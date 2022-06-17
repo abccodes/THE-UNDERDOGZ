@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import {
   FaBars,
   FaTimes,
-  FaGithub,
-  FaLinkedin,
-  FaFacebook,
-  FaLinkedinIn,
+  FaTwitter,
+  FaDiscord,
+  FaInstagram,
+
 } from 'react-icons/fa';
+
+import { GiSailboat } from "react-icons/gi";
 import { HiOutlineMail } from 'react-icons/hi';
 import { BsFillPersonLinesFill } from 'react-icons/bs';
 import Logo from '../assets/logo.png';
-import InstagramLogo from "../assets/6636566_instagram_social media_social network_icon.png";
-import TwitterLogo from "../assets/3225183_app_logo_media_popular_social_icon.png";
-import DiscordLogo from "../assets/3069758_circle_discord_gaming_messenger_round icon_icon.png";
+
 import OpenseaLogo from '../assets/9255431_opensea_logo_icon.png';
 
 // import { Link } from 'react-scroll';
@@ -83,17 +83,17 @@ const Navbar = () => {
           <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-600'>
             <a
               className='flex justify-between items-center w-full text-gray-300'
-              href='/'
+              href='https://twitter.com/UnderdogZ_CAP'
             >
-              Linkedin <FaLinkedin size={30} />
+              Twitter <FaTwitter size={30} />
             </a>
           </li>
           <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#333333]'>
             <a
               className='flex justify-between items-center w-full text-gray-300'
-              href='/'
+              href='https://t.co/RLYuBDfb5i'
             >
-              Github <FaGithub size={30} />
+              Discord <FaDiscord size={30} />
             </a>
           </li>
           <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#6fc2b0]'>
@@ -101,7 +101,7 @@ const Navbar = () => {
               className='flex justify-between items-center w-full text-gray-300'
               href='/'
             >
-              Email <HiOutlineMail size={30} />
+              Opensea <GiSailboat size={30} />
             </a>
           </li>
           <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#565f69]'>
@@ -109,7 +109,7 @@ const Navbar = () => {
               className='flex justify-between items-center w-full text-gray-300'
               href='/'
             >
-              Resume <BsFillPersonLinesFill size={30} />
+              Instagram <FaInstagram size={30} />
             </a>
           </li>
         </ul>
