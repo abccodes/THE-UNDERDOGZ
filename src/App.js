@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import Dao from './components/Dao'
 import Contact from './components/Contact'
 import Home from './components/Home'
@@ -8,6 +9,9 @@ import { Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
+    // <>
+    //   <Navbar accounts={accounts} seetAccounts={setAccounts} />
+    //   <Mint accounts={accounts} seetAccounts={setAccounts} />
     <>
       <Navbar />
       <Routes>
