@@ -15,6 +15,7 @@ import Tailwind from '../assets/tailwind.png';
 import Mongo from '../assets/mongo.png';
 import Header from './Header.js'
 import FAQ from './FAQ'
+import Roadmap from './sections/Roadmap'
 
 const Home = () => {
   const [faqs, setfaqs] = useState([
@@ -103,31 +104,8 @@ const Home = () => {
           An investment DAO.
         </h2>
       </div>
-      <div name='about' className='w-full h-screen text-gray-300'>
-      <div className='flex flex-col justify-center items-center w-full h-full'>
-        <div className='max-w-[1000px] w-full grid grid-cols-2 gap-8'>
-          <div className='sm:text-right pb-8 pl-4'>
-            <p className='text-4xl font-bold inline border-b-4 border-pink-600'>
-              Roadmap
-            </p>
-          </div>
-          <div></div>
-          </div>
-          <div className='max-w-[1000px] w-full grid sm:grid-cols-2 gap-8 px-4'>
-            <div className='sm:text-right text-4xl font-bold'>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat assumenda beatae fuga exercitationem, nesciunt ex facere accusantium quis, corporis quisquam, quam sequi laborum sed? Rem dolorum optio ea culpa explicabo.</p>
-            </div>
-            <div>
-              <p>Lorem ipsum dolor sit amet 
-                consectetur adipisicing elit. 
-                Quas quam architecto dicta eligendi
-                 animi eius saepe quaerat et corrupti 
-                 incidunt quisquam fugit blanditiis iusto 
-                 ipsum at culpa debitis, eum consectetur.</p>  
-            </div>
-          </div>
-      </div>
-    </div>
+      <div className='roadmap'> </div>
+      <Roadmap></Roadmap>
       <div name='skills' className='w-full h-screen  text-gray-300'>
       {/* Container */}
       <div className='max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full'>
