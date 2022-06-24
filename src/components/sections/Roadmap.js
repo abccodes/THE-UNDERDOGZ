@@ -206,7 +206,9 @@ const Roadmap = () => {
 
   return (
     <Section id="roadmap">
-      <Title>Roadmap</Title>
+      <Title className="text-4xl sm:text-7xl font-bold text-[#1a1616">
+        Roadmap
+      </Title>
       <Container>
         <SvgContainer>
           <DrawSvg />
@@ -215,27 +217,27 @@ const Roadmap = () => {
           <Item>&nbsp;</Item>
           <RoadMapItem
             addToRef={addToRefs}
-            title="Grand Opening"
+            title="Lorem"
             subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
           />
           <RoadMapItem
             addToRef={addToRefs}
-            title="Great Benefits"
+            title="Lorem"
             subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
           />
           <RoadMapItem
             addToRef={addToRefs}
-            title="Early Access"
+            title="Lorem"
             subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
           />
           <RoadMapItem
             addToRef={addToRefs}
-            title="New Merch"
+            title="Lorem"
             subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
           />
           <RoadMapItem
             addToRef={addToRefs}
-            title="Holders Ranking"
+            title="Lorem"
             subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
           />
         </Items>

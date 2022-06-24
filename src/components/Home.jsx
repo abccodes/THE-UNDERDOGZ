@@ -104,7 +104,7 @@ const Home = () => {
           An investment DAO.
         </h2>
       </div>
-      <div className='roadmap'> </div>
+      <div className='roadmap background'> </div>
       <Roadmap></Roadmap>
       <div name='skills' className='w-full h-screen  text-gray-300'>
       {/* Container */}

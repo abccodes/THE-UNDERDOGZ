@@ -9,7 +9,8 @@ import {
 import { GiSailboat } from "react-icons/gi";
 // import { HiOutlineMail } from 'react-icons/hi';
 // import { BsFillPersonLinesFill } from 'react-icons/bs';
-import Logo from '../assets/logo.png';
+// import Logo from '../assets/logo.png';
+import Logo from '../assets/UDZ_Logo.jpg'
 
 // import { Link } from 'react-scroll';
 
@@ -31,7 +32,7 @@ const Navbar = () => {
   return (
     <div className='fixed w-full h-[50px] flex justify-between items-center px-4 bg-[#050505] text-gray-300'>
       <div>
-        <img src={Logo} alt='Logo Image' style={{ width: '40px' }} />
+        <img src={Logo} alt='Logo Image' style={{ width: '60px' }} />
       </div>
 
       {/* menu */}

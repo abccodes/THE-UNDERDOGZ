@@ -30,6 +30,10 @@
 }
 
 
+.background {
+    background-color: #000000;
+}
+
 /* .background {
     background: #12c2e9;
     background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9); 
@@ -135,13 +139,27 @@ body {
     opacity: 1;
 }
 
+
 .css-selector {
+    background: linear-gradient(226deg, #0c0d0d, #4169e8, #e158f0, #0b0b0b);
+    background-size: 800% 800%;
+
+    animation: AnimationName 36s ease infinite;
+}
+
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+/* .css-selector {
     background: linear-gradient(182deg, #050505, #2794ee, #6f27d3, #0d0c0d);
     background-size: 800% 800%;
-    -webkit-animation: AnimationName 30s ease infinite;
-    -moz-animation: AnimationName 30s ease infinite;
-    -o-animation: AnimationName 30s ease infinite;
-    animation: AnimationName 30s ease infinite;
+    -webkit-animation: AnimationName 50s ease infinite;
+    -moz-animation: AnimationName 50s ease infinite;
+    -o-animation: AnimationName 50s ease infinite;
+    animation: AnimationName 50s ease infinite;
     height: 5000px;
 }
 @-webkit-keyframes AnimationName {
@@ -163,4 +181,4 @@ body {
     0%{background-position:50% 0%}
     50%{background-position:51% 100%}
     100%{background-position:50% 0%}
-}
+} */
