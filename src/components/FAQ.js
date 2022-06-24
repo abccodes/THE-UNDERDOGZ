@@ -1,4 +1,8 @@
 import React from 'react'
+;<style>
+  @import
+  url('https://fonts.googleapis.com/css2?family=Exo:wght@100&display=swap');
+</style>
 
 function FAQ({ faq, index, toggleFAQ }) {
   return (
@@ -7,8 +11,11 @@ function FAQ({ faq, index, toggleFAQ }) {
       key={index}
       onClick={() => toggleFAQ(index)}
     >
+      {' '}
+      {/* <style> */}
       <div className="faq-question">{faq.question}</div>
       <div className="faq-answer">{faq.answer}</div>
+      {/* </style> */}
     </div>
   )
 }

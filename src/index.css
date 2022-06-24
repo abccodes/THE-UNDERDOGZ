@@ -2,7 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* exo regular */
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
+/* roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
 
 @layer base {
     body {
@@ -30,8 +35,8 @@
 }
 
 
-.background {
-    background-color: #000000;
+.backgroundBlack {
+    background: #000000;
 }
 
 /* .background {
@@ -86,6 +91,10 @@ body {
     background-color: #EEE;
 }
 
+.fontColorWhite {
+    color: white;
+}
+
 .faqs .faq {
     margin: 15px;
     padding: 15px;
@@ -100,6 +109,9 @@ body {
     padding-right: 80px;
 
     transition: all 0.4s ease;
+
+    font-family: 'Exo', sans-serif;
+    font-weight: bold;
 }
 
 .faqs .faq .faq-question::after {
@@ -110,6 +122,7 @@ body {
     transform: translateY(-50%);
     width: 30px;
     height: 30px;
+
 
     background-image: url('./assets/down-arrow-svgrepo-com (1).svg');
     background-position: center;
@@ -124,6 +137,7 @@ body {
     max-height: 0;
     overflow-y: hidden;
     transition: all 0.4s ease-out;
+    font-family: 'Exo', sans-serif;
 }
 
 .faqs .faq.open .faq-question {
@@ -182,3 +196,7 @@ body {
     50%{background-position:51% 100%}
     100%{background-position:50% 0%}
 } */
+.roboto {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}

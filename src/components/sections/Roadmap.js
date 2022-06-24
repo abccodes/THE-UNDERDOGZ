@@ -36,7 +36,6 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-
   @media (max-width: 64em) {
     width: 80%;
   }
@@ -58,7 +57,6 @@ const Items = styled.ul`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* background-color: lightblue; */
 
   @media (max-width: 48em) {
     width: 90%;
@@ -71,7 +69,6 @@ const Items = styled.ul`
     }
 
     div {
-      border-radius: 50px 0 50px 0;
       text-align: right;
 
       @media (max-width: 48em) {
@@ -92,7 +89,6 @@ const Items = styled.ul`
       justify-content: center;
     }
     div {
-      border-radius: 0 50px 0 50px;
       text-align: left;
     }
     p {
@@ -114,25 +110,17 @@ const ItemContainer = styled.div`
   height: fit-content;
   padding: 1rem;
   border: 3px solid ${(props) => props.theme.text};
-
+  color: white;
   @media (max-width: 48em) {
     width: 70%;
   }
 `
 
-const Box = styled.p`
-  height: fit-content;
-  background-color: ${(props) => props.theme.carouselColor};
-  color: ${(props) => props.theme.text};
-  padding: 1rem;
-  position: relative;
-  border: 1px solid ${(props) => props.theme.text};
-`
 const SubTitle = styled.span`
   display: block;
   font-size: ${(props) => props.theme.fontxl};
   text-transform: capitalize;
-  color: ${(props) => props.theme.text};
+  color: white;
 
   @media (max-width: 40em) {
     font-size: ${(props) => props.theme.fontlg};
@@ -143,7 +131,7 @@ const Text = styled.span`
   display: block;
   font-size: ${(props) => props.theme.fontsm};
   text-transform: capitalize;
-  color: ${(props) => props.theme.text};
+  color: white;
 
   font-weight: 400;
   margin: 0.5rem 0;
@@ -156,10 +144,8 @@ const RoadMapItem = ({ title, subtext, addToRef }) => {
   return (
     <Item ref={addToRef}>
       <ItemContainer>
-        <Box>
-          <SubTitle>{title} </SubTitle>
-          <Text>{subtext}</Text>
-        </Box>
+        <SubTitle>{title} </SubTitle>
+        <Text>{subtext}</Text>
       </ItemContainer>
     </Item>
   )
@@ -206,7 +192,7 @@ const Roadmap = () => {
 
   return (
     <Section id="roadmap">
-      <Title className="text-4xl sm:text-7xl font-bold text-[#1a1616">
+      <Title className="text-4xl sm:text-7xl font-bold text-[#1a1616 fontColorWhite">
         Roadmap
       </Title>
       <Container>
@@ -217,29 +203,32 @@ const Roadmap = () => {
           <Item>&nbsp;</Item>
           <RoadMapItem
             addToRef={addToRefs}
-            title="Lorem"
-            subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
+            title="1. MINT"
+            subtext="Mint 100% of the Underdogz which funds the DAO."
           />
           <RoadMapItem
             addToRef={addToRefs}
-            title="Lorem"
-            subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
+            title="2. REVEAL"
+            subtext="Reveal the Underdogz, and start exclusive raffles to DAO members. DAO is
+            funded with over 400 ETH allocated to our fund for BLUE chip NFTS."
           />
           <RoadMapItem
             addToRef={addToRefs}
-            title="Lorem"
-            subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
+            title="3. THE VOTE"
+            subtext="Each Underdog NFT is 1 VOTE on which blue chip NFT projects to
+            invest in. The DAO together will vote on all future decisions. Examples of NFT’s to buy:
+            BAYC, MAYC, AZUKI, ABS, moon birds"
           />
           <RoadMapItem
             addToRef={addToRefs}
-            title="Lorem"
-            subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
+            title="4. PAYOUT"
+            subtext="Pay out holders as investments grow"
           />
-          <RoadMapItem
+          {/* <RoadMapItem
             addToRef={addToRefs}
             title="Lorem"
             subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
-          />
+          /> */}
         </Items>
       </Container>
     </Section>

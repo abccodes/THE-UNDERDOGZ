@@ -38,19 +38,19 @@ const Navbar = () => {
       {/* menu */}
       <ul className='hidden md:flex'>
         <li>
-          <a href="/">Home</a>
+          <a href="/" className='roboto'>Home</a>
         </li>
         <li>
-          <a href="/dao">Dao</a>
+          <a href="/dao" className='roboto'>Dao</a>
         </li>
         <li>
-          <a href="/mint">Mint</a>  
+          <a href="/mint" className='roboto'>Mint</a>  
         </li>
         <li>
-          <a href="/help">Help</a>  
+          <a href="/help" className='roboto'>Help</a>  
         </li>
         <li>
-          <a href="/contact">Contact</a>
+          <a href="/contact" className='roboto'>Contact</a>
         </li>
       </ul>
 
