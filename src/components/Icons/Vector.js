@@ -8,7 +8,7 @@ const Vector = ({ progress = 0, ...props }) => {
         strokeWidth="6px"
         className="svg-path"
         d="M1 0v2048.5"
-        stroke="white"
+        stroke="black"
       />
     </svg>
   )

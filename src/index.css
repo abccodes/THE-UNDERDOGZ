@@ -34,15 +34,18 @@
     )!important;
 }
 .roadmapClass {
-    background-color: black;
+    background-color: white;
     border-bottom: 3px solid #ffffff;
 }
 
+.fontColorBlack {
+    color: black;
+}
 .backgroundBlack {
-    background-color: black;
+    background-color: #282928;
 }
 .aboutClass {
-    background-color: black;
+    background-color: #282928;
     border-bottom: 3px solid #ffffff;
 }
 

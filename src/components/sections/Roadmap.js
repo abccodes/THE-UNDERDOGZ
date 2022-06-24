@@ -28,8 +28,8 @@ const Title = styled.h1`
   }
 `
 const Container = styled.div`
-  width: 70%;
-  height: 200vh;
+  width: 80%;
+  height: 150vh;
   background-color: ${(props) => props.theme.body};
   margin: 0 auto;
   display: flex;
@@ -44,9 +44,9 @@ const Container = styled.div`
   }
 `
 const SvgContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
 `
 
 const Items = styled.ul`
@@ -108,9 +108,9 @@ const Item = styled.li`
 const ItemContainer = styled.div`
   width: 40%;
   height: fit-content;
-  padding: 1rem;
-  border: 3px solid ${(props) => props.theme.text};
-  color: white;
+  padding: 2rem;
+  border: 2px solid ${(props) => props.theme.text};
+  color: black;
   @media (max-width: 48em) {
     width: 70%;
   }
@@ -120,7 +120,7 @@ const SubTitle = styled.span`
   display: block;
   font-size: ${(props) => props.theme.fontxl};
   text-transform: capitalize;
-  color: white;
+  color: black;
 
   @media (max-width: 40em) {
     font-size: ${(props) => props.theme.fontlg};
@@ -131,7 +131,7 @@ const Text = styled.span`
   display: block;
   font-size: ${(props) => props.theme.fontsm};
   text-transform: capitalize;
-  color: white;
+  color: black;
 
   font-weight: 400;
   margin: 0.5rem 0;
@@ -192,7 +192,7 @@ const Roadmap = () => {
 
   return (
     <Section id="roadmap">
-      <Title className="text-4xl sm:text-7xl font-bold text-[#1a1616 fontColorWhite">
+      <Title className="text-4xl sm:text-7xl font-bold text-[#1a1616 fontColorBlack">
         Roadmap
       </Title>
       <Container>
