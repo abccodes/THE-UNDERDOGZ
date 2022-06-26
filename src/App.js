@@ -8,12 +8,12 @@ import Help from './components/Help'
 import { Routes, Route } from 'react-router-dom'
 
 function App() {
+  const [accounts, setAccounts] = useState([])
   return (
     // <>
-    //   <Navbar accounts={accounts} seetAccounts={setAccounts} />
     //   <Mint accounts={accounts} seetAccounts={setAccounts} />
     <>
-      <Navbar />
+      <Navbar accounts={accounts} setAccounts={setAccounts} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dao" element={<Dao />} />

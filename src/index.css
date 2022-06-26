@@ -19,6 +19,13 @@
     }
 }
 
+.titlePage {
+    
+    border-bottom: 10px solid white;
+    width:100%; 
+    
+}
+
 .content-div {
     background-repeat: no-repeat;
     background-size: cover;
@@ -34,18 +41,20 @@
     )!important;
 }
 .roadmapClass {
-    background-color: white;
+    background-color: #FFFFFF;
+
     border-bottom: 3px solid #ffffff;
 }
 
 .fontColorBlack {
     color: black;
+
 }
 .backgroundBlack {
-    background-color: #282928;
+    background-color: black;
 }
 .aboutClass {
-    background-color: #282928;
+    background-color: black;
     border-bottom: 3px solid #ffffff;
 }
 
