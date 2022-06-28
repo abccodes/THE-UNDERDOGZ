@@ -7,13 +7,9 @@ import {
   FaInstagram,
 } from 'react-icons/fa';
 import { GiSailboat } from "react-icons/gi";
-// import { HiOutlineMail } from 'react-icons/hi';
-// import { BsFillPersonLinesFill } from 'react-icons/bs';
-// import Logo from '../assets/logo.png';
-import Logo from '../assets/UDZ_Logo.jpg'
+import Logo from '../assets/UDZ_Logo.jpg';
 
 
-// import { Link } from 'react-scroll';
 
 
 const Navbar = ({accounts, setAccounts}) => {
@@ -58,9 +54,13 @@ const Navbar = ({accounts, setAccounts}) => {
         </li>
         <li>
           {isConnected ? (
-            <p>Connected</p>
-          ) : (<button onClick ={connectAccount}>Connect</button>)}
-        </li>
+            <p className='fontColorGreen' margin="0 15px">Connected</p>
+          ) : (<button className="button"onClick={connectAccount} >
+            <p className='fontColorRed'>Connect</p>
+            </button>)}
+          
+
+          </li>
       </ul>
 
       {/* Hamburger */}

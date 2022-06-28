@@ -1,6 +1,6 @@
 import React from 'react';
-import WorkImg from '../assets/workImg.jpeg';
-import realEstate from '../assets/realestate.jpg';
+// import WorkImg from '../assets/workImg.jpeg';
+// import realEstate from '../assets/realestate.jpg';
 
 const Help = () => {
   return (
