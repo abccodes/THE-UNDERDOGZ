@@ -12,45 +12,54 @@ import { GiSailboat } from "react-icons/gi";
 // import Logo from '../assets/logo.png';
 import Logo from '../assets/UDZ_Logo.jpg'
 
+
 // import { Link } from 'react-scroll';
 
-const Navbar = () => {
-  const NavBar = ({accounts, setAccounts}) => {
+
+const Navbar = ({accounts, setAccounts}) => {
+  
     const isConnected = Boolean(accounts[0]);
 
-    async function connectACcount() {
+    async function connectAccount() {
       if(window.ethereum) {
         const accounts = await window.ethereum.request({method:"eth_requestAccounts",
       });
       setAccounts(accounts);
       }
     }
-  }
+  
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
 
   return (
     <div className='fixed w-full h-[50px] flex justify-between items-center px-4 bg-[#050505] text-gray-300'>
       <div>
+
         <img src={Logo} alt='Logo Image' style={{ width: '60px' }} />
+
       </div>
 
       {/* menu */}
       <ul className='hidden md:flex'>
         <li>
-          <a href="/" className='roboto'>Home</a>
+          <a href="/" className=''>Home</a>
         </li>
         <li>
-          <a href="/dao" className='roboto'>Dao</a>
+          <a href="/dao" className=''>Dao</a>
         </li>
         <li>
-          <a href="/mint" className='roboto'>Mint</a>  
+          <a href="/mint" className=''>Mint</a>  
         </li>
         <li>
-          <a href="/help" className='roboto'>Help</a>  
+          <a href="/help" className=''>Help</a>  
         </li>
         <li>
-          <a href="/contact" className='roboto'>Contact</a>
+          <a href="/contact" className=''>Contact</a>
+        </li>
+        <li>
+          {isConnected ? (
+            <p>Connected</p>
+          ) : (<button onClick ={connectAccount}>Connect</button>)}
         </li>
       </ul>
 

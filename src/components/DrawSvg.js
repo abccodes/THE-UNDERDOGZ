@@ -23,12 +23,6 @@ const VectorContainer = styled.div`
     left: 1rem;
   }
 `
-const Bounce = keyframes`
-from {  transform: translateX(-50%) scale(0.5);   }
-to {  transform: translateX(-50%) scale(1);   }
-
-
-`
 
 const Ball = styled.div`
   position: absolute;
@@ -39,7 +33,6 @@ const Ball = styled.div`
   height: 1.5rem;
   border-radius: 50%;
   background-color: ${(props) => props.theme.text};
-  animation: ${Bounce} 1.5s linear infinite alternate;
 
   @media (max-width: 48em) {
     left: 1rem;

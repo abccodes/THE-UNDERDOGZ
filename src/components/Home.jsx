@@ -95,7 +95,7 @@ const Home = () => {
     <div className = 'css-selector'>
     <div name='home' className='w-full h-screen '>
       {/* Container */}
-      <div className='max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full'>
+      <div className='max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full titlePage'>
         
         <h1 className='text-4xl sm:text-7xl font-bold text-[#f5ffff] '>
           UnderDogZ
