@@ -6,14 +6,14 @@ import Navbar from './components/Navbar'
 import Mint from './components/Mint'
 import Help from './components/Help'
 import { Routes, Route } from 'react-router-dom'
-// import { ChakraProvider } from '@chakra-ui/react'
 
 function App() {
-  const [accounts, setAccounts] = useState([])
   return (
-    // <ChakraProvider>
+    // <>
+    //   <Navbar accounts={accounts} seetAccounts={setAccounts} />
+    //   <Mint accounts={accounts} seetAccounts={setAccounts} />
     <>
-      <Navbar accounts={accounts} setAccounts={setAccounts} />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dao" element={<Dao />} />
@@ -21,8 +21,12 @@ function App() {
         <Route path="/help" element={<Help />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      {/* <Home />
+      <About />
+      <Skills />
+      <Work />
+      <Contact /> */}
     </>
-    // </ChakraProvider>
   )
 }
 

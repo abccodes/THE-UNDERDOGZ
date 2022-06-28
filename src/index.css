@@ -19,13 +19,6 @@
     }
 }
 
-.titlePage {
-    
-    border-bottom: 10px solid white;
-    width:100%; 
-    
-}
-
 .content-div {
     background-repeat: no-repeat;
     background-size: cover;
@@ -41,23 +34,10 @@
     )!important;
 }
 .roadmapClass {
-    background-color: #FFFFFF;
-
+    background-color: black;
     border-bottom: 3px solid #ffffff;
 }
 
-.fontColorBlack {
-    color: black;
-
-}
-.fontColorRed {
-    color: red;
-
-}
-.fontColorGreen {
-    color: #45ff67;
-
-}
 .backgroundBlack {
     background-color: black;
 }
@@ -225,30 +205,4 @@ body {
 .roboto {
     color: white;
     font-family: 'Roboto', sans-serif;
-}
-
-
-.button {
-    display:inline-block;
-    padding:0.3em 1.2em;
-    margin:0 0.1em 0.1em 0;
-    border:0.16em solid red;
-    border-radius:2em;
-    box-sizing: border-box;
-    text-decoration:none;
-    font-family:'Roboto',sans-serif;
-    font-weight:300;
-    color:#FFFFFF;
-    text-shadow: 0 0.04em 0.04em red;
-    text-align:center;
-    transition: all 0.2s;
-    }
-    .button:hover{
-    border-color: rgba(255,255,255,1);
-    }
-    @media all and (max-width:30em){
-    .button4{
-    display:block;
-    margin:0.2em auto;
-    }
 }
