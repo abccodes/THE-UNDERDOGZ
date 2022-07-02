@@ -11,6 +11,7 @@ import Header from '../Header.js'
 import FAQ from '../FAQ'
 import Roadmap from '../Roadmap.js'
 import Team from '../Team'
+import Showcase from '../Showcase.js';
 
 const Home = () => {
   const [faqs, setfaqs] = useState([
@@ -140,12 +141,13 @@ project was born. By the people, for the people #dogz .</p>
   </div>
 </div>
       <div className='roadmapClass bgWhiteGradient'>
-      <Roadmap/>
+          <Roadmap/>
       </div>
-      <div name='skills' className='w-full h-screen  text-gray-300 backgroundBlack'>
-      {/* Container */}
+      <div name='team' className=' text-gray-300 backgroundBlack'>
           <Team/>
-      
+    </div>
+    <div>
+      <Showcase/>
     </div>
 
     <Header />

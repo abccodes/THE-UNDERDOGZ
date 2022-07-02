@@ -1,9 +1,9 @@
 import React, { lazy, Suspense } from 'react'
 import styled from 'styled-components'
 
-import img1 from './assets/1.png'
-import img2 from './assets/1.png'
-import img3 from './assets/1.png'
+import img1 from './assets/hunter.png'
+import img2 from './assets/nic.png'
+import img3 from './assets/lee.png'
 import img4 from './assets/1.png'
 import img5 from './assets/1.png'
 import img6 from './assets/1.png'
@@ -83,7 +83,7 @@ const Item = styled.div`
 const ImageContainer = styled.div`
   width: 80%;
   margin: 0 auto;
-  background-color: ${(props) => props.theme.carouselColor};
+  background-color: white;
   border: 1px solid ${(props) => props.theme.text};
   padding: 1rem;
 
@@ -137,23 +137,12 @@ const Team = () => {
       </Suspense>
       <Title>Team</Title>
       <Container>
-        <MemberComponent img={img1} name="SKYBLAZE" position="founder" />
-        <MemberComponent img={img2} name="MEGNUM" position="Co-Founder" />
-        <MemberComponent img={img3} name="MONKEY KING" position="Director" />
-        <MemberComponent img={img4} name="BLACK PANTHER" position="manager" />
-        <MemberComponent img={img5} name="DEATHSTROKE" position="artist" />
-        <MemberComponent
-          img={img6}
-          name="LAZY KONG"
-          position="social media manager"
-        />
-        <MemberComponent
-          img={img7}
-          name="CYBER PUNK"
-          position="Blockchain Specialist"
-        />
-        <MemberComponent img={img8} name="MONK" position="Web3 Developer" />
-        <MemberComponent img={img9} name="BANANA" position="Graphic Designer" />
+        <MemberComponent img={img1} name="HUNTER" position="Co-Founder" />
+        <MemberComponent img={img2} name="NIC" position="Co-Founder" />
+        <MemberComponent img={img3} name="LEE" position="Co-Founder" />
+        <MemberComponent img={img4} name="FILL IN" position="FILL IN" />
+        <MemberComponent img={img5} name="FILL IN" position="FILL IN" />
+        <MemberComponent img={img6} name="FILL IN" position="FILL IN" />
       </Container>
     </Section>
   )
