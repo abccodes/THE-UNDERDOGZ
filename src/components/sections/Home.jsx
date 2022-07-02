@@ -10,6 +10,7 @@ import React, {useState} from 'react';
 import Header from '../Header.js'
 import FAQ from '../FAQ'
 import Roadmap from '../Roadmap.js'
+import Team from '../Team'
 
 const Home = () => {
   const [faqs, setfaqs] = useState([
@@ -143,47 +144,10 @@ project was born. By the people, for the people #dogz .</p>
       </div>
       <div name='skills' className='w-full h-screen  text-gray-300 backgroundBlack'>
       {/* Container */}
-      <div className='max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full'>
-          <div>
-              <p className='text-4xl font-bold inline border-b-4 border-pink-600 '>Art</p>
-          </div>
-
-          <div className='w-full grid grid-cols-2 sm:grid-cols-4 gap-4 text-center py-8'>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                  {/* <img className='w-20 mx-auto' src={HTML} alt="HTML icon" /> */}
-                  <p className='my-4'>HTML</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                  {/* <img className='w-20 mx-auto' src={CSS} alt="HTML icon" /> */}
-                  <p className='my-4'>CSS</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                  {/* <img className='w-20 mx-auto' src={JavaScript} alt="HTML icon" /> */}
-                  <p className='my-4'>JAVASCRIPT</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                  {/* <img className='w-20 mx-auto' src={ReactImg} alt="HTML icon" /> */}
-                  <p className='my-4'>REACT</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                  {/* <img className='w-20 mx-auto' src={GitHub} alt="HTML icon" /> */}
-                  <p className='my-4'>GITHUB</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                  {/* <img className='w-20 mx-auto' src={Node} alt="HTML icon" /> */}
-                  <p className='my-4'>NODE JS</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                  {/* <img className='w-20 mx-auto' src={Mongo} alt="HTML icon" /> */}
-                  <p className='my-4'>MONGO DB</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                  {/* <img className='w-20 mx-auto' src={AWS} alt="HTML icon" /> */}
-                  <p className='my-4'>AWS</p>
-              </div>
-          </div>
-      </div>
+          <Team/>
+      
     </div>
+
     <Header />
       <div className="faq ">
         <div className="faqs">
