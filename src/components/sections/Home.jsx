@@ -12,6 +12,8 @@ import FAQ from '../FAQ'
 import Roadmap from '../Roadmap.js'
 import Team from '../Team'
 import Showcase from '../Showcase.js';
+import LandingPage from '../LandingPage.js';
+import About from '../About.js'
 
 const Home = () => {
   const [faqs, setfaqs] = useState([
@@ -88,58 +90,11 @@ const Home = () => {
   }
 
   return (
-    <div className = 'css-selector'>
-    <div name='home' className='w-full h-screen '>
+    <div name='home' className='w-full h-screen css-selector '>
       {/* Container */}
-      <div className='max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full titlePage'>
-        
-        <h1 className='text-4xl sm:text-7xl font-bold text-[#f5ffff] '>
-          UnderDogZ
-        </h1>
-        <h2 className='text-4xl sm:text-7xl font-bold text-[#1a1616'>
-          An investment DAO.
-        </h2>
-      </div>
-      <div name='about' className='w-full h-screen aboutClass text-gray-300'>
-      <div class="bg-black">
-  <div class="max-w-2xl mx-auto py-24 px-4 grid items-center grid-cols-1 gap-y-16 gap-x-8 sm:px-9 sm:py-32 lg:max-w-7xl lg:px-8 lg:grid-cols-2">
-    <div>
-      <h2 class="text-3xl font-extrabold tracking-tight text-white-1000 sm:text-4xl headerFont">About</h2>
-      <p class="mt-8 text-white-500 bodyFont">Our team has been involved with the crypto/web 3 space since 2016. We’ve seen booms and
-busts in the market but never lost faith. In the last 2 years we’ve seen the rise of the NFT space.
-We absolutely fell in love with the idea and community behind NFT’s. We have created thex
-opportunity for everyone to get involved in the top 1% of NFTs and digital assets. With this
-project everyone will get value from what NFTs have to offer. The sky's the limit with this
-treasury. The Underdogz team has been trading and participating in projects for 2 years now.
-We’ve been through alot of rug pulls and had our dreams crushed by the greed and corruption
-behind certain projects. We are fed up with this happening and decided to create a project
-ourselves to fulfill the promises made to us by other projects. That is how the UNDERDOGZ
-project was born. By the people, for the people #dogz .</p>
-    </div>
-    <div class="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
-      <img src="https://gateway.pinata.cloud/ipfs/QmYTi6qC4m5WBfh68WEYfcDaQSC6j7s7ZYYn4Zhgw4ejMU/4.png" alt="" class="bg-gray-100 rounded-lg"/>
-      <img src="https://gateway.pinata.cloud/ipfs/QmYTi6qC4m5WBfh68WEYfcDaQSC6j7s7ZYYn4Zhgw4ejMU/3.png" alt="" class="bg-gray-100 rounded-lg"/>
-      <img src="https://gateway.pinata.cloud/ipfs/QmYTi6qC4m5WBfh68WEYfcDaQSC6j7s7ZYYn4Zhgw4ejMU/2.png" alt="" class="bg-gray-100 rounded-lg"/>
-      <img src="https://gateway.pinata.cloud/ipfs/QmYTi6qC4m5WBfh68WEYfcDaQSC6j7s7ZYYn4Zhgw4ejMU/1.png" alt="" class="bg-gray-100 rounded-lg"/>
-    </div>
-  </div>c
-</div>
-    </div>
-    <div className="banner">
-    <div class="bg-black">
-  <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between flex-wrap">
-      <div class="w-0 flex-1 flex items-center">
+      <LandingPage/>
+      <About/>
 
-        <p class="ml-3 font-medium text-white truncate">
-  
-          <span class="hidden md:inline"> .</span>
-        </p>
-      </div>
-      </div>
-    </div>
-  </div>
-</div>
       <div className='roadmapClass bgWhiteGradient'>
           <Roadmap/>
       </div>
@@ -159,7 +114,7 @@ project was born. By the people, for the people #dogz .</p>
         </div>
       </div>
     </div>
-    </div>
+  
 
     
 

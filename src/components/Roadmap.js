@@ -189,47 +189,49 @@ const Roadmap = () => {
   }, [])
 
   return (
-    <Section id="roadmap">
-      <Title className="text-4xl sm:text-8xl  text-[#1a1616 fontColorBlack rdHead ">
-        Roadmap
-      </Title>
-      <Container>
-        <SvgContainer>
-          <DrawSvg />
-        </SvgContainer>
-        <Items>
-          <Item>&nbsp;</Item>
-          <RoadMapItem
-            addToRef={addToRefs}
-            title="1. MINT"
-            subtext="Mint 100% of the Underdogz which funds the DAO."
-          />
-          <RoadMapItem
-            addToRef={addToRefs}
-            title="2. REVEAL"
-            subtext="Reveal the Underdogz, and start exclusive raffles to DAO members. DAO is
+    <div className="roadmapClass bgWhiteGradient">
+      <Section id="roadmap">
+        <Title className="text-4xl sm:text-8xl  text-[#1a1616 fontColorBlack rdHead ">
+          Roadmap
+        </Title>
+        <Container>
+          <SvgContainer>
+            <DrawSvg />
+          </SvgContainer>
+          <Items>
+            <Item>&nbsp;</Item>
+            <RoadMapItem
+              addToRef={addToRefs}
+              title="1. MINT"
+              subtext="Mint 100% of the Underdogz which funds the DAO."
+            />
+            <RoadMapItem
+              addToRef={addToRefs}
+              title="2. REVEAL"
+              subtext="Reveal the Underdogz, and start exclusive raffles to DAO members. DAO is
             funded with over 400 ETH allocated to our fund for BLUE chip NFTS."
-          />
-          <RoadMapItem
-            addToRef={addToRefs}
-            title="3. THE VOTE"
-            subtext="Each Underdog NFT is 1 VOTE on which blue chip NFT projects to
+            />
+            <RoadMapItem
+              addToRef={addToRefs}
+              title="3. THE VOTE"
+              subtext="Each Underdog NFT is 1 VOTE on which blue chip NFT projects to
             invest in. The DAO together will vote on all future decisions. Examples of NFT’s to buy:
             BAYC, MAYC, AZUKI, ABS, moon birds"
-          />
-          <RoadMapItem
-            addToRef={addToRefs}
-            title="4. PAYOUT"
-            subtext="Pay out holders as investments grow"
-          />
-          {/* <RoadMapItem
+            />
+            <RoadMapItem
+              addToRef={addToRefs}
+              title="4. PAYOUT"
+              subtext="Pay out holders as investments grow"
+            />
+            {/* <RoadMapItem
             addToRef={addToRefs}
             title="Lorem"
             subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
           /> */}
-        </Items>
-      </Container>
-    </Section>
+          </Items>
+        </Container>
+      </Section>
+    </div>
   )
 }
 

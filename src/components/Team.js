@@ -131,20 +131,22 @@ const MemberComponent = ({ img, name = ' ', position = ' ' }) => {
 
 const Team = () => {
   return (
-    <Section id="team">
-      <Suspense fallback={<Loading />}>
-        {/* <ConfettiComponent />{' '} */}
-      </Suspense>
-      <Title>Team</Title>
-      <Container>
-        <MemberComponent img={img1} name="HUNTER" position="Co-Founder" />
-        <MemberComponent img={img2} name="NIC" position="Co-Founder" />
-        <MemberComponent img={img3} name="LEE" position="Co-Founder" />
-        <MemberComponent img={img4} name="FILL IN" position="FILL IN" />
-        <MemberComponent img={img5} name="FILL IN" position="FILL IN" />
-        <MemberComponent img={img6} name="FILL IN" position="FILL IN" />
-      </Container>
-    </Section>
+    <div name="team" className=" text-gray-300 backgroundBlack">
+      <Section id="team">
+        <Suspense fallback={<Loading />}>
+          {/* <ConfettiComponent />{' '} */}
+        </Suspense>
+        <Title>Team</Title>
+        <Container>
+          <MemberComponent img={img1} name="HUNTER" position="Co-Founder" />
+          <MemberComponent img={img2} name="NIC" position="Co-Founder" />
+          <MemberComponent img={img3} name="LEE" position="Co-Founder" />
+          <MemberComponent img={img4} name="FILL IN" position="FILL IN" />
+          <MemberComponent img={img5} name="FILL IN" position="FILL IN" />
+          <MemberComponent img={img6} name="FILL IN" position="FILL IN" />
+        </Container>
+      </Section>
+    </div>
   )
 }
 
