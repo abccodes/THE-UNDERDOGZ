@@ -2,7 +2,7 @@ import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import React, { useLayoutEffect, useRef } from 'react'
 import styled from 'styled-components'
-import DrawSvg from '../DrawSvg'
+import DrawSvg from './DrawSvg.js'
 
 const Section = styled.section`
   min-height: 100vh;
@@ -14,13 +14,11 @@ const Section = styled.section`
 `
 const Title = styled.h1`
   font-size: ${(props) => props.theme.fontxxl};
-  text-transform: capitalize;
-  color: ${(props) => props.theme.text};
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 1rem auto;
-  border-bottom: 2px solid ${(props) => props.theme.text};
+  // border-bottom: 2px solid ${(props) => props.theme.text};
   width: fit-content;
 
   @media (max-width: 40em) {
@@ -192,7 +190,7 @@ const Roadmap = () => {
 
   return (
     <Section id="roadmap">
-      <Title className="text-4xl sm:text-7xl font-bold text-[#1a1616 fontColorBlack">
+      <Title className="text-4xl sm:text-8xl  text-[#1a1616 fontColorBlack rdHead ">
         Roadmap
       </Title>
       <Container>

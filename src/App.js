@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import Dao from './components/Dao'
-import Contact from './components/Contact'
-import Home from './components/Home'
-import Navbar from './components/Navbar'
-import Mint from './components/Mint'
-import Help from './components/Help'
+import Dao from './components/sections/Dao'
+import Contact from './components/sections/Contact'
+import Home from './components/sections/Home'
+import Navbar from './components/sections/Navbar'
+import Mint from './components/sections/Mint'
+import Help from './components/sections/Help'
 import { Routes, Route } from 'react-router-dom'
 
 function App() {
