@@ -10,7 +10,7 @@ import { GiSailboat } from "react-icons/gi";
 // import { HiOutlineMail } from 'react-icons/hi';
 // import { BsFillPersonLinesFill } from 'react-icons/bs';
 // import Logo from '../assets/logo.png';
-import Logo from '../assets/UDZ_Logo.jpg'
+import Logo from '../assets/UDZ_Logo.png'
 
 
 // import { Link } from 'react-scroll';
@@ -35,31 +35,31 @@ const Navbar = ({accounts, setAccounts}) => {
     <div className='fixed w-full h-[50px] flex justify-between items-center px-4 bg-[#050505] text-gray-300'>
       <div>
 
-        <img src={Logo} alt='Logo Image' style={{ width: '60px' }} />
+        <img href="/" src={Logo} alt='Logo' style={{ width: '50px' }} />
 
       </div>
 
       {/* menu */}
       <ul className='hidden md:flex'>
         <li>
-          <a href="/" className=''>Home</a>
+          <a href="/" className='navText'>Home</a>
         </li>
         <li>
-          <a href="/dao" className=''>Dao</a>
+          <a href="/dao" className='navText'>Dao</a>
         </li>
         <li>
-          <a href="/mint" className=''>Mint</a>  
+          <a href="/mint" className='navText'>Mint</a>  
         </li>
         <li>
-          <a href="/help" className=''>Help</a>  
+          <a href="/help" className='navText'>Help</a>  
         </li>
         <li>
-          <a href="/contact" className=''>Contact</a>
+          <a href="/contact" className='navText'>Contact</a>
         </li>
         <li>
           {isConnected ? (
-            <p>Connected</p>
-          ) : (<button onClick ={connectAccount}>Connect</button>)}
+            <p className='connectedText'>Connected</p>
+          ) : (<button onClick={connectAccount} className="button navText">Connect</button>)}
         </li>
       </ul>
 

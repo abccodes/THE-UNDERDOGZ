@@ -7,7 +7,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
 /* roboto */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+.bgBlackImg {
+    background: #fff url(https://images.pexels.com/photos/6044197/pexels-photo-6044197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2) center center/cover no-repeat;
 
+}.bgWhiteGradient {
+    background: #fff url(https://wallpaperaccess.com/full/1586344.jpg) center center/cover no-repeat;
+}
 
 @layer base {
     body {
@@ -21,7 +26,7 @@
 
 .titlePage {
     
-    border-bottom: 10px solid white;
+    border-bottom: 10px solid rgb(255, 255, 255);
     width:100%; 
     
 }
@@ -43,7 +48,6 @@
 .roadmapClass {
     background-color: #FFFFFF;
 
-    border-bottom: 3px solid #ffffff;
 }
 
 .fontColorBlack {
@@ -55,7 +59,7 @@
 }
 .aboutClass {
     background-color: black;
-    border-bottom: 3px solid #ffffff;
+
 }
 
 .backgroundDarkGradient {
@@ -185,36 +189,61 @@ body {
     100%{background-position:0% 50%}
 }
 
-/* .css-selector {
-    background: linear-gradient(182deg, #050505, #2794ee, #6f27d3, #0d0c0d);
-    background-size: 800% 800%;
-    -webkit-animation: AnimationName 50s ease infinite;
-    -moz-animation: AnimationName 50s ease infinite;
-    -o-animation: AnimationName 50s ease infinite;
-    animation: AnimationName 50s ease infinite;
-    height: 5000px;
-}
-@-webkit-keyframes AnimationName {
-    0%{background-position:50% 0%}
-    50%{background-position:51% 100%}
-    100%{background-position:50% 0%}
-}
-@-moz-keyframes AnimationName {
-    0%{background-position:50% 0%}
-    50%{background-position:51% 100%}
-    100%{background-position:50% 0%}
-}
-@-o-keyframes AnimationName {
-    0%{background-position:50% 0%}
-    50%{background-position:51% 100%}
-    100%{background-position:50% 0%}
-}
-@keyframes AnimationName {
-    0%{background-position:50% 0%}
-    50%{background-position:51% 100%}
-    100%{background-position:50% 0%}
-} */
 .roboto {
     color: white;
     font-family: 'Roboto', sans-serif;
+}
+.navText {
+    font-family: Helvetica, Arial, Sans-Serif;
+}
+.button {
+    
+    background: #fff5f6;
+    background: -webkit-linear-gradient(top, #9c3e5e, #d665ab);
+    background: -moz-linear-gradient(top, #9c3e5e, #d665ab);
+    background: -ms-linear-gradient(top, #9c3e5e, #d665ab);
+    background: -o-linear-gradient(top, #9c3e5e, #d665ab);
+    padding: 0px 6px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    box-shadow: rgba(0,0,0,1) 0 1px 0;
+    text-shadow: rgba(0,0,0,.4) 0 px 0;
+    color: #000000;
+    font-size: 17px;
+    font-weight: 500;
+    
+    
+    
+    }
+ .button:hover {
+    border-top-color: #ededed;
+    background: #ededed;
+    color: #000000;
+    }
+ .button:active {
+    border-top-color: #f70a29;
+    background: #a9b8c4;
+    }
+
+.connectedText {
+    background: #00FF00;
+    background: linear-gradient(to left, #00FF00 0%, #00FFFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+}    
+
+.banner {
+    margin-top: 5%;
+}
+
+.headerFont {
+    font-size: 100px;
+}
+
+.bodyFont {
+
 }
