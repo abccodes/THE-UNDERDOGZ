@@ -5,6 +5,8 @@
 /* exo regular */
 @import url('https://fonts.googleapis.com/css2?family=Exo:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
+/* baloo2 */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=Roboto:wght@100&display=swap');
 /* roboto */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 .bgBlackImg {
@@ -244,6 +246,8 @@ body {
     font-size: 100px;
 }
 
-.bodyFont {
-
+.rdHead {
+    font-family: 'Baloo 2', cursive;
 }
+
+
