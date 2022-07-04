@@ -14,18 +14,20 @@ function App() {
     //   <Mint accounts={accounts} seetAccounts={setAccounts} />
     <>
       <Navbar accounts={accounts} setAccounts={setAccounts} />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/dao" element={<Dao />} />
-        <Route path="/mint" element={<Mint />} />
-        <Route path="/help" element={<Help />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-      {/* <Home />
+      <>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/dao" element={<Dao />} />
+          <Route path="/mint" element={<Mint />} />
+          <Route path="/help" element={<Help />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+        {/* <Home />
       <About />
       <Skills />
       <Work />
       <Contact /> */}
+      </>
     </>
   )
 }
