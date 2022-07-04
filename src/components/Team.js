@@ -1,15 +1,12 @@
 import React, { lazy, Suspense } from 'react'
 import styled from 'styled-components'
 
-import img1 from './assets/hunter.png'
-import img2 from './assets/nic.png'
-import img3 from './assets/lee.png'
-import img4 from './assets/1.png'
-import img5 from './assets/1.png'
-import img6 from './assets/1.png'
-import img7 from './assets/1.png'
-import img8 from './assets/1.png'
-import img9 from './assets/1.png'
+import img1 from './assets/1-removebg-preview.png'
+import img2 from './assets/1-removebg-preview.png'
+import img3 from './assets/1-removebg-preview.png'
+import img4 from './assets/1-removebg-preview.png'
+import img5 from './assets/1-removebg-preview.png'
+import img6 from './assets/1-removebg-preview.png'
 import Loading from './Loading'
 // import ConfettiComponent from '../Confetti';
 

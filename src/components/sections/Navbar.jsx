@@ -7,13 +7,7 @@ import {
   FaInstagram,
 } from 'react-icons/fa';
 import { GiSailboat } from "react-icons/gi";
-// import { HiOutlineMail } from 'react-icons/hi';
-// import { BsFillPersonLinesFill } from 'react-icons/bs';
-// import Logo from '../assets/logo.png';
 import Logo from '../assets/UDZ_Logo.png'
-
-
-// import { Link } from 'react-scroll';
 
 
 const Navbar = ({accounts, setAccounts}) => {
@@ -32,7 +26,7 @@ const Navbar = ({accounts, setAccounts}) => {
   const handleClick = () => setNav(!nav);
 
   return (
-    <div className='fixed w-full h-[50px] flex justify-between items-center px-4 bg-[#050505] text-gray-300'>
+    <div className='fixed w-full h-[50px] flex justify-between items-center px-4 bg-[#050505] text-gray-300 '>
       <div>
 
         <img href="/" src={Logo} alt='Logo' style={{ width: '50px' }} />
@@ -97,36 +91,36 @@ const Navbar = ({accounts, setAccounts}) => {
       {/* Social icons */}
       <div className='hidden lg:flex fixed flex-col top-[35%] left-0 roboto'>
         <ul>
-          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-600'>
+          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 twitter'>
             <a
               className='flex justify-between items-center w-full text-gray-300'
               href='https://twitter.com/UnderdogZ_CAP'
             >
-              Twitter <FaTwitter size={30} />
+              <b className='fontColorWhite'>Twitter</b> <FaTwitter size={30} />
             </a>
           </li>
-          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#333333]'>
+          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 discord'>
             <a
               className='flex justify-between items-center w-full text-gray-300'
               href='https://t.co/RLYuBDfb5i'
             >
-              Discord <FaDiscord size={30} />
+              <b className='fontColorWhite'>Discord</b> <FaDiscord size={30} />
             </a>
           </li>
-          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#6fc2b0]'>
+          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 opensea'>
             <a
               className='flex justify-between items-center w-full text-gray-300'
               href='/'
             >
-              Opensea <GiSailboat size={30} />
+              <b className='fontColorWhite'>Opensea</b> <GiSailboat size={30} />
             </a>
           </li>
-          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#565f69]'>
+          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 insta'>
             <a
               className='flex justify-between items-center w-full text-gray-300'
               href='/'
             >
-              Instagram <FaInstagram size={30} />
+              <b className='fontColorWhite'>Instagram</b> <FaInstagram size={30} />
             </a>
           </li>
         </ul>

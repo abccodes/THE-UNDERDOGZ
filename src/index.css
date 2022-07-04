@@ -56,6 +56,10 @@
     color: black;
 
 }
+.fontColorWhite {
+    color: white;
+
+}
 .backgroundBlack {
     background-color: black;
 }
@@ -88,8 +92,7 @@ header {
     justify-content: center;
     align-content: center;
     padding: 15px;
-    background: #000000;
-    border-bottom: 3px solid #ffffff; 
+    background: #000000; 
 }
 
 header h1 {
@@ -181,7 +184,6 @@ body {
 .css-selector {
     background: linear-gradient(226deg, #0c0d0d, #4169e8, #e158f0, #0b0b0b);
     background-size: 800% 800%;
-
     animation: AnimationName 36s ease infinite;
 }
 
@@ -250,4 +252,31 @@ body {
     font-family: 'Baloo 2', cursive;
 }
 
+.insta {
+    background: #f09433; 
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+}
+
+.opensea {
+    background-color: #045de9;
+    background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+}
+
+.discord {
+    background-color: #7f5a83;
+    background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
+}
+
+.twitter {
+    background-color: #6a93cb;
+    background-image: linear-gradient(315deg, #6a93cb 0%, #a4bfef 74%);
+}
+
+.disUnder {
+    position: relative; 
+    z-index: -1; 
+}
 

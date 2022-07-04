@@ -1,12 +1,4 @@
 import React, {useState} from 'react';
-// import HTML from '.../assets/html.png';
-// import CSS from '../assets/css.png';
-// import JavaScript from '../assets/javascript.png';
-// import ReactImg from '../assets/react.png';
-// import Node from '../assets/node.png';
-// import AWS from '../assets/aws.png';
-// import GitHub from '../assets/github.png';
-// import Mongo from '../assets/mongo.png';
 import Header from '../Header.js'
 import FAQ from '../FAQ'
 import Roadmap from '../Roadmap.js'
@@ -90,7 +82,7 @@ const Home = () => {
   }
 
   return (
-    <div name='home' className='w-full h-screen css-selector '>
+    <div name='home' className='w-full h-screen css-selector disUnder'>
       {/* Container */}
       <LandingPage/>
       <About/>
@@ -107,10 +99,10 @@ const Home = () => {
     </div>
   </div>
 
-      <Roadmap/>
-      <Team/>
-      <Showcase/>
-      <Header />
+      <Roadmap></Roadmap>
+      <Team></Team>
+      <Showcase></Showcase>
+      <Header></Header>
         <div className="faq ">
           <div className="faqs">
             {faqs.map((faq, i) => (
