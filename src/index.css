@@ -280,3 +280,11 @@ body {
     z-index: -1; 
 }
 
+.daoHeader {
+    width: 200px; 
+    height: 200px;
+    background-color: transparent;
+    border-radius: 30px;
+    border: solid white 5px; 
+    margin: 20px; 
+}
