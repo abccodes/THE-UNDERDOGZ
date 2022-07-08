@@ -1,4 +1,11 @@
-const NftCard = ({ image, id, title, address, description, attributes }) => {
+const NftCard = ( props ) => {
+    console.log(props.value.image)
+    
+    return (<img src= {props.value.image} />
+    
+    )
+    
+    /*
     return (
         <div className="w-1/4 mr-3 mb-4 bg-slate-100 rounded-md" >
             <img className='w-full rounded-t-md' key={id} src={image}></img>
@@ -12,7 +19,7 @@ const NftCard = ({ image, id, title, address, description, attributes }) => {
                         <a target="_blank" className="text-blue-700" href={`https://etherscan.io/token/${address}`}>{`${address.slice(0, 4)}...${address.slice(address.length - 4)}`}</a>
                     </div>
                 </div>
-                <p>{description? description.slice(0, 200) : "No Description"}</p>
+                <p>{description ? description.slice(0, 200) : "No Description"}</p>
             </div>
             <div className="flex flex-wrap justify-center items-center p-3 ">
                 {attributes?.length > 0 && attributes.map(attribute => {
@@ -26,6 +33,8 @@ const NftCard = ({ image, id, title, address, description, attributes }) => {
             </div>
         </div>
     )
+    */
+    
 }
 
 export default NftCard
