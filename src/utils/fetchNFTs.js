@@ -31,8 +31,9 @@ const getNFTsMetadata = async (NFTS) => {
         let imageUrl; 
         console.log("metadata", metadata)
 
-        if (metadata.media[0].uri.gatewat.length) {
-            imageUrl = metadata.media[0].uri.gateway
+        
+        if (metadata.media[0].gateway) {
+            imageUrl = metadata.media[0].gateway
         }   else {
             imageUrl = "https://via.placeholder.com/500"
         }
@@ -53,13 +54,14 @@ const getNFTsMetadata = async (NFTS) => {
 }
 
 const fetchNFTs = async (owner, contractAddress, setNFTs) => {
-
+    
     const data = await getAddressNFTs(owner, contractAddress)
 
     if (data.ownedNfts.length) {
 
         const NFTs = await getNFTsMetadata(data.ownedNfts)
-        let fullfilledNFTs = NFTs.filter(NFT => NFT.status == "fulfilled")
+        console.log(NFTs)
+        let fullfilledNFTs = NFTs.filter(NFT => NFT.status === "fulfilled")
         setNFTs(fullfilledNFTs)
 
     } else {
@@ -68,3 +70,4 @@ const fetchNFTs = async (owner, contractAddress, setNFTs) => {
 }
 
 export {fetchNFTs}; 
+
