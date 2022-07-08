@@ -46,7 +46,7 @@ const move = keyframes`
 `
 
 const Row = styled.div`
-  background-color: black;
+  // background-color: black;
   white-space: nowrap;
   box-sizing: content-box;
   margin: 2rem 0;
