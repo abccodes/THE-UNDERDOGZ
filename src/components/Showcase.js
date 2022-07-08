@@ -17,7 +17,7 @@ const Section = styled.section`
   min-height: 100vh;
   width: 100vw;
   background-color: ${(props) => props.theme.text};
-  display: flex;
+  display: block;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -39,13 +39,14 @@ const Section = styled.section`
   }
 `
 const move = keyframes`
+
 0%{ transform: translateX(100%)   };
 100%{ transform: translateX(-100%)   }
 
 `
 
 const Row = styled.div`
-  // background-color: black;
+  background-color: black;
   white-space: nowrap;
   box-sizing: content-box;
   margin: 2rem 0;
