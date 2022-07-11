@@ -8,6 +8,7 @@ import {
 } from 'react-icons/fa';
 import { GiSailboat } from "react-icons/gi";
 import Logo from '../assets/UDZ_Logo.png'
+import { Link } from 'react-router-dom'
 
 
 const Navbar = ({accounts, setAccounts}) => {
@@ -28,9 +29,9 @@ const Navbar = ({accounts, setAccounts}) => {
   return (
     <div className='fixed w-full h-[50px] flex justify-between items-center px-4 bg-[#050505] text-gray-300 '>
       <div>
-
-        <img href="/" src={Logo} alt='Logo' style={{ width: '50px' }} />
-
+      <Link to="/">
+        <img src={Logo} alt='Logo' style={{ width: '50px' }} />
+        </Link>
       </div>
 
       {/* menu */}

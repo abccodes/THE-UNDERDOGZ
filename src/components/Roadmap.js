@@ -11,6 +11,7 @@ const Section = styled.section`
   position: relative;
   display: inline-block;
   overflow: hidden;
+  background-color: #161717;
 `
 const Title = styled.h1`
   font-size: ${(props) => props.theme.fontxxl};
@@ -108,7 +109,7 @@ const ItemContainer = styled.div`
   height: fit-content;
   padding: 2rem;
   border: 2px solid ${(props) => props.theme.text};
-  color: black;
+  color: white;
   @media (max-width: 48em) {
     width: 70%;
   }
@@ -118,7 +119,7 @@ const SubTitle = styled.span`
   display: block;
   font-size: ${(props) => props.theme.fontxl};
   text-transform: capitalize;
-  color: black;
+  color: white;
 
   @media (max-width: 40em) {
     font-size: ${(props) => props.theme.fontlg};
@@ -129,7 +130,7 @@ const Text = styled.span`
   display: block;
   font-size: ${(props) => props.theme.fontsm};
   text-transform: capitalize;
-  color: black;
+  color: white;
 
   font-weight: 400;
   margin: 0.5rem 0;
@@ -189,9 +190,10 @@ const Roadmap = () => {
   }, [])
 
   return (
-    <div className="roadmapClass bgWhiteGradient">
+    // bgWhiteGradient"
+    <div className="">
       <Section id="roadmap">
-        <Title className="text-4xl sm:text-8xl  text-[#1a1616 fontColorBlack rdHead ">
+        <Title className="text-4xl sm:text-8xl  text-[#1a1616 fontColorWhite rdHead ">
           Roadmap
         </Title>
         <Container>
@@ -223,11 +225,6 @@ const Roadmap = () => {
               title="4. PAYOUT"
               subtext="Pay out holders as investments grow"
             />
-            {/* <RoadMapItem
-            addToRef={addToRefs}
-            title="Lorem"
-            subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
-          /> */}
           </Items>
         </Container>
       </Section>

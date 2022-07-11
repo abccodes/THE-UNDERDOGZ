@@ -82,23 +82,12 @@ const Home = () => {
   }
 
   return (
-    <div name='home' className='w-full h-screen css-selector disUnder'>
+    <div className='disUnder'>
+    <div className='w-full h-screen'>
+      
       {/* Container */}
       <LandingPage/>
       <About/>
-    <div class="bg-black banner">
-  <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between flex-wrap">
-      <div class="w-0 flex-1 flex items-center">
-        <p class="ml-3 font-medium text-white truncate">
-  
-          <span class="hidden md:inline"> </span>
-        </p>
-      </div>
-      </div>
-    </div>
-  </div>
-
       <Roadmap></Roadmap>
       <Team></Team>
       <Showcase></Showcase>
@@ -111,7 +100,7 @@ const Home = () => {
           </div>
         </div>
     </div>
-  
+    </div>
 
     
 

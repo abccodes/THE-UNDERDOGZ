@@ -34,6 +34,7 @@ const Row = styled.div`
   box-sizing: content-box;
   margin: 2rem 0;
   display: flex;
+
 `
 
 const ImgContainer = styled.div`
@@ -52,10 +53,14 @@ const ImgContainer = styled.div`
   }
 
   img {
+    border-top: .5px solid black;
+    border-right: .5px solid black;
+    border-left: .5px solid black;
     width: 100%;
     height: auto;
+    margin-top 10%
+
   }
-  
 `
 
 const Details = styled.div`
@@ -66,7 +71,7 @@ const Details = styled.div`
 
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  border: 0.1px solid black;
+  border: .5px solid black;
   span {
     font-size: ${(props) => props.theme.fontsm};
     color: ${(props) => `rgba(${props.theme.bodyRgba},0.5)`};
@@ -83,6 +88,7 @@ const Details = styled.div`
       font-size: ${(props) => props.theme.fontsm};
     }
   }
+
 `
 
 const Price = styled.div`
