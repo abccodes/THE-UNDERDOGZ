@@ -7,29 +7,30 @@ import DrawSvg from './DrawSvg.js'
 const Section = styled.section`
   min-height: 100vh;
   width: 100vw;
-  background-color: ${(props) => props.theme.body};
   position: relative;
   display: inline-block;
   overflow: hidden;
   background-color: #161717;
 `
 const Title = styled.h1`
-  font-size: ${(props) => props.theme.fontxxl};
+  font-size: 5em;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1rem auto;
+  margin: 5rem auto;
   // border-bottom: 2px solid ${(props) => props.theme.text};
   width: fit-content;
 
   @media (max-width: 40em) {
-    font-size: ${(props) => props.theme.fontxl};
+    font-size: 2em;
   }
+  letter-spacing: 15px;
+  color: white;
 `
 const Container = styled.div`
   width: 80%;
   height: 150vh;
-  background-color: ${(props) => props.theme.body};
+  // background-color: #1c1c1c;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -94,6 +95,7 @@ const Items = styled.ul`
       border-radius: 0 40px 0 40px;
     }
   }
+  // border: 2px solid white;
 `
 const Item = styled.li`
   width: 100%;
@@ -108,34 +110,54 @@ const ItemContainer = styled.div`
   width: 40%;
   height: fit-content;
   padding: 2rem;
-  border: 2px solid ${(props) => props.theme.text};
+  border: 2px solid #fff;
   color: white;
   @media (max-width: 48em) {
     width: 70%;
   }
+  // background-color: white;
+  // opacity: 0.3;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+`
+const Box = styled.p`
+  height: fit-content;
+  // background-color: black;
+  color: #202020;
+  padding: 1rem;
+  position: relative;
+  // border: 1px solid white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  // background-color: blue;
 `
 
 const SubTitle = styled.span`
   display: block;
-  font-size: ${(props) => props.theme.fontxl};
+  font-size: 1.25em;
   text-transform: capitalize;
   color: white;
 
   @media (max-width: 40em) {
-    font-size: ${(props) => props.theme.fontlg};
+    font-size: 2em;
     font-weight: 600;
   }
+  font-family: 'Baloo 2', cursive;
 `
 const Text = styled.span`
   display: block;
-  font-size: ${(props) => props.theme.fontsm};
+  font-size: 1em;
   text-transform: capitalize;
   color: white;
 
   font-weight: 400;
   margin: 0.5rem 0;
   @media (max-width: 40em) {
-    font-size: ${(props) => props.theme.fontxs};
+    font-size: 0.75em;
   }
 `
 
@@ -143,8 +165,10 @@ const RoadMapItem = ({ title, subtext, addToRef }) => {
   return (
     <Item ref={addToRef}>
       <ItemContainer>
-        <SubTitle>{title} </SubTitle>
-        <Text>{subtext}</Text>
+        <Box>
+          <SubTitle>{title} </SubTitle>
+          <Text>{subtext}</Text>
+        </Box>
       </ItemContainer>
     </Item>
   )
@@ -190,45 +214,42 @@ const Roadmap = () => {
   }, [])
 
   return (
-    // bgWhiteGradient"
-    <div className="">
-      <Section id="roadmap">
-        <Title className="text-4xl sm:text-8xl  text-[#1a1616 fontColorWhite rdHead ">
-          Roadmap
-        </Title>
-        <Container>
-          <SvgContainer>
-            <DrawSvg />
-          </SvgContainer>
-          <Items>
-            <Item>&nbsp;</Item>
-            <RoadMapItem
-              addToRef={addToRefs}
-              title="1. MINT"
-              subtext="Mint 100% of the Underdogz which funds the DAO."
-            />
-            <RoadMapItem
-              addToRef={addToRefs}
-              title="2. REVEAL"
-              subtext="Reveal the Underdogz, and start exclusive raffles to DAO members. DAO is
-            funded with over 400 ETH allocated to our fund for BLUE chip NFTS."
-            />
-            <RoadMapItem
-              addToRef={addToRefs}
-              title="3. THE VOTE"
-              subtext="Each Underdog NFT is 1 VOTE on which blue chip NFT projects to
-            invest in. The DAO together will vote on all future decisions. Examples of NFT’s to buy:
-            BAYC, MAYC, AZUKI, ABS, moon birds"
-            />
-            <RoadMapItem
-              addToRef={addToRefs}
-              title="4. PAYOUT"
-              subtext="Pay out holders as investments grow"
-            />
-          </Items>
-        </Container>
-      </Section>
-    </div>
+    <Section id="roadmap">
+      <Title>Roadmap</Title>
+      <Container>
+        <SvgContainer>
+          <DrawSvg />
+        </SvgContainer>
+        <Items>
+          <Item>&nbsp;</Item>
+          <RoadMapItem
+            addToRef={addToRefs}
+            title="Grand Opening"
+            subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
+          />
+          <RoadMapItem
+            addToRef={addToRefs}
+            title="Great Benefits"
+            subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
+          />
+          <RoadMapItem
+            addToRef={addToRefs}
+            title="Early Access"
+            subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
+          />
+          <RoadMapItem
+            addToRef={addToRefs}
+            title="New Merch"
+            subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
+          />
+          <RoadMapItem
+            addToRef={addToRefs}
+            title="Holders Ranking"
+            subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
+          />
+        </Items>
+      </Container>
+    </Section>
   )
 }
 

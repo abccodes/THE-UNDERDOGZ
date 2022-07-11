@@ -18,6 +18,7 @@ const Section = styled.section`
   background-color: ${(props) => props.theme.body};
   position: relative;
   overflow: hidden;
+  background-color: #161717;
 `
 const Title = styled.h1`
   font-size: ${(props) => props.theme.fontxxl};
@@ -128,7 +129,7 @@ const MemberComponent = ({ img, name = ' ', position = ' ' }) => {
 
 const Team = () => {
   return (
-    <div name="team" className=" text-gray-300 backgroundBlack">
+    <div name="team" className=" text-gray-300 ">
       <Section id="team">
         <Suspense fallback={<Loading />}>
           {/* <ConfettiComponent />{' '} */}
