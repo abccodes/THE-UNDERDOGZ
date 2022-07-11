@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import {
   FaBars,
   FaTimes,
@@ -6,12 +7,13 @@ import {
   FaDiscord,
   FaInstagram,
 } from 'react-icons/fa';
+
 import { GiSailboat } from "react-icons/gi";
 import Logo from '../assets/UDZ_Logo.png'
 
 
 const Navbar = ({accounts, setAccounts}) => {
-  
+
     const isConnected = Boolean(accounts[0]);
 
     async function connectAccount() {
@@ -78,7 +80,6 @@ const Navbar = ({accounts, setAccounts}) => {
         </li>
         <li className='py-6 text-4xl'>
         <a href="/mint">Mint</a>
-          
         </li>
         <li className='py-6 text-4xl'>
           <a href="/help">Help</a>
