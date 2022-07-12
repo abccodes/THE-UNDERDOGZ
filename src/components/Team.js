@@ -1,14 +1,13 @@
 import React, { lazy, Suspense } from 'react'
 import styled from 'styled-components'
 
-import img1 from './assets/1-removebg-preview.png'
-import img2 from './assets/1-removebg-preview.png'
-import img3 from './assets/1-removebg-preview.png'
+import img1 from './assets/hunter-removebg-preview.png'
+import img2 from './assets/nic-removebg-preview.png'
+import img3 from './assets/lee-removebg-preview.png'
 import img4 from './assets/1-removebg-preview.png'
-import img5 from './assets/1-removebg-preview.png'
-import img6 from './assets/1-removebg-preview.png'
+import img5 from './assets/3500-removebg-preview.png'
 import Loading from './Loading'
-
+import Twitter from './Icons/Twitter'
 // import ConfettiComponent from '../Confetti';
 // const ConfettiComponent = lazy(() => import(',/Confetti.js'))
 
@@ -165,7 +164,20 @@ const Position = styled.h2`
   font-weight: 400;
 `
 
-const MemberComponent = ({ img, name = ' ', position = ' ' }) => {
+const Icon = styled.h2`
+  font-size: 1em;
+  display: fixed;
+  align-items: center;
+  justify-content: center;
+  color: white;
+`
+
+const MemberComponent = ({
+  img,
+  name = ' ',
+  position = ' ',
+  twitter = ' ',
+}) => {
   return (
     <Item>
       <ImageContainer>
@@ -173,11 +185,21 @@ const MemberComponent = ({ img, name = ' ', position = ' ' }) => {
       </ImageContainer>
       <Name>{name}</Name>
       <Position>{position}</Position>
+      <Icon>
+        <a href={twitter}>
+          <Twitter></Twitter>
+        </a>
+      </Icon>
     </Item>
   )
 }
 
-const MemberComponentCenter = ({ img, name = ' ', position = ' ' }) => {
+const MemberComponentCenter = ({
+  img,
+  name = ' ',
+  position = ' ',
+  twitter = ' ',
+}) => {
   return (
     <ItemCenter>
       <ImageContainer>
@@ -185,6 +207,11 @@ const MemberComponentCenter = ({ img, name = ' ', position = ' ' }) => {
       </ImageContainer>
       <Name>{name}</Name>
       <Position>{position}</Position>
+      <Icon>
+        <a href={twitter}>
+          <Twitter></Twitter>
+        </a>
+      </Icon>
     </ItemCenter>
   )
 }
@@ -198,17 +225,38 @@ const Team = () => {
         </Suspense>
         <Title></Title>
         <Container>
-          <MemberComponent img={img1} name="HUNTER" position="Co-Founder" />
-          <MemberComponent img={img2} name="NIC" position="Co-Founder" />
-          <MemberComponent img={img3} name="LEE" position="Co-Founder" />
+          <MemberComponent
+            img={img1}
+            name="HUNTER"
+            position="Co-Founder"
+            twitter="https://twitter.com/HunterSkellengr"
+          />
+          <MemberComponent
+            img={img2}
+            name="NIC"
+            position="Co-Founder"
+            twitter="https://twitter.com/nicci_burns"
+          />
+          <MemberComponent
+            img={img3}
+            name="LEE"
+            position="Co-Founder"
+            twitter="https://twitter.com/Lee_Michaelson1"
+          />
         </Container>
         <ContainerCenter>
-          <MemberComponentCenter img={img4} name="BEN" position="FILL IN" />
+          <MemberComponentCenter
+            img={img4}
+            name="BEN"
+            position="Developer"
+            twitter="https://twitter.com/B3nskiii"
+          />
           <MemberComponentCenter
             img={img5}
             name="AIDAN"
-            position="FILL IN"
-          />{' '}
+            position="Developer"
+            twitter="https://twitter.com/Aidan__eth"
+          />
         </ContainerCenter>
       </Section>
     </div>

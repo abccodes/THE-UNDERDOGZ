@@ -26,6 +26,7 @@ const Title = styled.h1`
   }
   letter-spacing: 15px;
   color: white;
+  border: 2px solid #fff;
 `
 const Container = styled.div`
   width: 80%;
@@ -43,15 +44,6 @@ const Container = styled.div`
     width: 90%;
   }
 `
-    
-
-  
-
-
-
-
-
-
 
 
 const Dao = () => {
@@ -68,7 +60,6 @@ const Dao = () => {
     <Section className='disUnder'>
       <Title>hello</Title>
       <Container>
-
       </Container>
     </Section>
 
