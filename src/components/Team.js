@@ -38,7 +38,7 @@ const Title = styled.h1`
 `
 
 const Container = styled.div`
-  width: 75%;
+  width: 80%;
   margin: 2rem auto;
 
   display: flex;
@@ -53,6 +53,27 @@ const Container = styled.div`
     width: 90%;
     justify-content: center;
   }
+  // justify-content: center;
+  // align-items: center;
+`
+const ContainerCenter = styled.div`
+  width: 80%;
+  margin: 2rem auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media (max-width: 64em) {
+    width: 80%;
+  }
+  @media (max-width: 48em) {
+    width: 90%;
+    justify-content: center;
+  }
+  justify-content: center;
+  align-items: center;
 `
 
 const Item = styled.div`
@@ -77,6 +98,34 @@ const Item = styled.div`
   @media (max-width: 30em) {
     width: 70vw;
   }
+  background-color: #1e1e1f;
+`
+
+const ItemCenter = styled.div`
+  width: calc(20rem - 4vw);
+  padding: 1rem 0;
+  color: #fff;
+  margin: 2rem 1rem;
+  position: relative;
+  z-index: 5;
+
+  backdrop-filter: blur(4px);
+
+  border: 2px solid #fff;
+  border-radius: 20px;
+
+  &:hover {
+    img {
+      transform: translateY(-2rem) scale(1.2);
+    }
+  }
+
+  @media (max-width: 30em) {
+    width: 70vw;
+  }
+  background-color: #1e1e1f;
+  margin-left: 10%;
+  margin-right: 10%;
 `
 
 const ImageContainer = styled.div`
@@ -128,6 +177,18 @@ const MemberComponent = ({ img, name = ' ', position = ' ' }) => {
   )
 }
 
+const MemberComponentCenter = ({ img, name = ' ', position = ' ' }) => {
+  return (
+    <ItemCenter>
+      <ImageContainer>
+        <img width={500} height={400} src={img} alt={name} />
+      </ImageContainer>
+      <Name>{name}</Name>
+      <Position>{position}</Position>
+    </ItemCenter>
+  )
+}
+
 const Team = () => {
   return (
     <div name="team" className=" text-gray-300 ">
@@ -140,10 +201,15 @@ const Team = () => {
           <MemberComponent img={img1} name="HUNTER" position="Co-Founder" />
           <MemberComponent img={img2} name="NIC" position="Co-Founder" />
           <MemberComponent img={img3} name="LEE" position="Co-Founder" />
-          <MemberComponent img={img4} name="BEN" position="FILL IN" />
-          <MemberComponent img={img5} name="AIDAN" position="FILL IN" />
-          <MemberComponent img={img6} name="..." position="FILL IN" />
         </Container>
+        <ContainerCenter>
+          <MemberComponentCenter img={img4} name="BEN" position="FILL IN" />
+          <MemberComponentCenter
+            img={img5}
+            name="AIDAN"
+            position="FILL IN"
+          />{' '}
+        </ContainerCenter>
       </Section>
     </div>
   )

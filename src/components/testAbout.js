@@ -20,7 +20,6 @@ const Section = styled.section`
 const Container = styled.div`
   width: 75%;
   margin: 0 auto;
-  // background-color: lightblue;
 
   display: flex;
   justify-content: center;
@@ -43,6 +42,7 @@ const Container = styled.div`
     }
   }
 `
+
 const Box = styled.div`
   width: 50%;
   height: 100%;
@@ -75,7 +75,9 @@ const Title = styled.h2`
   @media (max-width: 30em) {
     font-size: 1.25em};
   }
+  font-family: 'Baloo 2', cursive;
 `
+
 const SubText = styled.p`
   font-size: 1.25em;
   color: white;
@@ -94,7 +96,9 @@ const SubText = styled.p`
   @media (max-width: 30em) {
     font-size: 1em;
   }
+  font-family: 'Baloo 2', cursive;
 `
+
 const SubTextLight = styled.p`
   font-size: 1em;
   color: #c2c2c2;
@@ -114,7 +118,9 @@ const SubTextLight = styled.p`
   @media (max-width: 30em) {
     font-size: 0.75em;
   }
+  font-family: 'Baloo 2', cursive;
 `
+
 const ButtonContainer = styled.div`
   width: 80%;
   margin: 1rem auto;
@@ -165,11 +171,7 @@ const testAbout = () => {
             trading and participating in projects for 2 years now.The Underdogz
             team has been trading and participating in projects for 2 years now.
           </SubTextLight>
-          <ButtonContainer>
-            <ThemeProvider theme={dark}>
-              {/* <Button text="JOIN OUR DISCORD" link="#" /> */}
-            </ThemeProvider>
-          </ButtonContainer>
+          <ButtonContainer></ButtonContainer>
         </Box>
         <Box>
           <Card />

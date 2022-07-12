@@ -200,6 +200,7 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 .navText {
+    color: white;
     font-family: Helvetica, Arial, Sans-Serif;
 }
 .button {
@@ -314,6 +315,6 @@ body {
     
 }
 
-.anticSlab {
-    font-family: 'Antic Slab', serif;
+.Baloo {
+    font-family: 'Baloo 2', cursive;
 }

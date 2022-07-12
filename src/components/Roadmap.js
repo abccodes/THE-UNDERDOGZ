@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import DrawSvg from './DrawSvg.js'
 
 const Section = styled.section`
-  min-height: 200vh;
+  min-height: 212vh;
   width: 100vw;
   position: relative;
   overflow: hidden;
@@ -134,7 +134,6 @@ const Box = styled.p`
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  // background-color: blue;
 `
 
 const SubTitle = styled.span`
