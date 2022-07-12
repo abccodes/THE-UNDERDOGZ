@@ -6,41 +6,75 @@ import {fetchNFTs} from '../../utils/fetchNFTs.js';
 //---------------------------------------------------
 
 
-const Body = styled.div`
-  
-  background-color = #111;
-  margin: 0
-  height: 100vh;
+const Section = styled.section`
+  min-height: 150vh;
+  width: 100%;
   display: flex;
   justify-content: center;
-  alighn-items: center; 
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background-color: #161717;
+`
+
+const Title = styled.h1`
+  font-size: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem auto;
+  // border-bottom: 2px solid ${(props) => props.theme.text};
+  width: fit-content;
+
+  @media (max-width: 40em) {
+    font-size: 2em;
+  }
+  letter-spacing: 15px;
+  color: white;
+`
+
+
+const Container = styled.div`
+  width: 80%;
+  height: 150vh;
+  background-color: #1c1c1c;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  @media (max-width: 64em) {
+    width: 80%;
+  }
+  @media (max-width: 48em) {
+    width: 90%;
+  }
+
+`
+
+const box = styled.p`
+  height: 200px;
+  color: white; 
+  border: 2px; 
+  position: relative;
+`
+    
   
 
-  container {
-    width: 90%
-    display: grid;
-    grid-template-columns: repeat(auto-, minmax(250px, 1fr));
-    grid-gap: 20px;
-  }
-
-  box {
-    height: 200px;
-    color: white; 
-    border: 2px; 
-    position: relative;
-  }
-
-  h2 {
-    text-transform: uppercase;
-    font-family: verdana, Geneva, Tahoma, sans-serif;
-    margin: 0;
-    position: aboslute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); 
-
-  }
+const h2 = styled.h2 `
+  text-transform: uppercase;
+  font-family: verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  position: aboslute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  
 `
+    
+
+  
+
 
 
 
@@ -60,35 +94,20 @@ const Dao = () => {
 
   return (
     <div className= "DAO">
-
-      <head>
-        <meta charset = "UTF-8"></meta>
-        <meta name = "viewport" content = "width=device-width, initial-scal = 1.0" ></meta>
-        <title>THE UNDERDOGZ DAO</title>
-      </head>
-
-      
-        <Body>
-          <div class = "container">
-            <div class = "box">
-              <h2>Box 1</h2>
-            </div>
-
-            <div class = "box">
-              <h2>Box 2</h2>
-            </div>
-
-            <div class = "box">
-              <h2>Box 3</h2>
-            </div>
-          </div>
-        </Body>
-
+      <Section className = "disUnder">
         
+      <Title>
+        The UNDERDOGZ DAO
+      </Title>
+        <Container>
+          
+        </Container>
 
-      
+       
+          
 
 
+      </Section>
     </div>
   )
 }

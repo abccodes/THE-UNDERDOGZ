@@ -9,6 +9,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=Roboto:wght@100&display=swap');
 /* roboto */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antic+Slab&display=swap');
+
 .bgBlackImg {
     background: #fff url(https://images.pexels.com/photos/6044197/pexels-photo-6044197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2) center center/cover no-repeat;
 
@@ -198,6 +200,7 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 .navText {
+    color: white;
     font-family: Helvetica, Arial, Sans-Serif;
 }
 .button {

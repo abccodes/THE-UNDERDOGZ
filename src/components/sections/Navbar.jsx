@@ -37,12 +37,12 @@ const Navbar = ({accounts, setAccounts}) => {
       </div>
 
       {/* menu */}
-      <ul className='hidden md:flex'>
+      <ul className='hidden md:flex '>
         <li>
-          <a href="/" className='navText'>Home</a>
+          <a href="/" className='navText '>Home</a>
         </li>
         <li>
-          <a href="/dao" className='navText'>Dao</a>
+          <a href="/dao" className='navText '>Dao</a>
         </li>
         <li>
           <a href="/mint" className='navText'>Mint</a>  
