@@ -5,18 +5,13 @@ import NftCard from '../nftcard';
 import {fetchNFTs} from '../../utils/fetchNFTs.js';
 //---------------------------------------------------
 
-
 const Section = styled.section`
-  min-height: 150vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  min-height: 212vh;
+  width: 100vw;
   position: relative;
   overflow: hidden;
   background-color: #161717;
 `
-
 const Title = styled.h1`
   font-size: 5em;
   display: flex;
@@ -32,12 +27,10 @@ const Title = styled.h1`
   letter-spacing: 15px;
   color: white;
 `
-
-
 const Container = styled.div`
   width: 80%;
   height: 150vh;
-  background-color: #1c1c1c;
+  // background-color: #1c1c1c;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -49,27 +42,6 @@ const Container = styled.div`
   @media (max-width: 48em) {
     width: 90%;
   }
-
-`
-
-const box = styled.p`
-  height: 200px;
-  color: white; 
-  border: 2px; 
-  position: relative;
-`
-    
-  
-
-const h2 = styled.h2 `
-  text-transform: uppercase;
-  font-family: verdana, Geneva, Tahoma, sans-serif;
-  margin: 0;
-  position: aboslute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); 
-  
 `
     
 
@@ -93,22 +65,14 @@ const Dao = () => {
 
 
   return (
-    <div className= "DAO">
-      <Section className = "disUnder">
-        
-      <Title>
-        The UNDERDOGZ DAO
-      </Title>
-        <Container>
-          
-        </Container>
+    <Section className='disUnder'>
+      <Title>hello</Title>
+      <Container>
 
-       
-          
+      </Container>
+    </Section>
 
-
-      </Section>
-    </div>
+    
   )
 }
 
