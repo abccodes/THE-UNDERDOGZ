@@ -63,10 +63,7 @@
 .backgroundBlack {
     background-color: black;
 }
-.aboutClass {
-    background-color: black;
 
-}
 
 .backgroundDarkGradient {
     background-color: #000000;
@@ -183,8 +180,11 @@ body {
 
 .css-selector {
     background: linear-gradient(226deg, #0c0d0d, #4169e8, #e158f0, #0b0b0b);
-    background-size: 800% 800%;
+    background-size: 800%;
     animation: AnimationName 36s ease infinite;
+    width: 100%;
+    height: 100%;
+    
 }
 
 @keyframes AnimationName {
@@ -280,10 +280,11 @@ body {
     z-index: -1; 
 }
 
-.daoHeader {
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    vertical-align: text-top;
+/*========================================================================================== */
 
-    border: 3px black;
-}
+
+
+
+
+
+

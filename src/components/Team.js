@@ -139,8 +139,8 @@ const Team = () => {
           <MemberComponent img={img2} name="NIC" position="Co-Founder" />
           <MemberComponent img={img3} name="LEE" position="Co-Founder" />
           <MemberComponent img={img4} name="BEN" position="FILL IN" />
-          <MemberComponent img={img5} name="AIDEN" position="FILL IN" />
-          <MemberComponent img={img6} name="Ur moms fat cooch" position="FILL IN" />
+          <MemberComponent img={img5} name="AIDAN" position="FILL IN" />
+          <MemberComponent img={img6} name="..." position="FILL IN" />
         </Container>
       </Section>
     </div>

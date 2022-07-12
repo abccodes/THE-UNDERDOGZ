@@ -6,8 +6,41 @@ import {fetchNFTs} from '../../utils/fetchNFTs.js';
 //---------------------------------------------------
 
 
+const Body = styled.div`
+  
+  background-color = #111;
+  margin: 0
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  alighn-items: center; 
+  
 
+  container {
+    width: 90%
+    display: grid;
+    grid-template-columns: repeat(auto-, minmax(250px, 1fr));
+    grid-gap: 20px;
+  }
 
+  box {
+    height: 200px;
+    color: white; 
+    border: 2px; 
+    position: relative;
+  }
+
+  h2 {
+    text-transform: uppercase;
+    font-family: verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    position: aboslute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+
+  }
+`
 
 
 
@@ -26,16 +59,35 @@ const Dao = () => {
 
 
   return (
+    <div className= "DAO">
 
-    <div> className = "DAO"
+      <head>
+        <meta charset = "UTF-8"></meta>
+        <meta name = "viewport" content = "width=device-width, initial-scal = 1.0" ></meta>
+        <title>THE UNDERDOGZ DAO</title>
+      </head>
 
-      <div name='contact' className='w-full h-screen css-selector'>
+      
+        <Body>
+          <div class = "container">
+            <div class = "box">
+              <h2>Box 1</h2>
+            </div>
 
-        <div class='daoHeader' className='daoHeader'> 
-          <p>THE UNDERDOGZ DAO</p>
-        </div>
+            <div class = "box">
+              <h2>Box 2</h2>
+            </div>
 
-      </div> 
+            <div class = "box">
+              <h2>Box 3</h2>
+            </div>
+          </div>
+        </Body>
+
+        
+
+      
+
 
     </div>
   )
