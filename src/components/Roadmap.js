@@ -224,28 +224,31 @@ const Roadmap = () => {
           <Item>&nbsp;</Item>
           <RoadMapItem
             addToRef={addToRefs}
+            title="Website Release"
+            subtext="Website and roadmap release."
+          />
+          <RoadMapItem
+            addToRef={addToRefs}
             title="Mint"
-            subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
+            subtext="MINT 100% of the Underdogz which funds the DAO"
           />
           <RoadMapItem
             addToRef={addToRefs}
-            title="Great Benefits"
-            subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
+            title="Reveal"
+            subtext="The Underdogz, and start exclusive raffles to DAO members. DAO is
+            funded with over 400 ETH allocated to our fund for BLUE chip NFTS."
           />
           <RoadMapItem
             addToRef={addToRefs}
-            title="Early Access"
-            subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
+            title="The Vote"
+            subtext="Each Underdog NFT is 1 VOTE on which blue chip NFT projects to
+            invest in. The DAO together will vote on all future decisions. Examples of NFT’s to buy:
+            BAYC, MAYC, AZUKI, ABS, moon birds"
           />
           <RoadMapItem
             addToRef={addToRefs}
-            title="New Merch"
-            subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
-          />
-          <RoadMapItem
-            addToRef={addToRefs}
-            title="Holders Ranking"
-            subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
+            title="Payout"
+            subtext="Pay out holders as investments grow"
           />
         </Items>
       </Container>
