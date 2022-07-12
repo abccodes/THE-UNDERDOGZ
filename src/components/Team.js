@@ -8,31 +8,32 @@ import img4 from './assets/1-removebg-preview.png'
 import img5 from './assets/1-removebg-preview.png'
 import img6 from './assets/1-removebg-preview.png'
 import Loading from './Loading'
-// import ConfettiComponent from '../Confetti';
 
+// import ConfettiComponent from '../Confetti';
 // const ConfettiComponent = lazy(() => import(',/Confetti.js'))
 
 const Section = styled.section`
-  min-height: 100vh;
+  // margin-top: 25px;
+  min-height: 150vh;
   width: 100vw;
-  background-color: ${(props) => props.theme.body};
+  background-color: #fff;
   position: relative;
   overflow: hidden;
   background-color: #161717;
 `
 const Title = styled.h1`
-  font-size: ${(props) => props.theme.fontxxl};
+  font-size: 3em;
   text-transform: capitalize;
-  color: ${(props) => props.theme.text};
+  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 1rem auto;
-  border-bottom: 2px solid ${(props) => props.theme.text};
+  border-bottom: 2px solid #fff;
   width: fit-content;
 
   @media (max-width: 40em) {
-    font-size: ${(props) => props.theme.fontxl};
+    font-size: 2em;
   }
 `
 
@@ -57,14 +58,14 @@ const Container = styled.div`
 const Item = styled.div`
   width: calc(20rem - 4vw);
   padding: 1rem 0;
-  color: ${(props) => props.theme.body};
+  color: #fff;
   margin: 2rem 1rem;
   position: relative;
   z-index: 5;
 
   backdrop-filter: blur(4px);
 
-  border: 2px solid ${(props) => props.theme.text};
+  border: 2px solid #fff;
   border-radius: 20px;
 
   &:hover {
@@ -82,7 +83,7 @@ const ImageContainer = styled.div`
   width: 80%;
   margin: 0 auto;
   background-color: white;
-  border: 1px solid ${(props) => props.theme.text};
+  border: 1px solid #fff;
   padding: 1rem;
 
   border-radius: 20px;
@@ -96,22 +97,22 @@ const ImageContainer = styled.div`
 `
 
 const Name = styled.h2`
-  font-size: ${(props) => props.theme.fontlg};
+  font-size: 1.25em;
   display: flex;
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
-  color: ${(props) => props.theme.text};
+  color: #fff;
   margin-top: 1rem;
 `
 
 const Position = styled.h2`
-  font-size: ${(props) => props.theme.fontmd};
+  font-size: 1em;
   display: flex;
   align-items: center;
   justify-content: center;
   text-transform: capitalize;
-  color: ${(props) => `rgba(${props.theme.textRgba},0.9)`};
+  color: white;
   font-weight: 400;
 `
 
@@ -134,7 +135,7 @@ const Team = () => {
         <Suspense fallback={<Loading />}>
           {/* <ConfettiComponent />{' '} */}
         </Suspense>
-        <Title>Team</Title>
+        <Title></Title>
         <Container>
           <MemberComponent img={img1} name="HUNTER" position="Co-Founder" />
           <MemberComponent img={img2} name="NIC" position="Co-Founder" />

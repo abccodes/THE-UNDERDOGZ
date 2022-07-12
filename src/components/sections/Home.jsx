@@ -7,6 +7,7 @@ import Showcase from '../Showcase.js';
 import LandingPage from '../LandingPage.js';
 // import About from '../About.js'
 import TestAbout from '../testAbout'
+import ArtDisplay from '../ArtDisplay.js';
 
 const Home = () => {
   const [faqs, setfaqs] = useState([
@@ -89,11 +90,12 @@ const Home = () => {
       {/* Container */}
       <LandingPage/>
       <TestAbout/>
+      <ArtDisplay/>
       <Roadmap></Roadmap>
       <Team></Team>
       {/* <Showcase></Showcase> */}
       <Header></Header>
-        <div className="faq backgroundBlack">
+        <div className="faq ">
           <div className="faqs ">
             {faqs.map((faq, i) => (
               <FAQ faq={faq} index={i} toggleFAQ = {toggleFAQ} />

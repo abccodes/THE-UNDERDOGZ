@@ -8,7 +8,7 @@ import Card from './Card.tsx'
 // const Carousel = lazy(() => import('./Carousel'))
 
 const Section = styled.section`
-  min-height: 100vh;
+  min-height: 150vh;
   width: 100%;
   display: flex;
   justify-content: center;

@@ -5,10 +5,9 @@ import styled from 'styled-components'
 import DrawSvg from './DrawSvg.js'
 
 const Section = styled.section`
-  min-height: 100vh;
+  min-height: 200vh;
   width: 100vw;
   position: relative;
-  display: inline-block;
   overflow: hidden;
   background-color: #161717;
 `
@@ -97,6 +96,7 @@ const Items = styled.ul`
   }
   // border: 2px solid white;
 `
+
 const Item = styled.li`
   width: 100%;
   height: 100%;
@@ -117,10 +117,11 @@ const ItemContainer = styled.div`
   }
   // background-color: white;
   // opacity: 0.3;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #1e1e1f;
 `
 const Box = styled.p`
   height: fit-content;
@@ -214,8 +215,8 @@ const Roadmap = () => {
   }, [])
 
   return (
-    <Section id="roadmap">
-      <Title>Roadmap</Title>
+    <Section>
+      <Title></Title>
       <Container>
         <SvgContainer>
           <DrawSvg />
@@ -224,7 +225,7 @@ const Roadmap = () => {
           <Item>&nbsp;</Item>
           <RoadMapItem
             addToRef={addToRefs}
-            title="Grand Opening"
+            title="Mint"
             subtext="Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit. At Repellat Placeat, Adipisicing Elit. At Repellat Placeat."
           />
           <RoadMapItem
