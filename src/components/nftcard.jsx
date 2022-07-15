@@ -17,7 +17,6 @@ const NftCard = ( props ) => {
                   <a target="_blank" className="text-blue-700" href={`https://etherscan.io/token/${props.value.contractAddress}`}>{`${props.value.contractAddress.slice(0, 4)}...${props.value.contractAddress.slice(props.value.contractAddress.length - 4)}`}</a>
                   </div>
               </div>
-              
           </div>
       </div>
   )    
