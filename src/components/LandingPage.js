@@ -11,7 +11,7 @@ const LandingPage = () => {
           UnderDogZ
         </h1>
         <h2 className="text-4xl sm:text-7xl font-bold text-[#1a1616">
-          An investment DAO.
+          An Investment DAO.
         </h2>
       </div>
     </div>

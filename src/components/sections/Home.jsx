@@ -6,8 +6,9 @@ import Team from '../Team'
 import Showcase from '../Showcase.js';
 import LandingPage from '../LandingPage.js';
 // import About from '../About.js'
-import TestAbout from '../testAbout'
+import About from '../About.js'
 import ArtDisplay from '../ArtDisplay.js';
+// import Banner from '../Banner.jsx'
 
 const Home = () => {
   const [faqs, setfaqs] = useState([
@@ -89,7 +90,8 @@ const Home = () => {
       
       {/* Container */}
       <LandingPage/>
-      <TestAbout/>
+      <About/>
+      {/* <Banner/> */}
       <ArtDisplay/>
       <Roadmap></Roadmap>
       <Team></Team>

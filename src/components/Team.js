@@ -8,8 +8,8 @@ import img4 from './assets/1-removebg-preview.png'
 import img5 from './assets/3500-removebg-preview.png'
 import Loading from './Loading'
 import Twitter from './Icons/Twitter'
-// import ConfettiComponent from '../Confetti';
-// const ConfettiComponent = lazy(() => import(',/Confetti.js'))
+// import ConfettiComponent from './Confetti'
+// const ConfettiComponent = lazy(() => import('./Confetti.js'))
 
 const Section = styled.section`
   // margin-top: 25px;

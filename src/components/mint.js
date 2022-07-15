@@ -1,14 +1,13 @@
 import React, { lazy, Suspense } from 'react'
-import styled, { ThemeProvider } from 'styled-components'
+import styled from 'styled-components'
 // import Carousel from '../Carousel'
-import { dark } from './Themes.js'
 // import Loading from '../Loading'
-import Card from './Card.tsx'
+import Card from '../Card.tsx'
 
 // const Carousel = lazy(() => import('./Carousel'))
 
 const Section = styled.section`
-  min-height: 150vh;
+  min-height: 125vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -58,12 +57,13 @@ const Box = styled.div`
 `
 
 const Title = styled.h2`
-  font-size: 3em;
+  font-size: 4em;
   text-transform: capitalize;
   color: white;
   align-self: flex-start;
   width: 80%;
   margin: 0 auto;
+  font-weight: bold;
 
   @media (max-width: 64em) {
     width: 100%;
@@ -97,6 +97,7 @@ const SubText = styled.p`
     font-size: 1em;
   }
   font-family: 'Baloo 2', cursive;
+  font-weight: bold;
 `
 
 const SubTextLight = styled.p`
@@ -106,6 +107,7 @@ const SubTextLight = styled.p`
   width: 80%;
   margin: 1rem auto;
   font-weight: 400;
+  font-weight: bold;
 
   @media (max-width: 64em) {
     width: 100%;
@@ -153,7 +155,7 @@ const ButtonContainer = styled.div`
 </p> */
 }
 
-const testAbout = () => {
+const mint = () => {
   return (
     <Section id="about">
       <Container>
@@ -183,4 +185,4 @@ const testAbout = () => {
   )
 }
 
-export default testAbout
+export default mint
