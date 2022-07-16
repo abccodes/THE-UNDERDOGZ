@@ -39,19 +39,35 @@ const Navbar = ({accounts, setAccounts}) => {
       {/* menu */}
       <ul className='hidden md:flex '>
         <li>
-          <a href="/" className='navText '>Home</a>
+        <Link to="/">
+          <a 
+          // href="/" 
+          className='navText '>
+            Home
+            </a>
+            </Link>
         </li>
         <li>
-          <a href="/dao" className='navText '>Dao</a>
+          <Link to="/dao">
+          <a 
+          // href="/dao" 
+          className='navText '>Dao</a>
+          </Link>
         </li>
         <li>
-          <a href="/mint" className='navText'>Mint</a>  
+        <Link to="/mint">
+          <a className='navText'>Mint</a>  
+          </Link>
         </li>
         <li>
-          <a href="/help" className='navText'>Help</a>  
+        <Link to="/help">
+          <a className='navText'>Help</a>  
+          </Link>
         </li>
         <li>
-          <a href="/contact" className='navText'>Contact</a>
+        <Link to="/contact">
+          <a className='navText'>Contact</a>
+          </Link>
         </li>
         <li>
           {isConnected ? (

@@ -285,8 +285,34 @@ body {
 
 /*========================================================================================== */
 
+.grid-container {
+    display: grid; 
+    grid-template-columns: 200px 250px; 
+    grid-auto-rows: minmax(150px, auto); 
+    grid-row-gap: 20px; 
+    grid-column-gap: 20px; 
+    grid-template-areas: 
+        "header header"
+        "sidebar content"
+        "sidebar content"
 
+}
 
+.grid-item-1 {
+    grid-column-start: 1 / -1;
+    background-color: blueviolet
+    
+}
+
+.grid-item-2 {
+    grid-row-start: 2; 
+    grid-row: 4; 
+}
+
+.grid-item-3 {
+    grid-row-start: 2;
+    grid-row-end: 4; 
+}
 
 
 

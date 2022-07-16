@@ -8,9 +8,9 @@ const LandingPage = () => {
     >
       <div className="max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full ">
         <h1 className="text-4xl sm:text-7xl font-bold text-[#f5ffff] ">
-          UnderDogZ
+          THE UNDERDOGZ
         </h1>
-        <h2 className="text-4xl sm:text-7xl font-bold text-[#1a1616">
+        <h2 className="text-4xl sm:text-7xl font-bold text-[#000000]">
           An Investment DAO.
         </h2>
       </div>
