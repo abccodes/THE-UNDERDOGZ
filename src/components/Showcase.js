@@ -62,7 +62,7 @@ const ImgContainer = styled.div`
   margin: 0 2rem;
   background-color: white;
 
-  border-radius: 20px;
+  // border-radius: 20px;
   cursor: pointer;
 
   @media (max-width: 48em) {
@@ -77,6 +77,8 @@ const ImgContainer = styled.div`
     height: 100%;
   }
   border: 6.5px solid #fff;
+  // border-bottom-left-radius: 20px;
+  // border-bottom-right-radius: 20px;
 `
 
 // const Details = styled.div`
@@ -155,6 +157,7 @@ const Showcase = () => {
 
   return (
     <Section id="showcase">
+      <p className="fontColorWhite">sanbdiuasbduiasbduiasudib</p>
       <Row direction="none" ref={Row1Ref}>
         <NftItem img={img1} />
         <NftItem img={img2} />

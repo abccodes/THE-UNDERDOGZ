@@ -1,7 +1,9 @@
-import React, { lazy, Suspense } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import Showcase from '../Showcase.js'
-
+import {ethers, BigNumber} from "ethers";
+import { useEffect, useState } from "react";
+// import mintContract from "";
 
 const Section = styled.section`
   height: 50vh;
@@ -16,7 +18,7 @@ const Section = styled.section`
 const Container = styled.div`
   width: 75%;
   margin: 0 auto;
-
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -150,33 +152,61 @@ position:fixed;
   zoom: 1.0 ;
 }
 `
-
-
 const Mint = () => {
+
+const [accounts, setAccounts] = useState([]);
+const [mintAmount, setMintAmount] = useState(1)
+const mintContractAbi = 172378123;
+const mintContractAddress = 172378123;
+
+//CONNECT ACCOUNTS
+
+async function connectAccounts() {
+  if(window.ethereum) {
+    const accounts = await window.ethereum.request({method:"eth_requestAccounts",
+  });
+  setAccounts(accounts);
+  }
+}
+
+//MINTING
+
+async function handleMint() {
+  if(window.ethereum) {
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSinger();
+    const contract = new ethers.Contract(
+      mintContractAddress,
+      mintContractAbi,
+      signer
+    );
+    try {
+      const response = await contract.mint(BigNumber.from(mintAmount));
+      console.log("response");
+    } 
+    catch(err) {
+      console.log(err);
+    }
+  }
+}
+
   return (
     <div className='disUnder'>
-    <div className='w-full h-screen'>
-    {/* <Section id="about">
-      <Container>
-        <Box>
-          <Title>Mint</Title>
-          <SubText>
-            The UnderDogZ are a group of 8000 randomly generated ERC-721
 
-          </SubText>
-          <SubTextLight>
-            We have created the opportunity for everyone to get involved in the
-            top 1% of NFTs and digital assets. With this project everyone will
-
-          </SubTextLight>
-          <ButtonContainer></ButtonContainer>
-        </Box>
-        <Box>
-        </Box>
-      </Container>
-    </Section> */}
-    <Showcase/>
-    </div>
+    <Showcase>
+    <Section>
+    <p className="fontColorBlack">iugdiuasgduiagsiduga</p>
+      {accounts.length && (
+        <div>
+          <button onClick={() => setMintAmount(mintAmount -1)}>-</button>
+          {mintAmount}
+          <button onClick={() => setMintAmount(mintAmount + 1)}>+</button>
+          <button onClick={handleMint}>Mint</button>
+        </div>
+      )}
+      </Section> */
+    </Showcase>
+    
     </div>
   )
 }
