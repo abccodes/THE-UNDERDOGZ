@@ -1,11 +1,10 @@
 import React, { Suspense } from 'react'
 import styled from 'styled-components'
-import Showcase from '../Showcase.js'
+import Showcase from './Showcase.js'
 import {ethers, BigNumber} from "ethers";
 import { useEffect, useState } from "react";
 import { useSpring, animated } from "react-spring";
 import { motion } from 'framer-motion';
-import Minter from '../Minter.js';
 
 
 const Number = () => {
@@ -162,7 +161,6 @@ const ButtonContainer = styled.div`
   }
 `
 
-
 const Mint = () => {
 
   
@@ -204,8 +202,7 @@ async function handleMint() {
 
 return (
   <Section className='disUnder'>
-    <Minter/>
-     {/* <Container>
+     <Container>
 
       <Box>
       <Title>Mint</Title> 
@@ -213,7 +210,6 @@ return (
           <p>-</p>
           <button>Mint</button>
           <p>+</p>
-
         </SubText>
         <SubTextLight>
           8000/8000
@@ -222,7 +218,7 @@ return (
        
       </Box>
     </Container>
-    <Showcase/> */}
+    <Showcase/>
   </Section>
   
 )

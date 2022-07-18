@@ -1,17 +1,17 @@
 import React, { useRef } from 'react'
 import styled, { keyframes } from 'styled-components'
 
-import img1 from './assets/nic.png'
-import img2 from './assets/nic.png'
-import img3 from './assets/nic.png'
-import img4 from './assets/nic.png'
-import img5 from './assets/nic.png'
-import img6 from './assets/nic.png'
-import img7 from './assets/nic.png'
-import img8 from './assets/nic.png'
-import img9 from './assets/nic.png'
-import img10 from './assets/nic.png'
-import ETH from './assets/ethereum-eth.webp'
+import img1 from '../../assets/nic.png'
+import img2 from '../../assets/nic.png'
+import img3 from '../../assets/nic.png'
+import img4 from '../../assets/nic.png'
+import img5 from '../../assets/nic.png'
+import img6 from '../../assets/nic.png'
+import img7 from '../../assets/nic.png'
+import img8 from '../../assets/nic.png'
+import img9 from '../../assets/nic.png'
+import img10 from '../../assets/nic.png'
+// import ETH from './assets/ethereum-eth.webp'
 
 const Section = styled.section`
   height: 100vh;

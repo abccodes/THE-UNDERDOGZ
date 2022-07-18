@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
-import Header from '../Header.js'
-import FAQ from '../FAQ'
-import Roadmap from '../Roadmap.js'
-import Team from '../Team'
-import Showcase from '../Showcase.js';
-import LandingPage from '../LandingPage.js';
+import Header from './Header.js'
+import FAQ from './FAQ'
+import Roadmap from './Roadmap.js'
+import Team from './Team'
+import Showcase from '../Mint/Showcase.js';
+import LandingPage from './LandingPage.js';
 // import About from '../About.js'
-import About from '../About.js'
-import ArtDisplay from '../ArtDisplay.js';
+import About from './About.js'
+import ArtDisplay from './ArtDisplay.js';
 // import Banner from '../Banner.jsx'
 
 const Home = () => {

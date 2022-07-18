@@ -1,7 +1,7 @@
-import img1 from './assets/100.png'
-import img2 from './assets/1500.png'
-import img3 from './assets/8237.png'
-import img4 from './assets/3500.png'
+import img1 from '../../assets/100.png'
+import img2 from '../../assets/1500.png'
+import img3 from '../../assets/8237.png'
+import img4 from '../../assets/3500.png'
 import { motion } from 'framer-motion'
 
 const nfts = [

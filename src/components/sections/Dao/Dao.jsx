@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components'
 
-import NftCard from '../nftcard';
-import {fetchNFTs} from '../../utils/fetchNFTs.js';
+import NftCard from './nftcard';
+import {fetchNFTs} from '../../../utils/fetchNFTs.js';
 //---------------------------------------------------
 
 const Container = styled.div`

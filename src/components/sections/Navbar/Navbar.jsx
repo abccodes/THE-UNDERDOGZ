@@ -9,7 +9,7 @@ import {
 } from 'react-icons/fa';
 
 import { GiSailboat } from "react-icons/gi";
-import Logo from '../assets/UDZ_Logo.png'
+import Logo from '../../assets/UDZ_Logo.png'
 import { Link } from 'react-router-dom'
 
 
