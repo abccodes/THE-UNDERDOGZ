@@ -14,16 +14,13 @@ import img10 from '../../assets/nic.png'
 // import ETH from './assets/ethereum-eth.webp'
 
 const Section = styled.section`
-  height: 100vh;
-  width: 100vw;
-  // background-color: white;
-  // background-color: #161717;
+  background-color: ${(props) => props.theme.text};
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  overflow: hidden;
+  position: relative;
+  // overflow: hidden;
 
   & > *:first-child {
     animation-duration: 20s;
@@ -33,12 +30,14 @@ const Section = styled.section`
     }
   }
   & > *:last-child {
-    animation-duration: 30s;
+    animation-duration: 20s;
     @media (max-width: 30em) {
-      animation-duration: 20s;
+      animation-duration: 15s;
     }
   }
+  z-index: -5;
 `
+
 const move = keyframes`
 0%{ transform: translateX(100%)   };
 100%{ transform: translateX(-100%)   }
@@ -46,23 +45,20 @@ const move = keyframes`
 `
 
 const Row = styled.div`
-  // background-color: blue;
+  /* background-color: lightblue; */
   white-space: nowrap;
   box-sizing: content-box;
-  margin: 1rem 0;
+  margin: 2rem 0;
   display: flex;
+
   animation: ${move} linear infinite ${(props) => props.direction};
-  position: absolute;
-  bottom: 0;
 `
 const ImgContainer = styled.div`
-  width: 10rem;
-  height: 10rem;
+  width: 15rem;
+  // margin: 0 1rem;
+  // background-color: ${(props) => props.theme.body};
 
-  margin: 0 2rem;
-  background-color: white;
-
-  // border-radius: 20px;
+  border-radius: 20px;
   cursor: pointer;
 
   @media (max-width: 48em) {
@@ -73,54 +69,13 @@ const ImgContainer = styled.div`
   }
 
   img {
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    height: auto;
+    border: 6px solid white;
   }
-  border: 6.5px solid #fff;
 `
 
-// const Details = styled.div`
-//   width: 75%;
-//   height: 75%;
-//   display: flex;
-//   justify-content: space-between;
-//   padding: 0.8rem 1rem;
-//   background-color: ${(props) => props.theme.text};
-//   border: 2px solid ${(props) => `rgba(${props.theme.bodyRgba},0.5)`};
-
-//   border-bottom-left-radius: 20px;
-//   border-bottom-right-radius: 20px;
-
-//   span {
-//     font-size: ${(props) => props.theme.fontsm};
-//     color: ${(props) => `rgba(${props.theme.bodyRgba},0.5)`};
-//     font-weight: 600;
-//     line-height: 1.5rem;
-//   }
-
-//   h1 {
-//     font-size: ${(props) => props.theme.fontmd};
-//     color: ${(props) => props.theme.body};
-//     font-weight: 600;
-
-//     @media (max-width: 30em) {
-//       font-size: ${(props) => props.theme.fontsm};
-//     }
-//   }
-// `
-
-// const Price = styled.div`
-//   display: flex;
-//   justify-content: flex-start;
-//   align-items: center;
-
-//   img {
-//     width: 1rem;
-//     height: auto;
-//   }
-// `
-
-const NftItem = ({ img, number = 0, price = 0, passRef }) => {
+const NftItem = ({ img, passRef }) => {
   let play = (e) => {
     passRef.current.style.animationPlayState = 'running'
   }
@@ -130,21 +85,7 @@ const NftItem = ({ img, number = 0, price = 0, passRef }) => {
 
   return (
     <ImgContainer onMouseOver={(e) => pause(e)} onMouseOut={(e) => play(e)}>
-      <img width={500} height={400} src={img} alt="The Weirdos" />
-      {/* <Details>
-        <div>
-          <span>UDZ</span> <br />
-          <h1>#{number}</h1>
-        </div>
-
-        <div>
-          <span>Price</span>
-          <Price>
-            <img width={200} height={200} src={ETH} alt="ETH" />
-            <h1>{Number(price).toFixed(1)}</h1>
-          </Price>
-        </div>
-      </Details> */}
+      <img width={500} height={400} src={img} alt="UnderDogZ" />
     </ImgContainer>
   )
 }
@@ -156,16 +97,18 @@ const Showcase = () => {
   return (
     <Section id="showcase">
       <Row direction="none" ref={Row1Ref}>
-        <NftItem img={img1} />
-        <NftItem img={img2} />
-        <NftItem img={img3} />
-        <NftItem img={img4} />
-        <NftItem img={img5} />
-        <NftItem img={img6} />
-        <NftItem img={img7} />
-        <NftItem img={img8} />
-        <NftItem img={img9} />
-        <NftItem img={img10} />
+        <NftItem img={img1} number={852} price={1} passRef={Row1Ref} />
+        <NftItem img={img2} number={123} price={1.2} passRef={Row1Ref} />
+        <NftItem img={img3} number={456} price={2.5} passRef={Row1Ref} />
+        <NftItem img={img4} number={666} price={3.5} passRef={Row1Ref} />
+        <NftItem img={img5} number={452} price={4.7} passRef={Row1Ref} />
+      </Row>
+      <Row direction="reverse" ref={Row2Ref}>
+        <NftItem img={img6} number={888} price={1.2} passRef={Row2Ref} />
+        <NftItem img={img7} number={211} price={3.2} passRef={Row2Ref} />
+        <NftItem img={img8} number={455} price={1.8} passRef={Row2Ref} />
+        <NftItem img={img9} number={456} price={5.1} passRef={Row2Ref} />
+        <NftItem img={img10} number={865} price={3.7} passRef={Row2Ref} />
       </Row>
     </Section>
   )

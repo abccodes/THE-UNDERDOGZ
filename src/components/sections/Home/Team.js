@@ -99,6 +99,7 @@ const Item = styled.div`
     width: 70vw;
   }
   background-color: #1e1e1f;
+  box-shadow: 0px 0px 40px 20px black;
 `
 
 const ItemCenter = styled.div`
@@ -126,6 +127,7 @@ const ItemCenter = styled.div`
   background-color: #1e1e1f;
   margin-left: 10%;
   margin-right: 10%;
+  box-shadow: 0px 0px 40px 20px black;
 `
 
 const ImageContainer = styled.div`

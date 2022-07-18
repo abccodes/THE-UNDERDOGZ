@@ -5,6 +5,9 @@ import {ethers, BigNumber} from "ethers";
 import { useEffect, useState } from "react";
 import { useSpring, animated } from "react-spring";
 import { motion } from 'framer-motion';
+import Count from './CountdownTimer/CountdownTimer'
+import { BsFillArrowRightCircleFill, BsFillArrowLeftCircleFill } from "react-icons/bs";
+
 
 
 const Number = () => {
@@ -24,6 +27,26 @@ const Number = () => {
 		</>
 	);
 };
+
+const ContainerCenter = styled.div`
+  width: 80%;
+  margin: 2rem auto;
+
+  display: flex;
+  // justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media (max-width: 64em) {
+    width: 80%;
+  }
+  @media (max-width: 48em) {
+    width: 90%;
+    justify-content: center;
+  }
+  justify-content: center;
+  align-items: center;
+`
 
 const Section = styled.section`
   min-height: 100vh;
@@ -63,8 +86,7 @@ const Container = styled.div`
 
 const Box = styled.div`
   width: 50%;
-  height: 100%;
-  min-height: 60vh;
+  height: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -73,6 +95,12 @@ const Box = styled.div`
   @media (max-width: 40em) {
     min-height: 50vh;
   }
+  // border: 2px solid white;
+  margin-top: 2%;
+  // box-shadow: 10px 10px 10px black;
+  background-color: #171717;
+  box-shadow: 0px 0px 40px 20px #4e32a8;
+  border-radius: 30px;
 `
 
 const Title = styled.h2`
@@ -146,19 +174,24 @@ text-align: center;
   font-family: 'Baloo 2', cursive;
 `
 
-const ButtonContainer = styled.div`
-  width: 80%;
-  margin: 1rem auto;
-  display: flex;
-  align-self: flex-start;
 
-  @media (max-width: 64em) {
-    width: 100%;
-
-    button {
-      margin: 0 auto;
-    }
-  }
+const Button = styled.button`
+  background: #fff5f6;
+  // background: -webkit-linear-gradient(top, #9c3e5e, #d665ab);
+  // background: -moz-linear-gradient(top, #9c3e5e, #d665ab);
+  // background: -ms-linear-gradient(top, #9c3e5e, #d665ab);
+  // background: -o-linear-gradient(top, #9c3e5e, #d665ab);
+  padding: 0px 6px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  box-shadow: rgba(0,0,0,1) 0 1px 0;
+  text-shadow: rgba(0,0,0,.4) 0 px 0;
+  color: #000000;
+  font-size: 17px;
+  font-weight: 500;
 `
 
 const Mint = () => {
@@ -201,24 +234,22 @@ async function handleMint() {
 }
 
 return (
-  <Section className='disUnder'>
-     <Container>
 
+  <Section className='disUnder'>
+    <ContainerCenter>
+    
+      <Count countdownTimestampMs={1659983662000}/>
       <Box>
-      <Title>Mint</Title> 
-        <SubText>
-          <p>-</p>
-          <button>Mint</button>
-          <p>+</p>
-        </SubText>
-        <SubTextLight>
-          8000/8000
-        </SubTextLight>
-        <ButtonContainer></ButtonContainer>
-       
+      <BsFillArrowRightCircleFill color='white'/>
+      <Button>Connect</Button>
+      <BsFillArrowLeftCircleFill color='white'/>
+      <p color='white'>8000/8000</p>
+      <Showcase/>
       </Box>
-    </Container>
-    <Showcase/>
+    </ContainerCenter>
+    
+
+    
   </Section>
   
 )

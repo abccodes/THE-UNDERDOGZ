@@ -97,7 +97,7 @@ const Home = () => {
       <Team></Team>
       {/* <Showcase></Showcase> */}
       <Header></Header>
-        <div className="faq ">
+        <div className="faq backgroundGrey">
           <div className="faqs ">
             {faqs.map((faq, i) => (
               <FAQ faq={faq} index={i} toggleFAQ = {toggleFAQ} />

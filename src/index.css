@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* exo regular */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@600&display=swap');/* exo regular */
 @import url('https://fonts.googleapis.com/css2?family=Exo:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
 /* baloo2 */
@@ -121,6 +122,10 @@ body {
     color: white;
 }
 
+.backgroundGrey {
+    background-color: #161717;
+}
+
 .faqs .faq {
     margin: 15px;
     padding: 15px;
@@ -181,8 +186,8 @@ body {
 
 
 .css-selector {
-    background: linear-gradient(226deg, #424242, #4169e8, #e158f0, #0b0b0b);
-    background-size: 800%;
+    background: linear-gradient(226deg, #0c0d0d, #4169e8, #e158f0, #0b0b0b);
+    background-size: 800% 800%;
     animation: AnimationName 36s ease infinite;
     width: 100%;
     height: 100%;
@@ -199,17 +204,21 @@ body {
     color: white;
     font-family: 'Roboto', sans-serif;
 }
+
 .navText {
     color: white;
-    font-family: Helvetica, Arial, Sans-Serif;
+    /* font-family: 'Signika', sans-serif; */
+    font-family: 'Open Sans', sans-serif;
+    
 }
+
 .button {
     
     background: #fff5f6;
-    background: -webkit-linear-gradient(top, #9c3e5e, #d665ab);
+    /* background: -webkit-linear-gradient(top, #9c3e5e, #d665ab);
     background: -moz-linear-gradient(top, #9c3e5e, #d665ab);
     background: -ms-linear-gradient(top, #9c3e5e, #d665ab);
-    background: -o-linear-gradient(top, #9c3e5e, #d665ab);
+    background: -o-linear-gradient(top, #9c3e5e, #d665ab); */
     padding: 0px 6px;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
@@ -280,7 +289,7 @@ body {
 
 .disUnder {
     position: relative; 
-    z-index: -1; 
+    z-index: -10; 
 }
 
 /*========================================================================================== */
@@ -313,7 +322,6 @@ body {
     grid-row-start: 2;
     grid-row-end: 4; 
 }
-
 
 
 

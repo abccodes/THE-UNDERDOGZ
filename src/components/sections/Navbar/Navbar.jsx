@@ -29,7 +29,7 @@ const Navbar = ({accounts, setAccounts}) => {
   const handleClick = () => setNav(!nav);
 
   return (
-    <div className='fixed w-full h-[50px] flex justify-between items-center px-4 bg-[#050505] text-gray-300 '>
+    <div className='fixed w-full h-[50px] flex justify-between items-center px-4 bg-[#050505] '>
       <div>
       <Link to="/">
         <img src={Logo} alt='Logo' style={{ width: '50px' }} />
