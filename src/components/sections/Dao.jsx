@@ -110,6 +110,153 @@ const Column2 = styled.h1`
   color: white;
 `
 
+const Column3 = styled.h1`
+  font-size: 2.25em;
+  text-align: left;
+  display: flex; 
+  justify-content: center;
+  align-items: top;
+  margin: 5rem auto;
+  width: 25%;
+  border: 2.5px solid white; 
+  padding: 10px; 
+
+  top: 200px; 
+  bottom: 1000px; 
+  position: absolute;
+  left: 1000px;
+
+
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+  @media (max-width: 40em) {
+    font-size: 1em;
+  }
+  letter-spacing: 5px;
+  color: white;
+`
+
+const Snapshot = styled.button`
+  font-size: 2.25em;
+  text-align: left;
+  display: flex; 
+  justify-content: center;
+  align-items: top;
+  margin: 5rem auto;
+  width: 40%;
+  border: 2.5px solid white; 
+  padding: 10px; 
+
+  top: 775px; 
+  position: absolute;
+  left: 135px;
+
+
+
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+  @media (max-width: 40em) {
+    font-size: 1em;
+  }
+  letter-spacing: 5px;
+  color: white;
+`
+const Dividens = styled.button`
+  font-size: 2.25em;
+  text-align: left;
+  display: flex; 
+  justify-content: center;
+  align-items: top;
+  margin: 5rem auto;
+  width: 40%;
+  border: 2.5px solid white; 
+  padding: 10px; 
+
+  top: 775px; 
+  position: absolute;
+  left: 780px;
+
+
+
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+  @media (max-width: 40em) {
+    font-size: 1em;
+  }
+  letter-spacing: 5px;
+  color: white;
+`
+
+const Assets = styled.button`
+  font-size: 2.25em;
+  text-align: left;
+  display: flex; 
+  justify-content: center;
+  align-items: top;
+  margin: 5rem auto;
+  width: 40%;
+  border: 2.5px solid white; 
+  padding: 10px; 
+
+  top: 1000px; 
+  position: absolute;
+  left: 135px;
+
+
+
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+  @media (max-width: 40em) {
+    font-size: 1em;
+  }
+  letter-spacing: 5px;
+  color: white;
+`
+
+const Balance = styled.h1`
+  font-size: 2.25em;
+  text-align: left; 
+  justify-content: center;
+  align-items: top;
+  margin: 5rem auto;
+  width: 41%;
+  border: 2.5px solid white; 
+  padding: 10px; 
+
+  position: absolute;
+  top: 1000px; 
+  left: 780px;
+
+
+
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+  @media (max-width: 40em) {
+    font-size: 1em;
+  }
+  letter-spacing: 5px;
+  color: white;
+`
+
+
+
+
+
 
 const Dao = () => {
 
@@ -122,47 +269,46 @@ const Dao = () => {
 
 
   return (
-    // <Section className='disUnder'>
-    //   <Title>hello</Title>
-    //   <Container>
-    //   </Container>
-    // </Section>
+    
+    <div className = 'disUnder'>
 
-    //     <Header>THE UNDERDOGZ DAO</Header>
+      <Section>
+
+        <Header>THE UNDERDOGZ DAO</Header>
 
         <Column1>Vote: 1 UDZ NFT equals VOTING POWER. Have your say in what The Underdogz DAO invest in.</Column1>
-    //     <Column2>Purpose: 5 UDZ NFTs equals PROPOSAL POWER. Bring your ideas into the Underdogz DAO.</Column2>
-    //     <Column1>Earn: Lets get rich together. Participate in the DAO and watch our earnings grow. </Column1>
+        <Column2>Purpose: 5 UDZ NFTs equals PROPOSAL POWER. Bring your ideas into the Underdogz DAO.</Column2>
+        <Column3>Earn: Lets get rich together. Participate in the DAO and watch our earnings grow. </Column3>
 
-    //     <Snapshot>Snapshot - Participate Here </Snapshot>
-    //     <Dividens>Claim Dividens </Dividens>
+        <Snapshot>Snapshot - Participate Here </Snapshot>
+        <Dividens>Claim Dividens </Dividens>
 
-    //     <Assets>Load UDZ DAO Assets</Assets>
-    //     <Balance>Treasury Balance: 250.45 ETH</Balance>
+        <Assets>Load UDZ DAO Assets</Assets>
+        <Balance>Treasury Balance: 250.45 ETH</Balance>
 
         
         
 
 
-    //     <section className='Assets'>
-    //         {
-    //           NFTs ? NFTs.map((NFT, index) => { 
-    //             return (
-    //               <NftCard key={index} {...NFT} />
-    //             ) 
-    //           }       
-    //         ) : <div></div> }
+        <section className='Assets'>
+            {
+              NFTs ? NFTs.map((NFT, index) => { 
+                return (
+                  <NftCard key={index} {...NFT} />
+                ) 
+              }       
+            ) : <div></div> }
             
-    //     </section>
+        </section>
 
 
 
 
-    //     <Container>
-    //     </Container>
-    //   </Section>
+        <Container>
+        </Container>
+      </Section>
 
-    // </div>
+    </div>
 
       
   )

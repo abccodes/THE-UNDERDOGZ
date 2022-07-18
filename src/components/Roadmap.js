@@ -3,6 +3,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 import React, { useLayoutEffect, useRef } from 'react'
 import styled from 'styled-components'
 import DrawSvg from './DrawSvg.js'
+import { motion } from 'framer-motion'
 
 const Section = styled.section`
   min-height: 212vh;
@@ -166,8 +167,21 @@ const RoadMapItem = ({ title, subtext, addToRef }) => {
     <Item ref={addToRef}>
       <ItemContainer>
         <Box>
-          <SubTitle>{title} </SubTitle>
-          <Text>{subtext}</Text>
+          <motion.div
+            initial={{
+              opacity: 0,
+            }}
+            whileInView={{ opacity: 1 }}
+            // animate={{
+            //   opacity: 1,
+            // }}
+            transition={{
+              duration: 1,
+            }}
+          >
+            <SubTitle>{title} </SubTitle>
+            <Text>{subtext}</Text>
+          </motion.div>
         </Box>
       </ItemContainer>
     </Item>
@@ -227,6 +241,7 @@ const Roadmap = () => {
             title="Website Release"
             subtext="Website and roadmap release."
           />
+
           <RoadMapItem
             addToRef={addToRefs}
             title="Mint"

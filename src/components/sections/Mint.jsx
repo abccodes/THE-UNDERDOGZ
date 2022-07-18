@@ -1,12 +1,33 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import styled from 'styled-components'
 import Showcase from '../Showcase.js'
 import {ethers, BigNumber} from "ethers";
 import { useEffect, useState } from "react";
-// import mintContract from "";
+import { useSpring, animated } from "react-spring";
+import { motion } from 'framer-motion';
+import Minter from '../Minter.js';
+
+
+const Number = () => {
+	const [isHigh, setHigh] = useState(false);
+	const { number } = useSpring({
+		number: isHigh ? 100 : 0
+	});
+
+	const toggle = () => setHigh(state => !state);
+
+	return (
+		<>
+			<animated.span>
+				{number.interpolate(x => x.toFixed(0))}
+			</animated.span>
+			<button onClick={toggle}>TOGGLE</button>
+		</>
+	);
+};
 
 const Section = styled.section`
-  height: 50vh;
+  min-height: 100vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -18,7 +39,7 @@ const Section = styled.section`
 const Container = styled.div`
   width: 75%;
   margin: 0 auto;
-  background-color: white;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,6 +77,7 @@ const Box = styled.div`
 `
 
 const Title = styled.h2`
+  text-align: center;
   font-size: 4em;
   text-transform: capitalize;
   color: white;
@@ -78,7 +100,9 @@ const Title = styled.h2`
 `
 
 const SubText = styled.p`
-  font-size: 1.25em;
+  display: flex; 
+  justify-content: space-evenly;
+  font-size: 2.5em;
   color: white;
   align-self: flex-start;
   width: 80%;
@@ -100,11 +124,12 @@ const SubText = styled.p`
 `
 
 const SubTextLight = styled.p`
-  font-size: 1em;
+text-align: center;
+  font-size: 1.5em;
   color: #c2c2c2;
   align-self: flex-start;
   width: 80%;
-  margin: 1rem auto;
+  margin: -1rem auto;
   font-weight: 400;
   font-weight: bold;
 
@@ -137,23 +162,10 @@ const ButtonContainer = styled.div`
   }
 `
 
-const Row = styled.div`
-position: absolute;
-bottom: 0;
-left: 0;
-right: 0;
-height:15%;
-margin: auto;
-background: rgba(0, 0, 0, 0.5);
-color: white;
-position:fixed;
-@viewport {
-  width: device-width ;
-  zoom: 1.0 ;
-}
-`
+
 const Mint = () => {
 
+  
 const [accounts, setAccounts] = useState([]);
 const [mintAmount, setMintAmount] = useState(1)
 const mintContractAbi = 172378123;
@@ -190,25 +202,30 @@ async function handleMint() {
   }
 }
 
-  return (
-    <div className='disUnder'>
+return (
+  <Section className='disUnder'>
+    <Minter/>
+     {/* <Container>
 
-    <Showcase>
-    <Section>
-    <p className="fontColorBlack">iugdiuasgduiagsiduga</p>
-      {accounts.length && (
-        <div>
-          <button onClick={() => setMintAmount(mintAmount -1)}>-</button>
-          {mintAmount}
-          <button onClick={() => setMintAmount(mintAmount + 1)}>+</button>
-          <button onClick={handleMint}>Mint</button>
-        </div>
-      )}
-      </Section> */
-    </Showcase>
-    
-    </div>
-  )
+      <Box>
+      <Title>Mint</Title> 
+        <SubText>
+          <p>-</p>
+          <button>Mint</button>
+          <p>+</p>
+
+        </SubText>
+        <SubTextLight>
+          8000/8000
+        </SubTextLight>
+        <ButtonContainer></ButtonContainer>
+       
+      </Box>
+    </Container>
+    <Showcase/> */}
+  </Section>
+  
+)
 }
 
 export default Mint

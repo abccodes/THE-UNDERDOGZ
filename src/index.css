@@ -181,7 +181,7 @@ body {
 
 
 .css-selector {
-    background: linear-gradient(226deg, #0c0d0d, #4169e8, #e158f0, #0b0b0b);
+    background: linear-gradient(226deg, #424242, #4169e8, #e158f0, #0b0b0b);
     background-size: 800%;
     animation: AnimationName 36s ease infinite;
     width: 100%;

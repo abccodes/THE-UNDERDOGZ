@@ -10,6 +10,7 @@ import Loading from './Loading'
 import Twitter from './Icons/Twitter'
 // import ConfettiComponent from './Confetti'
 // const ConfettiComponent = lazy(() => import('./Confetti.js'))
+import { motion } from 'framer-motion'
 
 const Section = styled.section`
   // margin-top: 25px;
@@ -224,40 +225,63 @@ const Team = () => {
           {/* <ConfettiComponent />{' '} */}
         </Suspense>
         <Title></Title>
-        <Container>
-          <MemberComponent
-            img={img1}
-            name="HUNTER"
-            position="Co-Founder"
-            twitter="https://twitter.com/HunterSkellengr"
-          />
-          <MemberComponent
-            img={img2}
-            name="NIC"
-            position="Co-Founder"
-            twitter="https://twitter.com/nicci_burns"
-          />
-          <MemberComponent
-            img={img3}
-            name="LEE"
-            position="Co-Founder"
-            twitter="https://twitter.com/Lee_Michaelson1"
-          />
-        </Container>
-        <ContainerCenter>
-          <MemberComponentCenter
-            img={img4}
-            name="BEN"
-            position="Developer"
-            twitter="https://twitter.com/B3nskiii"
-          />
-          <MemberComponentCenter
-            img={img5}
-            name="AIDAN"
-            position="Developer"
-            twitter="https://twitter.com/Aidan__eth"
-          />
-        </ContainerCenter>
+        <motion.div
+          initial={{
+            opacity: 0,
+          }}
+          whileInView={{ opacity: 1 }}
+          // animate={{
+          //   opacity: 1,
+          // }}
+          transition={{
+            duration: 1.5,
+          }}
+        >
+          <Container>
+            <MemberComponent
+              img={img1}
+              name="HUNTER"
+              position="Co-Founder"
+              twitter="https://twitter.com/HunterSkellengr"
+            />
+            <MemberComponent
+              img={img2}
+              name="NIC"
+              position="Co-Founder"
+              twitter="https://twitter.com/nicci_burns"
+            />
+            <MemberComponent
+              img={img3}
+              name="LEE"
+              position="Co-Founder"
+              twitter="https://twitter.com/Lee_Michaelson1"
+            />
+          </Container>
+        </motion.div>
+        <motion.div
+          initial={{
+            opacity: 0,
+          }}
+          whileInView={{ opacity: 1 }}
+          transition={{
+            duration: 1.5,
+          }}
+        >
+          <ContainerCenter>
+            <MemberComponentCenter
+              img={img4}
+              name="BEN"
+              position="Developer"
+              twitter="https://twitter.com/B3nskiii"
+            />
+            <MemberComponentCenter
+              img={img5}
+              name="AIDAN"
+              position="Developer"
+              twitter="https://twitter.com/Aidan__eth"
+            />
+          </ContainerCenter>
+        </motion.div>
       </Section>
     </div>
   )

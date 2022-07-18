@@ -17,7 +17,7 @@ const Section = styled.section`
   height: 100vh;
   width: 100vw;
   // background-color: white;
-  background-color: #161717;
+  // background-color: #161717;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -77,8 +77,6 @@ const ImgContainer = styled.div`
     height: 100%;
   }
   border: 6.5px solid #fff;
-  // border-bottom-left-radius: 20px;
-  // border-bottom-right-radius: 20px;
 `
 
 // const Details = styled.div`
@@ -157,7 +155,6 @@ const Showcase = () => {
 
   return (
     <Section id="showcase">
-      <p className="fontColorWhite">sanbdiuasbduiasbduiasudib</p>
       <Row direction="none" ref={Row1Ref}>
         <NftItem img={img1} />
         <NftItem img={img2} />
