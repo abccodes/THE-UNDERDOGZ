@@ -7,7 +7,7 @@ import { useSpring, animated } from "react-spring";
 import { motion } from 'framer-motion';
 import Count from './CountdownTimer/CountdownTimer'
 import { BsFillArrowRightCircleFill, BsFillArrowLeftCircleFill } from "react-icons/bs";
-
+import img from '../../assets/nic.png'
 
 
 const Number = () => {
@@ -100,7 +100,7 @@ const Box = styled.div`
   // box-shadow: 10px 10px 10px black;
   background-color: #171717;
   box-shadow: 0px 0px 40px 20px #4e32a8;
-  border-radius: 30px;
+  border-radius: 40px;
 `
 
 const Title = styled.h2`
@@ -194,6 +194,29 @@ const Button = styled.button`
   font-weight: 500;
 `
 
+const ImgContainer = styled.div`
+  width: 15rem;
+  // margin: 0 1rem;
+
+  border-radius: 20px;
+  cursor: pointer;
+
+  @media (max-width: 48em) {
+    width: 12rem;
+  }
+  @media (max-width: 30em) {
+    width: 10rem;
+  }
+
+  img {
+    width: 50%;
+    height: auto;
+    border: 6px solid white;
+  }
+  justify-content: center;
+  align-items: center;
+`
+
 const Mint = () => {
 
   
@@ -244,15 +267,13 @@ return (
       <Button>Connect</Button>
       <BsFillArrowLeftCircleFill color='white'/>
       <p color='white'>8000/8000</p>
+      <ImgContainer>
+      <img width={500} height={400} src={img} alt="UnderDogZ" />
+      </ImgContainer>
       <Showcase/>
       </Box>
     </ContainerCenter>
-    
-
-    
   </Section>
-  
-)
-}
+)}
 
 export default Mint

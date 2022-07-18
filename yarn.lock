@@ -13410,6 +13410,11 @@
   "resolved" "https://registry.npmjs.org/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz"
   "version" "3.0.4"
 
+"react-lorem-ipsum@^1.4.10":
+  "integrity" "sha512-PCEuauLZTGJkm++oxJeUycEgQOBg3qmmD7pn5sUyq9e0OvvNbW32RKQsSgalAYGUIbS91UkDgxvt6iHVAsqYJw=="
+  "resolved" "https://registry.npmjs.org/react-lorem-ipsum/-/react-lorem-ipsum-1.4.10.tgz"
+  "version" "1.4.10"
+
 "react-native-androw@>= 0.0.31":
   "integrity" "sha512-YuW0GxYNzABvPPe6k+JdLUF5CAzKSW5R6IxxA/+fg5gc+4avE1tZgLmnRfNtXJCbW9r90YLYp33S9Uu2pe//fg=="
   "resolved" "https://registry.npmjs.org/react-native-androw/-/react-native-androw-0.0.34.tgz"

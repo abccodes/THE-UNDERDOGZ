@@ -12,8 +12,6 @@ const Section = styled.section`
   align-items: center;
   position: absolute;
   overflow: hidden;
-
-
 `
 
 

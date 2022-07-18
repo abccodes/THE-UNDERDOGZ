@@ -13,6 +13,7 @@ import Logo from '../../assets/UDZ_Logo.png'
 import { Link } from 'react-router-dom'
 
 
+
 const Navbar = ({accounts, setAccounts}) => {
 
     const isConnected = Boolean(accounts[0]);
