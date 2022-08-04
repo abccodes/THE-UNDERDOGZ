@@ -1,18 +1,39 @@
 import gsap from 'gsap'
+import Loading from '../../Loading'
 import ScrollTrigger from 'gsap/ScrollTrigger'
-import React, { useLayoutEffect, useRef } from 'react'
+import React, { useLayoutEffect, useRef, lazy, Suspense } from 'react'
 import styled from 'styled-components'
 import DrawSvg from './DrawSvg.js'
 import { motion } from 'framer-motion'
 
+const ConfettiComponent = lazy(() => import('./Confetti.js'))
+
+const ImgContainer = styled.div`
+  cursor: pointer;
+
+  @media (max-width: 48em) {
+    width: 12rem;
+  }
+  @media (max-width: 30em) {
+    width: 10rem;
+  }
+
+  // border-radius: 50px;
+  width: 50%;
+  height: auto;
+  border: 2px solid white;
+  justify-content: center;
+  align-items: center;
+`
+
 const Section = styled.section`
-  min-height: 212vh;
+  height: 200vh;
   width: 100vw;
   position: relative;
   overflow: hidden;
   background-color: #161717;
 `
-const Title = styled.h1`
+const Title = styled.a`
   font-size: 5em;
   display: flex;
   justify-content: center;
@@ -165,7 +186,7 @@ const Text = styled.span`
 
 const RoadMapItem = ({ title, subtext, addToRef }) => {
   return (
-    <Item ref={addToRef}>
+    <Item ref={addToRef} className="disMiddle">
       <ItemContainer>
         <Box>
           <motion.div
@@ -230,7 +251,12 @@ const Roadmap = () => {
 
   return (
     <Section>
+      <Suspense fallback={<Loading />}>
+        <ConfettiComponent />{' '}
+      </Suspense>
+
       <Title></Title>
+
       <Container>
         <SvgContainer>
           <DrawSvg />

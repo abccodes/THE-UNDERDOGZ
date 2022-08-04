@@ -30,7 +30,7 @@ const Navbar = ({accounts, setAccounts}) => {
   const handleClick = () => setNav(!nav);
 
   return (
-    <div className='fixed w-full h-[50px] flex justify-between items-center px-4 bg-[#050505] '>
+    <div className='fixed w-full h-[50px] flex justify-between items-center px-4 bg-[#050505] disOver'>
       <div>
       <Link to="/">
         <img src={Logo} alt='Logo' style={{ width: '50px' }} />
@@ -79,7 +79,7 @@ const Navbar = ({accounts, setAccounts}) => {
 
       {/* Hamburger */}
       <div onClick={handleClick} className='md:hidden z-10'>
-        {!nav ? <FaBars /> : <FaTimes />}
+        {!nav ? <FaBars color="white"/> : <FaTimes />}
       </div>
 
       {/* Mobile menu */}
@@ -87,7 +87,7 @@ const Navbar = ({accounts, setAccounts}) => {
         className={
           !nav
             ? 'hidden'
-            : 'absolute top-0 left-0 w-full h-screen bg-[#0a192f] flex flex-col justify-center items-center'
+            : 'absolute top-0 left-0 w-full h-screen bg-white flex flex-col justify-center items-center col'
         }
       >
         <li className='py-6 text-4xl'>

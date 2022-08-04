@@ -10,6 +10,8 @@ import About from './About.js'
 import ArtDisplay from './ArtDisplay.js';
 // import Banner from '../Banner.jsx'
 
+
+
 const Home = () => {
   const [faqs, setfaqs] = useState([
     {
@@ -85,15 +87,16 @@ const Home = () => {
   }
 
   return (
-    <div className='disUnder'>
-    <div className='w-full h-screen'>
+  
+    <div className='w-full h-screen '>
       
       {/* Container */}
       <LandingPage/>
-      <About/>
+      <About  />
       {/* <Banner/> */}
       <ArtDisplay/>
       <Roadmap></Roadmap>
+    
       <Team></Team>
       {/* <Showcase></Showcase> */}
       <Header></Header>
@@ -105,7 +108,7 @@ const Home = () => {
           </div>
         </div>
     </div>
-    </div>
+    
   );
 };
 

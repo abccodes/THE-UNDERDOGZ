@@ -4,11 +4,14 @@ import styled from 'styled-components'
 // import Loading from '../Loading'
 import Card from './Card.tsx'
 import { motion } from 'framer-motion'
+// import fire from '../../assets/Looping_Fire_2_4001_HD_AdobeExpress (1).gif'
+import lightning from '../../assets/Lightning_Bursts_1_2286_2K.gif'
+// import cloud from '../../assets/Cartoon-Smoke-2-4003-HD.gif'
 
 // const Carousel = lazy(() => import('./Carousel'))
 
 const Section = styled.section`
-  min-height: 125vh;
+  min-height: 100vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -24,23 +27,6 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  @media (max-width: 70em) {
-    width: 85%;
-  }
-
-  @media (max-width: 64em) {
-    width: 100%;
-    flex-direction: column;
-
-    & > *:last-child {
-      width: 80%;
-    }
-  }
-  @media (max-width: 40em) {
-    & > *:last-child {
-      width: 90%;
-    }
-  }
 `
 
 const Box = styled.div`
@@ -138,10 +124,21 @@ const ButtonContainer = styled.div`
     }
   }
 `
+const styles = {
+  root: {
+    fontFamily: 'sans-serif',
+    textAlign: 'center',
+    height: '100%',
+    background: '#222',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+}
 
 const About = () => {
   return (
-    <Section id="about">
+    <Section style={{ backgroundImage: `url(${lightning})` }}>
       <motion.div
         initial={{
           opacity: 0,
@@ -157,18 +154,10 @@ const About = () => {
         <Container>
           <Box>
             <Title>About us</Title>
-            <SubText>
-              The UnderDogZ are a group of 8000 randomly generated ERC-721
-              collectable which grants access to one of cryptos first investment
-              DAOs. By the people, for the people #dogz.
-            </SubText>
+            <SubText>The UnderDogZ are a group of 8000 randoml</SubText>
             <SubTextLight>
               We have created the opportunity for everyone to get involved in
               the top 1% of NFTs and digital assets. With this project everyone
-              will get value from what NFTs have to offer. The Underdogz team
-              has been trading and participating in projects for 2 years now.The
-              Underdogz team has been trading and participating in projects for
-              2 years now.
             </SubTextLight>
             <ButtonContainer></ButtonContainer>
           </Box>

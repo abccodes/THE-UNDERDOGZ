@@ -6,20 +6,16 @@ import img2 from '../../assets/nic-removebg-preview.png'
 import img3 from '../../assets/lee-removebg-preview.png'
 import img4 from '../../assets/1-removebg-preview.png'
 import img5 from '../../assets/3500-removebg-preview.png'
-import Loading from '../../Loading'
 import Twitter from '../../Icons/Twitter'
-// import ConfettiComponent from './Confetti'
-// const ConfettiComponent = lazy(() => import('./Confetti.js'))
 import { motion } from 'framer-motion'
 
 const Section = styled.section`
-  // margin-top: 25px;
-  min-height: 150vh;
+  height: 150vh;
   width: 100vw;
   background-color: #fff;
   position: relative;
   overflow: hidden;
-  background-color: #161717;
+  background-color: black;
 `
 const Title = styled.h1`
   font-size: 3em;
@@ -38,6 +34,7 @@ const Title = styled.h1`
 `
 
 const Container = styled.div`
+  margin-top: 50px;
   width: 80%;
   margin: 2rem auto;
 
@@ -99,7 +96,7 @@ const Item = styled.div`
     width: 70vw;
   }
   background-color: #1e1e1f;
-  box-shadow: 0px 0px 40px 20px black;
+  box-shadow: 0px 0px 40px 20px #4e32a8;
 `
 
 const ItemCenter = styled.div`
@@ -127,7 +124,7 @@ const ItemCenter = styled.div`
   background-color: #1e1e1f;
   margin-left: 10%;
   margin-right: 10%;
-  box-shadow: 0px 0px 40px 20px black;
+  box-shadow: 0px 0px 40px 20px #4e32a8;
 `
 
 const ImageContainer = styled.div`
@@ -223,10 +220,8 @@ const Team = () => {
   return (
     <div name="team" className=" text-gray-300 ">
       <Section id="team">
-        <Suspense fallback={<Loading />}>
-          {/* <ConfettiComponent />{' '} */}
-        </Suspense>
         <Title></Title>
+        <Container></Container>
         <motion.div
           initial={{
             opacity: 0,

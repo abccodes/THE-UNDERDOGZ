@@ -1,7 +1,7 @@
-import img1 from '../../assets/100.png'
-import img2 from '../../assets/1500.png'
-import img3 from '../../assets/8237.png'
-import img4 from '../../assets/3500.png'
+import img1 from '../../assets/giphy (2).gif'
+import img2 from '../../assets/giphy (3).gif'
+import img3 from '../../assets/giphy (4).gif'
+import img4 from '../../assets/giphy.gif'
 import { motion } from 'framer-motion'
 
 const nfts = [
@@ -40,9 +40,9 @@ const nfts = [
 
 const ArtDisplay = () => {
   return (
-    <div className="bg-white">
-      <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
-        <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+    <div>
+      <div className="max-w-2xl mx-auto py-16 px-4 sm:py-8 sm:px-6 lg:max-w-7xl lg:px-8">
+        <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-4 xl:grid-cols- xl:gap-x-8">
           {nfts.map((nft) => (
             <a key={nft.id} href={nft.href} className="group">
               <motion.div

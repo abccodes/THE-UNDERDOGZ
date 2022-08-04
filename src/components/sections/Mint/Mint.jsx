@@ -6,8 +6,11 @@ import { useEffect, useState } from "react";
 import { useSpring, animated } from "react-spring";
 import { motion } from 'framer-motion';
 import Count from './CountdownTimer/CountdownTimer'
-import { BsFillArrowRightCircleFill, BsFillArrowLeftCircleFill } from "react-icons/bs";
-import img from '../../assets/nic.png'
+import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
+import img from '../../assets/giphy (3).gif'
+import '../../../index.css'
+import "./styling.css"
+import lightning1 from "../../assets/Lightning_Bursts_1_2286_2K.gif"
 
 
 const Number = () => {
@@ -48,55 +51,52 @@ const ContainerCenter = styled.div`
   align-items: center;
 `
 
-const Section = styled.section`
-  min-height: 100vh;
+
+
+const Section = styled.a`
+  height: 100vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   overflow: hidden;
-  background-color: #161717;
+  // background-color: #161717;
 `
 const Container = styled.div`
-  width: 75%;
-  margin: 0 auto;
+width: 80%;
+margin: 1rem auto;
 
-  display: flex;
+display: flex;
+justify-content: space-around;
+align-items: center;
+flex-wrap: wrap;
+
+@media (max-width: 64em) {
+  width: 80%;
+}
+@media (max-width: 48em) {
+  width: 90%;
   justify-content: center;
-  align-items: center;
-  @media (max-width: 70em) {
-    width: 85%;
-  }
-
-  @media (max-width: 64em) {
-    width: 100%;
-    flex-direction: column;
-
-    & > *:last-child {
-      width: 80%;
-    }
-  }
-  @media (max-width: 40em) {
-    & > *:last-child {
-      width: 90%;
-    }
-  }
+}
+justify-content: center;
+align-items: center;
 `
 
 const Box = styled.div`
   width: 50%;
-  height: 50%;
-  display: flex;
+  max-height: 600px;
+  display: inline-block;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
+  // margin
   @media (max-width: 40em) {
     min-height: 50vh;
   }
-  // border: 2px solid white;
-  margin-top: 2%;
+  border: .5px solid black;
+  margin-top: 3%;
   // box-shadow: 10px 10px 10px black;
   background-color: #171717;
   box-shadow: 0px 0px 40px 20px #4e32a8;
@@ -123,56 +123,19 @@ const Title = styled.h2`
   @media (max-width: 30em) {
     font-size: 1.25em};
   }
-  font-family: 'Baloo 2', cursive;
+
 `
 
 const SubText = styled.p`
   display: flex; 
   justify-content: space-evenly;
-  font-size: 2.5em;
+  font-size: 1.5em;
   color: white;
   align-self: flex-start;
-  width: 80%;
   margin: 1rem auto;
-  font-weight: 400;
-  @media (max-width: 64em) {
-    width: 100%;
-    text-align: center;
-    font-size: 1em;
-  }
-  @media (max-width: 40em) {
-    font-size: 1em;
-  }
-  @media (max-width: 30em) {
-    font-size: 1em;
-  }
-  font-family: 'Baloo 2', cursive;
   font-weight: bold;
 `
 
-const SubTextLight = styled.p`
-text-align: center;
-  font-size: 1.5em;
-  color: #c2c2c2;
-  align-self: flex-start;
-  width: 80%;
-  margin: -1rem auto;
-  font-weight: 400;
-  font-weight: bold;
-
-  @media (max-width: 64em) {
-    width: 100%;
-    text-align: center;
-    font-size: 0.875em;
-  }
-  @media (max-width: 40em) {
-    font-size: 0.875em;
-  }
-  @media (max-width: 30em) {
-    font-size: 0.75em;
-  }
-  font-family: 'Baloo 2', cursive;
-`
 
 
 const Button = styled.button`
@@ -190,34 +153,38 @@ const Button = styled.button`
   box-shadow: rgba(0,0,0,1) 0 1px 0;
   text-shadow: rgba(0,0,0,.4) 0 px 0;
   color: #000000;
-  font-size: 17px;
+  font-size: 30px;
   font-weight: 500;
 `
 
 const ImgContainer = styled.div`
-  width: 15rem;
-  // margin: 0 1rem;
+margin-top: 10%;
+margin:auto;
 
-  border-radius: 20px;
-  cursor: pointer;
+cursor: pointer;
 
-  @media (max-width: 48em) {
-    width: 12rem;
-  }
-  @media (max-width: 30em) {
-    width: 10rem;
-  }
+@media (max-width: 48em) {
+  width: 12rem;
+}
+@media (max-width: 30em) {
+  width: 10rem;
+}
 
-  img {
-    width: 50%;
-    height: auto;
-    border: 6px solid white;
-  }
-  justify-content: center;
-  align-items: center;
+// border-radius: 50px;
+width: 50%;
+height: auto;
+border: 2px solid white;
+justify-content: center;
+align-items: center;
 `
 
 const Mint = () => {
+  const [isHigh, setHigh] = useState(false);
+	const { number } = useSpring({
+		number: isHigh ? 100 : 0
+	});
+	const toggle = () => setHigh(state => !state);
+
 
   
 const [accounts, setAccounts] = useState([]);
@@ -257,23 +224,27 @@ async function handleMint() {
 }
 
 return (
-
-  <Section className='disUnder'>
+  // <div className='disUnder'>
+  <Section style={{backgroundImage: `url(${lightning1})`}}>
     <ContainerCenter>
     
       <Count countdownTimestampMs={1659983662000}/>
-      <Box>
-      <BsFillArrowRightCircleFill color='white'/>
-      <Button>Connect</Button>
-      <BsFillArrowLeftCircleFill color='white'/>
-      <p color='white'>8000/8000</p>
+      <Box > 
+      <SubText className='titleNumbers'>8500/8500</SubText>
       <ImgContainer>
       <img width={500} height={400} src={img} alt="UnderDogZ" />
       </ImgContainer>
-      <Showcase/>
+      <Container>      
+      <AiFillMinusCircle color='white' size={50}/>
+      <button class="button-85" role="button">MINT</button>      
+      <AiFillPlusCircle color='white' size={50}/>
+      </Container>
+      <SubText className='boxText' color='white'>1</SubText>
+      {/* <Showcase/> */}
       </Box>
     </ContainerCenter>
   </Section>
+  // </div>
 )}
 
 export default Mint
