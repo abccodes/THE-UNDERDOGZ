@@ -19,10 +19,9 @@ const NftCard = ( props ) => {
               </div>
           </div>
       </div>
-  )    
+    )    
 }
     
         
 
 export default NftCard
-
