@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Signika:wght@600&display=swap');/* exo regular */
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@600&display=swap');
+/* exo regular */
 @import url('https://fonts.googleapis.com/css2?family=Exo:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
 /* baloo2 */
@@ -101,11 +102,11 @@ header {
     justify-content: center;
     align-content: center;
     padding: 15px;
-    background: #000000; 
+    background: #ffffff; 
 }
 
 header h1 {
-    color: #EEE;
+    color: rgb(0, 0, 0);
     font-size: 28px;
     font-weight: 700;
     text-transform: uppercase;
@@ -351,9 +352,11 @@ body {
 
 
 
+
+
 /* CSS */
 .button-85 {
-  padding: 1em 6em;
+  padding: 5% 25%;
   border: none;
   outline: none;
   color: rgb(24, 24, 24);
@@ -365,6 +368,7 @@ body {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  
 }
 
 .button-85:before {
@@ -418,3 +422,20 @@ body {
   top: 0;
   border-radius: 10px;
 }
+
+.MintIcons{
+    font-size: 50px;
+  }
+  
+  @media only screen and (max-width: 900px) {
+    .MintIcons {
+      font-size: 40px;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    .MintIcons {
+      font-size: 30px;
+    }
+  }
+

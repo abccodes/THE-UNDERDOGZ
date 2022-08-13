@@ -1,19 +1,32 @@
 import React, { useState } from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
+
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import '../../sections/Dao/styled.css';
+
+
+import eth from '../../assets/ethereum-eth.webp';
+
 
 import NftCard from './nftcard';
 import {fetchNFTs} from '../../../utils/fetchNFTs.js';
+
+import FlipCard from '../../sections/Dao/FlipCard.js'; 
+
+
+
+
 //---------------------------------------------------
 
 const Container = styled.div`
   width: 80%;
   height: 150vh;
-  // background-color: #1c1c1c;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+
   @media (max-width: 64em) {
     width: 80%;
   }
@@ -30,31 +43,142 @@ const Section = styled.section`
   background-color: #161717;
 `
 
-const Header = styled.p`
-  font-size: 5em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 5rem auto;
-  width: fit-content;
-  border: 5px solid white; 
-  padding: 10px; 
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-
-  @media (max-width: 40em) {
-    font-size: 2em;
+const cards = [
+  {
+    id: "1",
+    variant: "click",
+    front: "Vote",
+    back: "Each NFT equals VOTING POWER. Have a say on where capital is allocated."
+  },
+  {
+    id: "2",
+    variant: "click",
+    front: "Purpose",
+    back: "5 NFT's equals PROPOSAL POWER. Share your ideas with the Underdogz DAO."
+  },
+  {
+    id: "3",
+    variant: "click",
+    front: "Earn",
+    back: "Let the passive income begin. Participate in the DAO and watch your earnings grow."
   }
-  letter-spacing: 15px;
-  color: white;
-`
+];
+
+
+const Dao = () => {
+
+  //---------------------------------------------------------------
+  const owner = "0x9486B1110b2D88130054985E877bC98fED97f0C0";
+  const [contractAddress, setContractAddress] = useState("");
+  const [NFTs, setNFTs] = useState("");
+  //---------------------------------------------------------------
+
+
+  return(
+
+    <div className = "body">
+
+      
+      <Section>
+
+        
+
+        <div className="container">
+
+          <div className = "header">
+            <img src = {eth} width = "200" height = "100"></img>
+            <p>THE UNDERDOGZ DAO</p>
+            <img src = {eth} width = "200" height = "100"></img>
+          </div>
+
+
+          <div className="row h-100">
+            <div class="col d-flex flex-column flex-md-row justify-content-around align-items-center">
+              {cards.map((card) => (
+                <FlipCard key={card.id} card={card} />
+              ))}
+            </div>
+
+
+          </div>
+
+          <div className = "btnContainer">
+
+            <button className = 'daoBtn' onClick = "window.location.hred = 'https://snapshot.org/#/';">Snapshot - Participate Here</button>
+
+            <button className = 'daoBtn' onClick = "location.href = 'https://snapshot.org/#/'">Claim Dividens</button>
+
+            <button className = 'daoBtn' onClick={() => {fetchNFTs(owner, contractAddress, setNFTs)}} >Load DAO Assets</button>
+          </div>
+        </div> 
+
+        
+
+        <div className = 'nftContainer'>
+
+        {
+            NFTs ? NFTs.map((NFT, index) => { 
+              return (
+                <NftCard key={index} {...NFT} />
+              ) 
+            }       
+          ) : <div></div> 
+        }
+
+        </div>
+
+        
+
+        
+      </Section> 
+
+    </div>
+
+  
+  )
+
+
+
+  
+}
+
+export default Dao
+
+
+/*
+<div className='flex flex-col items-center justify-center mb-4 w-2/6 gap-y-2 '>
+  <input className="border rounded-sm focus:outline-none py-2 px-3 w-full" value={owner} onChange={(e) => setOwner(e.target.value)} placeholder='Insert your wallet address'></input>
+  <input className="focus:outline-none rounded-sm py-2 px-3 w-full" value={contractAddress} onChange={(e) => setContractAddress(e.target.value)} placeholder='Insert NFT Contract address (optional)'></input>
+</div>
+*/
+
+//Button:
+//<button className='py-3 bg-white rounded-sm w-full hover:bg-slate-100' onClick={() => {fetchNFTs(owner, contractAddress, setNFTs)}}>Load DAO Assets</button>
+
+/*
+<section className='flex flex-wrap justify-center'>
+{
+  NFTs ? NFTs.map((NFT, index) => { 
+    return (
+      <NftCard key={index} {...NFT} />
+    ) 
+  }       
+) : <div></div> }
+            
+</section>
+
+*/
+
+
+
+
+/* 
 
 const Column1 = styled.h1`
   font-size: 2.25em;
   text-align: left;
-  display: flex; 
+  display: flex;
+  flex: 1 
   justify-content: center;
   align-items: top;
   margin: 5rem auto;
@@ -85,6 +209,7 @@ const Column2 = styled.h1`
   font-size: 2.25em;
   text-align: left; 
   display: flex; 
+  flex: 1
   justify-content: center;
   align-items: top;
   margin: 5rem auto;
@@ -114,6 +239,7 @@ const Column3 = styled.h1`
   font-size: 2.25em;
   text-align: left;
   display: flex; 
+  flex: 1
   justify-content: center;
   align-items: top;
   margin: 5rem auto;
@@ -252,91 +378,6 @@ const Balance = styled.h1`
   letter-spacing: 5px;
   color: white;
 `
-
-
-
-
-
-
-const Dao = () => {
-
-  //---------------------------------------------------------------
-  const owner = "0xC2144a4e236dDd95224aCD16f7d73128c9d3F8b8"
-  const [contractAddress, setContractAddress] = useState("")
-  const [NFTs, setNFTs] = useState("")
-  //---------------------------------------------------------------
-
-
-
-  return (
-    
-    <div className = 'disUnder'>
-
-      <Section>
-
-        <Header>THE UNDERDOGZ DAO</Header>
-
-        <Column1>Vote: 1 UDZ NFT equals VOTING POWER. Have your say in what The Underdogz DAO invest in.</Column1>
-        <Column2>Purpose: 5 UDZ NFTs equals PROPOSAL POWER. Bring your ideas into the Underdogz DAO.</Column2>
-        <Column3>Earn: Lets get rich together. Participate in the DAO and watch our earnings grow. </Column3>
-
-        <Snapshot>Snapshot - Participate Here </Snapshot>
-        <Dividens>Claim Dividens </Dividens>
-
-        <Assets>Load UDZ DAO Assets</Assets>
-        <Balance>Treasury Balance: 250.45 ETH</Balance>
-
-        
-        
-
-
-        <section className='Assets'>
-            {
-              NFTs ? NFTs.map((NFT, index) => { 
-                return (
-                  <NftCard key={index} {...NFT} />
-                ) 
-              }       
-            ) : <div></div> }
-            
-        </section>
-
-
-
-
-        <Container>
-        </Container>
-      </Section>
-
-    </div>
-
-      
-  )
-}
-
-export default Dao
-
-
-/*
-<div className='flex flex-col items-center justify-center mb-4 w-2/6 gap-y-2 '>
-  <input className="border rounded-sm focus:outline-none py-2 px-3 w-full" value={owner} onChange={(e) => setOwner(e.target.value)} placeholder='Insert your wallet address'></input>
-  <input className="focus:outline-none rounded-sm py-2 px-3 w-full" value={contractAddress} onChange={(e) => setContractAddress(e.target.value)} placeholder='Insert NFT Contract address (optional)'></input>
-</div>
-*/
-
-//Button:
-//<button className='py-3 bg-white rounded-sm w-full hover:bg-slate-100' onClick={() => {fetchNFTs(owner, contractAddress, setNFTs)}}>Load DAO Assets</button>
-
-/*
-<section className='flex flex-wrap justify-center'>
-            {
-              NFTs ? NFTs.map((NFT, index) => { 
-                return (
-                  <NftCard key={index} {...NFT} />
-                ) 
-              }       
-            ) : <div></div> }
-            
-</section>
-
+<ImgContainer1><img width={250} height={250} src={img1}></img></ImgContainer1>
+<ImgContainer2><img width={250} height={250} src={img1}></img></ImgContainer2> 
 */

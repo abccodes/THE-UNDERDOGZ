@@ -45,13 +45,19 @@ const Container = styled.div`
 
   @media (max-width: 64em) {
     width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
   }
   @media (max-width: 48em) {
-    width: 90%;
-    justify-content: center;
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 2rem auto;
   }
-  // justify-content: center;
-  // align-items: center;
 `
 const ContainerCenter = styled.div`
   width: 80%;
@@ -66,8 +72,12 @@ const ContainerCenter = styled.div`
     width: 80%;
   }
   @media (max-width: 48em) {
-    width: 90%;
-    justify-content: center;
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 2rem auto;
   }
   justify-content: center;
   align-items: center;

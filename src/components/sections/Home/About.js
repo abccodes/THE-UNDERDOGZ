@@ -5,7 +5,6 @@ import styled from 'styled-components'
 import Card from './Card.tsx'
 import { motion } from 'framer-motion'
 // import fire from '../../assets/Looping_Fire_2_4001_HD_AdobeExpress (1).gif'
-import lightning from '../../assets/Lightning_Bursts_1_2286_2K.gif'
 // import cloud from '../../assets/Cartoon-Smoke-2-4003-HD.gif'
 
 // const Carousel = lazy(() => import('./Carousel'))
@@ -138,7 +137,8 @@ const styles = {
 
 const About = () => {
   return (
-    <Section style={{ backgroundImage: `url(${lightning})` }}>
+    // style={{ backgroundImage: `url(${lightning})` }}
+    <Section>
       <motion.div
         initial={{
           opacity: 0,

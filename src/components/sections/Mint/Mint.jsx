@@ -235,9 +235,9 @@ return (
       <img width={500} height={400} src={img} alt="UnderDogZ" />
       </ImgContainer>
       <Container>      
-      <AiFillMinusCircle color='white' size={50}/>
+      <AiFillMinusCircle color='white' className="MintIcons"/>
       <button class="button-85" role="button">MINT</button>      
-      <AiFillPlusCircle color='white' size={50}/>
+      <AiFillPlusCircle color='white' className='MintIcons'/>
       </Container>
       <SubText className='boxText' color='white'>1</SubText>
       {/* <Showcase/> */}

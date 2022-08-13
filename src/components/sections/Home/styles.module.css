@@ -1,10 +1,11 @@
+
 .card {
     position: relative;
     width: 350px;
     height: 350px;
     background: grey;
     border-radius: 5px;
-    /* box-shadow: 0px 0px 40px 20px white; */
+    box-shadow: 0px 0px 20px 10px rgb(0, 0, 0);
     transition: box-shadow 0.5s, opacity 0.5s;
     will-change: transform;
     cursor: grab;
@@ -13,7 +14,7 @@
   }
   
   .card:hover {
-    box-shadow: 0px 30px 100px -10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 30px 100px -10px rgba(93, 12, 255, 0.4);
   }
   
   .card > div {
