@@ -1,9 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-;<style>
-  @import
-  url('https://fonts.googleapis.com/css2?family=Exo:wght@100&display=swap');
-</style>
+import '../../fonts.css'
 
 function FAQ({ faq, index, toggleFAQ }) {
   return (
@@ -14,8 +11,8 @@ function FAQ({ faq, index, toggleFAQ }) {
     >
       {' '}
       {/* <style> */}
-      <div className="faq-question">{faq.question}</div>
-      <div className="faq-answer">{faq.answer}</div>
+      <div className="faq-question titleFont">{faq.question}</div>
+      <div className="faq-answer subFont">{faq.answer}</div>
       {/* </style> */}
     </div>
   )

@@ -1,307 +1,814 @@
-import { useEffect, useState } from "react";
-import Web3 from "web3";
-import contract from "../contracts/contract.json";
-import Hero from "../assets/hero.png";
+import React, { useEffect, useState, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { connect } from "./redux/blockchain/blockchainActions";
+import { fetchData } from "./redux/data/dataActions";
+import * as s from "./styles/globalStyles";
+import styled from "styled-components";
+import { Provider } from 'react-redux'
+import img1 from "../../assets/1.png"
+import store from './redux/store'
+import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
+import img from '../../assets/giphy (3).gif'
+import Count from './CountdownTimer/CountdownTimer'
+import lightning1 from "../../assets/Lightning_Bursts_1_2286_2K.gif"
 
-const initialInfoState = {
-  connected: false,
-  status: null,
-  account: null,
-  web3: null,
-  contract: null,
-  address: null,
-  contractJSON: null,
-};
 
-const initialMintState = {
-  loading: false,
-  status: `Mint your ${contract.name}`,
-  amount: 1,
-  supply: "0",
-  cost: "0",
-};
+const truncate = (input, len) =>
+  input.length > len ? `${input.substring(0, len)}...` : input;
 
-function Minter() {
-  const [info, setInfo] = useState(initialInfoState);
-  const [mintInfo, setMintInfo] = useState(initialMintState);
 
-  console.log(info);
 
-  const init = async (_request, _contractJSON) => {
-    if (window.ethereum.isMetaMask) {
-      try {
-        const accounts = await window.ethereum.request({
-          method: _request,
-        });
-        const networkId = await window.ethereum.request({
-          method: "net_version",
-        });
-        if (networkId == _contractJSON.chain_id) {
-          let web3 = new Web3(window.ethereum);
-          setInfo((prevState) => ({
-            ...prevState,
-            connected: true,
-            status: null,
-            account: accounts[0],
-            web3: web3,
-            contract: new web3.eth.Contract(
-              _contractJSON.abi,
-              _contractJSON.address
-            ),
-            contractJSON: _contractJSON,
-          }));
-        } else {
-          setInfo(() => ({
-            ...initialInfoState,
-            status: `Change network to ${_contractJSON.chain}.`,
-          }));
-        }
-      } catch (err) {
-        console.log(err.message);
-        setInfo(() => ({
-          ...initialInfoState,
-        }));
-      }
-    } else {
-      setInfo(() => ({
-        ...initialInfoState,
-        status: "Please install metamask.",
-      }));
-    }
-  };
+export const StyledButton = styled.button`
+  padding: 10px;
+  border-radius: 50px;
+  border: none;
+  background-color: var(--secondary);
+  padding: 10px;
+  font-weight: bold;
+  color: white;
+  width: 100px;
+  cursor: pointer;
+  box-shadow: 0px 6px 0px -2px rgba(250, 250, 250, 0.3);
+  -webkit-box-shadow: 0px 6px 0px -2px rgba(250, 250, 250, 0.3);
+  -moz-box-shadow: 0px 6px 0px -2px rgba(250, 250, 250, 0.3);
+  :active {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+  }
+`;
 
-  const initListeners = () => {
-    if (window.ethereum) {
-      window.ethereum.on("accountsChanged", () => {
-        window.location.reload();
+export const StyledRoundButton = styled.button`
+  padding: 10px;
+  border-radius: 100%;
+  border: none;
+  background-color: var(--primary);
+  padding: 10px;
+  font-weight: bold;
+  font-size: 15px;
+  color: white;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 0px -2px rgba(250, 250, 250, 0.3);
+  -webkit-box-shadow: 0px 4px 0px -2px rgba(250, 250, 250, 0.3);
+  -moz-box-shadow: 0px 4px 0px -2px rgba(250, 250, 250, 0.3);
+  :active {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+  }
+`;
+
+export const ResponsiveWrapper = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: stretched;
+  align-items: stretched;
+  width: 100%;
+  @media (min-width: 767px) {
+    flex-direction: row;
+  }
+`;
+
+export const StyledLogo = styled.img`
+  width: 200px;
+  @media (min-width: 767px) {
+    width: 300px;
+  }
+  transition: width 0.5s;
+  transition: height 0.5s;
+`;
+
+export const StyledImg = styled.img`
+  box-shadow: 0px 5px 11px 2px rgba(0, 0, 0, 0.7);
+  border: 4px dashed var(--secondary);
+  background-color: var(--accent);
+  border-radius: 100%;
+  width: 200px;
+  @media (min-width: 900px) {
+    width: 250px;
+  }
+  @media (min-width: 1000px) {
+    width: 300px;
+  }
+  transition: width 0.5s;
+`;
+
+export const StyledLink = styled.a`
+  color: #efe6fc;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+
+`;
+
+const Section = styled.a`
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  // background-color: #161717;
+`
+
+const Container = styled.div`
+width: 80%;
+margin: 1rem auto;
+
+display: flex;
+justify-content: space-around;
+align-items: center;
+flex-wrap: wrap;
+
+@media (max-width: 64em) {
+  width: 80%;
+}
+@media (max-width: 48em) {
+  width: 90%;
+  justify-content: center;
+}
+justify-content: center;
+align-items: center;
+`
+
+
+const ContainerCenter = styled.div`
+  width: 80%;
+  margin: 2rem auto;
+
+  display: flex;
+  // justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media (max-width: 64em) {
+    width: 80%;
+  }
+  @media (max-width: 48em) {
+    width: 90%;
+    justify-content: center;
+  }
+  justify-content: center;
+  align-items: center;
+`
+
+const Box = styled.div`
+  width: 50%;
+  max-height: 600px;
+  display: inline-block;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 40em) {
+    min-height: 50vh;
+  }
+  border: .5px solid black;
+  margin-top: 3%;
+  background-color: #171717;
+  box-shadow: 0px 0px 40px 20px #4e32a8;
+  border-radius: 45px;
+`
+
+const Title = styled.h2`
+  text-align: center;
+  font-size: 4em;
+  text-transform: capitalize;
+  color: white;
+  align-self: flex-start;
+  width: 80%;
+  margin: 0 auto;
+  font-weight: bold;
+
+  @media (max-width: 64em) {
+    width: 100%;
+    text-align: center;
+  }
+  @media (max-width: 40em) {
+    font-size: 3em;
+  }
+  @media (max-width: 30em) {
+    font-size: 1.25em};
+  }
+
+`
+
+const MidText = styled.h2`
+  text-align: center;
+  font-size: 3em;
+  text-transform: capitalize;
+  color: white;
+  align-self: flex-start;
+  width: 80%;
+  margin: 0 auto;
+  font-weight: bold;
+
+  @media (max-width: 64em) {
+    width: 100%;
+    text-align: center;
+  }
+  @media (max-width: 40em) {
+    font-size: 1.5em;
+  }
+  @media (max-width: 30em) {
+    font-size: 1em};
+  }
+
+`
+
+const SubText = styled.p`
+  display: flex; 
+  justify-content: space-evenly;
+  font-size: 1.5em;
+  color: white;
+  align-self: flex-start;
+  margin: 1rem auto;
+  font-weight: bold;
+`
+
+const NumberText = styled.p`
+  display: flex; 
+
+  font-size: 2em;
+  color: white;
+  align-self: center;
+  justify-content: center;
+  font-weight: 600;
+  // font-weight: bold;
+
+  margin-top: 5px;
+`
+
+const SmallText = styled.p`
+  display: flex; 
+
+  font-size: .75em;
+  color: white;
+  align-self: center;
+  justify-content: center;
+  font-weight: bold;
+
+  margin-top: 5px;
+`
+
+
+const Button = styled.button`
+  background: #fff5f6;
+  // background: -webkit-linear-gradient(top, #9c3e5e, #d665ab);
+  // background: -moz-linear-gradient(top, #9c3e5e, #d665ab);
+  // background: -ms-linear-gradient(top, #9c3e5e, #d665ab);
+  // background: -o-linear-gradient(top, #9c3e5e, #d665ab);
+  padding: 0px 6px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  box-shadow: rgba(0,0,0,1) 0 1px 0;
+  text-shadow: rgba(0,0,0,.4) 0 px 0;
+  color: #000000;
+  font-size: 30px;
+  font-weight: 500;
+`
+
+const ImgContainer = styled.div`
+margin-top: 10%;
+margin:auto;
+
+cursor: pointer;
+
+@media (max-width: 48em) {
+  width: 12rem;
+}
+@media (max-width: 30em) {
+  width: 10rem;
+}
+
+// border-radius: 50px;
+width: 50%;
+height: auto;
+border: 4px solid white;
+justify-content: center;
+align-items: center;
+margin-bottom: 6px;
+`
+
+function Mint() {
+  const dispatch = useDispatch();
+  const blockchain = useSelector((state) => state.blockchain);
+  const data = useSelector((state) => state.data);
+  const [claimingNft, setClaimingNft] = useState(false);
+  const [feedback, setFeedback] = useState(`Click buy to mint your NFT.`);
+  const [mintAmount, setMintAmount] = useState(1);
+  const [CONFIG, SET_CONFIG] = useState({
+    CONTRACT_ADDRESS: "",
+    SCAN_LINK: "",
+    NETWORK: {
+      NAME: "Ethereum",
+      SYMBOL: "ETH",
+      ID: 0,
+    },
+    NFT_NAME: "",
+    SYMBOL: "",
+    MAX_SUPPLY: 1,
+    WEI_COST: 0,
+    DISPLAY_COST: 0,
+    GAS_LIMIT: 0,
+    MARKETPLACE: "",
+    MARKETPLACE_LINK: "",
+    SHOW_BACKGROUND: false,
+  });
+
+  const claimNFTs = () => {
+    let cost = CONFIG.WEI_COST;
+    let gasLimit = CONFIG.GAS_LIMIT;
+    let totalCostWei = String(cost * mintAmount);
+    let totalGasLimit = String(gasLimit * mintAmount);
+    console.log("Cost: ", totalCostWei);
+    console.log("Gas limit: ", totalGasLimit);
+    setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
+    setClaimingNft(true);
+    blockchain.smartContract.methods
+      .mint(mintAmount)
+      .send({
+        gasLimit: String(totalGasLimit),
+        to: CONFIG.CONTRACT_ADDRESS,
+        from: blockchain.account,
+        value: totalCostWei,
+      })
+      .once("error", (err) => {
+        console.log(err);
+        setFeedback("Sorry, something went wrong please try again later.");
+        setClaimingNft(false);
+      })
+      .then((receipt) => {
+        console.log(receipt);
+        setFeedback(
+          `WOW, the ${CONFIG.NFT_NAME} is yours! go visit Opensea.io to view it.`
+        );
+        setClaimingNft(false);
+        dispatch(fetchData(blockchain.account));
       });
-      window.ethereum.on("chainChanged", () => {
-        window.location.reload();
-      });
+  };
+
+  const decrementMintAmount = () => {
+    let newMintAmount = mintAmount - 1;
+    if (newMintAmount < 1) {
+      newMintAmount = 1;
+    }
+    setMintAmount(newMintAmount);
+  };
+
+  const incrementMintAmount = () => {
+    let newMintAmount = mintAmount + 1;
+    if (newMintAmount > 5) {
+      newMintAmount = 5;
+    }
+    setMintAmount(newMintAmount);
+  };
+
+  const getData = () => {
+    if (blockchain.account !== "" && blockchain.smartContract !== null) {
+      dispatch(fetchData(blockchain.account));
     }
   };
 
-  const getSupply = async () => {
-    const params = {
-      to: info.contractJSON.address,
-      from: info.account,
-      data: info.contract.methods.totalSupply().encodeABI(),
-    };
-    try {
-      const result = await window.ethereum.request({
-        method: "eth_call",
-        params: [params],
-      });
-      console.log(info.web3.utils.hexToNumberString(result));
-      setMintInfo((prevState) => ({
-        ...prevState,
-        supply: info.web3.utils.hexToNumberString(result),
-      }));
-    } catch (err) {
-      setMintInfo((prevState) => ({
-        ...prevState,
-        supply: 0,
-      }));
-    }
-  };
-
-  const getCost = async () => {
-    const params = {
-      to: info.contractJSON.address,
-      from: info.account,
-      data: info.contract.methods.cost().encodeABI(),
-    };
-    try {
-      const result = await window.ethereum.request({
-        method: "eth_call",
-        params: [params],
-      });
-      console.log(info.web3.utils.hexToNumberString(result));
-      setMintInfo((prevState) => ({
-        ...prevState,
-        cost: info.web3.utils.hexToNumberString(result),
-      }));
-    } catch (err) {
-      setMintInfo((prevState) => ({
-        ...prevState,
-        cost: "0",
-      }));
-    }
-  };
-
-  const mint = async () => {
-    const params = {
-      to: info.contractJSON.address,
-      from: info.account,
-      value: String(
-        info.web3.utils.toHex(Number(mintInfo.cost) * mintInfo.amount)
-      ),
-      data: info.contract.methods
-        .mint(info.account, mintInfo.amount)
-        .encodeABI(),
-    };
-    try {
-      setMintInfo((prevState) => ({
-        ...prevState,
-        loading: true,
-        status: `Minting ${mintInfo.amount}...`,
-      }));
-      const txHash = await window.ethereum.request({
-        method: "eth_sendTransaction",
-        params: [params],
-      });
-      setMintInfo((prevState) => ({
-        ...prevState,
-        loading: false,
-        status:
-          "Nice! Your NFT will show up on Opensea, once the transaction is successful.",
-      }));
-      getSupply();
-    } catch (err) {
-      setMintInfo((prevState) => ({
-        ...prevState,
-        loading: false,
-        status: err.message,
-      }));
-    }
-  };
-
-  const updateAmount = (newAmount) => {
-    if (newAmount <= 5 && newAmount >= 1) {
-      setMintInfo((prevState) => ({
-        ...prevState,
-        amount: newAmount,
-      }));
-    }
-  };
-
-  const connectToContract = (_contractJSON) => {
-    init("eth_requestAccounts", _contractJSON);
+  const getConfig = async () => {
+    const configResponse = await fetch("/config/config.json", {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    });
+    const config = await configResponse.json();
+    SET_CONFIG(config);
   };
 
   useEffect(() => {
-    connectToContract(contract);
-    initListeners();
+    getConfig();
   }, []);
 
   useEffect(() => {
-    if (info.connected) {
-      getSupply();
-      getCost();
-    }
-  }, [info.connected]);
+    getData();
+  }, [blockchain.account]);
 
   return (
-    <div className="page">
-      <div className="card">
-        <div className="card_header colorGradient">
-          <img className="card_header_image ns" alt={"banner"} src={Hero} />
-        </div>
-        {mintInfo.supply < contract.total_supply ? (
-          <div className="card_body">
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <button
-                disabled={!info.connected || mintInfo.cost == "0"}
-                className="small_button"
-                onClick={() => updateAmount(mintInfo.amount - 1)}
+    <Section style={{backgroundImage: `url(${lightning1})`}}>
+    <ContainerCenter>
+      <Count countdownTimestampMs={1659983662000}/>
+        <Box>
+          <MidText className="funkFont" >
+            {data.totalSupply} / {CONFIG.MAX_SUPPLY}
+          </MidText>
+
+          <s.TextDescription
+            style={{textAlign: "center"}}>
+            <StyledLink className="text" target={"_blank"} href={CONFIG.SCAN_LINK}>
+              {truncate(CONFIG.CONTRACT_ADDRESS, 15)}
+            </StyledLink>
+          </s.TextDescription>
+
+          
+          {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
+            <>
+              <Title style={{ textAlign: "center", color: "white" }} className="titleFont ">
+                The sale has ended
+              </Title>
+              <MidText style={{ textAlign: "center", color: "white" }} className="">
+                You can still find {CONFIG.NFT_NAME} on
+              </MidText >
+              <SubText 
+
+                target={"_blank"} 
+                href={CONFIG.MARKETPLACE_LINK}>
+                {CONFIG.MARKETPLACE}
+              </SubText >
+            </>
+          ) : (
+            <>
+              <SmallText
+                style={{ textAlign: "center", color: "white" }}
+                className="subFont"
               >
-                -
-              </button>
-              <div style={{ width: 10 }}></div>
-              <button
-                disabled={!info.connected || mintInfo.cost == "0"}
-                className="button"
-                onClick={() => mint()}
-              >
-                Mint {mintInfo.amount}
-              </button>
-              <div style={{ width: 10 }}></div>
-              <button
-                disabled={!info.connected || mintInfo.cost == "0"}
-                className="small_button"
-                onClick={() => updateAmount(mintInfo.amount + 1)}
-              >
-                +
-              </button>
-            </div>
-            {info.connected ? (
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <p style={{ color: "var(--statusText)", textAlign: "center" }}>
-                  {info.web3?.utils.fromWei(mintInfo.cost, "ether") *
-                    mintInfo.amount}{" "}
-                  {contract.chain_symbol}
-                </p>
-                <div style={{ width: 20 }}></div>
-                <p style={{ color: "var(--statusText)", textAlign: "center" }}>
-                  |
-                </p>
-                <div style={{ width: 20 }}></div>
-                <p style={{ color: "var(--statusText)", textAlign: "center" }}>
-                  {mintInfo.supply}/{contract.total_supply}
-                </p>
-              </div>
-            ) : null}
-            {mintInfo.status ? (
-              <p className="statusText">{mintInfo.status}</p>
-            ) : null}
-            {info.status ? (
-              <p className="statusText" style={{ color: "var(--error)" }}>
-                {info.status}
-              </p>
-            ) : null}
-          </div>
-        ) : (
-          <div className="card_body">
-            <p style={{ color: "var(--statusText)", textAlign: "center" }}>
-              {mintInfo.supply}/{contract.total_supply}
-            </p>
-            <p className="statusText">
-              We've sold out! .You can still buy and trade the {contract.name}{" "}
-              on marketplaces such as Opensea.
-            </p>
-          </div>
-        )}
-        <div className="card_footer colorGradient">
-          <button
-            className="button"
-            style={{
-              backgroundColor: info.connected
-                ? "var(--success)"
-                : "var(--warning)",
-            }}
-            onClick={() => connectToContract(contract)}
-          >
-            {info.account ? "Connected" : "Connect Wallet"}
-          </button>
-          {info.connected ? (
-            <span className="accountText">
-              {String(info.account).substring(0, 6) +
-                "..." +
-                String(info.account).substring(38)}
-            </span>
-          ) : null}
-        </div>
-        <a
+                1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
+                {CONFIG.NETWORK.SYMBOL}
+              </SmallText>
+              <ImgContainer>
+      <img width={500} height={400} src={img} alt="UnderDogZ" />
+      </ImgContainer>
+              {blockchain.account === "" ||
+              blockchain.smartContract === null ? (
+                <s.Container ai={"center"} jc={"center"}>
+
+                  <button className="button-85 titleFont"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      dispatch(connect());
+                      getData();
+                    }}
+                  >
+                    CONNECT
+                  </button>
+                  <SmallText
+                    style={{textAlign: "center", color: "white",}}>
+                    Connect to the {CONFIG.NETWORK.NAME} network
+                  </SmallText>
+                  {blockchain.errorMsg !== "" ? (
+                    <>
+                      <s.SpacerSmall />
+                      <s.TextDescription
+                        style={{
+                          textAlign: "center",
+                          color: "white",
+                        }}
+                      >
+                        {blockchain.errorMsg}
+                      </s.TextDescription>
+                    </>
+                  ) : null}
+                </s.Container>
+              ) : (
+                <>
+                  <s.TextDescription
+                    style={{
+                      textAlign: "center",
+                      color: "white",
+                    }}
+                    className="text"
+                  >
+                    {feedback}
+                  </s.TextDescription>
+        
+                  <s.Container ai={"center"} jc={"center"} fd={"row"}>
+                    <StyledRoundButton
+                      style={{ lineHeight: 0.4 }}
+                      disabled={claimingNft ? 1 : 0}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        decrementMintAmount();
+                      }}
+                    >
+                      -
+                    </StyledRoundButton>
+                    <s.SpacerMedium />
+                    <s.TextDescription
+                      style={{
+                        textAlign: "center",
+                        color: "white",
+                      }}
+                    >
+                      {mintAmount}
+                    </s.TextDescription>
+                    <s.SpacerMedium />
+                    <StyledRoundButton
+                      disabled={claimingNft ? 1 : 0}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        incrementMintAmount();
+                      }}
+                    >
+                      +
+                    </StyledRoundButton>
+                  </s.Container>
+                  <s.SpacerSmall />
+                  <s.Container ai={"center"} jc={"center"} fd={"row"}>
+                    <StyledButton
+                      disabled={claimingNft ? 1 : 0}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        claimNFTs();
+                        getData();
+                      }}
+                    >
+                      {claimingNft ? "BUSY" : "BUY"}
+                    </StyledButton>
+                  </s.Container>
+                </>
+              )}
+            </>
+          )}
+          <s.SpacerMedium />
+        {/* </s.Container> */}
+        </Box>
+      {/* <s.Container jc={"center"} ai={"center"} style={{ width: "70%" }}>
+        <s.TextDescription
           style={{
-            position: "absolute",
-            bottom: 55,
-            left: -75,
+            textAlign: "center",
+            color: "var(--primary-text)",
           }}
-          className="_90"
-          target="_blank"
-          href="https://polygonscan.com/token/0x827acb09a2dc20e39c9aad7f7190d9bc53534192"
         >
-          View Contract
-        </a>
-      </div>
-    </div>
+          Please make sure you are connected to the right network (
+          {CONFIG.NETWORK.NAME} Mainnet) and the correct address. Please note:
+          Once you make the purchase, you cannot undo this action.
+        </s.TextDescription>
+        <s.SpacerSmall />
+        <s.TextDescription
+          style={{
+            textAlign: "center",
+            color: "var(--primary-text)",
+          }}
+        >
+          We have set the gas limit to {CONFIG.GAS_LIMIT} for the contract to
+          successfully mint your NFT. We recommend that you don't lower the
+          gas limit.
+        </s.TextDescription>
+      </s.Container> */}
+       </ContainerCenter>
+    </Section>
+  //   <Section style={{backgroundImage: `url(${lightning1})`}}>
+  //   <ContainerCenter>
+    
+  //     <Count countdownTimestampMs={1659983662000}/>
+  //     <Box > 
+  //     <SubText className='titleNumbers'> {data.totalSupply} / {CONFIG.MAX_SUPPLY}</SubText>
+  //     <SubText style={{ textAlign: "center"}}>
+  //   {CONFIG.DISPLAY_COST}{" "}
+  //    {CONFIG.NETWORK.SYMBOL}
+  //   </SubText>
+  //     <ImgContainer>
+  //     <img width={500} height={400} src={img} alt="UnderDogZ" />
+  //     </ImgContainer>
+  //     <Container>     
+         
+  //     {/* <AiFillMinusCircle color='white' className="MintIcons"/>
+  //     <button className="button-85 titleFont" role="button">MINT</button>      
+  //     <AiFillPlusCircle color='white' className='MintIcons'/> */}
+  //     </Container>
+  //     <SubText className='boxText subFont' color='white'>1</SubText>
+  //     {/* <StyledLink target={"_blank"} href={CONFIG.MARKETPLACE_LINK}>
+  //     {CONFIG.MARKETPLACE}
+  //     </StyledLink> */}
+  //     {/* <Showcase/> */}
+  //     {/* <StyledLink target={"_blank"} href={CONFIG.SCAN_LINK}>
+  //     {truncate(CONFIG.CONTRACT_ADDRESS, 15)}
+  //     </StyledLink> */}
+  //     </Box>
+  //   </ContainerCenter>
+  // </Section>
+
+  // <s.Screen>
+  //     <s.Container
+  //       flex={1}
+  //       ai={"center"}
+  //       style={{ padding: 24, backgroundColor: "var(--primary)" }}
+  //       image={CONFIG.SHOW_BACKGROUND ? "/config/images/bg.png" : null}
+  //     >
+  //       <StyledLogo alt={"logo"} src={"/config/images/logo.png"} />
+  //       <s.SpacerSmall />
+  //       <ResponsiveWrapper flex={1} style={{ padding: 24 }} test>
+  //         <s.Container flex={1} jc={"center"} ai={"center"}>
+  //           <StyledImg alt={"example"} src={"../../assets/1.png"} />
+  //         </s.Container>
+  //         <s.SpacerLarge />
+  //         <s.Container
+  //           flex={2}
+  //           jc={"center"}
+  //           ai={"center"}
+  //           style={{
+  //             backgroundColor: "var(--accent)",
+  //             padding: 24,
+  //             borderRadius: 24,
+  //             border: "4px dashed var(--secondary)",
+  //             boxShadow: "0px 5px 11px 2px rgba(0,0,0,0.7)",
+  //           }}
+  //         >
+  //           <s.TextTitle
+  //             style={{
+  //               textAlign: "center",
+  //               fontSize: 50,
+  //               fontWeight: "bold",
+  //               color: "var(--accent-text)",
+  //             }}
+  //           >
+  //             {data.totalSupply} / {CONFIG.MAX_SUPPLY}
+  //           </s.TextTitle>
+  //           <s.TextDescription
+  //             style={{
+  //               textAlign: "center",
+  //               color: "var(--primary-text)",
+  //             }}
+  //           >
+  //             <StyledLink target={"_blank"} href={CONFIG.SCAN_LINK}>
+  //               {truncate(CONFIG.CONTRACT_ADDRESS, 15)}
+  //             </StyledLink>
+  //           </s.TextDescription>
+  //           <s.SpacerSmall />
+  //           {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
+  //             <>
+  //               <s.TextTitle
+  //                 style={{ textAlign: "center", color: "var(--accent-text)" }}
+  //               >
+  //                 The sale has ended.
+  //               </s.TextTitle>
+  //               <s.TextDescription
+  //                 style={{ textAlign: "center", color: "var(--accent-text)" }}
+  //               >
+  //                 You can still find {CONFIG.NFT_NAME} on
+  //               </s.TextDescription>
+  //               <s.SpacerSmall />
+  //               <StyledLink target={"_blank"} href={CONFIG.MARKETPLACE_LINK}>
+  //                 {CONFIG.MARKETPLACE}
+  //               </StyledLink>
+  //             </>
+  //           ) : (
+  //             <>
+  //               <s.TextTitle
+  //                 style={{ textAlign: "center", color: "var(--accent-text)" }}
+  //               >
+  //                 1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
+  //                 {CONFIG.NETWORK.SYMBOL}.
+  //               </s.TextTitle>
+  //               <s.SpacerXSmall />
+  //               <s.TextDescription
+  //                 style={{ textAlign: "center", color: "var(--accent-text)" }}
+  //               >
+  //                 Excluding gas fees.
+  //               </s.TextDescription>
+  //               <s.SpacerSmall />
+  //               {blockchain.account === "" ||
+  //               blockchain.smartContract === null ? (
+  //                 <s.Container ai={"center"} jc={"center"}>
+  //                   <s.TextDescription
+  //                     style={{
+  //                       textAlign: "center",
+  //                       color: "var(--accent-text)",
+  //                     }}
+  //                   >
+  //                     Connect to the {CONFIG.NETWORK.NAME} network
+  //                   </s.TextDescription>
+  //                   <s.SpacerSmall />
+  //                   <StyledButton
+  //                     onClick={(e) => {
+  //                       e.preventDefault();
+  //                       dispatch(connect());
+  //                       getData();
+  //                     }}
+  //                   >
+  //                     CONNECT
+  //                   </StyledButton>
+  //                   {blockchain.errorMsg !== "" ? (
+  //                     <>
+  //                       <s.SpacerSmall />
+  //                       <s.TextDescription
+  //                         style={{
+  //                           textAlign: "center",
+  //                           color: "var(--accent-text)",
+  //                         }}
+  //                       >
+  //                         {blockchain.errorMsg}
+  //                       </s.TextDescription>
+  //                     </>
+  //                   ) : null}
+  //                 </s.Container>
+  //               ) : (
+  //                 <>
+  //                   <s.TextDescription
+  //                     style={{
+  //                       textAlign: "center",
+  //                       color: "var(--accent-text)",
+  //                     }}
+  //                   >
+  //                     {feedback}
+  //                   </s.TextDescription>
+  //                   <s.SpacerMedium />
+  //                   <s.Container ai={"center"} jc={"center"} fd={"row"}>
+  //                     <StyledRoundButton
+  //                       style={{ lineHeight: 0.4 }}
+  //                       disabled={claimingNft ? 1 : 0}
+  //                       onClick={(e) => {
+  //                         e.preventDefault();
+  //                         decrementMintAmount();
+  //                       }}
+  //                     >
+  //                       -
+  //                     </StyledRoundButton>
+  //                     <s.SpacerMedium />
+  //                     <s.TextDescription
+  //                       style={{
+  //                         textAlign: "center",
+  //                         color: "var(--accent-text)",
+  //                       }}
+  //                     >
+  //                       {mintAmount}
+  //                     </s.TextDescription>
+  //                     <s.SpacerMedium />
+  //                     <StyledRoundButton
+  //                       disabled={claimingNft ? 1 : 0}
+  //                       onClick={(e) => {
+  //                         e.preventDefault();
+  //                         incrementMintAmount();
+  //                       }}
+  //                     >
+  //                       +
+  //                     </StyledRoundButton>
+  //                   </s.Container>
+  //                   <s.SpacerSmall />
+  //                   <s.Container ai={"center"} jc={"center"} fd={"row"}>
+  //                     <StyledButton
+  //                       disabled={claimingNft ? 1 : 0}
+  //                       onClick={(e) => {
+  //                         e.preventDefault();
+  //                         claimNFTs();
+  //                         getData();
+  //                       }}
+  //                     >
+  //                       {claimingNft ? "BUSY" : "BUY"}
+  //                     </StyledButton>
+  //                   </s.Container>
+  //                 </>
+  //               )}
+  //             </>
+  //           )}
+  //           <s.SpacerMedium />
+  //         </s.Container>
+  //         <s.SpacerLarge />
+  //         <s.Container flex={1} jc={"center"} ai={"center"}>
+  //           <StyledImg
+  //             alt={"example"}
+  //             src={"/config/images/example.gif"}
+  //             style={{ transform: "scaleX(-1)" }}
+  //           />
+  //         </s.Container>
+  //       </ResponsiveWrapper>
+  //       <s.SpacerMedium />
+  //       <s.Container jc={"center"} ai={"center"} style={{ width: "70%" }}>
+  //         <s.TextDescription
+  //           style={{
+  //             textAlign: "center",
+  //             color: "var(--primary-text)",
+  //           }}
+  //         >
+  //           Please make sure you are connected to the right network (
+  //           {CONFIG.NETWORK.NAME} Mainnet) and the correct address. Please note:
+  //           Once you make the purchase, you cannot undo this action.
+  //         </s.TextDescription>
+  //         <s.SpacerSmall />
+  //         <s.TextDescription
+  //           style={{
+  //             textAlign: "center",
+  //             color: "var(--primary-text)",
+  //           }}
+  //         >
+  //           We have set the gas limit to {CONFIG.GAS_LIMIT} for the contract to
+  //           successfully mint your NFT. We recommend that you don't lower the
+  //           gas limit.
+  //         </s.TextDescription>
+  //       </s.Container>
+  //     </s.Container>
+  //   </s.Screen>
   );
 }
+
+function Minter() { return (
+  <Provider store={store}>
+    <Mint/>
+  </Provider>
+)};
 
 export default Minter;

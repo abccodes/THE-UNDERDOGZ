@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Maze&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
+
+.titleFont {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .subFont {
+    font-family: 'Raleway', sans-serif;
+  }
+  
+  .nav {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+  }  
+
+  .navButton {
+    color: black;
+    font-family: 'Roboto', sans-serif;
+  }  
+
+  .text {
+    font-family: 'Cairo', sans-serif;
+  }
+
+
+  .funkFont {
+    font-family: 'Alumni Sans Pinstripe', sans-serif;
+  }
+
+ 

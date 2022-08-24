@@ -4,20 +4,23 @@ import styled from 'styled-components'
 // import Loading from '../Loading'
 import Card from './Card.tsx'
 import { motion } from 'framer-motion'
+
+import '../../fonts.css'
+
 // import fire from '../../assets/Looping_Fire_2_4001_HD_AdobeExpress (1).gif'
 // import cloud from '../../assets/Cartoon-Smoke-2-4003-HD.gif'
 
 // const Carousel = lazy(() => import('./Carousel'))
 
 const Section = styled.section`
-  min-height: 100vh;
+  min-height: 110vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   overflow: hidden;
-  background-color: #161717;
+  background-color: #121113;
 `
 const Container = styled.div`
   width: 75%;
@@ -26,10 +29,12 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  // background-color: #221a26;
+  border-radius: 25px;
 `
 
 const Box = styled.div`
-  width: 50%;
+  width: 100%;
   height: 100%;
   min-height: 60vh;
   display: flex;
@@ -49,8 +54,8 @@ const Title = styled.h2`
   align-self: flex-start;
   width: 80%;
   margin: 0 auto;
-  font-weight: bold;
-
+  font-weight: 800;
+  color: #FAFAFF;
   @media (max-width: 64em) {
     width: 100%;
     text-align: center;
@@ -65,35 +70,33 @@ const Title = styled.h2`
 `
 
 const SubText = styled.p`
-  font-size: 1.25em;
-  color: white;
+  font-size: 1.1em;
+  color: #fafaff;
   align-self: flex-start;
   width: 80%;
   margin: 1rem auto;
-  font-weight: 400;
+  font-weight: 500;
   @media (max-width: 64em) {
     width: 100%;
     text-align: center;
     font-size: 1em;
   }
   @media (max-width: 40em) {
-    font-size: 1em;
+    font-size: 0.7em;
   }
   @media (max-width: 30em) {
-    font-size: 1em;
+    font-size: 0.5em;
   }
-  font-family: 'Baloo 2', cursive;
-  font-weight: bold;
 `
 
 const SubTextLight = styled.p`
   font-size: 1em;
-  color: #c2c2c2;
+  color: #fafaff;
   align-self: flex-start;
   width: 80%;
   margin: 1rem auto;
   font-weight: 400;
-  font-weight: bold;
+  // font-weight: bold;
 
   @media (max-width: 64em) {
     width: 100%;
@@ -106,7 +109,7 @@ const SubTextLight = styled.p`
   @media (max-width: 30em) {
     font-size: 0.75em;
   }
-  font-family: 'Baloo 2', cursive;
+  color: #fafaff;
 `
 
 const ButtonContainer = styled.div`
@@ -148,17 +151,29 @@ const About = () => {
         //   opacity: 1,
         // }}
         transition={{
-          duration: 1.5,
+          duration: 3,
         }}
       >
         <Container>
           <Box>
-            <Title>About us</Title>
-            <SubText>The UnderDogZ are a group of 8000 randoml</SubText>
-            <SubTextLight>
-              We have created the opportunity for everyone to get involved in
-              the top 1% of NFTs and digital assets. With this project everyone
-            </SubTextLight>
+            <Title className="titleFont">About us</Title>
+            <SubText className="subFont">
+              As the NFT space grows, we aim to serve this community and apply
+              our knowledge to this NFT-focused DAO. We are creating a community
+              DAO Treasury, in which we will allocate 50% of total sales to the
+              DAO treasury wallet. The purpose of the DAO is to buy blue chip
+              NFT’s and other digital assets in order to generate profits for
+              our holders.
+            </SubText>
+            <SubText className="subFont">
+              Anyone who holds our NFT’s will have access to vote on future
+              investments using the capital from the treasury. Each Underdog you
+              own represents a percentage of ownership of the DAO Treasury. This
+              is an opportunity for everyone in the NFT space to be alongside
+              the biggest holders in the NFT space and own bluechip NFT’s, as
+              well as the profit that comes with it!
+            </SubText>
+
             <ButtonContainer></ButtonContainer>
           </Box>
           <Box>

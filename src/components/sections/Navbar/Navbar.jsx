@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../../fonts.css'
 
 import {
   FaBars,
@@ -30,7 +31,7 @@ const Navbar = ({accounts, setAccounts}) => {
   const handleClick = () => setNav(!nav);
 
   return (
-    <div className='fixed w-full h-[50px] flex justify-between items-center px-4 bg-[#050505] disOver'>
+    <div className='fixed w-full h-[50px] flex justify-between items-center px-3 bg-[#121113] disOver'>
       <div>
       <Link to="/">
         <img src={Logo} alt='Logo' style={{ width: '50px' }} />
@@ -52,29 +53,25 @@ const Navbar = ({accounts, setAccounts}) => {
           <Link to="/dao">
           <a 
           // href="/dao" 
-          className='navText '>Dao</a>
+          className='nav'>Dao</a>
           </Link>
         </li>
         <li>
         <Link to="/mint">
-          <a className='navText'>Mint</a>  
+          <a className='nav'>Mint</a>  
           </Link>
         </li>
         <li>
         <Link to="/help">
-          <a className='navText'>Help</a>  
+          <a className='nav'>Help</a>  
           </Link>
         </li>
         <li>
         <Link to="/contact">
-          <a className='navText'>Contact</a>
+          <a className='nav'>Contact</a>
           </Link>
         </li>
-        <li>
-          {isConnected ? (
-            <p className='connectedText'>Connected</p>
-          ) : (<button onClick={connectAccount} className="button navText">Connect</button>)}
-        </li>
+
       </ul>
 
       {/* Hamburger */}

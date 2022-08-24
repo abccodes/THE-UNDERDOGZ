@@ -3,8 +3,7 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Signika:wght@600&display=swap');
-/* exo regular */
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@600&display=swap');/* exo regular */
 @import url('https://fonts.googleapis.com/css2?family=Exo:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&display=swap');
 /* baloo2 */
@@ -12,7 +11,7 @@
 /* roboto */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Antic+Slab&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
 .quickSand {
     font-family: 'Fira Sans', sans-serif;
@@ -102,11 +101,11 @@ header {
     justify-content: center;
     align-content: center;
     padding: 15px;
-    background: #ffffff; 
+    background: #000000; 
 }
 
 header h1 {
-    color: rgb(0, 0, 0);
+    color: #EEE;
     font-size: 28px;
     font-weight: 700;
     text-transform: uppercase;
@@ -143,7 +142,7 @@ body {
     padding: 15px;
     background-color: #EEE;
     border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 30px 10px black;
 }
 
 .faqs .faq .faq-question {
@@ -153,8 +152,8 @@ body {
 
     transition: all 0.4s ease;
 
-    font-family: 'Exo', sans-serif;
-    font-weight: bold;
+    
+
 }
 
 .faqs .faq .faq-question::after {
@@ -180,7 +179,7 @@ body {
     max-height: 0;
     overflow-y: hidden;
     transition: all 0.4s ease-out;
-    font-family: 'Exo', sans-serif;
+
 }
 
 .faqs .faq.open .faq-question {
@@ -352,11 +351,9 @@ body {
 
 
 
-
-
 /* CSS */
 .button-85 {
-  padding: 5% 25%;
+  padding: 1em 6.8em;
   border: none;
   outline: none;
   color: rgb(24, 24, 24);
@@ -368,7 +365,6 @@ body {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  
 }
 
 .button-85:before {
@@ -423,19 +419,23 @@ body {
   border-radius: 10px;
 }
 
-.MintIcons{
-    font-size: 50px;
-  }
-  
-  @media only screen and (max-width: 900px) {
-    .MintIcons {
-      font-size: 40px;
-    }
-  }
+.purpleEffect {
+    box-shadow: 0px 0px 16px 8px #3a0ca3;
+}
 
-  @media only screen and (max-width: 500px) {
-    .MintIcons {
-      font-size: 30px;
-    }
-  }
+.titleNumbers {
 
+    
+    /* border: .1px solid white; */
+
+    color: rgb(231, 222, 222);
+
+    font-family: 'Monoton', cursive;
+    font-size: 35px;
+
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 100;
+}

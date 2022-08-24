@@ -8,6 +8,7 @@ import img4 from '../../assets/1-removebg-preview.png'
 import img5 from '../../assets/3500-removebg-preview.png'
 import Twitter from '../../Icons/Twitter'
 import { motion } from 'framer-motion'
+import '../../fonts.css'
 
 const Section = styled.section`
   height: 150vh;
@@ -15,7 +16,7 @@ const Section = styled.section`
   background-color: #fff;
   position: relative;
   overflow: hidden;
-  background-color: black;
+  background-color: #3a0ca3;
 `
 const Title = styled.h1`
   font-size: 3em;
@@ -58,6 +59,7 @@ const Container = styled.div`
     flex-wrap: wrap;
     margin: 2rem auto;
   }
+  // background-color: white;
 `
 const ContainerCenter = styled.div`
   width: 80%;
@@ -193,8 +195,8 @@ const MemberComponent = ({
       <ImageContainer>
         <img width={500} height={400} src={img} alt={name} />
       </ImageContainer>
-      <Name>{name}</Name>
-      <Position>{position}</Position>
+      <Name className="titleFont">{name}</Name>
+      <Position className="subFont">{position}</Position>
       <Icon>
         <a href={twitter}>
           <Twitter></Twitter>
@@ -215,8 +217,8 @@ const MemberComponentCenter = ({
       <ImageContainer>
         <img width={500} height={400} src={img} alt={name} />
       </ImageContainer>
-      <Name>{name}</Name>
-      <Position>{position}</Position>
+      <Name className="titleFont">{name}</Name>
+      <Position className="subFont">{position}</Position>
       <Icon>
         <a href={twitter}>
           <Twitter></Twitter>

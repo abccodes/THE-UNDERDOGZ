@@ -5,6 +5,7 @@ import React, { useLayoutEffect, useRef, lazy, Suspense } from 'react'
 import styled from 'styled-components'
 import DrawSvg from './DrawSvg.js'
 import { motion } from 'framer-motion'
+import '../../fonts.css'
 
 const ConfettiComponent = lazy(() => import('./Confetti.js'))
 
@@ -31,7 +32,7 @@ const Section = styled.section`
   width: 100vw;
   position: relative;
   overflow: hidden;
-  background-color: #161717;
+  background-color: #121113;
 `
 const Title = styled.a`
   font-size: 5em;
@@ -46,7 +47,6 @@ const Title = styled.a`
     font-size: 2em;
   }
   letter-spacing: 15px;
-  color: white;
 `
 const Container = styled.div`
   width: 80%;
@@ -198,11 +198,11 @@ const RoadMapItem = ({ title, subtext, addToRef }) => {
             //   opacity: 1,
             // }}
             transition={{
-              duration: 1,
+              duration: 3,
             }}
           >
-            <SubTitle>{title} </SubTitle>
-            <Text>{subtext}</Text>
+            <SubTitle className="titleFont">{title} </SubTitle>
+            <Text className="subFont">{subtext}</Text>
           </motion.div>
         </Box>
       </ItemContainer>

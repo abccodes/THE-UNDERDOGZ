@@ -1,6 +1,7 @@
 /*Monoton*/
 @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
 .countdown-timer {
+    margin-top: 25px;;
     width: 70%;
     height: 100px;
     /* border: 2px solid white; */

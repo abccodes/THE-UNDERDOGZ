@@ -9,27 +9,33 @@ import Count from './CountdownTimer/CountdownTimer'
 import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
 import img from '../../assets/giphy (3).gif'
 import '../../../index.css'
-import "./styling.css"
 import lightning1 from "../../assets/Lightning_Bursts_1_2286_2K.gif"
 
 
-const Number = () => {
-	const [isHigh, setHigh] = useState(false);
-	const { number } = useSpring({
-		number: isHigh ? 100 : 0
-	});
+import { useDispatch, useSelector } from "react-redux";
+import { fetchData } from "./redux/data/dataActions";
+import { connect } from "./redux/blockchain/blockchainActions";
 
-	const toggle = () => setHigh(state => !state);
 
-	return (
-		<>
-			<animated.span>
-				{number.interpolate(x => x.toFixed(0))}
-			</animated.span>
-			<button onClick={toggle}>TOGGLE</button>
-		</>
-	);
-};
+import '../../fonts.css'
+
+// const Number = () => {
+// 	const [isHigh, setHigh] = useState(false);
+// 	const { number } = useSpring({
+// 		number: isHigh ? 100 : 0
+// 	});
+
+// 	const toggle = () => setHigh(state => !state);
+
+// 	return (
+// 		<>
+// 			<animated.span>
+// 				{number.interpolate(x => x.toFixed(0))}
+// 			</animated.span>
+// 			<button onClick={toggle}>TOGGLE</button>
+// 		</>
+// 	);
+// };
 
 const ContainerCenter = styled.div`
   width: 80%;
@@ -179,49 +185,8 @@ align-items: center;
 `
 
 const Mint = () => {
-  const [isHigh, setHigh] = useState(false);
-	const { number } = useSpring({
-		number: isHigh ? 100 : 0
-	});
-	const toggle = () => setHigh(state => !state);
 
 
-  
-const [accounts, setAccounts] = useState([]);
-const [mintAmount, setMintAmount] = useState(1)
-const mintContractAbi = 172378123;
-const mintContractAddress = 172378123;
-
-//CONNECT ACCOUNTS
-
-async function connectAccounts() {
-  if(window.ethereum) {
-    const accounts = await window.ethereum.request({method:"eth_requestAccounts",
-  });
-  setAccounts(accounts);
-  }
-}
-
-//MINTING
-
-async function handleMint() {
-  if(window.ethereum) {
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const signer = provider.getSinger();
-    const contract = new ethers.Contract(
-      mintContractAddress,
-      mintContractAbi,
-      signer
-    );
-    try {
-      const response = await contract.mint(BigNumber.from(mintAmount));
-      console.log("response");
-    } 
-    catch(err) {
-      console.log(err);
-    }
-  }
-}
 
 return (
   // <div className='disUnder'>
@@ -229,6 +194,7 @@ return (
     <ContainerCenter>
     
       <Count countdownTimestampMs={1659983662000}/>
+      
       <Box > 
       <SubText className='titleNumbers'>8500/8500</SubText>
       <ImgContainer>
@@ -236,10 +202,10 @@ return (
       </ImgContainer>
       <Container>      
       <AiFillMinusCircle color='white' className="MintIcons"/>
-      <button class="button-85" role="button">MINT</button>      
+      <button className="button-85 titleFont" role="button">MINT</button>      
       <AiFillPlusCircle color='white' className='MintIcons'/>
       </Container>
-      <SubText className='boxText' color='white'>1</SubText>
+      <SubText className='boxText subFont' color='white'>1</SubText>
       {/* <Showcase/> */}
       </Box>
     </ContainerCenter>
