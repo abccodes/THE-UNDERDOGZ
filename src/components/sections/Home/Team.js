@@ -35,7 +35,7 @@ const Title = styled.h1`
 `
 
 const Container = styled.div`
-  margin-top: 50px;
+  height: 5%;
   width: 80%;
   margin: 2rem auto;
 
@@ -66,12 +66,17 @@ const ContainerCenter = styled.div`
   margin: 2rem auto;
 
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 
   @media (max-width: 64em) {
     width: 80%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
   }
   @media (max-width: 48em) {
     width: 30%;
@@ -81,8 +86,6 @@ const ContainerCenter = styled.div`
     flex-wrap: wrap;
     margin: 2rem auto;
   }
-  justify-content: center;
-  align-items: center;
 `
 
 const Item = styled.div`
@@ -104,15 +107,116 @@ const Item = styled.div`
     }
   }
 
-  @media (max-width: 30em) {
-    width: 70vw;
+  @media (max-width: 75em) {
+    width: calc(17rem - 4vw);
+    padding: 1rem 0;
+    color: #fff;
+    margin: 2rem 1rem;
+    position: relative;
+    z-index: 5;
+    backdrop-filter: blur(4px);
+    border: 2px solid #fff;
+    border-radius: 20px;
+  }
+  @media (max-width: 65em) {
+    width: calc(15rem - 4vw);
+    padding: 1rem 0;
+    color: #fff;
+    margin: 2rem 1rem;
+    position: relative;
+    z-index: 5;
+    backdrop-filter: blur(4px);
+    border: 2px solid #fff;
+    border-radius: 20px;
+  }
+  @media (max-width: 57em) {
+    width: calc(13rem - 4vw);
+    padding: 1rem 0;
+    color: #fff;
+    margin: 2rem 1rem;
+    position: relative;
+    z-index: 5;
+    backdrop-filter: blur(4px);
+    border: 2px solid #fff;
+    border-radius: 20px;
+  }
+}
+  @media (max-width: 50em) {
+    width: calc(12rem - 4vw);
+    padding: 1rem 0;
+    color: #fff;
+    margin: 2rem 1rem;
+    position: relative;
+    z-index: 5;
+
+    backdrop-filter: blur(4px);
+
+    border: 2px solid #fff;
+    border-radius: 20px;
   }
   background-color: #1e1e1f;
   box-shadow: 0px 0px 40px 20px #4e32a8;
 `
 
-const ItemCenter = styled.div`
-  width: calc(20rem - 4vw);
+const ItemSpace = styled.div`
+width: calc(20rem - 4vw);
+padding: 1rem 0;
+color: #fff;
+margin: 2rem 1rem;
+position: relative;
+z-index: 5;
+margin: 0px 75px 0px;
+
+backdrop-filter: blur(4px);
+
+border: 2px solid #fff;
+border-radius: 20px;
+
+&:hover {
+  img {
+    transform: translateY(-2rem) scale(1.2);
+  }
+}
+
+@media (max-width: 75em) {
+  width: calc(17rem - 4vw);
+  padding: 1rem 0;
+  color: #fff;
+  margin: 2rem 1rem;
+  position: relative;
+  z-index: 5;
+  backdrop-filter: blur(4px);
+  border: 2px solid #fff;
+  border-radius: 20px;
+  margin: 0px 75px 0px;
+}
+@media (max-width: 65em) {
+  width: calc(15rem - 4vw);
+  padding: 1rem 0;
+  color: #fff;
+  margin: 2rem 1rem;
+  position: relative;
+  z-index: 5;
+  backdrop-filter: blur(4px);
+  border: 2px solid #fff;
+  border-radius: 20px;
+  margin: 0px 50px 0px;
+}
+@media (max-width: 57em) {
+  width: calc(13rem - 4vw);
+  padding: 1rem 0;
+  color: #fff;
+  margin: 2rem 1rem;
+  position: relative;
+  z-index: 5;
+  backdrop-filter: blur(4px);
+  border: 2px solid #fff;
+  border-radius: 20px;
+  margin: 0px 25px 0px;
+}
+}
+@media (max-width: 50em) {
+  width: calc(12rem - 4vw);
   padding: 1rem 0;
   color: #fff;
   margin: 2rem 1rem;
@@ -123,20 +227,10 @@ const ItemCenter = styled.div`
 
   border: 2px solid #fff;
   border-radius: 20px;
-
-  &:hover {
-    img {
-      transform: translateY(-2rem) scale(1.2);
-    }
-  }
-
-  @media (max-width: 30em) {
-    width: 70vw;
-  }
-  background-color: #1e1e1f;
-  margin-left: 10%;
-  margin-right: 10%;
-  box-shadow: 0px 0px 40px 20px #4e32a8;
+  margin: 0px 25px 0px;
+}
+background-color: #1e1e1f;
+box-shadow: 0px 0px 40px 20px #4e32a8;
 `
 
 const ImageContainer = styled.div`
@@ -206,14 +300,14 @@ const MemberComponent = ({
   )
 }
 
-const MemberComponentCenter = ({
+const MemberComponentSpace = ({
   img,
   name = ' ',
   position = ' ',
   twitter = ' ',
 }) => {
   return (
-    <ItemCenter>
+    <ItemSpace>
       <ImageContainer>
         <img width={500} height={400} src={img} alt={name} />
       </ImageContainer>
@@ -224,7 +318,7 @@ const MemberComponentCenter = ({
           <Twitter></Twitter>
         </a>
       </Icon>
-    </ItemCenter>
+    </ItemSpace>
   )
 }
 
@@ -277,13 +371,13 @@ const Team = () => {
           }}
         >
           <ContainerCenter>
-            <MemberComponentCenter
+            <MemberComponentSpace
               img={img4}
               name="BEN"
               position="Developer"
               twitter="https://twitter.com/B3nskiii"
             />
-            <MemberComponentCenter
+            <MemberComponentSpace
               img={img5}
               name="AIDAN"
               position="Developer"

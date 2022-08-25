@@ -1,257 +1,124 @@
 import React, { useState } from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
+
+import '../../sections/Dao/DaoStyle.css';
+
+
+import eth from '../../assets/ethereum-eth.webp';
+import logo from '../../assets/Screenshot__214_-removebg-preview.png';
+import bank from '../../assets/fINAL_COIN-removebg.png';
+
 
 import NftCard from './nftcard';
 import {fetchNFTs} from '../../../utils/fetchNFTs.js';
+
+
+
+
+
+
 //---------------------------------------------------
 
-const Container = styled.div`
-  width: 80%;
-  height: 150vh;
-  // background-color: #1c1c1c;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  @media (max-width: 64em) {
-    width: 80%;
-  }
-  @media (max-width: 48em) {
-    width: 90%;
-  }
-`
-
 const Section = styled.section`
-  min-height: 212vh;
-  width: 100vw;
+  justify-content: center; 
+  align-items: center; 
+
+  height: 1000vh;
+  width: 100%;
   position: relative;
   overflow: hidden;
-  background-color: #161717;
+  background-color: #121113;
 `
 
-const Header = styled.p`
-  font-size: 5em;
+const Title = styled.h1`
+
   display: flex;
+  overflow: hidden;
+
+  font-size: 5em;
+  font-weight: bold;
+  text-align: center; 
+  letter-spacing: 5px;
+  text-transform: capitalize;
+  color: #fff;
+  background-color: #2d2d2d; 
+  padding: 25px;
+
+  border-radius: 2rem;
+  box-shadow: 0px 0px 20px 5px white;
+ 
   justify-content: center;
   align-items: center;
-  margin: 5rem auto;
+  margin: 1rem auto;
+  margin-top: 100px;
   width: fit-content;
-  border: 5px solid white; 
-  padding: 10px; 
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
 
   @media (max-width: 40em) {
     font-size: 2em;
+    
   }
-  letter-spacing: 15px;
-  color: white;
 `
 
-const Column1 = styled.h1`
-  font-size: 2.25em;
-  text-align: left;
-  display: flex; 
+const Treasury = styled.h1`
+
+  display: flex;
+  overflow: hidden;
+
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center; 
+  letter-spacing: 5px;
+  text-transform: capitalize;
+  color: #fff;
+  background-color: #2d2d2d; 
+  padding: 25px;
+
+  border-radius: 2rem;
+  box-shadow: 0 0 5px 10px rgba(50, 50, 50, 0.25);
+ 
   justify-content: center;
-  align-items: top;
-  margin: 5rem auto;
-  width: 25%;
-  border: 2.5px solid white; 
-  padding: 10px; 
-
-  top: 200px;
-  bottom: 1000px;  
-  position: absolute;
-  left: 140px;
-  
-
-
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  align-items: center;
+  margin: 1rem auto;
+  margin-top: 75px;
+  width: fit-content;
 
   @media (max-width: 40em) {
-    font-size: 1em;
+    font-size: 2em;
+    
   }
-  letter-spacing: 5px;
-  color: white;
 `
 
-const Column2 = styled.h1`
-  font-size: 2.25em;
-  text-align: left; 
-  display: flex; 
-  justify-content: center;
-  align-items: top;
-  margin: 5rem auto;
-  width: 25%;
-  border: 2.5px solid white; 
-  padding: 10px; 
+const Card = styled.section`
+  display: flex;
+  flex-wrap: wrap; 
+  flex-direction: row;
 
-  position: absolute;
-  top: 200px; 
-  bottom: 1000px; 
-  left: 570px;
+  justify-content: space-evenly;
 
 
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-
-  @media (max-width: 40em) {
-    font-size: 1em;
-  }
-  letter-spacing: 5px;
-  color: white;
+  max-width: 1500px;
+  margin: 1rem auto;
+  margin-top: 75px;
 `
 
-const Column3 = styled.h1`
-  font-size: 2.25em;
-  text-align: left;
-  display: flex; 
-  justify-content: center;
-  align-items: top;
-  margin: 5rem auto;
-  width: 25%;
-  border: 2.5px solid white; 
-  padding: 10px; 
+const Buttons = styled.section`
+  display: flex;
+  flex-wrap: wrap; 
+  flex-direction: row;
 
-  top: 200px; 
-  bottom: 1000px; 
-  position: absolute;
-  left: 1000px;
+  justify-content: space-evenly;
+  align-self: center;
+  align-items: center;
+  text-align: center;
 
 
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  max-width: 1500px;
+  margin: 1rem auto;
+  margin-top: 75px;
 
-  @media (max-width: 40em) {
-    font-size: 1em;
-  }
-  letter-spacing: 5px;
-  color: white;
 `
 
-const Snapshot = styled.button`
-  font-size: 2.25em;
-  text-align: left;
-  display: flex; 
-  justify-content: center;
-  align-items: top;
-  margin: 5rem auto;
-  width: 40%;
-  border: 2.5px solid white; 
-  padding: 10px; 
 
-  top: 775px; 
-  position: absolute;
-  left: 135px;
-
-
-
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-
-  @media (max-width: 40em) {
-    font-size: 1em;
-  }
-  letter-spacing: 5px;
-  color: white;
-`
-const Dividens = styled.button`
-  font-size: 2.25em;
-  text-align: left;
-  display: flex; 
-  justify-content: center;
-  align-items: top;
-  margin: 5rem auto;
-  width: 40%;
-  border: 2.5px solid white; 
-  padding: 10px; 
-
-  top: 775px; 
-  position: absolute;
-  left: 780px;
-
-
-
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-
-  @media (max-width: 40em) {
-    font-size: 1em;
-  }
-  letter-spacing: 5px;
-  color: white;
-`
-
-const Assets = styled.button`
-  font-size: 2.25em;
-  text-align: left;
-  display: flex; 
-  justify-content: center;
-  align-items: top;
-  margin: 5rem auto;
-  width: 40%;
-  border: 2.5px solid white; 
-  padding: 10px; 
-
-  top: 1000px; 
-  position: absolute;
-  left: 135px;
-
-
-
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-
-  @media (max-width: 40em) {
-    font-size: 1em;
-  }
-  letter-spacing: 5px;
-  color: white;
-`
-
-const Balance = styled.h1`
-  font-size: 2.25em;
-  text-align: left; 
-  justify-content: center;
-  align-items: top;
-  margin: 5rem auto;
-  width: 41%;
-  border: 2.5px solid white; 
-  padding: 10px; 
-
-  position: absolute;
-  top: 1000px; 
-  left: 780px;
-
-
-
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-
-  @media (max-width: 40em) {
-    font-size: 1em;
-  }
-  letter-spacing: 5px;
-  color: white;
-`
 
 
 
@@ -261,82 +128,134 @@ const Balance = styled.h1`
 const Dao = () => {
 
   //---------------------------------------------------------------
-  const owner = "0xC2144a4e236dDd95224aCD16f7d73128c9d3F8b8"
-  const [contractAddress, setContractAddress] = useState("")
-  const [NFTs, setNFTs] = useState("")
+  const owner = "0x9486B1110b2D88130054985E877bC98fED97f0C0";
+  const [contractAddress, setContractAddress] = useState("");
+  const [NFTs, setNFTs] = useState("");
   //---------------------------------------------------------------
 
 
+  return(
 
-  return (
-    
-    <div className = 'disUnder'>
+   
+    <Section>
 
-      <Section>
-
-        <Header>THE UNDERDOGZ DAO</Header>
-
-        <Column1>Vote: 1 UDZ NFT equals VOTING POWER. Have your say in what The Underdogz DAO invest in.</Column1>
-        <Column2>Purpose: 5 UDZ NFTs equals PROPOSAL POWER. Bring your ideas into the Underdogz DAO.</Column2>
-        <Column3>Earn: Lets get rich together. Participate in the DAO and watch our earnings grow. </Column3>
-
-        <Snapshot>Snapshot - Participate Here </Snapshot>
-        <Dividens>Claim Dividens </Dividens>
-
-        <Assets>Load UDZ DAO Assets</Assets>
-        <Balance>Treasury Balance: 250.45 ETH</Balance>
-
-        
-        
-
-
-        <section className='Assets'>
-            {
-              NFTs ? NFTs.map((NFT, index) => { 
-                return (
-                  <NftCard key={index} {...NFT} />
-                ) 
-              }       
-            ) : <div></div> }
-            
-        </section>
-
-
-
-
-        <Container>
-        </Container>
-      </Section>
-
-    </div>
+      <Title>
+        <img src = {eth} width = "150" height = "100"></img>
+        THE UNDERDOGZ DAO
+        <img src = {eth} width = "150" height = "100"></img>
+      </Title>
 
       
+
+      
+      <Card>
+
+        <div className = "card-container">
+
+          <div className = "card">
+
+            <div className = "front">
+              <h1>VOTE</h1>
+              <img src = {logo} width = "200" height = "100"></img>
+            </div>
+
+            <div className = "back">
+              <h1>UDZ Voting</h1>
+              <p>Each NFT equals VOTING POWER. Have a say on where capital is allocated.</p>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div className = "card-container">
+
+          <div className = "card">
+
+            <div className = "front">
+              <h1>PROPOSE</h1>
+              <img src = {logo} width = "200" height = "100"></img>
+            </div>
+
+            <div className = "back">
+              <h1>UDZ Proposals</h1>
+              <p>5 NFT's equals PROPOSAL POWER. Share your ideas with the Underdogz DAO.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div className = "card-container">
+
+          <div className = "card">
+
+            <div className = "front">
+              <h1>EARN</h1>
+              <img src = {logo} width = "200" height = "100"></img>
+            </div>
+
+            <div className = "back">
+              <h1>UDZ Earnings</h1>
+              <p>Let the passive income begin. Participate in the DAO and watch your earnings grow.</p>
+            </div>
+          </div>
+
+        </div>
+
+        
+
+        <div className = "dao-line"></div>
+
+
+      </Card>
+
+      
+      <Treasury>
+
+        <div className = "treasury-image">
+          <img src = {bank} width = "125" height = "100"></img>
+        </div>
+
+        <p>Treasury Balance: 10.2 ETH</p>
+
+        <div className = "treasury-image">
+          <img src = {bank} width = "125" height = "100"></img>
+        </div>
+      </Treasury>
+      
+      <Buttons>
+
+        <button className = 'daoBtn' onClick = "window.location.hred = 'https://snapshot.org/#/';">Snapshot - Participate Here</button>
+
+        <button className = 'daoBtn' onClick = "location.href = 'https://snapshot.org/#/'"> Claim Dividens </button>
+
+        <button className = 'daoBtn' onClick={() => {fetchNFTs(owner, contractAddress, setNFTs)}} >Load DAO Assets</button>
+
+
+      </Buttons>
+
+      <div className = "nft-container">
+          {
+            NFTs ? NFTs.map((NFT, index) => { 
+              return (
+                <NftCard key={index} {...NFT} />
+              ) 
+            }       
+          ) : <div></div> }
+      </div>  
+      
+        
+
+
+    </Section>
+
+
+  
   )
+
+
+
+  
 }
 
 export default Dao
-
-
-/*
-<div className='flex flex-col items-center justify-center mb-4 w-2/6 gap-y-2 '>
-  <input className="border rounded-sm focus:outline-none py-2 px-3 w-full" value={owner} onChange={(e) => setOwner(e.target.value)} placeholder='Insert your wallet address'></input>
-  <input className="focus:outline-none rounded-sm py-2 px-3 w-full" value={contractAddress} onChange={(e) => setContractAddress(e.target.value)} placeholder='Insert NFT Contract address (optional)'></input>
-</div>
-*/
-
-//Button:
-//<button className='py-3 bg-white rounded-sm w-full hover:bg-slate-100' onClick={() => {fetchNFTs(owner, contractAddress, setNFTs)}}>Load DAO Assets</button>
-
-/*
-<section className='flex flex-wrap justify-center'>
-            {
-              NFTs ? NFTs.map((NFT, index) => { 
-                return (
-                  <NftCard key={index} {...NFT} />
-                ) 
-              }       
-            ) : <div></div> }
-            
-</section>
-
-*/

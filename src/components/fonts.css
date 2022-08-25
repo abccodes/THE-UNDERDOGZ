@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Maze&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
 
 
 .titleFont {
@@ -33,4 +34,6 @@
     font-family: 'Alumni Sans Pinstripe', sans-serif;
   }
 
- 
+  .reg {
+    font-family: 'Michroma', sans-serif;
+  }

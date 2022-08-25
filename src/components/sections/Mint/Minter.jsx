@@ -42,19 +42,18 @@ export const StyledRoundButton = styled.button`
   padding: 10px;
   border-radius: 100%;
   border: none;
-  background-color: var(--primary);
   padding: 10px;
   font-weight: bold;
   font-size: 15px;
   color: white;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0px 4px 0px -2px rgba(250, 250, 250, 0.3);
-  -webkit-box-shadow: 0px 4px 0px -2px rgba(250, 250, 250, 0.3);
+  -webkit-box-shadow: 0px 4px 0px -2px #3a0ca3;
   -moz-box-shadow: 0px 4px 0px -2px rgba(250, 250, 250, 0.3);
   :active {
     box-shadow: none;
@@ -140,19 +139,17 @@ align-items: center;
 
 
 const ContainerCenter = styled.div`
-  width: 80%;
-  margin: 2rem auto;
+  width: 70%;
+ 
 
   display: flex;
-  // justify-content: space-between;
-  align-items: center;
   flex-wrap: wrap;
 
   @media (max-width: 64em) {
     width: 80%;
   }
   @media (max-width: 48em) {
-    width: 90%;
+    width: 70%;
     justify-content: center;
   }
   justify-content: center;
@@ -198,7 +195,13 @@ const Title = styled.h2`
   }
 
 `
+const TextDescription = styled.p`
+  position: absolute;
+  bottom: 10px;
+  justify-content: center;
+  font-size: .2em;
 
+`
 const MidText = styled.h2`
   text-align: center;
   font-size: 3em;
@@ -310,8 +313,8 @@ function Mint() {
     CONTRACT_ADDRESS: "",
     SCAN_LINK: "",
     NETWORK: {
-      NAME: "Ethereum",
-      SYMBOL: "ETH",
+      NAME: "",
+      SYMBOL: "",
       ID: 0,
     },
     NFT_NAME: "",
@@ -350,7 +353,7 @@ function Mint() {
       .then((receipt) => {
         console.log(receipt);
         setFeedback(
-          `WOW, the ${CONFIG.NFT_NAME} is yours! go visit Opensea.io to view it.`
+          `The ${CONFIG.NFT_NAME} is yours! go visit Opensea.io to view it.`
         );
         setClaimingNft(false);
         dispatch(fetchData(blockchain.account));
@@ -403,9 +406,9 @@ function Mint() {
     <ContainerCenter>
       <Count countdownTimestampMs={1659983662000}/>
         <Box>
-          <MidText className="funkFont" >
+          <NumberText className="reg" >
             {data.totalSupply} / {CONFIG.MAX_SUPPLY}
-          </MidText>
+          </NumberText>
 
           <s.TextDescription
             style={{textAlign: "center"}}>
@@ -420,9 +423,9 @@ function Mint() {
               <Title style={{ textAlign: "center", color: "white" }} className="titleFont ">
                 The sale has ended
               </Title>
-              <MidText style={{ textAlign: "center", color: "white" }} className="">
+              <SubText style={{ textAlign: "center", color: "grey" }} className="">
                 You can still find {CONFIG.NFT_NAME} on
-              </MidText >
+              </SubText >
               <SubText 
 
                 target={"_blank"} 
@@ -433,7 +436,6 @@ function Mint() {
           ) : (
             <>
               <SmallText
-                style={{ textAlign: "center", color: "white" }}
                 className="subFont"
               >
                 1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
@@ -446,7 +448,7 @@ function Mint() {
               blockchain.smartContract === null ? (
                 <s.Container ai={"center"} jc={"center"}>
 
-                  <button className="button-85 titleFont"
+                  <button className="button-85 reg"
                     onClick={(e) => {
                       e.preventDefault();
                       dispatch(connect());
@@ -456,6 +458,7 @@ function Mint() {
                     CONNECT
                   </button>
                   <SmallText
+                    className="subFont"
                     style={{textAlign: "center", color: "white",}}>
                     Connect to the {CONFIG.NETWORK.NAME} network
                   </SmallText>
@@ -476,11 +479,11 @@ function Mint() {
               ) : (
                 <>
                   <s.TextDescription
+                    className="subText"
                     style={{
                       textAlign: "center",
                       color: "white",
                     }}
-                    className="text"
                   >
                     {feedback}
                   </s.TextDescription>
@@ -518,7 +521,8 @@ function Mint() {
                   </s.Container>
                   <s.SpacerSmall />
                   <s.Container ai={"center"} jc={"center"} fd={"row"}>
-                    <StyledButton
+                    <button
+                    className="button-85 "
                       disabled={claimingNft ? 1 : 0}
                       onClick={(e) => {
                         e.preventDefault();
@@ -526,282 +530,28 @@ function Mint() {
                         getData();
                       }}
                     >
-                      {claimingNft ? "BUSY" : "BUY"}
-                    </StyledButton>
+                      {claimingNft ? <p className="reg">BUSY</p> : <p className="reg">BUY</p>}
+                    </button>
                   </s.Container>
                 </>
               )}
             </>
           )}
           <s.SpacerMedium />
-        {/* </s.Container> */}
         </Box>
-      {/* <s.Container jc={"center"} ai={"center"} style={{ width: "70%" }}>
-        <s.TextDescription
+      
+        <TextDescription
           style={{
             textAlign: "center",
-            color: "var(--primary-text)",
+            color: "white",
           }}
         >
           Please make sure you are connected to the right network (
           {CONFIG.NETWORK.NAME} Mainnet) and the correct address. Please note:
           Once you make the purchase, you cannot undo this action.
-        </s.TextDescription>
-        <s.SpacerSmall />
-        <s.TextDescription
-          style={{
-            textAlign: "center",
-            color: "var(--primary-text)",
-          }}
-        >
-          We have set the gas limit to {CONFIG.GAS_LIMIT} for the contract to
-          successfully mint your NFT. We recommend that you don't lower the
-          gas limit.
-        </s.TextDescription>
-      </s.Container> */}
+        </TextDescription>    
        </ContainerCenter>
     </Section>
-  //   <Section style={{backgroundImage: `url(${lightning1})`}}>
-  //   <ContainerCenter>
-    
-  //     <Count countdownTimestampMs={1659983662000}/>
-  //     <Box > 
-  //     <SubText className='titleNumbers'> {data.totalSupply} / {CONFIG.MAX_SUPPLY}</SubText>
-  //     <SubText style={{ textAlign: "center"}}>
-  //   {CONFIG.DISPLAY_COST}{" "}
-  //    {CONFIG.NETWORK.SYMBOL}
-  //   </SubText>
-  //     <ImgContainer>
-  //     <img width={500} height={400} src={img} alt="UnderDogZ" />
-  //     </ImgContainer>
-  //     <Container>     
-         
-  //     {/* <AiFillMinusCircle color='white' className="MintIcons"/>
-  //     <button className="button-85 titleFont" role="button">MINT</button>      
-  //     <AiFillPlusCircle color='white' className='MintIcons'/> */}
-  //     </Container>
-  //     <SubText className='boxText subFont' color='white'>1</SubText>
-  //     {/* <StyledLink target={"_blank"} href={CONFIG.MARKETPLACE_LINK}>
-  //     {CONFIG.MARKETPLACE}
-  //     </StyledLink> */}
-  //     {/* <Showcase/> */}
-  //     {/* <StyledLink target={"_blank"} href={CONFIG.SCAN_LINK}>
-  //     {truncate(CONFIG.CONTRACT_ADDRESS, 15)}
-  //     </StyledLink> */}
-  //     </Box>
-  //   </ContainerCenter>
-  // </Section>
-
-  // <s.Screen>
-  //     <s.Container
-  //       flex={1}
-  //       ai={"center"}
-  //       style={{ padding: 24, backgroundColor: "var(--primary)" }}
-  //       image={CONFIG.SHOW_BACKGROUND ? "/config/images/bg.png" : null}
-  //     >
-  //       <StyledLogo alt={"logo"} src={"/config/images/logo.png"} />
-  //       <s.SpacerSmall />
-  //       <ResponsiveWrapper flex={1} style={{ padding: 24 }} test>
-  //         <s.Container flex={1} jc={"center"} ai={"center"}>
-  //           <StyledImg alt={"example"} src={"../../assets/1.png"} />
-  //         </s.Container>
-  //         <s.SpacerLarge />
-  //         <s.Container
-  //           flex={2}
-  //           jc={"center"}
-  //           ai={"center"}
-  //           style={{
-  //             backgroundColor: "var(--accent)",
-  //             padding: 24,
-  //             borderRadius: 24,
-  //             border: "4px dashed var(--secondary)",
-  //             boxShadow: "0px 5px 11px 2px rgba(0,0,0,0.7)",
-  //           }}
-  //         >
-  //           <s.TextTitle
-  //             style={{
-  //               textAlign: "center",
-  //               fontSize: 50,
-  //               fontWeight: "bold",
-  //               color: "var(--accent-text)",
-  //             }}
-  //           >
-  //             {data.totalSupply} / {CONFIG.MAX_SUPPLY}
-  //           </s.TextTitle>
-  //           <s.TextDescription
-  //             style={{
-  //               textAlign: "center",
-  //               color: "var(--primary-text)",
-  //             }}
-  //           >
-  //             <StyledLink target={"_blank"} href={CONFIG.SCAN_LINK}>
-  //               {truncate(CONFIG.CONTRACT_ADDRESS, 15)}
-  //             </StyledLink>
-  //           </s.TextDescription>
-  //           <s.SpacerSmall />
-  //           {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
-  //             <>
-  //               <s.TextTitle
-  //                 style={{ textAlign: "center", color: "var(--accent-text)" }}
-  //               >
-  //                 The sale has ended.
-  //               </s.TextTitle>
-  //               <s.TextDescription
-  //                 style={{ textAlign: "center", color: "var(--accent-text)" }}
-  //               >
-  //                 You can still find {CONFIG.NFT_NAME} on
-  //               </s.TextDescription>
-  //               <s.SpacerSmall />
-  //               <StyledLink target={"_blank"} href={CONFIG.MARKETPLACE_LINK}>
-  //                 {CONFIG.MARKETPLACE}
-  //               </StyledLink>
-  //             </>
-  //           ) : (
-  //             <>
-  //               <s.TextTitle
-  //                 style={{ textAlign: "center", color: "var(--accent-text)" }}
-  //               >
-  //                 1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
-  //                 {CONFIG.NETWORK.SYMBOL}.
-  //               </s.TextTitle>
-  //               <s.SpacerXSmall />
-  //               <s.TextDescription
-  //                 style={{ textAlign: "center", color: "var(--accent-text)" }}
-  //               >
-  //                 Excluding gas fees.
-  //               </s.TextDescription>
-  //               <s.SpacerSmall />
-  //               {blockchain.account === "" ||
-  //               blockchain.smartContract === null ? (
-  //                 <s.Container ai={"center"} jc={"center"}>
-  //                   <s.TextDescription
-  //                     style={{
-  //                       textAlign: "center",
-  //                       color: "var(--accent-text)",
-  //                     }}
-  //                   >
-  //                     Connect to the {CONFIG.NETWORK.NAME} network
-  //                   </s.TextDescription>
-  //                   <s.SpacerSmall />
-  //                   <StyledButton
-  //                     onClick={(e) => {
-  //                       e.preventDefault();
-  //                       dispatch(connect());
-  //                       getData();
-  //                     }}
-  //                   >
-  //                     CONNECT
-  //                   </StyledButton>
-  //                   {blockchain.errorMsg !== "" ? (
-  //                     <>
-  //                       <s.SpacerSmall />
-  //                       <s.TextDescription
-  //                         style={{
-  //                           textAlign: "center",
-  //                           color: "var(--accent-text)",
-  //                         }}
-  //                       >
-  //                         {blockchain.errorMsg}
-  //                       </s.TextDescription>
-  //                     </>
-  //                   ) : null}
-  //                 </s.Container>
-  //               ) : (
-  //                 <>
-  //                   <s.TextDescription
-  //                     style={{
-  //                       textAlign: "center",
-  //                       color: "var(--accent-text)",
-  //                     }}
-  //                   >
-  //                     {feedback}
-  //                   </s.TextDescription>
-  //                   <s.SpacerMedium />
-  //                   <s.Container ai={"center"} jc={"center"} fd={"row"}>
-  //                     <StyledRoundButton
-  //                       style={{ lineHeight: 0.4 }}
-  //                       disabled={claimingNft ? 1 : 0}
-  //                       onClick={(e) => {
-  //                         e.preventDefault();
-  //                         decrementMintAmount();
-  //                       }}
-  //                     >
-  //                       -
-  //                     </StyledRoundButton>
-  //                     <s.SpacerMedium />
-  //                     <s.TextDescription
-  //                       style={{
-  //                         textAlign: "center",
-  //                         color: "var(--accent-text)",
-  //                       }}
-  //                     >
-  //                       {mintAmount}
-  //                     </s.TextDescription>
-  //                     <s.SpacerMedium />
-  //                     <StyledRoundButton
-  //                       disabled={claimingNft ? 1 : 0}
-  //                       onClick={(e) => {
-  //                         e.preventDefault();
-  //                         incrementMintAmount();
-  //                       }}
-  //                     >
-  //                       +
-  //                     </StyledRoundButton>
-  //                   </s.Container>
-  //                   <s.SpacerSmall />
-  //                   <s.Container ai={"center"} jc={"center"} fd={"row"}>
-  //                     <StyledButton
-  //                       disabled={claimingNft ? 1 : 0}
-  //                       onClick={(e) => {
-  //                         e.preventDefault();
-  //                         claimNFTs();
-  //                         getData();
-  //                       }}
-  //                     >
-  //                       {claimingNft ? "BUSY" : "BUY"}
-  //                     </StyledButton>
-  //                   </s.Container>
-  //                 </>
-  //               )}
-  //             </>
-  //           )}
-  //           <s.SpacerMedium />
-  //         </s.Container>
-  //         <s.SpacerLarge />
-  //         <s.Container flex={1} jc={"center"} ai={"center"}>
-  //           <StyledImg
-  //             alt={"example"}
-  //             src={"/config/images/example.gif"}
-  //             style={{ transform: "scaleX(-1)" }}
-  //           />
-  //         </s.Container>
-  //       </ResponsiveWrapper>
-  //       <s.SpacerMedium />
-  //       <s.Container jc={"center"} ai={"center"} style={{ width: "70%" }}>
-  //         <s.TextDescription
-  //           style={{
-  //             textAlign: "center",
-  //             color: "var(--primary-text)",
-  //           }}
-  //         >
-  //           Please make sure you are connected to the right network (
-  //           {CONFIG.NETWORK.NAME} Mainnet) and the correct address. Please note:
-  //           Once you make the purchase, you cannot undo this action.
-  //         </s.TextDescription>
-  //         <s.SpacerSmall />
-  //         <s.TextDescription
-  //           style={{
-  //             textAlign: "center",
-  //             color: "var(--primary-text)",
-  //           }}
-  //         >
-  //           We have set the gas limit to {CONFIG.GAS_LIMIT} for the contract to
-  //           successfully mint your NFT. We recommend that you don't lower the
-  //           gas limit.
-  //         </s.TextDescription>
-  //       </s.Container>
-  //     </s.Container>
-  //   </s.Screen>
   );
 }
 

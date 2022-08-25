@@ -51,20 +51,23 @@ const Title = styled.h2`
   font-size: 4em;
   text-transform: capitalize;
   color: white;
-  align-self: flex-start;
-  width: 80%;
-  margin: 0 auto;
+  justify-content: center;
+  align-self: center;
+  align-content: center;
+  margin: 1 auto;
   font-weight: 800;
   color: #FAFAFF;
   @media (max-width: 64em) {
+    font-size: 3.2em;
     width: 100%;
-    text-align: center;
   }
-  @media (max-width: 40em) {
-    font-size: 3em;
+  @media (max-width: 45em) {
+    font-size: 2.5em;
+    width: 90%;
   }
   @media (max-width: 30em) {
     font-size: 1.25em};
+    width: 80%;
   }
   font-family: 'Baloo 2', cursive;
 `
@@ -77,15 +80,16 @@ const SubText = styled.p`
   margin: 1rem auto;
   font-weight: 500;
   @media (max-width: 64em) {
-    width: 100%;
-    text-align: center;
-    font-size: 1em;
+    font-size: 0.8em;
+    width: 110%;
   }
   @media (max-width: 40em) {
     font-size: 0.7em;
+    width: 110%;
   }
   @media (max-width: 30em) {
     font-size: 0.5em;
+    width: 100%;
   }
 `
 
@@ -161,17 +165,19 @@ const About = () => {
               As the NFT space grows, we aim to serve this community and apply
               our knowledge to this NFT-focused DAO. We are creating a community
               DAO Treasury, in which we will allocate 50% of total sales to the
-              DAO treasury wallet. The purpose of the DAO is to buy blue chip
-              NFT’s and other digital assets in order to generate profits for
-              our holders.
+              DAO treasury wallet. T
+            </SubText>
+            <SubText>
+              he purpose of the DAO is to buy blue chip NFT’s and other digital
+              assets in order to generate profits for our holders. Anyone who
+              holds our NFT’s will have access to vote on future investments
+              using the capital from the treasury. Each Underdog you own
+              represents a percentage of ownership of the DAO Treasury.
             </SubText>
             <SubText className="subFont">
-              Anyone who holds our NFT’s will have access to vote on future
-              investments using the capital from the treasury. Each Underdog you
-              own represents a percentage of ownership of the DAO Treasury. This
-              is an opportunity for everyone in the NFT space to be alongside
-              the biggest holders in the NFT space and own bluechip NFT’s, as
-              well as the profit that comes with it!
+              This is an opportunity for everyone in the NFT space to be
+              alongside the biggest holders in the NFT space and own bluechip
+              NFT’s, as well as the profit that comes with it!
             </SubText>
 
             <ButtonContainer></ButtonContainer>

@@ -21,11 +21,13 @@ const Loading = styled.section`
 `
 
 function App() {
-  const [playAnimation, setPlayAnimation] = useState(false)
+  const [playAnimation, setPlayAnimation] = useState(true)
 
   useEffect(() => {
+    // setPlayAnimation(true)
+
     const onPageLoad = () => {
-      setPlayAnimation(true)
+      setPlayAnimation(false)
     }
 
     // Check if the page has already loaded
