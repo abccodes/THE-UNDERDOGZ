@@ -10,8 +10,10 @@ import {
 } from 'react-icons/fa';
 
 import { GiSailboat } from "react-icons/gi";
-import Logo from '../../assets/UDZ_Logo.png'
+import Logo from '../../assets/Screenshot__214_-removebg-preview.png'
 import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+
 
 
 
@@ -31,7 +33,7 @@ const Navbar = ({accounts, setAccounts}) => {
   const handleClick = () => setNav(!nav);
 
   return (
-    <div className='fixed w-full h-[50px] flex justify-between items-center px-3 bg-[#121113] disOver'>
+    <div className='fixed w-full h-[50px] flex justify-between items-center px-4 bg-[#121113] disOver'>
       <div>
       <Link to="/">
         <img src={Logo} alt='Logo' style={{ width: '50px' }} />
@@ -40,11 +42,13 @@ const Navbar = ({accounts, setAccounts}) => {
 
       {/* menu */}
       <ul className='hidden md:flex '>
+
         <li>
+        
         <Link to="/">
           <a 
           // href="/" 
-          className='navText '>
+          className='mont' >
             Home
             </a>
             </Link>
@@ -53,26 +57,28 @@ const Navbar = ({accounts, setAccounts}) => {
           <Link to="/dao">
           <a 
           // href="/dao" 
-          className='nav'>Dao</a>
+          className='mont'>Dao</a>
           </Link>
         </li>
         <li>
         <Link to="/mint">
-          <a className='nav'>Mint</a>  
+          <a className='mont'>Mint</a>  
           </Link>
         </li>
         <li>
         <Link to="/help">
-          <a className='nav'>Help</a>  
+          <a className='mont'>Help</a>  
           </Link>
         </li>
         <li>
         <Link to="/contact">
-          <a className='nav'>Contact</a>
+          <a className='mont'>Contact</a>
           </Link>
+          
         </li>
-
+      
       </ul>
+      
 
       {/* Hamburger */}
       <div onClick={handleClick} className='md:hidden z-10'>

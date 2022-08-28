@@ -289,8 +289,8 @@ const MemberComponent = ({
       <ImageContainer>
         <img width={500} height={400} src={img} alt={name} />
       </ImageContainer>
-      <Name className="titleFont">{name}</Name>
-      <Position className="subFont">{position}</Position>
+      <Name className="Baloo2">{name}</Name>
+      <Position className="mont">{position}</Position>
       <Icon>
         <a href={twitter}>
           <Twitter></Twitter>

@@ -75,19 +75,19 @@ const Help = () => {
       <Title>
         
         <img src = {logo} width = "125" height = "100"></img>
-        <p>UNDERDOGZ HELP</p>
+        <p className='Baloo2'>UNDERDOGZ HELP</p>
         <img src = {logo} width = "125" height = "100"></img>
       
       </Title>
 
       <div className = "subheaderFlex">
 
-        <div className = "left-subheader">
+        <div className = "left-subheader mont">
           <p>The NFT space is fast paced and constantly changing. Want to take the first step in your journey to profits in the NFT space, but not sure where to start? </p>
         </div>
 
         
-        <div className = "right-subheader">
+        <div className = "right-subheader mont">
           <p>Don’t sweat it. This page outlines the four steps on how to obtain an Underdogz NFT, along with learning about the amazing utility that comes with it. Here are the main points we cover:</p>
         </div>
 
@@ -103,11 +103,11 @@ const Help = () => {
 
           <div className = "help-card">
 
-            <div className = "help-front">
+            <div className = "help-front Baloo2">
               <h1>How to Get Started</h1>
             </div>
 
-            <div className = "help-back">
+            <div className = "help-back mont">
               <p>There are many secure crypto wallets to choose from. If you do not already have one, we recommend Metamask due to its ease of use and functionalities. You’ll need to download the MetaMask wallet software onto your chosen device by visiting the official website here. Complete all the steps as shown to successfully create your wallet.</p>
             </div>
           </div>
@@ -119,11 +119,11 @@ const Help = () => {
 
           <div className = "help-card">
 
-            <div className = "help-front">
+            <div className = "help-front Baloo2">
               <h1>Buying An Underdogz NFT</h1>
             </div>
 
-            <div className = "help-back">
+            <div className = "help-back mont">
               <p>Navigate to the MINT page of our website. Interact with the “+” or “-” to select the desired amount of NFT’s to mint. Each user can mint a maximum of 5 Underdogz. Please allow enough ETH balance in your wallet to cover the mint cost as well as gas fees. Gas fees fluctuate depending on the time of day and the traffic on the ETH network.  Our project is a 24 hour delayed reveal from the beginning of mint, After the 24 hours is up your NFT(s) will reveal.</p>
             </div>
           </div>
@@ -134,12 +134,12 @@ const Help = () => {
 
           <div className = "help-card">
 
-            <div className = "help-front">
+            <div className = "help-front Baloo2">
               <h1>Snapshot Voting System</h1>
               
             </div>
 
-            <div className = "help-back">
+            <div className = "help-back mont">
               <p>The Underdogz DAO uses Snapshot for a decentralized voting system. Simply connect your wallet to Snapshot's website through the button on the DAO page or via this link and it will allow you to cast a vote on any open proposals on the site.</p>
             </div>
           </div>
@@ -150,11 +150,11 @@ const Help = () => {
 
           <div className = "help-card">
 
-            <div className = "help-front">
+            <div className = "help-front Baloo2">
               <h1>How To Collect Profits</h1>
             </div>
 
-            <div className = "help-back">
+            <div className = "help-back mont">
               <p>Let the passive income begin. Participate in the DAO and watch your earnings grow.</p>
             </div>
           </div>

@@ -4,12 +4,10 @@ import styled from 'styled-components'
 // import Loading from '../Loading'
 import Card from './Card.tsx'
 import { motion } from 'framer-motion'
-
 import '../../fonts.css'
 
 // import fire from '../../assets/Looping_Fire_2_4001_HD_AdobeExpress (1).gif'
 // import cloud from '../../assets/Cartoon-Smoke-2-4003-HD.gif'
-
 // const Carousel = lazy(() => import('./Carousel'))
 
 const Section = styled.section`
@@ -48,7 +46,7 @@ const Box = styled.div`
 `
 
 const Title = styled.h2`
-  font-size: 4em;
+  font-size: 4.2em;
   text-transform: capitalize;
   color: white;
   justify-content: center;
@@ -69,7 +67,7 @@ const Title = styled.h2`
     font-size: 1.25em};
     width: 80%;
   }
-  font-family: 'Baloo 2', cursive;
+
 `
 
 const SubText = styled.p`
@@ -81,11 +79,11 @@ const SubText = styled.p`
   font-weight: 500;
   @media (max-width: 64em) {
     font-size: 0.8em;
-    width: 110%;
+    width: 100%;
   }
   @media (max-width: 40em) {
     font-size: 0.7em;
-    width: 110%;
+    width: 100%;
   }
   @media (max-width: 30em) {
     font-size: 0.5em;
@@ -144,7 +142,6 @@ const styles = {
 
 const About = () => {
   return (
-    // style={{ backgroundImage: `url(${lightning})` }}
     <Section>
       <motion.div
         initial={{
@@ -160,31 +157,28 @@ const About = () => {
       >
         <Container>
           <Box>
-            <Title className="titleFont">About us</Title>
-            <SubText className="subFont">
+            <Title className="Baloo2">About us</Title>
+            <SubText className="mont">
               As the NFT space grows, we aim to serve this community and apply
               our knowledge to this NFT-focused DAO. We are creating a community
               DAO Treasury, in which we will allocate 50% of total sales to the
               DAO treasury wallet. T
             </SubText>
-            <SubText>
+            <SubText className="mont">
               he purpose of the DAO is to buy blue chip NFT’s and other digital
               assets in order to generate profits for our holders. Anyone who
               holds our NFT’s will have access to vote on future investments
               using the capital from the treasury. Each Underdog you own
               represents a percentage of ownership of the DAO Treasury.
             </SubText>
-            <SubText className="subFont">
+            <SubText className="mont">
               This is an opportunity for everyone in the NFT space to be
               alongside the biggest holders in the NFT space and own bluechip
               NFT’s, as well as the profit that comes with it!
             </SubText>
-
-            <ButtonContainer></ButtonContainer>
           </Box>
           <Box>
             <Card />
-            {/* fallback={<Loading />} */}
             <Suspense>{/* <Carousel />{' '} */}</Suspense>{' '}
           </Box>
         </Container>

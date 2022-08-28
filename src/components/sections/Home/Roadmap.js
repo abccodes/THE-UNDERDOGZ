@@ -201,8 +201,8 @@ const RoadMapItem = ({ title, subtext, addToRef }) => {
               duration: 3,
             }}
           >
-            <SubTitle className="titleFont">{title} </SubTitle>
-            <Text className="subFont">{subtext}</Text>
+            <SubTitle className="Baloo2">{title} </SubTitle>
+            <Text className="mont">{subtext}</Text>
           </motion.div>
         </Box>
       </ItemContainer>

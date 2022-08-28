@@ -233,7 +233,6 @@ const Dao = () => {
 
 
       </Buttons>
-
       <div className = "nft-container">
           {
             NFTs ? NFTs.map((NFT, index) => { 
@@ -243,19 +242,8 @@ const Dao = () => {
             }       
           ) : <div></div> }
       </div>  
-      
-        
-
-
     </Section>
-
-
-  
   )
-
-
-
-  
 }
 
 export default Dao

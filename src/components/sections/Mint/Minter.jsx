@@ -103,7 +103,7 @@ export const StyledLink = styled.a`
   text-decoration: none;
   justify-content: center;
   align-items: center;
-
+  font-size: 10px;
 `;
 
 const Section = styled.a`
@@ -117,43 +117,24 @@ const Section = styled.a`
   // background-color: #161717;
 `
 
-const Container = styled.div`
-width: 80%;
-margin: 1rem auto;
 
-display: flex;
-justify-content: space-around;
-align-items: center;
-flex-wrap: wrap;
-
-@media (max-width: 64em) {
-  width: 80%;
-}
-@media (max-width: 48em) {
-  width: 90%;
-  justify-content: center;
-}
-justify-content: center;
-align-items: center;
-`
 
 
 const ContainerCenter = styled.div`
   width: 70%;
- 
+  justify-content: center;
+  align-items: center;
 
   display: flex;
   flex-wrap: wrap;
 
   @media (max-width: 64em) {
-    width: 80%;
+    width: 100%;
   }
   @media (max-width: 48em) {
-    width: 70%;
-    justify-content: center;
+    width: 110%;
+    // height: 70%
   }
-  justify-content: center;
-  align-items: center;
 `
 
 const Box = styled.div`
@@ -163,9 +144,6 @@ const Box = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  @media (max-width: 40em) {
-    min-height: 50vh;
-  }
   border: .5px solid black;
   margin-top: 3%;
   background-color: #171717;
@@ -236,16 +214,26 @@ const SubText = styled.p`
 `
 
 const NumberText = styled.p`
-  display: flex; 
 
+  display: flex; 
   font-size: 2em;
   color: white;
   align-self: center;
   justify-content: center;
   font-weight: 600;
-  // font-weight: bold;
-
   margin-top: 5px;
+  
+  @media (max-width: 64em) {
+    width: 100%;
+    text-align: center;
+  }
+  @media (max-width: 40em) {
+    font-size: 1.5em;
+  }
+  @media (max-width: 30em) {
+    font-size: 1em};
+  }
+
 `
 
 const SmallText = styled.p`
@@ -290,7 +278,7 @@ cursor: pointer;
   width: 12rem;
 }
 @media (max-width: 30em) {
-  width: 10rem;
+  width: 8rem;
 }
 
 // border-radius: 50px;
@@ -406,13 +394,13 @@ function Mint() {
     <ContainerCenter>
       <Count countdownTimestampMs={1659983662000}/>
         <Box>
-          <NumberText className="reg" >
+          <NumberText className="mont">
             {data.totalSupply} / {CONFIG.MAX_SUPPLY}
           </NumberText>
 
           <s.TextDescription
             style={{textAlign: "center"}}>
-            <StyledLink className="text" target={"_blank"} href={CONFIG.SCAN_LINK}>
+            <StyledLink className="mont" target={"_blank"} href={CONFIG.SCAN_LINK}>
               {truncate(CONFIG.CONTRACT_ADDRESS, 15)}
             </StyledLink>
           </s.TextDescription>
@@ -436,7 +424,7 @@ function Mint() {
           ) : (
             <>
               <SmallText
-                className="subFont"
+                className="mont"
               >
                 1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
                 {CONFIG.NETWORK.SYMBOL}
@@ -448,7 +436,7 @@ function Mint() {
               blockchain.smartContract === null ? (
                 <s.Container ai={"center"} jc={"center"}>
 
-                  <button className="button-85 reg"
+                  <button className="button-85 Baloo2"
                     onClick={(e) => {
                       e.preventDefault();
                       dispatch(connect());
@@ -458,7 +446,7 @@ function Mint() {
                     CONNECT
                   </button>
                   <SmallText
-                    className="subFont"
+                    className="mont"
                     style={{textAlign: "center", color: "white",}}>
                     Connect to the {CONFIG.NETWORK.NAME} network
                   </SmallText>
@@ -479,7 +467,7 @@ function Mint() {
               ) : (
                 <>
                   <s.TextDescription
-                    className="subText"
+                    className="mont"
                     style={{
                       textAlign: "center",
                       color: "white",
@@ -530,7 +518,7 @@ function Mint() {
                         getData();
                       }}
                     >
-                      {claimingNft ? <p className="reg">BUSY</p> : <p className="reg">BUY</p>}
+                      {claimingNft ? <p className="Baloo2">BUSY</p> : <p className="reg">BUY</p>}
                     </button>
                   </s.Container>
                 </>

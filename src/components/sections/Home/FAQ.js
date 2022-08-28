@@ -11,7 +11,7 @@ function FAQ({ faq, index, toggleFAQ }) {
     >
       {' '}
       {/* <style> */}
-      <div className="faq-question titleFont">{faq.question}</div>
+      <div className="faq-question Baloo2">{faq.question}</div>
       <div className="faq-answer subFont">{faq.answer}</div>
       {/* </style> */}
     </div>

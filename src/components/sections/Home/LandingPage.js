@@ -3,11 +3,8 @@ import { motion } from 'framer-motion'
 
 const LandingPage = () => {
   return (
-    <div
-      name="landingpage"
-      className="w-full h-screen titlePage css-selector  "
-    >
-      <div className="max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full ">
+    <div className="w-full h-screen titlePage css-selector  ">
+      <div className="max-w-[1000px] mx-auto px-9 flex flex-col justify-center h-full Baloo">
         <motion.div
           initial={{
             opacity: 0,
@@ -15,10 +12,10 @@ const LandingPage = () => {
           }}
           animate={{ opacity: 1, x: 0 }}
         >
-          <h1 className="text-4xl sm:text-7xl font-bold text-[#f5ffff] ">
+          <h1 className="text-4xl sm:text-8xl font-bold text-[#f5ffff] Baloo2">
             The UnderDogZ
           </h1>
-          <h2 className="text-4xl sm:text-7xl font-bold text-[#000000]">
+          <h2 className="text-4xl sm:text-7xl font-bold text-[#000000] Baloo2">
             An Investment DAO.
           </h2>
         </motion.div>
