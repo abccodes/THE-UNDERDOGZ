@@ -7,7 +7,7 @@ import styled from 'styled-components'
 
 const Container = styled.div`
   width: 100%;
-
+  height auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,14 +15,23 @@ const Container = styled.div`
 `
 
 const ImageContainer = styled.div`
-  width: 70%;
+  width: 60%;
   margin: 0 auto;
   padding: 0.5rem;
 
   border-radius: 20px;
   cursor: pointer;
 
+  @media (max-width: 64em) {
+    width: 70%;
+    height: 100%;
+  }
+  @media (max-width: 48em) {
+    width: 90%;
+  }
+
   img {
+    box-shadow: 0px 0px 10px 5px #3a0ca3;
     width: 100%;
     height: auto;
     transition: all 0.3s ease;
@@ -52,14 +61,14 @@ const nfts = [
 
     imageAlt: 'UDZ DOG',
   },
-  {
-    id: 4,
-    // name: 'Machined Mechanical Pencil',
+  // {
+  //   id: 4,
+  //   // name: 'Machined Mechanical Pencil',
 
-    // price: '$35',
-    imageSrc: img4,
-    imageAlt: 'UDZ DOG',
-  },
+  //   // price: '$35',
+  //   imageSrc: img4,
+  //   imageAlt: 'UDZ DOG',
+  // },
   // More products...
 ]
 
@@ -81,11 +90,7 @@ const ArtDisplay = () => {
             }}
           >
             <ImageContainer>
-              <img
-                src={nft.imageSrc}
-                alt={nft.imageAlt}
-                className="purpleEffect"
-              />
+              <img src={nft.imageSrc} alt={nft.imageAlt} />
             </ImageContainer>
           </motion.div>
         </a>

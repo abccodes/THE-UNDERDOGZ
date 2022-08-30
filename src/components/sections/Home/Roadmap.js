@@ -93,7 +93,7 @@ const Items = styled.ul`
       text-align: right;
 
       @media (max-width: 48em) {
-        border-radius: 0 50px 0 50px;
+        // border-radius: 0 50px 0 50px;
         text-align: left;
         p {
           border-radius: 0 40px 0 40px;
@@ -135,28 +135,16 @@ const ItemContainer = styled.div`
   border: 2px solid #fff;
   color: white;
   @media (max-width: 48em) {
-    width: 70%;
+    width: 80%;
+    margin-top: 5px;
   }
-  // background-color: white;
-  // opacity: 0.3;
+  background-color: white;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   background-color: #1e1e1f;
   box-shadow: 0px 0px 20px 10px white;
-`
-const Box = styled.p`
-  height: fit-content;
-  // background-color: black;
-  color: #202020;
-  padding: 1rem;
-  position: relative;
-  // border: 1px solid white;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
 `
 
 const SubTitle = styled.span`
@@ -188,23 +176,21 @@ const RoadMapItem = ({ title, subtext, addToRef }) => {
   return (
     <Item ref={addToRef} className="disMiddle">
       <ItemContainer>
-        <Box>
-          <motion.div
-            initial={{
-              opacity: 0,
-            }}
-            whileInView={{ opacity: 1 }}
-            // animate={{
-            //   opacity: 1,
-            // }}
-            transition={{
-              duration: 3,
-            }}
-          >
-            <SubTitle className="Baloo2">{title} </SubTitle>
-            <Text className="mont">{subtext}</Text>
-          </motion.div>
-        </Box>
+        <motion.div
+          initial={{
+            opacity: 0,
+          }}
+          whileInView={{ opacity: 1 }}
+          // animate={{
+          //   opacity: 1,
+          // }}
+          transition={{
+            duration: 3,
+          }}
+        >
+          <SubTitle className="Baloo2">{title} </SubTitle>
+          <Text className="">{subtext}</Text>
+        </motion.div>
       </ItemContainer>
     </Item>
   )

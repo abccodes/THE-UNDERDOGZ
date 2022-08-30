@@ -12,11 +12,15 @@ import '../../fonts.css'
 
 const Section = styled.section`
   height: 150vh;
-  width: 100vw;
+  width: 100%;
   background-color: #fff;
   position: relative;
   overflow: hidden;
   background-color: #3a0ca3;
+
+  @media (max-width: 48em) {
+    height: 200%;
+  }
 `
 const Title = styled.h1`
   font-size: 3em;
@@ -36,7 +40,7 @@ const Title = styled.h1`
 
 const Container = styled.div`
   height: 5%;
-  width: 80%;
+  width: 100%;
   margin: 2rem auto;
 
   display: flex;
@@ -62,7 +66,7 @@ const Container = styled.div`
   // background-color: white;
 `
 const ContainerCenter = styled.div`
-  width: 80%;
+  width: 100%;
   margin: 2rem auto;
 
   display: flex;
@@ -89,17 +93,6 @@ const ContainerCenter = styled.div`
 `
 
 const Item = styled.div`
-  width: calc(20rem - 4vw);
-  padding: 1rem 0;
-  color: #fff;
-  margin: 2rem 1rem;
-  position: relative;
-  z-index: 5;
-
-  backdrop-filter: blur(4px);
-
-  border: 2px solid #fff;
-  border-radius: 20px;
 
   &:hover {
     img {
@@ -107,11 +100,23 @@ const Item = styled.div`
     }
   }
 
+  @media (min-width: 75em) {
+    width: calc(20rem - 4vw);
+    padding: 1rem 0;
+    color: #fff;
+    margin: 2rem 1rem;
+    position: relative;
+    z-index: 5;
+    backdrop-filter: blur(4px);
+    border: 2px solid #fff;
+    border-radius: 20px;
+  }
+
   @media (max-width: 75em) {
     width: calc(17rem - 4vw);
     padding: 1rem 0;
     color: #fff;
-    margin: 2rem 1rem;
+    margin: rem 1rem;
     position: relative;
     z-index: 5;
     backdrop-filter: blur(4px);
@@ -142,15 +147,13 @@ const Item = styled.div`
   }
 }
   @media (max-width: 50em) {
-    width: calc(12rem - 4vw);
+    width: calc(13rem - 4vw);
     padding: 1rem 0;
     color: #fff;
     margin: 2rem 1rem;
     position: relative;
     z-index: 5;
-
     backdrop-filter: blur(4px);
-
     border: 2px solid #fff;
     border-radius: 20px;
   }
@@ -216,19 +219,19 @@ border-radius: 20px;
 }
 }
 @media (max-width: 50em) {
-  width: calc(12rem - 4vw);
+  width: calc(20rem - 4vw);d
   padding: 1rem 0;
   color: #fff;
   margin: 2rem 1rem;
   position: relative;
   z-index: 5;
-
   backdrop-filter: blur(4px);
-
   border: 2px solid #fff;
   border-radius: 20px;
-  margin: 0px 25px 0px;
 }
+
+
+
 background-color: #1e1e1f;
 box-shadow: 0px 0px 40px 20px #4e32a8;
 `
@@ -344,19 +347,19 @@ const Team = () => {
             <MemberComponent
               img={img1}
               name="HUNTER"
-              position="Co-Founder"
+              position="Founder"
               twitter="https://twitter.com/HunterSkellengr"
             />
             <MemberComponent
               img={img2}
               name="NIC"
-              position="Co-Founder"
+              position="Founder"
               twitter="https://twitter.com/nicci_burns"
             />
             <MemberComponent
               img={img3}
               name="LEE"
-              position="Co-Founder"
+              position="Founder"
               twitter="https://twitter.com/Lee_Michaelson1"
             />
           </Container>

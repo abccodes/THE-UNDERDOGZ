@@ -29,6 +29,14 @@ const Container = styled.div`
   align-items: center;
   // background-color: #221a26;
   border-radius: 25px;
+  @media (max-width: 64em) {
+    margin-bottom: 20px;
+  }
+  @media (max-width: 45em) {
+    margin-top: 20px;
+  }
+  @media (max-width: 30em) {
+  }
 `
 
 const Box = styled.div`
@@ -44,30 +52,28 @@ const Box = styled.div`
     min-height: 50vh;
   }
 `
+const BoxCard = styled.div``
 
 const Title = styled.h2`
+  width: 80%;
+  // background-color: white;
   font-size: 4.2em;
   text-transform: capitalize;
   color: white;
-  justify-content: center;
-  align-self: center;
-  align-content: center;
+  text-align: left;
   margin: 1 auto;
   font-weight: 800;
-  color: #FAFAFF;
+  color: #fafaff;
   @media (max-width: 64em) {
-    font-size: 3.2em;
+    font-size: 4em;
     width: 100%;
   }
   @media (max-width: 45em) {
-    font-size: 2.5em;
-    width: 90%;
+    font-size: 3em;
   }
   @media (max-width: 30em) {
-    font-size: 1.25em};
-    width: 80%;
+    font-size: 2.5em};
   }
-
 `
 
 const SubText = styled.p`
@@ -78,15 +84,15 @@ const SubText = styled.p`
   margin: 1rem auto;
   font-weight: 500;
   @media (max-width: 64em) {
-    font-size: 0.8em;
+    font-size: 1.6em;
     width: 100%;
   }
   @media (max-width: 40em) {
-    font-size: 0.7em;
+    font-size: 1.3em;
     width: 100%;
   }
   @media (max-width: 30em) {
-    font-size: 0.5em;
+    font-size: 1em;
     width: 100%;
   }
 `
@@ -162,10 +168,10 @@ const About = () => {
               As the NFT space grows, we aim to serve this community and apply
               our knowledge to this NFT-focused DAO. We are creating a community
               DAO Treasury, in which we will allocate 50% of total sales to the
-              DAO treasury wallet. T
+              DAO treasury wallet.
             </SubText>
             <SubText className="mont">
-              he purpose of the DAO is to buy blue chip NFT’s and other digital
+              The purpose of the DAO is to buy blue chip NFT’s and other digital
               assets in order to generate profits for our holders. Anyone who
               holds our NFT’s will have access to vote on future investments
               using the capital from the treasury. Each Underdog you own
@@ -177,10 +183,10 @@ const About = () => {
               NFT’s, as well as the profit that comes with it!
             </SubText>
           </Box>
-          <Box>
+          <BoxCard>
             <Card />
             <Suspense>{/* <Carousel />{' '} */}</Suspense>{' '}
-          </Box>
+          </BoxCard>
         </Container>
       </motion.div>
     </Section>
