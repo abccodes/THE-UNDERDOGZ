@@ -17,7 +17,8 @@ const Section = styled.section`
   position: relative;
   overflow: hidden;
   background-color: #3a0ca3;
-
+  justify-content: center;
+  align-items: center;
   @media (max-width: 48em) {
     height: 200%;
   }
@@ -41,7 +42,7 @@ const Title = styled.h1`
 const Container = styled.div`
   height: 5%;
   width: 100%;
-  margin: 2rem auto;
+  margin: 1rem auto;
 
   display: flex;
   justify-content: space-between;
@@ -56,7 +57,7 @@ const Container = styled.div`
     flex-wrap: wrap;
   }
   @media (max-width: 48em) {
-    width: 30%;
+    width: 60%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -66,11 +67,11 @@ const Container = styled.div`
   // background-color: white;
 `
 const ContainerCenter = styled.div`
-  width: 100%;
-  margin: 2rem auto;
+  width: 70%;
+  margin: 5rem auto;
 
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 
@@ -83,7 +84,7 @@ const ContainerCenter = styled.div`
     flex-wrap: wrap;
   }
   @media (max-width: 48em) {
-    width: 30%;
+    width: 60%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -159,12 +160,14 @@ const Item = styled.div`
   }
   background-color: #1e1e1f;
   box-shadow: 0px 0px 40px 20px #4e32a8;
+  
 `
 
 const ItemSpace = styled.div`
 width: calc(20rem - 4vw);
-padding: 1rem 0;
+padding: 2rem 0;
 color: #fff;
+
 margin: 2rem 1rem;
 position: relative;
 z-index: 5;
@@ -219,7 +222,7 @@ border-radius: 20px;
 }
 }
 @media (max-width: 50em) {
-  width: calc(20rem - 4vw);d
+  width: calc(13rem - 4vw);d
   padding: 1rem 0;
   color: #fff;
   margin: 2rem 1rem;

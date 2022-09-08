@@ -6,7 +6,6 @@ import styled from 'styled-components'
 import DrawSvg from './DrawSvg.js'
 import { motion } from 'framer-motion'
 import '../../fonts.css'
-
 const ConfettiComponent = lazy(() => import('./Confetti.js'))
 
 const ImgContainer = styled.div`

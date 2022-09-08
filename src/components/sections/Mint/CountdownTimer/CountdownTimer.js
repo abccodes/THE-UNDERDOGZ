@@ -23,21 +23,18 @@ const CountdownTimer = ({ countdownTimestampMs }) => {
     setRemainingTime(getRemainingTimeUntilMsTimestamp(countdown))
   }
 
+  function getDays() {
+    return remainingTime.days
+  }
+
   return (
     <div className="countdown-timer monoton">
       <p className="two-numbers">{remainingTime.days}</p>
-      <span></span>
-      : 
-      <span></span>
-
+      <span></span>:<span></span>
       <p className="two-numbers">{remainingTime.hours}</p>
-      <span></span>
-      : 
-      <span></span>
+      <span></span>:<span></span>
       <p className="two-numbers">{remainingTime.minutes}</p>
-      <span></span>
-      : 
-      <span></span>
+      <span></span>:<span></span>
       <p className="two-numbers">{remainingTime.seconds}</p>
     </div>
   )

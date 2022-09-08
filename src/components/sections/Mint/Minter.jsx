@@ -11,7 +11,7 @@ import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
 import img from '../../assets/giphy (3).gif'
 import Count from './CountdownTimer/CountdownTimer'
 import lightning1 from "../../assets/Lightning_Bursts_1_2286_2K.gif"
-
+import {getRemainingTimeUntilMsTimestamp} from "./CountdownTimer/Utils/CountdownTimerUtils"
 
 const truncate = (input, len) =>
   input.length > len ? `${input.substring(0, len)}...` : input;
@@ -389,10 +389,27 @@ function Mint() {
     getData();
   }, [blockchain.account]);
 
+  //countdown to display time until mint
+  const countdown = 1664582400000;  
+
   return (
     <Section style={{backgroundImage: `url(${lightning1})`}}>
+    {
+      
+      
+      (getRemainingTimeUntilMsTimestamp(countdown)).days >= 0 &&
+      (getRemainingTimeUntilMsTimestamp(countdown)).hours >= 0 &&
+      (getRemainingTimeUntilMsTimestamp(countdown)).minutes >= 0 &&
+      (getRemainingTimeUntilMsTimestamp(countdown)).seconds >= 0
+
+     ? (<Count countdownTimestampMs={1664582400000}/>) 
+    : 
+     
+     
+     (
     <ContainerCenter>
-      <Count countdownTimestampMs={1659983662000}/>
+
+      <Count countdownTimestampMs={1664582400000}/>
         <Box>
           <NumberText className="mont">
             {data.totalSupply} / {CONFIG.MAX_SUPPLY}
@@ -405,7 +422,7 @@ function Mint() {
             </StyledLink>
           </s.TextDescription>
 
-          
+        
           {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
             <>
               <Title style={{ textAlign: "center", color: "white" }} className="titleFont ">
@@ -539,6 +556,7 @@ function Mint() {
           Once you make the purchase, you cannot undo this action.
         </TextDescription>    
        </ContainerCenter>
+       )}
     </Section>
   );
 }
