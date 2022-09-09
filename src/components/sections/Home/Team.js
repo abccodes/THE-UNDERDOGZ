@@ -11,7 +11,7 @@ import { motion } from 'framer-motion'
 import '../../fonts.css'
 
 const Section = styled.section`
-  height: 150vh;
+  height: auto;
   width: 100%;
   background-color: #fff;
   position: relative;
@@ -52,14 +52,14 @@ const Container = styled.div`
   @media (max-width: 64em) {
     width: 80%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
   }
   @media (max-width: 48em) {
-    width: 60%;
+    width: 80%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     margin: 2rem auto;
@@ -86,7 +86,7 @@ const ContainerCenter = styled.div`
   @media (max-width: 48em) {
     width: 60%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     margin: 2rem auto;

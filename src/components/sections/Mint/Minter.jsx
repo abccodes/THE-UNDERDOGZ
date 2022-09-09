@@ -251,10 +251,6 @@ const SmallText = styled.p`
 
 const Button = styled.button`
   background: #fff5f6;
-  // background: -webkit-linear-gradient(top, #9c3e5e, #d665ab);
-  // background: -moz-linear-gradient(top, #9c3e5e, #d665ab);
-  // background: -ms-linear-gradient(top, #9c3e5e, #d665ab);
-  // background: -o-linear-gradient(top, #9c3e5e, #d665ab);
   padding: 0px 6px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
@@ -396,11 +392,11 @@ function Mint() {
     <Section style={{backgroundImage: `url(${lightning1})`}}>
     {
       
-      
-      (getRemainingTimeUntilMsTimestamp(countdown)).days >= 0 &&
-      (getRemainingTimeUntilMsTimestamp(countdown)).hours >= 0 &&
-      (getRemainingTimeUntilMsTimestamp(countdown)).minutes >= 0 &&
-      (getRemainingTimeUntilMsTimestamp(countdown)).seconds >= 0
+      1 < 0
+      // (getRemainingTimeUntilMsTimestamp(countdown)).days >= 0 &&
+      // (getRemainingTimeUntilMsTimestamp(countdown)).hours >= 0 &&
+      // (getRemainingTimeUntilMsTimestamp(countdown)).minutes >= 0 &&
+      // (getRemainingTimeUntilMsTimestamp(countdown)).seconds >= 0
 
      ? (<Count countdownTimestampMs={1664582400000}/>) 
     : 

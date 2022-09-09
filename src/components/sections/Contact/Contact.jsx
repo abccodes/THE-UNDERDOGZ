@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 
 const Section = styled.section`
-  height: 100%;
+  height: 115%;
   width: 100%;
   // background-color: white;
   display: flex;
@@ -21,7 +21,7 @@ const Contact = () => {
 
         <form method='POST' action="https://getform.io/f/a699a1b2-f225-434e-b317-1fbbde8e006c" className='flex flex-col max-w-[600px] w-full'>
             <div className='pb-8'>
-                <p className='text-5xl font-bold inline border-b-4 border-pink-600 text-gray-300'>Contact</p>
+                <p className=' text-5xl font-bold inline border-b-4 border-pink-600 text-gray-300'>Contact</p>
                 <p className='text-gray-300 py-4'>**Submit the form below to get in contact**</p>
             </div>
             <input className='bg-[#ccd6f6] p-2' type="text" placeholder='Name' name='name' />
