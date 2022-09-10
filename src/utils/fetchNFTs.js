@@ -1,6 +1,6 @@
 
 
-const endpoint = "https://eth-mainnet.g.alchemy.com/v2/wyAkMEeSjysNAjWn5dMnJ3q2yy6TvlXn";
+const endpoint = "https://eth-mainnet.g.alchemy.com/v2/F_-5b4B4mSACqm4gvqoAGvEREVrmAr8L";
 
 
 const getAddressNFTs = async (owner, contractAddress, retryAttempt) => { //Owner Addr, Contract Addr

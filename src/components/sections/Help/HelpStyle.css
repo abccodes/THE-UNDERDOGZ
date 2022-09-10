@@ -1,26 +1,44 @@
+.help-section-image{
+    background-image: url();
+}
+
+.help-title-image{
+    width: 200px;
+    height: 175px;
+
+    opacity: .75;
+}
+
+@media screen and (max-width: 1300px) {
+    .help-title-image {
+      display: none;
+    }   
+}
+
+/*==============================================================*/
+
 .subheaderFlex{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 
+    height: auto;
     margin-top: 75px;
-    margin-left: 250px;
-    margin-right: 250px;
-
-    gap: 50px;
-    
+    gap: 4.688em;
 }
-
-
 
 
 .left-subheader {
   width: fit-content;
-  margin: 5px;
-  padding: 5px;
+  padding: 25px;
+  max-width: 600px;
 
-  text-align: center;
-  font-size: 45px;
+  font-size: 35px;
   font-weight: bold;
+  font-family: 'Baloo 2';
+  text-align: center;
+  letter-spacing: 2px;
   color: #fff;
   
   border-radius: 2rem;
@@ -34,59 +52,71 @@
 
 .right-subheader {
     width: fit-content;
-    margin: 5px;
-    padding: 5px;
+    padding: 25px;
+    max-width: 600px;
   
     text-align: center;
-    font-size: 45px;
+    font-size: 35px;
     font-weight: bold;
+    font-family: 'Baloo 2';
+    letter-spacing: 2px;
     color: #fff;
     
     border-radius: 2rem;
     box-shadow: 0 0 5px 10px rgba(50, 50, 50, 0.25);
-    background: linear-gradient(-45deg, #0f0e0e, #090809, #2d2d2d, #0b0b0b);
+    background: linear-gradient(-45deg, #282525, #1a191a, #2d2d2d, #2c2b2b);
     background-size: 400% 400%;
     
     animation: gradient 15s ease infinite;
 
 }
 
-@media (max-width: 40em) {
+@media screen and (max-width: 1280px) {
+    .subheaderFlex {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 40em) {
 
     .subheaderFlex {
       flex-direction: column;
     }
 
     .left-subheader, .right-subheader {
-        font-size: 35px;
+        font-size: 25px;
+
+        margin-left: 30px;
+        margin-right: 30px;
     }
       
 }
 
+
+
   
-
-
 /*==============================================================*/
 
 .help-line{
-    display: flex;
-    justify-content: center;
-    margin-top: 75px;
-  
-    width: 100%;
-    height: 5px;
-    border-radius: 2rem;
-  
-    background-color: #2d2d2d;
-    opacity: .5;
+  display: flex;
+  justify-content: center;
+  margin-top: 75px;
+
+  width: 100%;
+  height: 5px;
+  border-radius: 2rem;
+
+  background-color: #2d2d2d;
+  opacity: .5;
 }
 
 /*==============================================================*/
 
 .help-card-container {
-    width: 2500px;
+    width: 1275px;
     height: 200px;
-    perspective: 750px; 
+    perspective: 1000px; 
      
 }
   
@@ -133,15 +163,14 @@
   
 .help-front {
     
-    background-color:rgba(50, 50, 50, 0.25);
-  
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 1.75em;
+    gap: 1em;
   
-    font-size: 50px;
+    font-size: 75px;
     font-weight: bold;
+    font-family: 'Baloo 2';
     letter-spacing: 2px;
     text-align: center;
     color: #fff
@@ -160,10 +189,144 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 25px;
     gap: 1em;
   
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
+    font-family: 'Baloo 2';
     text-align: center;
+    letter-spacing: 2px;
     color: #fff
+}
+
+.help-card-image {
+    align-self: center;
+
+    width: 192px;
+    height: 192px;
+
+    opacity: 0.5; 
+}
+
+@media screen and (max-width: 1280px) {
+
+    .help-card-container {
+        width: 600px;
+        height: 525px;
+    }
+
+    .help-front {
+        font-size: 65px;
+        padding: 15px;
+    }
+
+    .help-back {
+        transform: rotateY(180deg); 
+
+        font-size: 25px;
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
+
+    .help-card-container:hover > .help-card {
+        transform: rotateY(180deg);
+    }
+
+}
+
+
+@media screen and (max-width: 550px) {
+
+    .help-card-container {
+        width: 400px;
+        height: 500px;
+    }
+
+    .help-front {
+        font-size: 45px;
+        padding: 15px;
+    }
+
+    .help-back {
+        transform: rotateY(180deg); 
+
+        font-size: 18px;
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
+
+    .help-card-container:hover > .help-card {
+        transform: rotateY(180deg);
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+
+    .help-card-container {
+        width: 300px;
+        height: 500px;
+    }
+
+    .help-front {
+        font-size: 45px;
+        padding: 15px;
+    }
+
+    .help-back {
+        transform: rotateY(180deg); 
+
+        font-size: 18px;
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
+
+    .help-card-container:hover > .help-card {
+        transform: rotateY(180deg);
+    }
+
+}
+
+@media screen and (max-width: 280px) {
+
+    .help-card-container {
+        width: 200px;
+        height: 500px;
+    }
+
+    .help-front {
+        font-size: 30px;
+        padding: 15px;
+    }
+
+    .help-back {
+        transform: rotateY(180deg); 
+
+        font-size: 13px;
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
+
+    .help-card-container:hover > .help-card {
+        transform: rotateY(180deg);
+    }
+
+}
+
+
+
+@media screen and (min-width: 1280px) {
+    
+    .help-card-image {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 280px) {
+    
+    .help-card-image {
+        width: 150px;
+        height: 150px;
+    }
 }

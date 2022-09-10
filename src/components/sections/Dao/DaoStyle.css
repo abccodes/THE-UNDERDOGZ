@@ -1,11 +1,44 @@
 
 
+    
+
+
+
+/*==============================================================*/
+
+.title-image {
+  width: 150px;
+  height: 150px;
+}
+
+.treasury-image {
+  width: 200px;
+  height: 125px;
+
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+@media screen and (max-width: 1500px) {
+  .title-image {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 1400px) {
+  .treasury-image {
+    display: none;
+  }
+}
+
+
 /*==============================================================*/
 
 .card-container {
   width: 350px;
   height: 500px;
-  perspective: 750px; 
+  perspective: 1000px; 
 }
 
 .card {
@@ -13,7 +46,7 @@
   width: 100%;
   position: relative;
   transition: transform 1500ms;
-  transform-style: preserve-3d;   
+  transform-style: preserve-3d;  
 }
 
 .card-container:hover > .card {
@@ -32,8 +65,6 @@
 }
 
 .front {
-  
-  background-image: url("../../assets/VOTE.gif");
 
   display: flex;
   flex-direction: column;
@@ -41,12 +72,17 @@
   align-items: center;
   gap: 1.75em;
 
+  
+  background-image: url('../../assets/Lightning_Bursts_1_2286_2K_AdobeExpress_AdobeExpress_AdobeExpress.gif');
+
   font-size: 50px;
   font-weight: bold;
-  letter-spacing: 2px;
+  font-family: 'Baloo 2';
+  letter-spacing: 4px;
   text-align: center;
-  text-decoration: underline;
-  color: #fff
+ 
+  color: #fff;
+  
 }
 
 .back {
@@ -62,13 +98,65 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1em;
+  padding: 15px;
+  gap: 1.75em;
+
 
   font-size: 35px;
   font-weight: bold;
+  font-family: 'Baloo 2';
   text-align: center;
   color: #fff
 }
+
+.card-image {
+  width: 200px;
+  height: 200px;
+
+  opacity: 0.5; 
+}
+
+@media screen and (max-width: 40em) {
+  .card-container {
+    width: 250px;
+    height: 350px;
+  }
+
+  .front {
+    font-size: 35px; 
+  }
+
+  .back {
+    font-size: 25px;
+  }
+
+  .card-image {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .card-container {
+    width: 200px;
+    height: 300px;
+  }
+
+  .front {
+    font-size: 25px; 
+  }
+
+  .back {
+    font-size: 15px;
+  }
+
+  .card-image {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+
 
 
 /*==============================================================*/
@@ -85,6 +173,16 @@
   background-color: #2d2d2d;
   opacity: .5;
 }
+
+
+@media screen and (max-width: 40em) {
+  .dao-line {
+    width: 100%;
+    font-size: 20px;
+    margin-top: 50px;
+  }
+
+}
   
 /*==============================================================*/
 
@@ -99,26 +197,73 @@
   border: none;
   cursor: pointer;
 
-  
 
-  font-weight: 600;
+  font-weight: bold;
   font-size: 25px;
+  font-family: 'Baloo 2';
   letter-spacing: 2px;
   text-align: center;
 
-  background-color: #2d2d2d ;
+  background: linear-gradient(-45deg, #37829f, #ae71ae, #2f57cf, #cf63c4);
+  background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+
   color: #fff;
 
-  
-  
 }
 
 .daoBtn:hover {
-  color: rgb(216, 216, 216);
-  background-color: #e73c7e;
-  box-shadow: inset 400px 0 0 0 #23a6d5, inset 400px 0 0 0 #ee7752, inset 400px 0 0 0 #e73c7e, inset 400px 0 0 0 #23d5ab;
+  background-color: #2d2d2d;
+  box-shadow: inset 400px 0 0 0 #2d2d2d;
+}
+
+@media screen and (max-width: 1280px) {
+  .daoBtn {
+    width: 600px;
+    font-size: 25px;
+  }
+
+  .daoBtn:hover {
+    box-shadow: inset 600px 0 0 0 #2d2d2d;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .daoBtn {
+    width: 500px;
+    font-size: 25px;
+  }
+
+  .daoBtn:hover {
+    box-shadow: inset 600px 0 0 0 #2d2d2d;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .daoBtn {
+    width: 325px;
+    font-size: 20px;
+  }
+
+  .daoBtn:hover {
+    box-shadow: none;
+  }
 
 }
+
+@media screen and (max-width: 300px) {
+  .daoBtn {
+    width: 200px;
+    font-size: 15px;
+  }
+
+  .daoBtn:hover {
+    box-shadow: none;
+  }
+
+}
+
+
 
 /*==============================================================*/
 
@@ -127,7 +272,9 @@
   flex-wrap: wrap; 
   flex-direction: row;
 
+
   justify-content: space-evenly;
+  align-items: center;
 
 
   max-width: 1500px;
@@ -136,16 +283,4 @@
 
 }
 
-@media (max-width: 40em) {
 
-  .nft-container {
-    align-items: center;
-    flex-direction: row;
-  }
-  
-  
-}
-
-.treasury-image {
-  padding: 20px;
-}

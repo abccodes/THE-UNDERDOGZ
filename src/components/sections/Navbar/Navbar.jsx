@@ -15,7 +15,20 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 
+const Hamburgerline = styled.div`
 
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+
+  width: 100%;
+  height: 5px;
+  border-radius: 2rem;
+
+  background-color: #2d2d2d;
+  opacity: .5;
+
+`
 
 const Navbar = ({accounts, setAccounts}) => {
 
@@ -87,14 +100,15 @@ const Navbar = ({accounts, setAccounts}) => {
 
       {/* Mobile menu */}
       <ul
-        className={
-          !nav
+        className = {
+          !nav 
             ? 'hidden'
-            : 'absolute top-0 left-0 w-full h-screen bg-white flex flex-col justify-center items-center col'
+            : 'absolute top-0 left-0 w-full h-screen bg-white flex flex-col justify-center items-center col  '
         }
       >
         <li className='py-6 text-4xl'>
           <a href="/">Home</a>
+          
         </li>
         <li className='py-6 text-4xl'>
         <a href="/dao">Dao</a>
@@ -108,6 +122,33 @@ const Navbar = ({accounts, setAccounts}) => {
         <li className='py-6 text-4xl'>
         <a href="/contact">Contact</a>
         </li>
+
+        <Hamburgerline></Hamburgerline>
+
+        <li className='py-6 text-4xl'>
+          <a href= "https://twitter.com/UnderdogZ_CAP">
+            <FaTwitter size = {45}></FaTwitter>
+          </a>
+        </li>
+        
+        <li className='py-6 text-4xl'>
+          <a href= "https://discord.com/invite/RsYQDcHRSN">
+            <FaDiscord size = {45}></FaDiscord>
+          </a>
+        </li>
+
+        <li className='py-6 text-4xl'>
+          <a href= "https://discord.com/invite/RsYQDcHRSN">
+            <GiSailboat size = {45}></GiSailboat>
+          </a>
+        </li>
+
+        <li className='py-6 text-4xl'>
+          <a href= "https://www.instagram.com/underdogz_capital/">
+            <FaInstagram size = {45}></FaInstagram>
+          </a>
+        </li>
+
       </ul>
 
       {/* Social icons */}
