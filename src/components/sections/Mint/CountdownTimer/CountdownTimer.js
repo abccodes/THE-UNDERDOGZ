@@ -28,7 +28,7 @@ const CountdownTimer = ({ countdownTimestampMs }) => {
   }
 
   return (
-    <div className="countdown-timer monoton">
+    <div className="countdown-timer titleFont">
       <p className="two-numbers">{remainingTime.days}</p>
       <span></span>:<span></span>
       <p className="two-numbers">{remainingTime.hours}</p>

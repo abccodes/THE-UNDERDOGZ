@@ -391,12 +391,10 @@ function Mint() {
   return (
     <Section style={{backgroundImage: `url(${lightning1})`}}>
     {
-      
-      1 < 0
-      // (getRemainingTimeUntilMsTimestamp(countdown)).days >= 0 &&
-      // (getRemainingTimeUntilMsTimestamp(countdown)).hours >= 0 &&
-      // (getRemainingTimeUntilMsTimestamp(countdown)).minutes >= 0 &&
-      // (getRemainingTimeUntilMsTimestamp(countdown)).seconds >= 0
+      (getRemainingTimeUntilMsTimestamp(countdown)).days >= 0 &&
+      (getRemainingTimeUntilMsTimestamp(countdown)).hours >= 0 &&
+      (getRemainingTimeUntilMsTimestamp(countdown)).minutes >= 0 &&
+      (getRemainingTimeUntilMsTimestamp(countdown)).seconds >= 0
 
      ? (<Count countdownTimestampMs={1664582400000}/>) 
     : 

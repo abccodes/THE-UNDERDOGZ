@@ -4,10 +4,9 @@
     margin-top: 25px;;
     width: 60%;
     height: 100px;
-    /* border: 2px solid white; */
-
     color: white;
-    font-family: 'Monoton', cursive;
+    font-family: 'Baloo2';
+    font-weight: 700;
     font-size: 40px;
 
     display: flex;
