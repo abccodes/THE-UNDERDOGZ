@@ -3,12 +3,9 @@ import Header from './Header.js'
 import FAQ from './FAQ'
 import Roadmap from './Roadmap.js'
 import Team from './Team'
-import Showcase from '../Mint/Showcase.js';
 import LandingPage from './LandingPage.js';
-// import About from '../About.js'
 import About from './About.js'
 import ArtDisplay from './ArtDisplay.js';
-// import Banner from '../Banner.jsx'
 
 
 

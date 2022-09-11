@@ -237,33 +237,25 @@ const Dao = ({ accounts, setAccounts}) => {
 
   let address = "0xB651ffe21526F6Cb2510589E0D2fC065037b6c88"; 
 
-  let treasuryBalance = 0; 
 
+  
   const getBalance = async (address) => {
-
-    
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const balance = await provider.getBalance(address);
     const balanceInEth = ethers.utils.formatEther(balance);
-    
-    treasuryBalance = balanceInEth //(balanceInEth.slice(0,5)); 
-
-    console.log(treasuryBalance); 
-
-    return {
-      treasuryBalance
-    }
-
-  }
-
-  if (document.readyState === 'complete') {
-    getBalance(address)
+    const bal = balanceInEth.slice(0,5)
+    return(bal)
   }
   
- 
-  return(
+  getBalance().then(function(response){
+      console.log(response)
+  })
 
     
+
+  
+
+  return(
 
     <Section>
 
@@ -275,13 +267,9 @@ const Dao = ({ accounts, setAccounts}) => {
         <img className = "title-image" src = {eth}></img>
 
       </Title>
-      
-
-      
       <Card>
 
         <div className = "card-container">
-
           <div className = "card">
 
             <div className = "front">
@@ -297,9 +285,7 @@ const Dao = ({ accounts, setAccounts}) => {
 
         </div>
 
-
         <div className = "card-container">
-
           <div className = "card">
 
             <div className = "front">
@@ -342,7 +328,7 @@ const Dao = ({ accounts, setAccounts}) => {
           <img className = "treasury-image" src = {bank}></img>
         </div>
 
-        <p>Treasury Balance: {treasuryBalance} ETH </p> 
+        <p>Treasury Balance: ETH </p> 
 
         <div className = "treasury-image">
           <img className = "treasury-image" src = {bank}></img>
@@ -376,17 +362,9 @@ const Dao = ({ accounts, setAccounts}) => {
 
       </div>  
       
-        
-
-
     </Section>
 
-
-  )
-
-
-
-  
+  )  
 }
 
 export default Dao

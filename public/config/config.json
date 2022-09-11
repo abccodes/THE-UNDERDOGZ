@@ -1,10 +1,10 @@
 {
-    "CONTRACT_ADDRESS": "0x827acb09a2dc20e39c9aad7f7190d9bc53534192",
-    "SCAN_LINK": "https://polygonscan.com/token/0x827acb09a2dc20e39c9aad7f7190d9bc53534192",
+    "CONTRACT_ADDRESS": "0xf94bD11B076c52Fe8bb6119Daae546808C3f11D9",
+    "SCAN_LINK": "https://rinkeby.etherscan.io/address/0xf94bD11B076c52Fe8bb6119Daae546808C3f11D9",
     "NETWORK": {
-      "NAME": "ropsten",
+      "NAME": "Rinkeby",
       "SYMBOL": "ETH",
-      "ID": 3
+      "ID": 4
     },
     "NFT_NAME": "UnderDogZ",
     "SYMBOL": "UDZ",

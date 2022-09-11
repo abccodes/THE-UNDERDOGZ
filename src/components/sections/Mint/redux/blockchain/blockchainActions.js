@@ -79,6 +79,8 @@ export const connect = () => {
           ethereum.on('chainChanged', () => {
             window.location.reload()
           })
+
+          return accounts[0]
           // Add listeners end
         } else {
           dispatch(connectFailed(`Change network to ${CONFIG.NETWORK.NAME}.`))

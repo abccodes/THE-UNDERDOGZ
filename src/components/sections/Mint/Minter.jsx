@@ -5,12 +5,11 @@ import { fetchData } from "./redux/data/dataActions";
 import * as s from "./styles/globalStyles";
 import styled from "styled-components";
 import { Provider } from 'react-redux'
-import img1 from "../../assets/1.png"
 import store from './redux/store'
-import { AiFillPlusCircle, AiFillMinusCircle } from "react-icons/ai";
 import img from '../../assets/giphy (3).gif'
 import Count from './CountdownTimer/CountdownTimer'
 import lightning1 from "../../assets/Lightning_Bursts_1_2286_2K.gif"
+import Web3 from 'web3'
 import {getRemainingTimeUntilMsTimestamp} from "./CountdownTimer/Utils/CountdownTimerUtils"
 
 const truncate = (input, len) =>
@@ -299,7 +298,7 @@ function Mint() {
     NETWORK: {
       NAME: "",
       SYMBOL: "",
-      ID: 0,
+      ID: 4,
     },
     NFT_NAME: "",
     SYMBOL: "",
@@ -313,6 +312,7 @@ function Mint() {
   });
 
   const claimNFTs = () => {
+    const { ethereum } = window
     let cost = CONFIG.WEI_COST;
     let gasLimit = CONFIG.GAS_LIMIT;
     let totalCostWei = String(cost * mintAmount);
@@ -322,7 +322,7 @@ function Mint() {
     setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
     setClaimingNft(true);
     blockchain.smartContract.methods
-      .mint(mintAmount)
+      .mint(ethereum.selectedAddress, mintAmount)
       .send({
         gasLimit: String(totalGasLimit),
         to: CONFIG.CONTRACT_ADDRESS,
@@ -367,7 +367,7 @@ function Mint() {
   };
 
   const getConfig = async () => {
-    const configResponse = await fetch("/config/config.json", {
+    const configResponse = await fetch('/config/config.json', {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -396,16 +396,16 @@ function Mint() {
       (getRemainingTimeUntilMsTimestamp(countdown)).minutes >= 0 &&
       (getRemainingTimeUntilMsTimestamp(countdown)).seconds >= 0
 
-     ? (<Count countdownTimestampMs={1664582400000}/>) 
+     ? (<Count countdownTimestampMs={countdown}/>) 
     : 
      
      
      (
     <ContainerCenter>
 
-      <Count countdownTimestampMs={1664582400000}/>
+      <Count countdownTimestampMs={countdown}/>
         <Box>
-          <NumberText className="mont">
+          <NumberText className="Baloo2">
             {data.totalSupply} / {CONFIG.MAX_SUPPLY}
           </NumberText>
 
@@ -419,11 +419,11 @@ function Mint() {
         
           {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
             <>
-              <Title style={{ textAlign: "center", color: "white" }} className="titleFont ">
+              <Title style={{ textAlign: "center", color: "white" }} className="Baloo2 ">
                 The sale has ended
               </Title>
-              <SubText style={{ textAlign: "center", color: "grey" }} className="">
-                You can still find {CONFIG.NFT_NAME} on
+              <SubText style={{ textAlign: "center", color: "white" }} className="mont">
+                Check out {CONFIG.NFT_NAME} on 
               </SubText >
               <SubText 
 
@@ -486,7 +486,6 @@ function Mint() {
                   >
                     {feedback}
                   </s.TextDescription>
-        
                   <s.Container ai={"center"} jc={"center"} fd={"row"}>
                     <StyledRoundButton
                       style={{ lineHeight: 0.4 }}
@@ -529,7 +528,7 @@ function Mint() {
                         getData();
                       }}
                     >
-                      {claimingNft ? <p className="Baloo2">BUSY</p> : <p className="reg">BUY</p>}
+                      {claimingNft ? <p className="Baloo2">BUSY</p> : <p className="Baloo2">MINT</p>}
                     </button>
                   </s.Container>
                 </>
