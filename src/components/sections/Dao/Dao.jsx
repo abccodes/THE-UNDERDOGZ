@@ -119,7 +119,7 @@ const Treasury = styled.h1`
   width: fit-content;
   padding: 25px;
 
-  font-size: 4.15em;
+  font-size: 4em;
   font-weight: bold;
   font-family: 'Baloo 2';
   text-align: center; 
@@ -140,6 +140,10 @@ const Treasury = styled.h1`
   }
 
   @media screen and (max-width: 950px) {
+    font-size: 3em;
+  }
+
+  @media screen and (max-width: 768px) {
     font-size: 2.5em;
   }
 
@@ -205,7 +209,7 @@ const Buttons = styled.section`
 
 
 
-const Dao = ({ accounts, setAccounts}) => {
+const Dao = ({ accounts, setAccounts }) => {
 
   
 
@@ -235,32 +239,28 @@ const Dao = ({ accounts, setAccounts}) => {
 
   // Get Treasury Balance =====================================
 
-  let address = "0xB651ffe21526F6Cb2510589E0D2fC065037b6c88"; 
+ 
+  
+  const [treasuryBalance, setTreasuryBalance] = useState(null) 
 
-  let treasuryBalance = 0; 
+  useEffect(() => {
 
-  const getBalance = async (address) => {
+    let address = "0xB651ffe21526F6Cb2510589E0D2fC065037b6c88";
 
-    
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const balance = await provider.getBalance(address);
-    const balanceInEth = ethers.utils.formatEther(balance);
-    
-    treasuryBalance = balanceInEth //(balanceInEth.slice(0,5)); 
+    const getBalance = async (address) => {
 
-    console.log(treasuryBalance); 
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const balance = await provider.getBalance(address);
+      const balanceInEth = ethers.utils.formatEther(balance);
+      const treasuryBalance = (balanceInEth.slice(0,5));
 
-    return {
-      treasuryBalance
+      setTreasuryBalance(treasuryBalance)
     }
 
-  }
-
-  if (document.readyState === 'complete') {
     getBalance(address)
-  }
-  
- 
+
+  })
+
   return(
 
     
@@ -268,11 +268,10 @@ const Dao = ({ accounts, setAccounts}) => {
     <Section>
 
       <Title>
-        <img className = "title-image" src = {eth}></img>
-
-        THE UNDERDOGZ DAO
-
-        <img className = "title-image" src = {eth}></img>
+        
+        <img className = "title-image" src = {eth} alt = ""></img>
+          THE UNDERDOGZ DAO
+        <img className = "title-image" src = {eth} alt = ""></img>
 
       </Title>
       
@@ -286,7 +285,7 @@ const Dao = ({ accounts, setAccounts}) => {
 
             <div className = "front">
               <h1>VOTE</h1>
-              <img className = "card-image" src = {logo} alt = "UDZ!"></img> 
+              <img className = "card-image" src = {logo} alt = ""></img> 
             </div>
 
             <div className = "back">
@@ -304,7 +303,7 @@ const Dao = ({ accounts, setAccounts}) => {
 
             <div className = "front">
               <h1>PROPOSE</h1>
-              <img className = "card-image" src = {logo}></img>
+              <img className = "card-image" src = {logo} alt = ""></img>
             </div>
 
             <div className = "back">
@@ -321,7 +320,7 @@ const Dao = ({ accounts, setAccounts}) => {
 
             <div className = "front">
               <h1>EARN</h1>
-              <img className = "card-image" src = {logo}></img>
+              <img className = "card-image" src = {logo} alt = ""></img>
             </div>
 
             <div className = "back">
@@ -339,13 +338,13 @@ const Dao = ({ accounts, setAccounts}) => {
       <Treasury>
 
         <div className = "treasury-image">
-          <img className = "treasury-image" src = {bank}></img>
+          <img className = "treasury-image" src = {bank} alt = ""></img>
         </div>
 
         <p>Treasury Balance: {treasuryBalance} ETH </p> 
 
         <div className = "treasury-image">
-          <img className = "treasury-image" src = {bank}></img>
+          <img className = "treasury-image" src = {bank} alt = ""></img>
         </div>
         
       </Treasury>
@@ -381,12 +380,7 @@ const Dao = ({ accounts, setAccounts}) => {
 
     </Section>
 
-
   )
-
-
-
-  
 }
 
 export default Dao
@@ -397,105 +391,4 @@ export default Dao
 
 
 
-/*
-
-Text Linear Gradient:
-
-background: -webkit-linear-gradient(-45deg, #fff, #d6aed6, #fff, #8a9cd0);
-background-size: 400% 400%;
-animation: gradient 60s ease infinite;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-
-
-
-0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D
-
-
-<Title>
-  <img className = "title-image" src = {eth}></img>
-    THE UNDERDOGZ DAO
-  <img className = "title-image" src = {eth}></img>
-</Title>
-
-const Title = styled.h1`
-
-  display: flex;
-  overflow: hidden;
-
-  justify-content: center;
-  align-items: center;
-
-  font-size: 6em;
-  font-weight: bold;
-  font-family: 'Baloo 2';
-  text-align: center; 
-  letter-spacing: 5px;
-  text-transform: capitalize;
-
-  
-
-  color: #fff;
-
-  background: linear-gradient(-45deg, #282525, #1a191a, #2d2d2d, #2c2b2b);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-
-  padding: 25px;
-
-  border-radius: 2rem;
-  box-shadow: 0px 0px 20px 5px white;
-
-  margin: 1rem auto;
-  margin-top: 100px;
-  width: fit-content;
-
-
-  @media screen and (max-width: 40em) {
-    font-size: 2em;
-    margin-left: 20px;
-    margin-right: 20px;
-    padding: 15px;
-
-    box-shadow: 0px 0px 10px 5px white;
-  }
-`
-
-0x9486B1110b2D88130054985E877bC98fED97f0C0
-
-
-
-
-
-const [walletAddress, setWalletAddress] = useState("");
-
-  async function requestAccount() {
-    
-    //checks if metamask exist
-    if(window.ethereum) {
-      console.log('Requesting account...');
-
-      try {
-        const accounts = await window.ethereum.request ({
-          method: "eth_requestAccounts",
-        });
-        setWalletAddress(accounts[0]);
-
-      } catch (error) {
-        console.log('Error connecting...');
-      }
-
-    } else {
-      alert('Metamask is not installed')
-    }
-  }
-
-  async function connectWallet() {
-    if(typeof window.ethereum !== 'undefined') {
-      await requestAccount();
-
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
-    }
-  }
-*/
 

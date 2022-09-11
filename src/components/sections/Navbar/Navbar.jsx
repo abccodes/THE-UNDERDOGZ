@@ -103,7 +103,7 @@ const Navbar = ({accounts, setAccounts}) => {
         className = {
           !nav 
             ? 'hidden'
-            : 'absolute top-0 left-0 w-full h-screen bg-white flex flex-col justify-center items-center col  '
+            : 'absolute top-0 left-0 w-full h-screen bg-white flex flex-col justify-center items-center col'
         }
       >
         <li className='py-6 text-4xl'>
