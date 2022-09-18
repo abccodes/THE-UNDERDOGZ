@@ -429,7 +429,7 @@ function Mint() {
 
                 target={"_blank"} 
                 href={CONFIG.MARKETPLACE_LINK}>
-                {CONFIG.MARKETPLACE}
+                {CONFIG.MARKETPLACxE}
               </SubText >
             </>
           ) : (
@@ -519,6 +519,7 @@ function Mint() {
                   </s.Container>
                   <s.SpacerSmall />
                   <s.Container ai={"center"} jc={"center"} fd={"row"}>
+                    
                     <button
                     className="button-85 "
                       disabled={claimingNft ? 1 : 0}

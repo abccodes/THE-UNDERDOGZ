@@ -4,10 +4,12 @@ import styled from 'styled-components';
 import '../../sections/Help/HelpStyle.css';
 
 import logo from '../../assets/Screenshot__214_-removebg-preview.png';
+import nftIcon from '../../assets/Untitled_design-removebg-preview.png'; 
 import metamask from '../../assets/download_prev_ui.png';
-import dog from '../../assets/1-removebg-preview.png';
 import snapshotIcon from '../../assets/Tvz6UU5R_400x400_prev_ui.png'; 
-import profitIcon from '../../assets/166817_prev_ui.png';
+import profitIcon from '../../assets/My project.png';
+
+
 
 
 
@@ -30,7 +32,7 @@ const Title = styled.h1`
   flex-direction: row; 
   flex-wrap: wrap; 
 
-  font-size: 6em;
+  font-size: 6.5em;
   font-weight: bold;
   font-family: 'Baloo 2';
   text-align: center; 
@@ -46,41 +48,83 @@ const Title = styled.h1`
   padding: 15px;
 
   border-radius: 2rem;
-  box-shadow: 0px 0px 20px 5px white;
+  box-shadow: 0px 5px 50px -10px #3a0ca3; 
  
   justify-content: center;
   align-items: center;
   align-self: center;
   margin: 1rem auto;
-  margin-top: 100px;
+  margin-top: 75px;
   width: fit-content;
 
-  @media screen and (max-width: 950px) {
+  //font size media
+
+  @media screen and (max-width: 1300px) {
+    font-size: 6em;
+  }
+
+  @media screen and (max-width: 1200px) {
     font-size: 5em;
   }
-
-  @media screen and (max-width: 770px) {
-    font-size: 4.5em; 
+  
+  @media screen and (max-width: 1023px) {
+    font-size: 4.5em;
   }
 
-  @media screen and (max-width: 540px) {
-    font-size: 3em;
+  
+  //Ipad
+  @media screen and (max-width: 950px) {
+    font-size: 4em;
+  }
+
+  @media screen and (max-width: 820px) {
+    font-size: 4.5em;
+  }
+
+  //Ipad Mini
+  @media screen and (max-width: 725px) {
+    font-size: 4em;
+  }
+
+  @media screen and (max-width: 640px) {
+    font-size: 3.5em;
+  }
+
+  //Phones
+
+  @media screen and (max-width: 575px) {
+    font-size: 3.5em;
+
+    margin-left: 15px;
+    margin-right: 15px;
   }
 
   @media screen and (max-width: 450px) {
-    font-size: 2.5em;
-    
-    margin-left: 20px;
-    margin-right: 20px;
-    
+    font-size: 3em;
+
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  @media screen and (max-width: 375px) {
+    font-size: 2.25em;
+
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  @media screen and (max-width: 325px) {
+    font-size: 2em;
+
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   @media screen and (max-width: 280px) {
-    font-size: 2em;
+    font-size: 1.75em;
 
-    margin-left: 20px;
-    margin-right: 20px;
-    
+    margin-left: 10px;
+    margin-right: 10px;
   }
 `
 
@@ -108,11 +152,6 @@ const Help = () => {
     
     <Section>
 
-      
-      
-      
-     
-        
       <Title>
         
       <img className = "help-title-image" src = {logo}></img>
@@ -147,7 +186,7 @@ const Help = () => {
 
             <div className = "help-front">
               <h1>How To Get Started</h1>
-              <img className = "help-card-image" src = {metamask} alt = "UDZ!"></img>
+              <img className = "help-card-image" src = {metamask} alt = ""></img>
             </div>
 
             <div className = "help-back">
@@ -164,7 +203,7 @@ const Help = () => {
 
             <div className = "help-front">
               <h1>Buying An Underdogz NFT</h1>
-              <img className = "help-card-image" src = {logo} alt = "UDZ!"></img>
+              <img className = "help-card-image" src = {nftIcon} alt = ""></img>
             </div>
 
             <div className = "help-back">
@@ -180,7 +219,7 @@ const Help = () => {
 
             <div className = "help-front">
               <h1>Snapshot Voting System</h1>
-              <img className = "help-card-image" src = {snapshotIcon} alt = "UDZ!"></img>
+              <img className = "help-card-image"  src = {snapshotIcon} alt = ""></img>
             </div>
 
             <div className = "help-back">
@@ -196,11 +235,11 @@ const Help = () => {
 
             <div className = "help-front">
               <h1>How To Collect Profits</h1>
-              <img className = "help-card-image" src = {profitIcon} alt = "UDZ!"></img>
+              <img className = "help-card-image" src = {profitIcon} alt = ""></img>
             </div>
 
             <div className = "help-back">
-              <p>Once the UNDERDOGZ DAO has voted for a dividen release, head over to the DAO page, connect your wallet and click on the "Claim Dividends" button.</p>
+              <p>Once THE UNDERDOGZ DAO has voted for a dividen release, head over to the DAO page, connect your wallet and click on the "Claim Dividends" button.</p>
             </div>
           </div>
 
@@ -219,22 +258,3 @@ const Help = () => {
 };
 
 export default Help;
-
-
-/* <div className = "helpHeader">
-      <img src = {img1} width = "200" height = "100"></img>
-        <p>Underdogz Help</p>
-      <img src = {img1} width = "200" height = "100"></img>
-      </div>
-
-
-
-      <div className="row h-100">
-      <div class="col d-flex flex-column flex-md-row justify-content-around align-items-center">
-        {card1.map((card) => (
-          <HelpFlip key={card.id} card={card} />
-        ))}
-      </div>
-      </div>
-
-*/
