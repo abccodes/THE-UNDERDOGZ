@@ -171,6 +171,7 @@ body {
 .faqs .faq .faq-question {
     position: relative;
     font-size: 25px;
+    letter-spacing: 2px; 
     padding-right: 80px;
 
     transition: all 0.4s ease;

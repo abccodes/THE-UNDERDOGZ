@@ -25,7 +25,7 @@ const Section = styled.section`
 const Container = styled.div`
   width: 75%;
   margin: 75px auto;
-  margin-bottom: 25px; 
+  margin-bottom: 45px; 
 
   display: flex;
   justify-content: center;

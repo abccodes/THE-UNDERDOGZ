@@ -102,7 +102,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile menu */}
-      <ul className = { !nav ? 'hidden' : 'absolute top-0 left-0 w-full h-screen bg-white font-semibold flex flex-col place-content-evenly items-center col'}>
+      <ul className = { !nav ? 'hidden' : 'absolute top-0 left-0 w-full h-screen bg-zinc-800 font-bold flex flex-col place-content-evenly items-center col Baloo2'}>
 
         <li className='py-6 text-4xl '>
           <a href="/">Home</a>
@@ -128,27 +128,27 @@ const Navbar = () => {
 
         <HamburgerIcons>
 
-        <li className='py-6 text-3xl'>
+        <li className='py-6 text-4xl'>
           <a href= "https://twitter.com/UnderdogZ_CAP">
-            <FaTwitter size = {45}></FaTwitter>
+            <FaTwitter size = {45} color = "#6a93cb"></FaTwitter>
           </a>
         </li>
         
-        <li className='py-6 text-3xl'>
+        <li className='py-6 text-4xl'>
           <a href= "https://discord.com/invite/RsYQDcHRSN">
-            <FaDiscord size = {45}></FaDiscord>
+            <FaDiscord size = {45} color = "#7f5a83"></FaDiscord>
           </a>
         </li>
 
-        <li className='py-6 text-md'>
+        <li className='py-6 text-4xl'>
           <a href= "https://discord.com/invite/RsYQDcHRSN">
-            <GiSailboat size = {45}></GiSailboat>
+            <GiSailboat size = {45} color = "#045de9"></GiSailboat>
           </a>
         </li>
 
-        <li className='py-6 text-3xl'>
+        <li className='py-6 text-4xl'>
           <a href= "https://www.instagram.com/underdogz_capital/">
-            <FaInstagram size = {45}></FaInstagram>
+            <FaInstagram size = {45} color = "#cc2366"></FaInstagram>
           </a>
         </li>
 
