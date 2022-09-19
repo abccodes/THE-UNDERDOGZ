@@ -11,7 +11,7 @@ import '../../fonts.css'
 // const Carousel = lazy(() => import('./Carousel'))
 
 const Section = styled.section`
-  height: auto; //min-h 110vh
+  height: auto; 
   width: 100%;
   display: flex;
   justify-content: center;
@@ -25,7 +25,7 @@ const Section = styled.section`
 const Container = styled.div`
   width: 75%;
   margin: 75px auto;
-  margin-bottom: 75px; 
+  margin-bottom: 25px; 
 
   display: flex;
   justify-content: center;

@@ -15,7 +15,7 @@ const Header = styled.div`
 
   
 
-  padding: 5px;
+  padding-top: 45px;
   background: #121113; 
  
 
@@ -121,11 +121,15 @@ const Home = () => {
       {/* <Showcase></Showcase> */}
         
         <div className="faq backgroundGrey">
-          <div className="faqs ">
+
+          <div className="faqs">
+
             {faqs.map((faq, i) => (
               <FAQ faq={faq} index={i} toggleFAQ = {toggleFAQ} />
             ))}
+            
           </div>
+
         </div>
     </div>
     

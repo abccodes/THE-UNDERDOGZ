@@ -60,8 +60,8 @@ const Item = styled.div`
   width: 250px;
   height: 350px; 
   position: relative;
-  margin-top: 75px;
-  margin-bottom: 75px;
+  margin-top: 45px;
+  margin-bottom: 45px;
   padding: 1rem 0;
 
   color: #fff;
@@ -182,7 +182,7 @@ const ImageContainer = styled.div`
   width: 80%;
   margin: 0 auto;
   background-color: white;
-  border: 1px solid #fff;
+  border: 10px solid #2d2d2d;
   padding: 1rem;
 
   border-radius: 100rem;
@@ -196,13 +196,15 @@ const ImageContainer = styled.div`
 `
 
 const Name = styled.h2`
-  font-size: 1.25em;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;  
   display: flex;
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
   color: #fff;
-  margin-top: 1rem;
+  margin-top: 10px;
 `
 
 const Position = styled.h2`
@@ -213,6 +215,7 @@ const Position = styled.h2`
   text-transform: capitalize;
   color: white;
   font-weight: 400;
+  margin-top: 5px; 
 `
 
 const Icon = styled.h2`
@@ -221,18 +224,19 @@ const Icon = styled.h2`
   align-items: center;
   justify-content: center;
   color: white;
+  margin-top: 10px;
 `
 
 const Header = styled.div`
   display: flex;
   justify-content: center;
   align-content: center;
-  
   border: none; 
 
   background-color: #121113;
 
-  padding: 5px;
+  padding-bottom: 45px;
+  padding-top: 45px; 
   background: #121113; 
 
 

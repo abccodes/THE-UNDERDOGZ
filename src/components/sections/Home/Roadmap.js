@@ -21,7 +21,7 @@ const Header = styled.div`
   justify-content: center;
   align-content: center;
   text-align: center; 
-  margin-top: 75px;
+  margin-top: 45px;
 
   padding: 5px;
   background: #121113; 
@@ -58,7 +58,7 @@ const Line = styled.div`
 `
 
 const Container = styled.div`
-  margin-top: 10%;
+  margin-top: 45px;
   width: 80%;
   height: auto;
   margin: 0 auto;

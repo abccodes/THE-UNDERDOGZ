@@ -10,7 +10,7 @@ const Container = styled.div`
   height: auto;
   display: flex;
   justify-content: space-evenly;
-  
+  border: none; 
   background-color: #121113;
    
 `
@@ -20,14 +20,9 @@ const Container = styled.div`
 const ImageContainer = styled.div`
   width: 60%;
   margin: 0 auto;
-  margin-top: 10px;
-  margin-bottom: 10px; 
+  margin-bottom: 25px; 
   padding: 5px;
-
   
-
-  border-radius: 20px;
-  cursor: pointer;
 
   @media (max-width: 1024px) {
     width: 70%;
@@ -72,12 +67,7 @@ const nfts = [
     imageAlt: 'UDZ DOG',
   },
 
-  {
-    id: 3,
-    imageSrc: img4,
-
-    imageAlt: 'UDZ DOG',
-  },
+  
 ]
 
 const ArtDisplay = () => {

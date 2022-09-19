@@ -3,11 +3,11 @@ import styled from 'styled-components'
 
 
 const Section = styled.section`
-  height: 115%;
+  height: 100%;
   width: 100%;
-  // background-color: white;
+  
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -18,20 +18,75 @@ const Section = styled.section`
 	animation: gradient 15s ease infinite;
 `
 
+const Header = styled.div`
+  
+  display: flex;
+  overflow: hidden;
+  flex-direction: row; 
+  flex-wrap: wrap; 
+  font-weight: bold;
+  font-family: 'Baloo 2';
+  font-size: 75px; 
+  text-align: center; 
+  letter-spacing: 5px;
+  text-transform: capitalize;
+ 
+  color: #fff;
+
+  
+ 
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  margin: 1rem auto;
+  margin-top: 75px;
+  width: fit-content;
+
+`
+
+const SubHeader = styled.div`
+  
+  display: flex;
+  overflow: hidden;
+  flex-direction: row; 
+  flex-wrap: wrap; 
+  font-weight: bold;
+  font-family: 'Baloo 2';
+  font-size: 25px; 
+  text-align: center; 
+  letter-spacing: 5px;
+  text-transform: capitalize;
+ 
+  color: #fff;
+  
+  
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  margin: 1rem auto;
+  margin-top: 25px;
+  width: fit-content;
+
+`
 
 const Contact = () => {
   return (
-    <Section className='css-selector disUnder'>
+    <Section>
 
-        <form method='POST' action="https://getform.io/f/616176e7-53e0-4b01-b50d-0ec04bdd82fb" className='flex flex-col max-w-[600px] w-full'>
-            <div className='pb-8'>
-                <p className=' text-5xl font-bold inline border-b-4 border-white-600 text-gray-300'>Contact</p>
-                <p className='text-gray-300 py-4'>**Submit the form below to get in contact**</p>
-            </div>
-            <input className='bg-[#ccd6f6] p-2' type="text" placeholder='Name' name='name' />
-            <input className='my-4 p-2 bg-[#ccd6f6]' type="email" placeholder='Email' name='email' />
-            <textarea className='bg-[#ccd6f6] p-2' name="message" rows="10" placeholder='Message'></textarea>
-            <button className='text-white border-2 hover:bg-pink-600 hover:border-pink-600 px-4 py-3 my-8 mx-auto flex items-center'>Submit</button>
+        <form method='POST' action="https://getform.io/f/616176e7-53e0-4b01-b50d-0ec04bdd82fb" className='flex flex-col max-w-[750px] w-full'>
+
+          <div>
+            <Header>Contact UDZ</Header>
+            <SubHeader>Request? Reccomendations? Feedback? - Get In Contact!</SubHeader>
+          </div>
+
+          <input className='bg-zinc-800 p-2 rounded-lg' type="text" placeholder='Name' name='name' />
+          <input className='my-4 p-2 bg-zinc-800 rounded-lg' type="email" placeholder='Email' name='email' />
+
+          <textarea className='bg-zinc-800 p-2 rounded-lg' name="message" rows="10" placeholder='Message'></textarea>
+
+          <button className='text-white border-2 hover:bg-zinc-800 hover: px-4 py-3 my-8 mx-auto flex items-center rounded-lg'>Submit</button>
+
         </form>
     </Section>
   )

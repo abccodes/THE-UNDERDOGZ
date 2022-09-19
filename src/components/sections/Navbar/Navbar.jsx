@@ -104,7 +104,7 @@ const Navbar = () => {
       {/* Mobile menu */}
       <ul className = { !nav ? 'hidden' : 'absolute top-0 left-0 w-full h-screen bg-white font-semibold flex flex-col place-content-evenly items-center col'}>
 
-        <li className='py-6 text-4xl'>
+        <li className='py-6 text-4xl '>
           <a href="/">Home</a>
         </li>
 
