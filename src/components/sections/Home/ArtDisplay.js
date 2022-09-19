@@ -7,95 +7,112 @@ import styled from 'styled-components'
 
 const Container = styled.div`
   width: 100%;
-  height auto;
+  height: auto;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-evenly;
+  
   background-color: #121113;
+   
 `
+
+
 
 const ImageContainer = styled.div`
   width: 60%;
   margin: 0 auto;
-  padding: 0.5rem;
+  margin-top: 10px;
+  margin-bottom: 10px; 
+  padding: 5px;
+
+  
 
   border-radius: 20px;
   cursor: pointer;
 
-  @media (max-width: 64em) {
+  @media (max-width: 1024px) {
     width: 70%;
-    height: 100%;
+    height: auto;
   }
-  @media (max-width: 48em) {
-    width: 90%;
+  @media (max-width: 768px) {
+    width: 80%;
   }
 
   img {
-    box-shadow: 0px 0px 10px 5px #3a0ca3;
+    border: 10px solid #2d2d2d;
+    border-radius: 100rem;  
     width: 100%;
     height: auto;
     transition: all 0.3s ease;
+
+    @media (max-width: 1024px) {
+      border: 5px solid #2d2d2d;
+    }
+
+    @media (max-width: 768px) {
+      border: 2.5px solid #2d2d2d;
+    }
   }
 `
 
 const nfts = [
   {
     id: 1,
-    // name: 'Earthen Bottle',
-    // price: '$48',
     imageSrc: img1,
     imageAlt: 'UDZ DOG',
   },
   {
     id: 2,
-    // name: 'Nomad Tumbler',
-    // price: '$35',
     imageSrc: img2,
     imageAlt: 'UDZ DOG',
   },
   {
     id: 3,
-    // name: 'Focus Paper Refill',
-    // price: '$89',
     imageSrc: img3,
 
     imageAlt: 'UDZ DOG',
   },
-  // {
-  //   id: 4,
-  //   // name: 'Machined Mechanical Pencil',
 
-  //   // price: '$35',
-  //   imageSrc: img4,
-  //   imageAlt: 'UDZ DOG',
-  // },
-  // More products...
+  {
+    id: 3,
+    imageSrc: img4,
+
+    imageAlt: 'UDZ DOG',
+  },
 ]
 
 const ArtDisplay = () => {
   return (
-    <Container>
-      {nfts.map((nft) => (
-        <a key={nft.id} href={nft.href} className="group">
-          <motion.div
-            initial={{
-              opacity: 0,
-            }}
-            whileInView={{ opacity: 1 }}
-            // animate={{
-            //   opacity: 1,
-            // }}
-            transition={{
-              duration: 3,
-            }}
-          >
-            <ImageContainer>
-              <img src={nft.imageSrc} alt={nft.imageAlt} />
-            </ImageContainer>
-          </motion.div>
-        </a>
-      ))}
-    </Container>
+    <div>
+      <Container>
+        
+        {nfts.map((nft) => (
+          <a key={nft.id} href={nft.href} className="group">
+            <motion.div
+              initial={{
+                opacity: 0,
+              }}
+              whileInView={{ opacity: 1 }}
+              // animate={{
+              //   opacity: 1,
+              // }}
+              transition={{
+                duration: 3,
+              }}
+            >
+              <ImageContainer>
+                <img src={nft.imageSrc} alt={nft.imageAlt} />
+              </ImageContainer>
+              
+            </motion.div>
+            
+          </a>
+          
+        ))}
+        
+      </Container>
+      
+    </div>
+    
   )
 }
 

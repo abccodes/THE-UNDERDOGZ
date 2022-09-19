@@ -6,22 +6,21 @@ import Vector from '../../Icons/Vector'
 
 const VectorContainer = styled.div`
   position: absolute;
-  top: 0.5rem;
+  top: .25rem;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
   height: 100%;
   overflow: hidden;
+  justify-content: center; 
 
   svg {
-    display: inline-block;
+    //display: inline-block;
     width: 100%;
     height: 100%;
   }
 
-  @media (max-width: 48em) {
-    left: 1rem;
-  }
+ 
 `
 
 const Ball = styled.div`
@@ -37,6 +36,8 @@ const Ball = styled.div`
   @media (max-width: 48em) {
     left: 1rem;
   }
+
+  align-items: center; 
 `
 
 const DrawSvg = () => {

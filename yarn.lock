@@ -2399,6 +2399,18 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
+"@mdi/js@^7.0.96":
+  "integrity" "sha512-lNqhkV3cpPfYb/Avh+vXLFukUTbHbyHoFo4Jdc7Oc9UvURGVhamFIpgOVvEf2bNA78zvjXTZeVWExUTR+DLBfQ=="
+  "resolved" "https://registry.npmjs.org/@mdi/js/-/js-7.0.96.tgz"
+  "version" "7.0.96"
+
+"@mdi/react@^1.6.1":
+  "integrity" "sha512-4qZeDcluDFGFTWkHs86VOlHkm6gnKaMql13/gpIcUQ8kzxHgpj31NuCkD8abECVfbULJ3shc7Yt4HJ6Wu6SN4w=="
+  "resolved" "https://registry.npmjs.org/@mdi/react/-/react-1.6.1.tgz"
+  "version" "1.6.1"
+  dependencies:
+    "prop-types" "^15.7.2"
+
 "@motionone/animation@^10.12.0":
   "integrity" "sha512-SCWkVjMChQwA4Cnt1pdmhCi0OC4cAR+rqsskNEqmbgfG59zmn50TfOP6vgqjkYbaSZXXLeEb03Mez362jIEHRg=="
   "resolved" "https://registry.npmjs.org/@motionone/animation/-/animation-10.12.0.tgz"

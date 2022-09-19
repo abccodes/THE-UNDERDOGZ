@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Header from './Header.js'
+import styled from 'styled-components'
 import FAQ from './FAQ'
 import Roadmap from './Roadmap.js'
 import Team from './Team'
@@ -7,7 +7,26 @@ import LandingPage from './LandingPage.js';
 import About from './About.js'
 import ArtDisplay from './ArtDisplay.js';
 
+const Header = styled.div`
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: #121113;
 
+  
+
+  padding: 5px;
+  background: #121113; 
+ 
+
+  color: white;
+  font-size: 50px;
+  font-weight: 700;
+  font-family: "Baloo 2";
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+`
 
 const Home = () => {
   const [faqs, setfaqs] = useState([
@@ -83,6 +102,8 @@ const Home = () => {
     )
   }
 
+
+
   return (
   
     <div className='w-full h-screen'>
@@ -94,9 +115,11 @@ const Home = () => {
       <ArtDisplay/>
       <Roadmap></Roadmap>
     
+      
       <Team></Team>
+      <Header>FAQ</Header>
       {/* <Showcase></Showcase> */}
-      <Header></Header>
+        
         <div className="faq backgroundGrey">
           <div className="faqs ">
             {faqs.map((faq, i) => (

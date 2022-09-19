@@ -13,7 +13,7 @@ const LandingPage = () => {
           animate={{ opacity: 1, x: 0 }}
         >
           <h1 className="text-5xl sm:text-8xl font-bold text-[#f5ffff] Baloo2">
-            The UnderDogZ
+            THE UNDERDOGZ
           </h1>
           <h2 className="text-4xl sm:text-8xl font-bold text-[#000000] Baloo2">
             An Investment DAO.

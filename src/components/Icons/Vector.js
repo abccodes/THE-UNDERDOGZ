@@ -3,12 +3,12 @@ import * as React from 'react'
 
 const Vector = ({ progress = 0, ...props }) => {
   return (
-    <svg viewBox="0 0 52 2047" fill={props.fill || 'none'} {...props}>
+    <svg viewBox="0 0 1 2047" fill={props.fill || 'none'} {...props}>
       <path
         strokeWidth="6px"
         className="svg-path"
         d="M1 0v2048.5"
-        stroke="white"
+        stroke="#2d2d2d"
       />
     </svg>
   )

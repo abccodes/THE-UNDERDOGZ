@@ -8,49 +8,59 @@ import { motion } from 'framer-motion'
 import '../../fonts.css'
 const ConfettiComponent = lazy(() => import('./Confetti.js'))
 
-const ImgContainer = styled.div`
-  cursor: pointer;
-
-  @media (max-width: 48em) {
-    width: 12rem;
-  }
-  @media (max-width: 30em) {
-    width: 10rem;
-  }
-
-  // border-radius: 50px;
-  width: 50%;
-  height: auto;
-  border: 2px solid white;
-  justify-content: center;
-  align-items: center;
-`
-
 const Section = styled.section`
-  height: 200vh;
+  height: auto;
   width: 100vw;
   position: relative;
   overflow: hidden;
   background-color: #121113;
 `
-const Title = styled.a`
-  font-size: 5em;
+
+const Header = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin: 5rem auto;
-  // border-bottom: 2px solid ${(props) => props.theme.text};
-  width: fit-content;
+  align-content: center;
+  text-align: center; 
+  margin-top: 75px;
 
-  @media (max-width: 40em) {
-    font-size: 2em;
+  padding: 5px;
+  background: #121113; 
+  
+
+  color: #fff; 
+  font-size: 67.2px;
+  font-weight: 700;
+  font-family: "Baloo 2";
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  
+  @media (max-width: 770px) {
+    font-size: 64px; 
   }
-  letter-spacing: 15px;
+
+  @media (max-width: 480px) {
+    font-size: 50px; 
+  }
+
 `
+const Line = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+
+  width: 100%;
+  height: 5px;
+  border-radius: 2rem;
+
+  background-color: #2d2d2d;
+  opacity: .5;
+`
+
 const Container = styled.div`
+  margin-top: 10%;
   width: 80%;
-  height: 150vh;
-  // background-color: #1c1c1c;
+  height: auto;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -64,13 +74,13 @@ const Container = styled.div`
   }
 `
 const SvgContainer = styled.div`
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 const Items = styled.ul`
-  list-style: none;
+  margin-top: 5%;
   width: 100%;
   height: 100%;
   display: flex;
@@ -80,6 +90,7 @@ const Items = styled.ul`
 
   @media (max-width: 48em) {
     width: 90%;
+
   }
 
   & > *:nth-of-type(2n + 1) {
@@ -119,55 +130,55 @@ const Items = styled.ul`
 `
 
 const Item = styled.li`
-  width: 100%;
+  width: 110%;
   height: 100%;
   display: flex;
-
-  @media (max-width: 48em) {
-    justify-content: flex-end !important;
-  }
+  margin: 5rem;
 `
 const ItemContainer = styled.div`
   width: 40%;
   height: fit-content;
   padding: 2rem;
-  border: 2px solid #fff;
+  border: 3px solid #32323240;
   color: white;
   @media (max-width: 48em) {
     width: 80%;
-    margin-top: 5px;
+    
   }
   background-color: white;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-radius: 2rem; 
   background-color: #1e1e1f;
-  box-shadow: 0px 0px 20px 10px white;
+  box-shadow: 0px 5px 30px -10px #3a0ca3;
 `
 
 const SubTitle = styled.span`
   display: block;
-  font-size: 1.25em;
-  text-transform: capitalize;
-  color: white;
 
-  @media (max-width: 40em) {
-    font-size: 2em;
+  color: white;
+  font-size: 25px;
+  font-weight: bold; 
+  text-transform: capitalize;
+  text-decoration: underline; 
+  letter-spacing: 1.5px; 
+
+  @media (max-width: 48em) {
+    font-size: 30px;
     font-weight: 600;
+    text-align: center; 
   }
   font-family: 'Baloo 2', cursive;
 `
 const Text = styled.span`
   display: block;
-  font-size: 1em;
+  font-size: 20px;
   text-transform: capitalize;
   color: white;
 
   font-weight: 400;
   margin: 0.5rem 0;
-  @media (max-width: 40em) {
-    font-size: 0.75em;
+  @media (max-width: 48em) {
+    font-size: 20px;
+    text-align: center;  
   }
 `
 
@@ -206,48 +217,21 @@ const Roadmap = () => {
     }
   }
 
-  useLayoutEffect(() => {
-    let t1 = gsap.timeline()
-    revealRefs.current.forEach((el, index) => {
-      t1.fromTo(
-        el.childNodes[0],
-        {
-          y: '0',
-        },
-        {
-          y: '-30%',
-
-          scrollTrigger: {
-            id: `section-${index + 1}`,
-            trigger: el,
-            start: 'top center+=200px',
-            end: 'bottom center',
-            scrub: true,
-            // markers:true,
-          },
-        },
-      )
-    })
-
-    return () => {
-      if (t1) t1.kill()
-    }
-  }, [])
-
   return (
     <Section>
+      <Line></Line>
+      <Header>Roadmap</Header>
       <Suspense fallback={<Loading />}>
         <ConfettiComponent />{' '}
       </Suspense>
 
-      <Title></Title>
-
       <Container>
-        <SvgContainer>
-          <DrawSvg />
-        </SvgContainer>
+
+        
+          <DrawSvg className = "self-center"></DrawSvg>
+        
+      
         <Items>
-          <Item>&nbsp;</Item>
           <RoadMapItem
             addToRef={addToRefs}
             title="Website Release"
@@ -279,7 +263,9 @@ const Roadmap = () => {
           />
         </Items>
       </Container>
+      
     </Section>
+    
   )
 }
 

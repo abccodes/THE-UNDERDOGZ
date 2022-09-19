@@ -12,6 +12,10 @@ const Section = styled.section`
   align-items: center;
   position: absolute;
   overflow: hidden;
+
+  background: linear-gradient(-45deg, #37829f, #ae71ae, #2f57cf, #cf63c4);
+  background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
 `
 
 

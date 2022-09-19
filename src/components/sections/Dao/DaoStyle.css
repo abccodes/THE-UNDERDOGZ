@@ -175,6 +175,7 @@
   opacity: 0.5; 
 }
 
+
 @media screen and (max-width: 1500px) {
   .card-container {
     width: 300px;
@@ -210,8 +211,8 @@
   }
 
   .card-image {
-    width: 100px;
-    height: 100px;
+    width: 125px;
+    height: 125px;
   }
 }
 

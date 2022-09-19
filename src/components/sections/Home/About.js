@@ -11,7 +11,7 @@ import '../../fonts.css'
 // const Carousel = lazy(() => import('./Carousel'))
 
 const Section = styled.section`
-  min-height: 110vh;
+  height: auto; //min-h 110vh
   width: 100%;
   display: flex;
   justify-content: center;
@@ -20,23 +20,19 @@ const Section = styled.section`
   overflow: hidden;
   background-color: #121113;
 `
+
+
 const Container = styled.div`
   width: 75%;
-  margin: 0 auto;
+  margin: 75px auto;
+  margin-bottom: 75px; 
 
   display: flex;
   justify-content: center;
   align-items: center;
-  // background-color: #221a26;
+  
   border-radius: 25px;
-  @media (max-width: 64em) {
-    margin-bottom: 20px;
-  }
-  @media (max-width: 45em) {
-    margin-top: 20px;
-  }
-  @media (max-width: 30em) {
-  }
+
 `
 
 const Box = styled.div`
@@ -57,7 +53,7 @@ const BoxCard = styled.div``
 const Title = styled.h2`
   width: 80%;
   // background-color: white;
-  font-size: 4.2em;
+  font-size: 67.2px;
   text-transform: capitalize;
   color: white;
   text-align: left;
@@ -65,14 +61,14 @@ const Title = styled.h2`
   font-weight: 800;
   color: #fafaff;
   @media (max-width: 64em) {
-    font-size: 4em;
+    font-size: 64px;
     width: 100%;
   }
   @media (max-width: 45em) {
-    font-size: 3em;
+    font-size: 48px;
   }
   @media (max-width: 30em) {
-    font-size: 2.5em};
+    font-size: 40px};
   }
 `
 
