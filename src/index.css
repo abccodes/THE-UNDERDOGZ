@@ -177,6 +177,8 @@ body {
     transition: all 0.4s ease;
 }
 
+
+
 .faqs .faq .faq-question::after {
     content: '';
     position: absolute;
@@ -321,6 +323,11 @@ body {
 .twitter {
     background-color: #6a93cb;
     background-image: linear-gradient(315deg, #6a93cb 0%, #a4bfef 74%);
+}
+
+.etherscan {
+    background-color: #31363c;
+    background-image: linear-gradient(315deg, #31363c 0%, #314a76 74%);
 }
 
 .disUnder {

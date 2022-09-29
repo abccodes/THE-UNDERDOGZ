@@ -234,6 +234,7 @@ const Header = styled.div`
   border: none; 
 
   background-color: #121113;
+  box-shadow: 0px 0px 500px 500px #121113;
 
   padding-bottom: 45px;
   padding-top: 45px; 
@@ -247,6 +248,7 @@ const Header = styled.div`
   font-weight: bold;
   letter-spacing: 5px;
   text-transform: uppercase;
+  text-align: center; 
 `
 
 const MemberComponent = ({

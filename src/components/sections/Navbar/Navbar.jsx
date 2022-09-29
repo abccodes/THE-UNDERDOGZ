@@ -13,6 +13,7 @@ import { GiSailboat } from "react-icons/gi";
 import Logo from '../../assets/Screenshot__214_-removebg-preview.png'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import etherscan from "../../assets/etherscan-removebg-preview.png";
 
 
 const HamburgerIcons = styled.div`
@@ -59,38 +60,35 @@ const Navbar = () => {
       {/* menu */}
       <ul className='hidden md:flex '>
 
-        <li>
-        
-        <Link to="/">
-          <a 
-          // href="/" 
-          className='mont' >
-            Home
-            </a>
-            </Link>
+        <li className = "rounded-xl hover:bg-zinc-800">
+          <Link to="/">
+          <a className = 'mont'>Home</a>
+          </Link>
         </li>
-        <li>
+
+        <li className = "rounded-xl hover:bg-zinc-800">
           <Link to="/dao">
           <a 
-          // href="/dao" 
           className='mont'>Dao</a>
           </Link>
         </li>
-        <li>
+
+        <li className = "rounded-xl hover:bg-zinc-800">
         <Link to="/mint">
           <a className='mont'>Mint</a>  
           </Link>
         </li>
-        <li>
+
+        <li className = "rounded-xl hover:bg-zinc-800">
         <Link to="/help">
           <a className='mont'>Help</a>  
           </Link>
         </li>
-        <li>
+
+        <li className = "rounded-xl hover:bg-zinc-800">
         <Link to="/contact">
           <a className='mont'>Contact</a>
-          </Link>
-          
+        </Link>
         </li>
       
       </ul>
@@ -130,25 +128,31 @@ const Navbar = () => {
 
         <li className='py-6 text-4xl'>
           <a href= "https://twitter.com/UnderdogZ_CAP">
-            <FaTwitter size = {45} color = "#6a93cb"></FaTwitter>
+            <FaTwitter size = {40} color = "#6a93cb"></FaTwitter>
           </a>
         </li>
         
         <li className='py-6 text-4xl'>
           <a href= "https://discord.com/invite/RsYQDcHRSN">
-            <FaDiscord size = {45} color = "#7f5a83"></FaDiscord>
-          </a>
-        </li>
-
-        <li className='py-6 text-4xl'>
-          <a href= "https://discord.com/invite/RsYQDcHRSN">
-            <GiSailboat size = {45} color = "#045de9"></GiSailboat>
+            <FaDiscord size = {40} color = "#7f5a83"></FaDiscord>
           </a>
         </li>
 
         <li className='py-6 text-4xl'>
           <a href= "https://www.instagram.com/underdogz_capital/">
-            <FaInstagram size = {45} color = "#cc2366"></FaInstagram>
+            <FaInstagram size = {40} color = "#cc2366"></FaInstagram>
+          </a>
+        </li>
+
+        <li className='py-6 text-4xl'>
+          <a href= "https://discord.com/invite/RsYQDcHRSN">
+            <GiSailboat size = {40} color = "#045de9"></GiSailboat>
+          </a>
+        </li>
+
+        <li className='py-6 text-4xl'>
+          <a href = 'https://etherscan.io/address/0xc05b8a99b89d419393d08d284babd2d06780bfd1'>
+          <img src = {etherscan} alt = "Eth" width = "40px" height = "40px"/>
           </a>
         </li>
 
@@ -167,6 +171,7 @@ const Navbar = () => {
               <b className='fontColorWhite'>Twitter</b> <FaTwitter size={30} />
             </a>
           </li>
+
           <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 discord'>
             <a
               className='flex justify-between items-center w-full text-gray-300'
@@ -175,6 +180,16 @@ const Navbar = () => {
               <b className='fontColorWhite'>Discord</b> <FaDiscord size={30} />
             </a>
           </li>
+
+          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 insta'>
+            <a
+              className='flex justify-between items-center w-full text-gray-300'
+              href='/'
+            >
+              <b className='fontColorWhite'>Instagram</b> <FaInstagram size={30} />
+            </a>
+          </li>
+
           <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 opensea'>
             <a
               className='flex justify-between items-center w-full text-gray-300'
@@ -183,12 +198,13 @@ const Navbar = () => {
               <b className='fontColorWhite'>Opensea</b> <GiSailboat size={30} />
             </a>
           </li>
-          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 insta'>
+
+          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 etherscan'>
             <a
               className='flex justify-between items-center w-full text-gray-300'
-              href='/'
+              href='https://etherscan.io/address/0xc05b8a99b89d419393d08d284babd2d06780bfd1'
             >
-              <b className='fontColorWhite'>Instagram</b> <FaInstagram size={30} />
+              <b className='fontColorWhite'>Etherscan</b> <img src = {etherscan} alt = "Eth" width = "35px" height = "35px"/>
             </a>
           </li>
         </ul>

@@ -10,8 +10,10 @@ import logo from '../../assets/Screenshot__214_-removebg-preview.png';
 import bank from '../../assets/fINAL_COIN-removebg.png';
 
 //Blockchain Imports
-import NftCard from './nftcard';
+import underdogzABI from '../../sections/Dao/abi.json';
 import {fetchNFTs} from '../../../utils/fetchNFTs.js';
+import NftCard from './nftcard';
+
 
 
 //---------------------------------------------------
@@ -335,10 +337,44 @@ const Dao = () => {
   }
 
   async function connect(onConnected) {  
-    if (!window.ethereum) {
-      alert("MetaMask is not currently installed");
-      return;
-    }
+
+    // Check if MetaMask is installed
+    // MetaMask injects the global API into window.ethereum
+
+    if (window.ethereum) {
+      try {
+        // check if the chain to connect to is installed
+        await window.ethereum.request({
+          method: 'wallet_switchEthereumChain',
+          params: [{ chainId: '0x1' }], // chainId must be in hexadecimal numbers
+        });
+
+      } catch (error) {
+
+        // This error code indicates that the chain has not been added to MetaMask
+        // if it is not, then install it into the user MetaMask
+
+        if (error.code === 4902) {
+          try {
+            await window.ethereum.request({
+              method: 'wallet_addEthereumChain',
+              params: [
+                {
+                  chainId: '0x1',
+                  rpcUrl: 'https://eth-mainnet.alchemyapi.io/v2/',
+                },
+              ],
+            });
+          } catch (addError) {
+            console.error(addError);
+          }
+        }
+        console.error(error);
+      }
+    } else {
+      // if no window.ethereum then MetaMask is not installed
+      alert('MetaMask is not installed. Please consider installing it: https://metamask.io/download.html');
+    } 
 
     const accounts = await window.ethereum.request ({
       method: "eth_requestAccounts",
@@ -357,6 +393,7 @@ const Dao = () => {
         method: "eth_accounts",
       });
 
+      
       
       //if user has metamask installed - if() sets up their logged in account to be initialized 
       if ( accounts && accounts.length > 0) {
@@ -381,20 +418,20 @@ const Dao = () => {
 
     if (isMobileDevice()) {
 
-        const dappUrl = "metamask.app.link/dapp/opensea.io/"    //deep link for mobile users - will be set to opensea until TriLinked is hosted
-        const metamaskAppDeepLink = "https://metamask.app.link/dapp/" + dappUrl; 
+      const dappUrl = "metamask.app.link/dapp/opensea.io/"    //deep link for mobile users - will be set to opensea until TriLinked is hosted
+      const metamaskAppDeepLink = "https://metamask.app.link/dapp/" + dappUrl; 
 
-        return (
+      return (
         <a href = {metamaskAppDeepLink}> 
-            <button>Connect</button> 
+          <button>Connect</button> 
         </a>    
-        ); 
+      ); 
     }
 
 
 
     //Displays sliced wallet address upon connect 
-    if (userAddress != "") {
+    if (userAddress !== "") {
         return (
           <p>Connected: {userAddress.substring(0, 2)}...{userAddress.substring(userAddress.length - 3)}</p>
         )
@@ -419,7 +456,6 @@ const Dao = () => {
 
   // Get Treasury Balance =====================================
 
-  
   const [treasuryBalance, setTreasuryBalance] = useState(null); 
 
   useEffect(() => {
@@ -440,9 +476,23 @@ const Dao = () => {
 
   },[]) 
   
+
+  //Claim Dividends 
+
+  const underdogzAddress = "0x5e23A18ab660fBCc93308a6e1B568Ed83297Ad13";
+  const provider = new ethers.providers.Web3Provider(window.ethereum);
+  const underdogzContract = new ethers.Contract(underdogzAddress, underdogzABI, provider.getSigner())
+
+  async function claimDividends() {
+
+    const claim = underdogzContract.claimDividends(userAddress);
+    console.log(userAddress + " is claiming...");
+
+    if (!userAddress) {
+      alert("Please connect to Metamask"); 
+    } 
+  }
   
-
-
 
   return(
 
@@ -535,7 +585,7 @@ const Dao = () => {
 
         <button className = 'daoBtn' onClick = {(e) => {e.preventDefault(); window.location.href = 'https://snapshot.org/#/';}}>Snapshot - Participate Here</button>
 
-        <button className = 'daoBtn'> Claim Dividends </button>
+        <button className = 'daoBtn' onClick = {claimDividends}> Claim Dividends </button>
 
         <button className = 'daoBtn'><Connect/></button>
 

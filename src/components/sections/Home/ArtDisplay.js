@@ -12,10 +12,8 @@ const Container = styled.div`
   justify-content: space-evenly;
   border: none; 
   background-color: #121113;
-   
+  box-shadow: 0px 0px 500px 500px #121113;
 `
-
-
 
 const ImageContainer = styled.div`
   width: 60%;

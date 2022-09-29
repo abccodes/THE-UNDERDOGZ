@@ -17,7 +17,7 @@ const Header = styled.div`
 
   padding-top: 45px;
   background: #121113; 
- 
+  box-shadow: 0px 0px 500px 500px #121113;
 
   color: white;
   font-size: 50px;
@@ -42,11 +42,11 @@ const Home = () => {
     },
     {
       question: 'How many per wallet on mint?',
-      answer: '5 Total',
+      answer: '10 Total',
       open: false,
     },
     {
-      question: 'How many Whitelist/AllowList spots?',
+      question: 'How many Whitelist spots?',
       answer: '1000',
       open: false,
     },
