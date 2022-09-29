@@ -150,8 +150,8 @@ const FormSection = styled.div`
   overflow: hidden; 
   
   margin: 1rem auto; 
-  margin-top: 50px; 
- 
+  margin-top: 75px; 
+  margin-bottom: 75px;
 
   width: fit-content; 
   height: auto; 
