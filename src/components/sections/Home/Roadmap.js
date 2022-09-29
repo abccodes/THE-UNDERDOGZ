@@ -10,7 +10,7 @@ const ConfettiComponent = lazy(() => import('./Confetti.js'))
 
 const Section = styled.section`
   height: auto;
-  width: 100vw;
+  width: 100%;
   position: relative;
   overflow: hidden;
   background-color: #121113;
@@ -228,7 +228,7 @@ const Roadmap = () => {
       <Container>
 
         
-          <DrawSvg className = "self-center"></DrawSvg>
+        <DrawSvg className = "self-center"></DrawSvg>
         
       
         <Items>

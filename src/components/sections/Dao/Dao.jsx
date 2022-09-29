@@ -1,10 +1,11 @@
 //General Imports
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, lazy, Suspense } from "react";
 import styled, { keyframes} from 'styled-components';
 import { ethers } from "ethers"; 
 
 //Styling Imports
 import '../../sections/Dao/DaoStyle.css';
+import Loading from '../../sections/Home/Loading.js';
 import eth from '../../assets/ethereum-eth.webp';
 import logo from '../../assets/Screenshot__214_-removebg-preview.png';
 import bank from '../../assets/fINAL_COIN-removebg.png';
@@ -17,6 +18,8 @@ import NftCard from './nftcard';
 
 
 //---------------------------------------------------
+
+const SnowfallComponent = lazy(() => import('../../sections/Contact/Snowfall.js'));
 
 const Section = styled.section`
   justify-content: center; 
@@ -499,6 +502,10 @@ const Dao = () => {
    
     <Section>
 
+      <Suspense fallback={<Loading />}>
+        <SnowfallComponent />{' '}
+      </Suspense>
+
       <Title>
         
         <img className = "title-image" src = {eth} alt = ""></img>
@@ -592,8 +599,7 @@ const Dao = () => {
       </Buttons>
 
       <div className = "dao-line"></div>
-      
-      
+
      <div className = "nft-container">
         {
           NFTs ? NFTs.map((NFT, index) => { 

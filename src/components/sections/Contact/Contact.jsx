@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { lazy, Suspense} from 'react'
 import styled, { keyframes} from 'styled-components';
+import Loading from '../../sections/Home/Loading.js';
 import '../../sections/Contact/Contact.css';
 
-import leftLetter from "../../assets/Screenshot__252_-removebg-preview.png"; 
-import rightLetter from "../../assets/Screenshot__253_-removebg-preview.png"; 
+
 import logo from '../../assets/Screenshot__214_-removebg-preview.png';
+
+const SnowfallComponent = lazy(() => import('./Snowfall.js'));
 
 const Section = styled.div`
   justify-content: center; 
@@ -150,11 +152,12 @@ const FormSection = styled.div`
   overflow: hidden; 
   
   margin: 1rem auto; 
-  margin-top: 75px; 
-  margin-bottom: 75px;
+  margin-top: 75px;
+  margin-bottom: 75px; 
+  
 
   width: fit-content; 
-  height: auto; 
+  
 
   color: #fff; 
 
@@ -177,6 +180,10 @@ const Contact = () => {
   return (
     <Section>
 
+      <Suspense fallback={<Loading />}>
+        <SnowfallComponent />{' '}
+      </Suspense>
+
       <Title>
         <img className = "contact-title-image" src = {logo} alt = ""></img>
         UNDERDOGZ CONTACT
@@ -186,7 +193,6 @@ const Contact = () => {
       
 
      <FormSection>
-
 
       <form method='POST' action="https://getform.io/f/616176e7-53e0-4b01-b50d-0ec04bdd82fb">
 

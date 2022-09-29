@@ -43,6 +43,7 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
     "react-scroll": "^1.8.6",
+    "react-snowfall": "^1.2.1",
     "react-spinners": "^0.13.3",
     "react-spring": "^9.4.5",
     "react-use": "^17.4.0",

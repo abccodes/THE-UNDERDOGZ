@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense  } from 'react';
 import styled from 'styled-components';
 
 import '../../sections/Help/HelpStyle.css';
+
+import Loading from '../../sections/Home/Loading.js';
 
 import logo from '../../assets/Screenshot__214_-removebg-preview.png';
 import nftIcon from '../../assets/Untitled_design-removebg-preview.png'; 
@@ -10,9 +12,7 @@ import snapshotIcon from '../../assets/Tvz6UU5R_400x400_prev_ui.png';
 import profitIcon from '../../assets/My project.png';
 
 
-
-
-
+const SnowfallComponent = lazy(() => import('../../sections/Contact/Snowfall.js'));
 
 const Section = styled.section`
   justify-content: center; 
@@ -152,11 +152,15 @@ const Help = () => {
     
     <Section>
 
+      <Suspense fallback={<Loading />}>
+        <SnowfallComponent />{' '}
+      </Suspense>
+
       <Title>
         
-      <img className = "help-title-image" src = {logo}></img>
-        UNDERDOGZ HELP
-      <img className = "help-title-image" src = {logo}></img>
+        <img className = "help-title-image" src = {logo}></img>
+          UNDERDOGZ HELP
+        <img className = "help-title-image" src = {logo}></img>
       
       </Title>
 
