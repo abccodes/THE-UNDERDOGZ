@@ -56,8 +56,8 @@ const NftCard = ( props ) => {
               <div className="flex mb-3">
 
                 <div className="flex-grow">
-                  <h3 className="text-lg text-white font-mono font-bold">{props.value.title}</h3>
-                  <p className="text-md text-white font-mono font-semibold">{`${props.value.id.slice(0, 2)}..${props.value.id.slice(props.value.id.length - 3)}`}</p>
+                  <h3 className="text-lg text-white font-Baloo2 font-bold">{props.value.title}</h3>
+                  <p className="text-md text-white font-Baloo2 font-semibold">{`${props.value.id.slice(0, 2)}..${props.value.id.slice(props.value.id.length - 3)}`}</p>
                 </div>
 
                 <div className="flex mr-1">

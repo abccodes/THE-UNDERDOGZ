@@ -433,29 +433,25 @@ body {
     -webkit-user-select: none;
     touch-action: manipulation;
   }
-  }
+}
 
-  @media only screen and (min-width: 1000px) {
-    /* CSS */
-    .button-85 {
-        padding: 1em 5.9em;
-        border: none;
-        outline: none;
-        color: rgb(24, 24, 24);
-        background: rgb(255, 255, 255);
-        cursor: pointer;
-        position: relative;
-        z-index: 0;
-        border-radius: 10px;
-        user-select: none;
-        -webkit-user-select: none;
-        touch-action: manipulation;
-      }
+@media only screen and (min-width: 1000px) {
+/* CSS */
+.button-85 {
+    padding: 1em 5.9em;
+    border: none;
+    outline: none;
+    color: rgb(24, 24, 24);
+    background: rgb(255, 255, 255);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
     }
-
-
-
-
+}
 
 
 
@@ -533,4 +529,35 @@ body {
 
 .marginTop {
     margin-top: 10%;
+}
+
+
+.mintBtn {
+    width: 40%;
+    height: 50px;
+    border-radius: 2rem;
+    transition: ease-out 0.5s;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 5px;
+    margin-top: 5px;
+
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Baloo 2';
+    letter-spacing: 1px;
+    text-align: center;
+
+    background: linear-gradient(-45deg, #37829f, #ae71ae, #2f57cf, #cf63c4);
+    background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+
+    color: #fff;
+
+}
+
+.mintBtn:hover {
+background-color: #2d2d2d;
+box-shadow: inset 400px 0 0 0 #2d2d2d;
 }

@@ -9,33 +9,59 @@ import store from './redux/store'
 import img from '../../assets/giphy (3).gif'
 import Count from './CountdownTimer/CountdownTimer'
 import lightning1 from "../../assets/Lightning_Bursts_1_2286_2K.gif"
-import Web3 from 'web3'
 import {getRemainingTimeUntilMsTimestamp} from "./CountdownTimer/Utils/CountdownTimerUtils"
 
-const truncate = (input, len) =>
-  input.length > len ? `${input.substring(0, len)}...` : input;
+const Section = styled.a`
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+`
 
+const ContainerCenter = styled.div`
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+`
 
+const Header = styled.h1`
 
-export const StyledButton = styled.button`
-  padding: 10px;
-  border-radius: 50px;
-  border: none;
-  background-color: var(--secondary);
-  padding: 10px;
-  font-weight: bold;
-  color: white;
-  width: 100px;
-  cursor: pointer;
-  box-shadow: 0px 6px 0px -2px rgba(250, 250, 250, 0.3);
-  -webkit-box-shadow: 0px 6px 0px -2px rgba(250, 250, 250, 0.3);
-  -moz-box-shadow: 0px 6px 0px -2px rgba(250, 250, 250, 0.3);
-  :active {
-    box-shadow: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-  }
-`;
+  display: flex; 
+
+  background: linear-gradient(-45deg, #282525, #1a191a, #2d2d2d, #2c2b2b);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+
+  padding: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  // border-radius: 2rem;
+  box-shadow: 0px 0px 10px 5px #2b2b2b; 
+ 
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+  width: fit-content;
+`
+const Box = styled.div`
+  background: linear-gradient(-45deg, #282525, #1a191a, #2d2d2d, #2c2b2b);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  width: 90%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: .5px solid black;
+  margin-top: 2.5%;
+  box-shadow: 0px 0px 20px 10px #4e32a8;
+  border-radius: 45px;
+  margin-top 5%;
+`
 
 export const StyledRoundButton = styled.button`
   padding: 10px;
@@ -52,7 +78,7 @@ export const StyledRoundButton = styled.button`
   align-items: center;
   justify-content: center;
   box-shadow: 0px 4px 0px -2px rgba(250, 250, 250, 0.3);
-  -webkit-box-shadow: 0px 4px 0px -2px #3a0ca3;
+  -webkit-box-shadow: 0px 4px 0px -2px #2d2d2d;
   -moz-box-shadow: 0px 4px 0px -2px rgba(250, 250, 250, 0.3);
   :active {
     box-shadow: none;
@@ -61,94 +87,11 @@ export const StyledRoundButton = styled.button`
   }
 `;
 
-export const ResponsiveWrapper = styled.div`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: stretched;
-  align-items: stretched;
-  width: 100%;
-  @media (min-width: 767px) {
-    flex-direction: row;
-  }
-`;
-
-export const StyledLogo = styled.img`
-  width: 200px;
-  @media (min-width: 767px) {
-    width: 300px;
-  }
-  transition: width 0.5s;
-  transition: height 0.5s;
-`;
 
 export const StyledImg = styled.img`
-  box-shadow: 0px 5px 11px 2px rgba(0, 0, 0, 0.7);
-  border: 4px dashed var(--secondary);
-  background-color: var(--accent);
-  border-radius: 100%;
-  width: 200px;
-  @media (min-width: 900px) {
-    width: 250px;
-  }
-  @media (min-width: 1000px) {
-    width: 300px;
-  }
-  transition: width 0.5s;
+  border: 5px solid #2d2d2d;  
+  border-radius: 100rem;  
 `;
-
-export const StyledLink = styled.a`
-  color: #efe6fc;
-  text-decoration: none;
-  justify-content: center;
-  align-items: center;
-  font-size: 10px;
-`;
-
-const Section = styled.a`
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  // background-color: #161717;
-`
-
-
-
-
-const ContainerCenter = styled.div`
-  width: 70%;
-  justify-content: center;
-  align-items: center;
-
-  display: flex;
-  flex-wrap: wrap;
-
-  @media (max-width: 64em) {
-    width: 100%;
-  }
-  @media (max-width: 48em) {
-    width: 110%;
-    // height: 70%
-  }
-`
-
-const Box = styled.div`
-  width: 50%;
-  max-height: 600px;
-  display: inline-block;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: .5px solid black;
-  margin-top: 3%;
-  background-color: #171717;
-  box-shadow: 0px 0px 40px 20px #4e32a8;
-  border-radius: 45px;
-`
 
 const Title = styled.h2`
   text-align: center;
@@ -159,131 +102,56 @@ const Title = styled.h2`
   width: 80%;
   margin: 0 auto;
   font-weight: bold;
-
-  @media (max-width: 64em) {
-    width: 100%;
-    text-align: center;
-  }
-  @media (max-width: 40em) {
-    font-size: 3em;
-  }
-  @media (max-width: 30em) {
-    font-size: 1.25em};
-  }
-
 `
 const TextDescription = styled.p`
   position: absolute;
-  bottom: 10px;
+  bottom: 0px;
   justify-content: center;
-  font-size: .2em;
-
-`
-const MidText = styled.h2`
-  text-align: center;
-  font-size: 3em;
-  text-transform: capitalize;
-  color: white;
-  align-self: flex-start;
-  width: 80%;
-  margin: 0 auto;
-  font-weight: bold;
-
-  @media (max-width: 64em) {
-    width: 100%;
-    text-align: center;
-  }
-  @media (max-width: 40em) {
-    font-size: 1.5em;
-  }
-  @media (max-width: 30em) {
-    font-size: 1em};
-  }
-
+  font-size: 0.5em;
 `
 
 const SubText = styled.p`
+  justify-content: center;
+  align-items: center;
   display: flex; 
-  justify-content: space-evenly;
-  font-size: 1.5em;
+  font-size: 2em;
   color: white;
   align-self: flex-start;
   margin: 1rem auto;
-  font-weight: bold;
 `
 
 const NumberText = styled.p`
 
   display: flex; 
-  font-size: 2em;
+  font-size: 2.75em;
   color: white;
   align-self: center;
   justify-content: center;
   font-weight: 600;
-  margin-top: 5px;
-  
-  @media (max-width: 64em) {
-    width: 100%;
-    text-align: center;
-  }
-  @media (max-width: 40em) {
-    font-size: 1.5em;
-  }
-  @media (max-width: 30em) {
-    font-size: 1em};
-  }
+  margin-top: 2.5px;
 
 `
 
 const SmallText = styled.p`
   display: flex; 
-
   font-size: .75em;
   color: white;
   align-self: center;
   justify-content: center;
   font-weight: bold;
-
-  margin-top: 5px;
-`
-
-
-const Button = styled.button`
-  background: #fff5f6;
-  padding: 0px 6px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
-  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-  box-shadow: rgba(0,0,0,1) 0 1px 0;
-  text-shadow: rgba(0,0,0,.4) 0 px 0;
-  color: #000000;
-  font-size: 30px;
-  font-weight: 500;
+  margin-bottom: 1%;
 `
 
 const ImgContainer = styled.div`
-margin-top: 10%;
 margin:auto;
-
 cursor: pointer;
-
-@media (max-width: 48em) {
-  width: 12rem;
-}
-@media (max-width: 30em) {
-  width: 8rem;
-}
-
-// border-radius: 50px;
-width: 50%;
+width: 40%;
 height: auto;
-border: 4px solid white;
 justify-content: center;
 align-items: center;
-margin-bottom: 6px;
+margin-bottom: 15px;
 `
+
 
 function Mint() {
   const dispatch = useDispatch();
@@ -298,11 +166,11 @@ function Mint() {
     NETWORK: {
       NAME: "",
       SYMBOL: "",
-      ID: 4,
+      ID: 0,
     },
     NFT_NAME: "",
     SYMBOL: "",
-    MAX_SUPPLY: 1,
+    MAX_SUPPLY: 0,
     WEI_COST: 0,
     DISPLAY_COST: 0,
     GAS_LIMIT: 0,
@@ -337,7 +205,7 @@ function Mint() {
       .then((receipt) => {
         console.log(receipt);
         setFeedback(
-          `The ${CONFIG.NFT_NAME} is yours! go visit Opensea.io to view it.`
+          `Congratulations, Minting Sucessful! Visit Opensea To View`
         );
         setClaimingNft(false);
         dispatch(fetchData(blockchain.account));
@@ -354,8 +222,8 @@ function Mint() {
 
   const incrementMintAmount = () => {
     let newMintAmount = mintAmount + 1;
-    if (newMintAmount > 5) {
-      newMintAmount = 5;
+    if (newMintAmount > 15) {
+      newMintAmount = 1;
     }
     setMintAmount(newMintAmount);
   };
@@ -386,68 +254,57 @@ function Mint() {
   }, [blockchain.account]);
 
   //countdown to display time until mint
-  const countdown = 1664582400000;  
-
+  // const countdown = 1664953200000;  
+  const countdown = 0; 
+  
   return (
     <Section style={{backgroundImage: `url(${lightning1})`}}>
-    {
-    //   (getRemainingTimeUntilMsTimestamp(countdown)).days >= 0 &&
-    //   (getRemainingTimeUntilMsTimestamp(countdown)).hours >= 0 &&
-    //   (getRemainingTimeUntilMsTimestamp(countdown)).minutes >= 0 &&
-    //   (getRemainingTimeUntilMsTimestamp(countdown)).seconds >= 0
+    { 
+      
+      ((getRemainingTimeUntilMsTimestamp(countdown)).days) > 0 &&
+      ((getRemainingTimeUntilMsTimestamp(countdown)).hours) > 0 &&
+      ((getRemainingTimeUntilMsTimestamp(countdown)).minutes) > 0 &&
+      ((getRemainingTimeUntilMsTimestamp(countdown)).seconds) > 0
 
-    //  ? (<Count countdownTimestampMs={countdown}/>) 
-    // : 
+     ? (<Count countdownTimestampMs={countdown}/>) 
+    : 
      
      
      (
     <ContainerCenter>
-
+      <Header>
       <Count countdownTimestampMs={countdown}/>
-        <Box>
-          <NumberText className="Baloo2">
-            {data.totalSupply} / {CONFIG.MAX_SUPPLY}
-          </NumberText>
-
-          <s.TextDescription
-            style={{textAlign: "center"}}>
-            <StyledLink className="mont" target={"_blank"} href={CONFIG.SCAN_LINK}>
-              {truncate(CONFIG.CONTRACT_ADDRESS, 15)}
-            </StyledLink>
-          </s.TextDescription>
-
-        
+      </Header>
+      
+        <Box>        
           {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
             <>
               <Title style={{ textAlign: "center", color: "white" }} className="Baloo2 ">
                 The sale has ended
               </Title>
               <SubText style={{ textAlign: "center", color: "white" }} className="mont">
-                Check out {CONFIG.NFT_NAME} on 
-              </SubText >
-              <SubText 
-
-                target={"_blank"} 
-                href={CONFIG.MARKETPLACE_LINK}>
-                {CONFIG.MARKETPLACxE}
+                <a href={CONFIG.MARKETPLACE_LINK}> Opensea</a>
               </SubText >
             </>
           ) : (
             <>
+                      <NumberText className="Baloo2">
+            {data.totalSupply} / {CONFIG.MAX_SUPPLY}
+          </NumberText>
               <SmallText
-                className="mont"
+                className="about"
               >
                 1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
                 {CONFIG.NETWORK.SYMBOL}
               </SmallText>
               <ImgContainer>
-      <img width={500} height={400} src={img} alt="UnderDogZ" />
+      <StyledImg src={img} alt="UnderDogZ" />
       </ImgContainer>
               {blockchain.account === "" ||
               blockchain.smartContract === null ? (
                 <s.Container ai={"center"} jc={"center"}>
 
-                  <button className="button-85 Baloo2"
+                  <button className="mintBtn Baloo2"
                     onClick={(e) => {
                       e.preventDefault();
                       dispatch(connect());
@@ -521,7 +378,7 @@ function Mint() {
                   <s.Container ai={"center"} jc={"center"} fd={"row"}>
                     
                     <button
-                    className="button-85 "
+                      className="mintBtn"
                       disabled={claimingNft ? 1 : 0}
                       onClick={(e) => {
                         e.preventDefault();
@@ -529,28 +386,18 @@ function Mint() {
                         getData();
                       }}
                     >
-                      {claimingNft ? <p className="Baloo2">BUSY</p> : <p className="Baloo2">MINT</p>}
+                      {claimingNft ? <p className="Baloo2">MINTING</p> : <p className="Baloo2">MINT</p>}
                     </button>
                   </s.Container>
                 </>
               )}
             </>
           )}
-          <s.SpacerMedium />
+
         </Box>
       
-        <TextDescription
-          style={{
-            textAlign: "center",
-            color: "white",
-          }}
-        >
-          Please make sure you are connected to the right network (
-          {CONFIG.NETWORK.NAME} Mainnet) and the correct address. Please note:
-          Once you make the purchase, you cannot undo this action.
-        </TextDescription>    
        </ContainerCenter>
-       )}
+       )}   
     </Section>
   );
 }

@@ -6,7 +6,7 @@ import '../../sections/Contact/Contact.css';
 
 import logo from '../../assets/Screenshot__214_-removebg-preview.png';
 
-const SnowfallComponent = lazy(() => import('./Snowfall.js'));
+const SnowfallComponent = lazy(() => import('../../../components/Snowfall.js'));
 
 const Section = styled.div`
   justify-content: center; 
@@ -17,6 +17,15 @@ const Section = styled.div`
   position: relative;
   overflow: hidden;
   background-color: #121113;
+
+  @media screen and (max-width: 950px) {
+    height: 100vh; 
+  }
+
+  @media screen and (max-width: 450px) {
+    height: auto; 
+  }
+
 `
 
 const Title = styled.h1`
@@ -26,7 +35,7 @@ const Title = styled.h1`
   flex-direction: row; 
   flex-wrap: wrap; 
 
-  font-size: 5em;
+  font-size: 6.5em;
   font-weight: bold;
   font-family: 'Baloo 2';
   text-align: center; 
@@ -54,89 +63,92 @@ const Title = styled.h1`
   //font size media
 
   @media screen and (max-width: 1300px) {
-    font-size: 4.5em;
+    font-size: 6em;
   }
 
   @media screen and (max-width: 1200px) {
-    font-size: 4.25em;
+    font-size: 5em;
   }
   
-  @media screen and (max-width: 1100px) {
-    font-size: 4em;
+  @media screen and (max-width: 1023px) {
+    font-size: 4.5em;
   }
 
-  @media screen and (max-width: 1000px) {
-    font-size: 3.75em;
-  }
-
+  
   //Ipad
   @media screen and (max-width: 950px) {
-    font-size: 3.25em;
-  }
-
-  @media screen and (max-width: 850px) {
     font-size: 4em;
   }
 
-  @media screen and (max-width: 820px) {
-    font-size: 3.75em;
-  }
+  //Padding left-right starts: 
 
-  @media screen and (max-width: 750px) {
-    font-size: 3.5em;
+  @media screen and (max-width: 820px) {
+    font-size: 4.5em;
+
+    padding-left: 75px;
+    padding-right: 75px;
   }
 
   //Ipad Mini
   @media screen and (max-width: 725px) {
-    font-size: 3.25em;
+    font-size: 4em;
+
+    padding-left: 75px;
+    padding-right: 75px;
   }
 
-  @media screen and (max-width: 660px) {
-    font-size: 3em;
-  }
-
-  //Phones
-
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 640px) {
     font-size: 3.5em;
 
-    margin-left: 20px;
-    margin-right: 20px;
+    padding-left: 75px;
+    padding-right: 75px;
   }
+
+  //Phones 
 
   @media screen and (max-width: 575px) {
     font-size: 3.5em;
 
-    margin-left: 20px;
-    margin-right: 20px;
+    padding-left: 45px;
+    padding-right: 45px;
+
   }
 
+  @media screen and (max-width: 500px) {
+    font-size: 3.25em;
+
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  //Hamburger style starts
+
   @media screen and (max-width: 450px) {
-    font-size: 3em;
+    font-size: 3.25em;
 
     margin-left: 15px;
     margin-right: 15px;
   }
 
   @media screen and (max-width: 375px) {
-    font-size: 2.25em;
+    font-size: 3em;
 
-    margin-left: 15px;
-    margin-right: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   @media screen and (max-width: 325px) {
-    font-size: 2em;
+    font-size: 2.75em;
 
-    margin-left: 15px;
-    margin-right: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   @media screen and (max-width: 280px) {
-    font-size: 1.75em;
+    font-size: 2.25em;
 
-    margin-left: 15px;
-    margin-right: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 `
 
@@ -152,12 +164,12 @@ const FormSection = styled.div`
   overflow: hidden; 
   
   margin: 1rem auto; 
-  margin-top: 75px;
-  margin-bottom: 75px; 
+  margin-top: 50px;
+  margin-bottom: 25px; 
   
 
   width: fit-content; 
-  
+  padding: 35px; 
 
   color: #fff; 
 
@@ -165,7 +177,7 @@ const FormSection = styled.div`
   background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
 
-  padding: 35px; 
+  
 
   border: 2px solid #2d2d2d; 
   border-radius: 2rem; 
@@ -186,28 +198,27 @@ const Contact = () => {
 
       <Title>
         <img className = "contact-title-image" src = {logo} alt = ""></img>
-        UNDERDOGZ CONTACT
+        CONTACT US!
         <img className = "contact-title-image" src = {logo} alt = ""></img>
       </Title>
 
       
 
-     <FormSection>
+      <FormSection>
 
-      <form method='POST' action="https://getform.io/f/616176e7-53e0-4b01-b50d-0ec04bdd82fb">
+        <form method='POST' action="https://getform.io/f/616176e7-53e0-4b01-b50d-0ec04bdd82fb">
 
-        <p className = "form-header">Request & Reccomendations? <br/> Let us know!</p>
+          <p className = "form-header">Request & Reccomendations? <br/> Let us know!</p>
 
-        <input className= 'form-input h-10' type = "text" placeholder= ' Name' name='name' />
-        <input className= 'form-input h-10' type = "email" placeholder= ' Email' name='email' />
+          <input className= 'form-input h-10' type = "text" placeholder= ' Name' name='name' />
+          <input className= 'form-input h-10' type = "email" placeholder= ' Email' name='email' />
 
-        <textarea className= 'form-input h-50' name="message" rows="10" placeholder=' Message'></textarea>
+          <textarea className= 'form-input h-50' name="message" rows="10" placeholder=' Message'></textarea>
 
-        <button className = 'form-submit'>Submit</button>
+          <button className = 'form-submit'>Submit</button>
 
-      </form>
-
-     </FormSection>
+        </form>
+      </FormSection>
 
     </Section>
   )

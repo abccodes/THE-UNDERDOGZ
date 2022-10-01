@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './CountdownTimer.css'
-import { getRemainingTimeUntilMsTimestamp } from './Utils/CountdownTimerUtils'
+import { getRemainingTimeUntilMsTimestamp} from './Utils/CountdownTimerUtils'
 
 const defaultRemainingTime = {
   seconds: '00',
@@ -9,7 +9,7 @@ const defaultRemainingTime = {
   days: '00',
 }
 
-const CountdownTimer = ({ countdownTimestampMs }) => {
+const CountdownTimer = ({ countdownTimestampMs, }) => {
   const [remainingTime, setRemainingTime] = useState(defaultRemainingTime)
 
   useEffect(() => {
@@ -29,13 +29,19 @@ const CountdownTimer = ({ countdownTimestampMs }) => {
 
   return (
     <div className="countdown-timer titleFont">
-      <p className="two-numbers">{remainingTime.days}</p>
-      <span></span>:<span></span>
-      <p className="two-numbers">{remainingTime.hours}</p>
-      <span></span>:<span></span>
-      <p className="two-numbers">{remainingTime.minutes}</p>
-      <span></span>:<span></span>
-      <p className="two-numbers">{remainingTime.seconds}</p>
+      <p className="animate-charcter Baloo2">{remainingTime.days}</p>
+      <span />
+      <span />
+      <span />
+      <p className="animate-charcter Baloo2">{remainingTime.hours}</p>
+      <span />
+      <span />
+      <span />
+      <p className="animate-charcter Baloo2">{remainingTime.minutes}</p>
+      <span />
+      <span />
+      <span />
+      <p className="animate-charcter Baloo2">{remainingTime.seconds}</p>
     </div>
   )
 }

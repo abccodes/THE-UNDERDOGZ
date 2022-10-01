@@ -12,7 +12,7 @@ import snapshotIcon from '../../assets/Tvz6UU5R_400x400_prev_ui.png';
 import profitIcon from '../../assets/My project.png';
 
 
-const SnowfallComponent = lazy(() => import('../../sections/Contact/Snowfall.js'));
+const SnowfallComponent = lazy(() => import('../../../components/Snowfall.js'));
 
 const Section = styled.section`
   justify-content: center; 

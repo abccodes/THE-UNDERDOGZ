@@ -8,7 +8,7 @@ const SnowfallComponent = () => {
     return (
         <Snowfall
             color = "#3a0ca3"
-            snowflakeCount={50}
+            snowflakeCount={30}
             width = {width}
             height = {height}
         />  
