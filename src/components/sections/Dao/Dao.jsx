@@ -349,7 +349,7 @@ const Dao = () => {
         // check if the chain to connect to is installed
         await window.ethereum.request({
           method: 'wallet_switchEthereumChain',
-          params: [{ chainId: '0x4' }], // chainId must be in hexadecimal numbers
+          params: [{ chainId: '0x1' }], // chainId must be in hexadecimal numbers
         });
 
       } catch (error) {
@@ -363,7 +363,7 @@ const Dao = () => {
               method: 'wallet_addEthereumChain',
               params: [
                 {
-                  chainId: '0x4',
+                  chainId: '0x1',
                   rpcUrl: 'https://eth-rinkeby.alchemyapi.io/v2/',
                 },
               ],
