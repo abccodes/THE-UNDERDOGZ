@@ -421,7 +421,7 @@ const Dao = () => {
 
     if (isMobileDevice()) {
 
-      const dappUrl = "metamask.app.link/dapp/opensea.io/"    //deep link for mobile users - will be set to opensea until TriLinked is hosted
+      const dappUrl = "metamask.app.link/dapp/opensea.io/"    //deep link for mobile users - will be set to opensea until UDZ is hosted
       const metamaskAppDeepLink = "https://metamask.app.link/dapp/" + dappUrl; 
 
       return (
@@ -488,13 +488,23 @@ const Dao = () => {
 
   async function claimDividends() {
 
-    const claim = underdogzContract.claimDividends(userAddress);
-    console.log(userAddress + " is claiming...");
+    let dStatus = await underdogzContract.dividendStatus();
 
     if (!userAddress) {
       alert("Please connect to Metamask"); 
-    } 
+
+    } else if (dStatus === false) {
+      alert("Dividends are not currently active");
+
+    } else {
+      const claim = underdogzContract.claimDividends(userAddress);
+      console.log(userAddress + " is claiming...");
+    }
   }
+  
+  //=================================================================================================================
+
+
   
 
   return(

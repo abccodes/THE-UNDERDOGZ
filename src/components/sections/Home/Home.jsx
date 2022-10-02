@@ -37,12 +37,12 @@ const Home = () => {
     },
     {
       question: "What's the mint price?",
-      answer: '.1 ETH',
+      answer: '.085 ETH',
       open: false,
     },
     {
       question: 'How many per wallet on mint?',
-      answer: '10 Total',
+      answer: '15 Total',
       open: false,
     },
     {

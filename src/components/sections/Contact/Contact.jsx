@@ -22,6 +22,10 @@ const Section = styled.div`
     height: 100vh; 
   }
 
+  @media screen and (max-width: 540px) {
+    height: 120vh; 
+  }
+
   @media screen and (max-width: 450px) {
     height: auto; 
   }
