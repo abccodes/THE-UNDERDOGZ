@@ -1,18 +1,18 @@
 {
-    "CONTRACT_ADDRESS": "0x5e23A18ab660fBCc93308a6e1B568Ed83297Ad13",
-    "SCAN_LINK": "https://rinkeby.etherscan.io/address/0x5e23a18ab660fbcc93308a6e1b568ed83297ad13",
+    "CONTRACT_ADDRESS": "0xC05b8A99B89D419393D08D284bAbd2D06780BfD1",
+    "SCAN_LINK": "https://etherscan.io/address/0xc05b8a99b89d419393d08d284babd2d06780bfd1",
     "NETWORK": {
-      "NAME": "Rinkeby",
+      "NAME": "Ethereum",
       "SYMBOL": "ETH",
-      "ID": 4
+      "ID": 1
     },
     "NFT_NAME": "UnderDogZ",
     "SYMBOL": "UDZ",
     "MAX_SUPPLY": 8600,
-    "WEI_COST": 100000000000000000,
-    "DISPLAY_COST": 0.1,
+    "WEI_COST": 85000000000000000,
+    "DISPLAY_COST": 0.085,
     "GAS_LIMIT": 285000,
     "MARKETPLACE": "Opeansea",
-    "MARKETPLACE_LINK": "https/openseaLink",
+    "MARKETPLACE_LINK": "https://opensea.io/account",
     "SHOW_BACKGROUND": true
   }

@@ -11,7 +11,7 @@ import logo from '../../assets/Screenshot__214_-removebg-preview.png';
 import bank from '../../assets/fINAL_COIN-removebg.png';
 
 //Blockchain Imports
-import underdogzABI from '../../sections/Dao/abi.json';
+import underdogzABI from '../../contracts/abi.json';
 import {fetchNFTs} from '../../../utils/fetchNFTs.js';
 import NftCard from './nftcard';
 
@@ -482,7 +482,7 @@ const Dao = () => {
 
   //Claim Dividends 
 
-  const underdogzAddress = "0x5e23A18ab660fBCc93308a6e1B568Ed83297Ad13";
+  const underdogzAddress = "0xC05b8A99B89D419393D08D284bAbd2D06780BfD1";
   const provider = new ethers.providers.Web3Provider(window.ethereum);
   const underdogzContract = new ethers.Contract(underdogzAddress, underdogzABI, provider.getSigner())
 
