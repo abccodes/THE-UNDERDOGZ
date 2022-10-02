@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { connect } from "./redux/blockchain/blockchainActions";
 import { fetchData } from "./redux/data/dataActions";
@@ -102,12 +102,6 @@ const Title = styled.h2`
   width: 80%;
   margin: 0 auto;
   font-weight: bold;
-`
-const TextDescription = styled.p`
-  position: absolute;
-  bottom: 0px;
-  justify-content: center;
-  font-size: 0.5em;
 `
 
 const SubText = styled.p`
