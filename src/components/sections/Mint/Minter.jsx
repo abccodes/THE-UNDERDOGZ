@@ -254,8 +254,7 @@ function Mint() {
   }, [blockchain.account]);
 
   //countdown to display time until mint
-  // const countdown = 1664953200000;  
-  const countdown = 0; 
+  const countdown = 1664953200000;  
   
   return (
     <Section style={{backgroundImage: `url(${lightning1})`}}>
