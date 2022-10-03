@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
 import img1 from '../../assets/hunter-removebg-preview.png'
@@ -270,28 +270,6 @@ const MemberComponent = ({
         </a>
       </Icon>
     </Item>
-  )
-}
-
-const MemberComponentSpace = ({
-  img,
-  name = ' ',
-  position = ' ',
-  twitter = ' ',
-}) => {
-  return (
-    <ItemSpace>
-      <ImageContainer>
-        <img width={500} height={400} src={img} alt={name} />
-      </ImageContainer>
-      <Name className="titleFont">{name}</Name>
-      <Position className="subFont">{position}</Position>
-      <Icon>
-        <a href={twitter}>
-          <Twitter></Twitter>
-        </a>
-      </Icon>
-    </ItemSpace>
   )
 }
 

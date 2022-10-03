@@ -1,7 +1,7 @@
 import gsap from 'gsap'
 import Loading from '../../Loading'
 import ScrollTrigger from 'gsap/ScrollTrigger'
-import React, { useLayoutEffect, useRef, lazy, Suspense } from 'react'
+import React, {useRef, lazy, Suspense } from 'react'
 import styled from 'styled-components'
 import DrawSvg from './DrawSvg.js'
 import { motion } from 'framer-motion'
@@ -72,11 +72,6 @@ const Container = styled.div`
   @media (max-width: 48em) {
     width: 90%;
   }
-`
-const SvgContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `
 
 const Items = styled.ul`
