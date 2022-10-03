@@ -1,17 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.215c1cd2.css",
-    "main.js": "/static/js/main.a33da554.js",
+    "main.js": "/static/js/main.d756f4b5.js",
     "static/js/248.41d43457.chunk.js": "/static/js/248.41d43457.chunk.js",
     "static/js/655.be1ecb80.chunk.js": "/static/js/655.be1ecb80.chunk.js",
     "static/media/fINAL_COIN-removebg.png": "/static/media/fINAL_COIN-removebg.841aec851be6901779b8.png",
     "static/media/giphy (4).gif": "/static/media/giphy (4).56696b528ec5b7a9d35b.gif",
-    "static/media/giphy.gif": "/static/media/giphy.20281a79fa4654568f15.gif",
     "static/media/Lightning_Bursts_1_2286_2K.gif": "/static/media/Lightning_Bursts_1_2286_2K.94ae49df9d64ec58eb35.gif",
     "static/media/giphy (2).gif": "/static/media/giphy (2).2cfb27d42f4950fe9106.gif",
     "static/media/giphy (3).gif": "/static/media/giphy (3).a3a3ecc0e746c9601af0.gif",
     "static/media/My project.png": "/static/media/My project.b264ca2716d12514cb63.png",
-    "static/media/2.png": "/static/media/2.8f97fb0a4737ddc640c4.png",
     "static/media/100.png": "/static/media/100.868cc80360c2a3f48a8f.png",
     "static/media/hunter.png": "/static/media/hunter.45dc3cdfca84de33ad77.png",
     "static/media/1500.png": "/static/media/1500.74b69992d4ae204f561d.png",
@@ -35,12 +33,12 @@
     "static/media/down-arrow-svgrepo-com (1).svg": "/static/media/down-arrow-svgrepo-com (1).600ee40a8482d49a28d3.svg",
     "index.html": "/index.html",
     "main.215c1cd2.css.map": "/static/css/main.215c1cd2.css.map",
-    "main.a33da554.js.map": "/static/js/main.a33da554.js.map",
+    "main.d756f4b5.js.map": "/static/js/main.d756f4b5.js.map",
     "248.41d43457.chunk.js.map": "/static/js/248.41d43457.chunk.js.map",
     "655.be1ecb80.chunk.js.map": "/static/js/655.be1ecb80.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.215c1cd2.css",
-    "static/js/main.a33da554.js"
+    "static/js/main.d756f4b5.js"
   ]
 }

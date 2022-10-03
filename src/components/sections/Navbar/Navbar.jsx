@@ -62,32 +62,32 @@ const Navbar = () => {
 
         <li className = "rounded-xl hover:bg-zinc-800">
           <Link to="/">
-          <a className = 'mont'>Home</a>
+          <p className = 'mont'>Home</p>
           </Link>
         </li>
 
         <li className = "rounded-xl hover:bg-zinc-800">
           <Link to="/dao">
-          <a 
-          className='mont'>Dao</a>
+          <p 
+          className='mont'>Dao</p>
           </Link>
         </li>
 
         <li className = "rounded-xl hover:bg-zinc-800">
         <Link to="/mint">
-          <a className='mont'>Mint</a>  
+          <p className='mont'>Mint</p>  
           </Link>
         </li>
 
         <li className = "rounded-xl hover:bg-zinc-800">
         <Link to="/help">
-          <a className='mont'>Help</a>  
+          <p className='mont'>Help</p>  
           </Link>
         </li>
 
         <li className = "rounded-xl hover:bg-zinc-800">
         <Link to="/contact">
-          <a className='mont'>Contact</a>
+          <p className='mont'>Contact</p>
         </Link>
         </li>
       
