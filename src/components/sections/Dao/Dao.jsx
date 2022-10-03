@@ -328,10 +328,14 @@ const Dao = () => {
   }, []); 
 
 
-  //Accounts Changed 
-  window.ethereum.on('accountsChanged', function (accounts) {
-   checkIfWalletIsConnected(setUserAddress);
-  })
+  useEffect(() => {
+    if(typeof window.ethereum !== 'undefined') {
+      window.ethereum.on('accountsChanged', function () {
+  
+        checkIfWalletIsConnected(setUserAddress);
+      })
+    }
+  }, []); 
 
 
   //Mobile:
@@ -482,11 +486,13 @@ const Dao = () => {
 
   //Claim Dividends 
 
-  const underdogzAddress = "0xC05b8A99B89D419393D08D284bAbd2D06780BfD1";
-  const provider = new ethers.providers.Web3Provider(window.ethereum);
-  const underdogzContract = new ethers.Contract(underdogzAddress, underdogzABI, provider.getSigner())
+  
 
   async function claimDividends() {
+
+    const underdogzAddress = "0xC05b8A99B89D419393D08D284bAbd2D06780BfD1";
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const underdogzContract = new ethers.Contract(underdogzAddress, underdogzABI, provider.getSigner())
 
     let dStatus = await underdogzContract.dividendStatus();
 
@@ -497,16 +503,13 @@ const Dao = () => {
       alert("Dividends are not currently active");
 
     } else {
-      const claim = underdogzContract.claimDividends(userAddress);
+      underdogzContract.claimDividends(userAddress);
       console.log(userAddress + " is claiming...");
     }
   }
   
   //=================================================================================================================
-
-
   
-
   return(
 
    
