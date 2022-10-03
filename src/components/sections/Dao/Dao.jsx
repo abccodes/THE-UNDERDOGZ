@@ -1,6 +1,6 @@
 //General Imports
-import React, { useEffect, useState, useRef, lazy, Suspense } from "react";
-import styled, { keyframes} from 'styled-components';
+import React, { useEffect, useState, lazy, Suspense } from "react";
+import styled from 'styled-components';
 import { ethers } from "ethers"; 
 
 //Styling Imports
@@ -325,6 +325,7 @@ const Dao = () => {
   
   useEffect(() => {
     checkIfWalletIsConnected(setUserAddress);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); 
 
 
@@ -335,6 +336,7 @@ const Dao = () => {
         checkIfWalletIsConnected(setUserAddress);
       })
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); 
 
 
@@ -455,9 +457,9 @@ const Dao = () => {
 
   
   useEffect(() => {
-
-    fetchNFTs(owner, contractAddress, setNFTs); 
-
+    setContractAddress(contractAddress); 
+    fetchNFTs(owner, contractAddress,  setNFTs); 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]) 
   
 
@@ -509,7 +511,10 @@ const Dao = () => {
   }
   
   //=================================================================================================================
+
+
   
+
   return(
 
    

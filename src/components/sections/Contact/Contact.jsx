@@ -1,5 +1,5 @@
 import React, { lazy, Suspense} from 'react'
-import styled, { keyframes} from 'styled-components';
+import styled from 'styled-components';
 import Loading from '../../sections/Home/Loading.js';
 import '../../sections/Contact/Contact.css';
 

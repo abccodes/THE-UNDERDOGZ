@@ -6,6 +6,6 @@ import img5 from './assets/nic.png'
 import img6 from './assets/lee.png'
 import img7 from './assets/hunter.png'
 import img8 from './assets/1.png'
-import img9 from './assets/2.png'
 
-export default [img1, img2, img3, img4, img5, img6, img7, img8]
+const array = [img1, img2, img3, img4, img5, img6, img7, img8]
+export default array

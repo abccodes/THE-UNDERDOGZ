@@ -1,26 +1,24 @@
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import React, { useLayoutEffect, useRef } from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import Vector from '../../Icons/Vector'
 
 const VectorContainer = styled.div`
   position: absolute;
-  top: .25rem;
+  top: 0.25rem;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
   height: 100%;
   overflow: hidden;
-  justify-content: center; 
+  justify-content: center;
 
   svg {
     //display: inline-block;
     width: 100%;
     height: 100%;
   }
-
- 
 `
 
 const Ball = styled.div`
@@ -37,7 +35,7 @@ const Ball = styled.div`
     left: 1rem;
   }
 
-  align-items: center; 
+  align-items: center;
 `
 
 const DrawSvg = () => {

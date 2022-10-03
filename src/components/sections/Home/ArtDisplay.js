@@ -1,7 +1,6 @@
 import img1 from '../../assets/giphy (2).gif'
 import img2 from '../../assets/giphy (3).gif'
 import img3 from '../../assets/giphy (4).gif'
-import img4 from '../../assets/giphy.gif'
 import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
@@ -10,7 +9,7 @@ const Container = styled.div`
   height: auto;
   display: flex;
   justify-content: space-evenly;
-  border: none; 
+  border: none;
   background-color: #121113;
   box-shadow: 0px 0px 500px 500px #121113;
 `
@@ -18,9 +17,8 @@ const Container = styled.div`
 const ImageContainer = styled.div`
   width: 60%;
   margin: 0 auto;
-  margin-bottom: 25px; 
+  margin-bottom: 25px;
   padding: 5px;
-  
 
   @media (max-width: 1024px) {
     width: 70%;
@@ -32,7 +30,7 @@ const ImageContainer = styled.div`
 
   img {
     border: 10px solid #2d2d2d;
-    border-radius: 100rem;  
+    border-radius: 100rem;
     width: 100%;
     height: auto;
     transition: all 0.3s ease;
@@ -64,15 +62,12 @@ const nfts = [
 
     imageAlt: 'UDZ DOG',
   },
-
-  
 ]
 
 const ArtDisplay = () => {
   return (
     <div>
       <Container>
-        
         {nfts.map((nft) => (
           <a key={nft.id} href={nft.href} className="group">
             <motion.div
@@ -87,17 +82,11 @@ const ArtDisplay = () => {
               <ImageContainer>
                 <img src={nft.imageSrc} alt={nft.imageAlt} />
               </ImageContainer>
-              
             </motion.div>
-            
           </a>
-          
         ))}
-        
       </Container>
-      
     </div>
-    
   )
 }
 

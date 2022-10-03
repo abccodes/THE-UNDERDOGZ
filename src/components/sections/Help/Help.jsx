@@ -1,4 +1,4 @@
-import React, { useState, lazy, Suspense  } from 'react';
+import React, { lazy, Suspense  } from 'react';
 import styled from 'styled-components';
 
 import '../../sections/Help/HelpStyle.css';
@@ -158,9 +158,9 @@ const Help = () => {
 
       <Title>
         
-        <img className = "help-title-image" src = {logo}></img>
+        <img className = "help-title-image" src = {logo} alt=""></img>
           UNDERDOGZ HELP
-        <img className = "help-title-image" src = {logo}></img>
+        <img className = "help-title-image" src = {logo} alt=""></img>
       
       </Title>
 

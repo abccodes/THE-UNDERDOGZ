@@ -245,6 +245,7 @@ function Mint() {
 
   useEffect(() => {
     getData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [blockchain.account]);
 
   //countdown to display time until mint

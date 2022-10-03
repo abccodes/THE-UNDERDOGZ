@@ -1,15 +1,10 @@
 import React from 'react'
-import styled from 'styled-components'
 import '../../fonts.css'
-
-
 
 function FAQ({ faq, index, toggleFAQ }) {
   return (
-    
     <div
-      
-      className= {'faq ' + (faq.open ? 'open' : '')}
+      className={'faq ' + (faq.open ? 'open' : '')}
       key={index}
       onClick={() => toggleFAQ(index)}
     >

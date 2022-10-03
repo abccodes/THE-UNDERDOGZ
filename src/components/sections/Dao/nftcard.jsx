@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect} from 'react'
 
 import etherscan from "../../assets/etherscan-removebg-preview.png";
 
@@ -29,7 +29,7 @@ const NftCard = ( props ) => {
 
   var nftWidth = "w-1/4 mr-1 mb-10 bg-slate-100 rounded-md"
 
-  const { height, width } = useWindowDimensions();
+  const { width } = useWindowDimensions();
 
   
 
@@ -49,22 +49,22 @@ const NftCard = ( props ) => {
   return (
       <div className= {nftWidth}>
 
-        <img className='w-full rounded-t-md shadow-lg shadow-purple-700/50' key={props.value.id} src={props.value.image}></img>
+        <img className='w-full rounded-t-md shadow-lg shadow-purple-700/50' key={props.value.id} src={props.value.image} alt = "Img Not Found :/"></img>
 
           <div className="p-3">
 
-              <div className="flex mb-3">
+            <div className="flex mb-3">
 
-                <div className="flex-grow">
-                  <h3 className="text-lg text-white font-Baloo2 font-bold">{props.value.title}</h3>
-                  <p className="text-md text-white font-Baloo2 font-semibold">{`${props.value.id.slice(0, 2)}..${props.value.id.slice(props.value.id.length - 3)}`}</p>
-                </div>
-
-                <div className="flex mr-1">
-                  <a target="_blank"  href={`https://etherscan.io/token/${props.value.contractAddress}`}> <img className = "h-10 w-10" src = {etherscan} alt = "etherscan" ></img> </a>
-                </div>
-
+              <div className="flex-grow">
+                <h3 className="text-lg text-white font-Baloo2 font-bold">{props.value.title}</h3>
+                <p className="text-md text-white font-Baloo2 font-semibold">{`${props.value.id.slice(0, 2)}..${props.value.id.slice(props.value.id.length - 3)}`}</p>
               </div>
+
+              <div className="flex mr-1">
+                <a href= {`https://etherscan.io/token/${props.value.contractAddress}`}> <img className = "h-10 w-10" src = {etherscan} alt = "etherscan" ></img> </a>
+              </div>
+
+            </div>
 
           </div>
       </div>

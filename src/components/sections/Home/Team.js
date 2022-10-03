@@ -17,37 +17,34 @@ const Section = styled.section`
   overflow: hidden;
   background: linear-gradient(-45deg, #37829f, #ae71ae, #2f57cf, #cf63c4);
   background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
+  animation: gradient 15s ease infinite;
   justify-content: center;
   align-items: center;
 `
 
-
 const Container = styled.div`
   width: 100%;
-  height: auto;    
+  height: auto;
 
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row; 
+  flex-direction: row;
 
   justify-content: space-evenly;
   align-items: center;
-  
+
   gap: 25px;
 
   @media (max-width: 700px) {
     flex-direction: column;
-    justify-content: center; 
-    gap: 15px; 
+    justify-content: center;
+    gap: 15px;
   }
-
- 
 
   @media (max-width: 48em) {
     width: 100%;
     display: flex;
-    
+
     align-items: center;
     flex-wrap: wrap;
   }
@@ -56,9 +53,8 @@ const Container = styled.div`
 `
 
 const Item = styled.div`
-
   width: 250px;
-  height: 350px; 
+  height: 350px;
   position: relative;
   margin-top: 45px;
   margin-bottom: 45px;
@@ -80,104 +76,26 @@ const Item = styled.div`
     width: 200px;
     height: 300px;
     padding: 1rem 0;
-    
+
     z-index: 5;
-    
   }
-  
+
   @media (max-width: 700px) {
     width: 250px;
     height: 350px;
-    
+
     z-index: 5;
   }
-  
+
   @media (max-width: 450px) {
     width: 200px;
     height: 300px;
-    
+
     z-index: 5;
   }
-  
 `
 
-const ItemSpace = styled.div`
-  width: calc(20rem - 4vw);
-  padding: 2rem 0;
-  color: #fff;
-
-  margin: 2rem 1rem;
-  position: relative;
-  z-index: 5;
-  margin: 0px 75px 0px;
-
-  backdrop-filter: blur(4px);
-
-  border: 2px solid #fff;
-  border-radius: 20px;
-
-  &:hover {
-    img {
-      transform: translateY(-2rem) scale(1.2);
-    }
-  }
-
-  @media (max-width: 75em) {
-    width: calc(17rem - 4vw);
-    padding: 1rem 0;
-    color: #fff;
-    margin: 2rem 1rem;
-    position: relative;
-    z-index: 5;
-    backdrop-filter: blur(4px);
-    border: 2px solid #fff;
-    border-radius: 20px;
-    margin: 0px 75px 0px;
-  }
-
-  @media (max-width: 65em) {
-    width: calc(15rem - 4vw);
-    padding: 1rem 0;
-    color: #fff;
-    margin: 2rem 1rem;
-    position: relative;
-    z-index: 5;
-    backdrop-filter: blur(4px);
-    border: 2px solid #fff;
-    border-radius: 20px;
-    margin: 0px 50px 0px;
-  }
-
-  @media (max-width: 57em) {
-    width: calc(13rem - 4vw);
-    padding: 1rem 0;
-    color: #fff;
-    margin: 2rem 1rem;
-    position: relative;
-    z-index: 5;
-    backdrop-filter: blur(4px);
-    border: 2px solid #fff;
-    border-radius: 20px;
-    margin: 0px 25px 0px;
-  }
-  
-  }
-  @media (max-width: 50em) {
-    width: calc(13rem - 4vw);d
-    padding: 1rem 0;
-    color: #fff;
-    margin: 2rem 1rem;
-    position: relative;
-    z-index: 5;
-    backdrop-filter: blur(4px);
-    border: 2px solid #fff;
-    border-radius: 20px;
-  }
-
-  background-color: #1e1e1f;
-  box-shadow: 0px 0px 40px 20px #4e32a8;
-`
-//Dog Image: 
+//Dog Image:
 const ImageContainer = styled.div`
   width: 80%;
   margin: 0 auto;
@@ -198,7 +116,7 @@ const ImageContainer = styled.div`
 const Name = styled.h2`
   font-size: 22px;
   font-weight: bold;
-  letter-spacing: 1px;  
+  letter-spacing: 1px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -215,7 +133,7 @@ const Position = styled.h2`
   text-transform: capitalize;
   color: white;
   font-weight: 400;
-  margin-top: 5px; 
+  margin-top: 5px;
 `
 
 const Icon = styled.h2`
@@ -231,24 +149,23 @@ const Header = styled.div`
   display: flex;
   justify-content: center;
   align-content: center;
-  border: none; 
+  border: none;
 
   background-color: #121113;
   box-shadow: 0px 0px 500px 500px #121113;
 
   padding-bottom: 45px;
-  padding-top: 45px; 
-  background: #121113; 
-
+  padding-top: 45px;
+  background: #121113;
 
   color: white;
   font-size: 50px;
   font-weight: 700;
-  font-family: "Baloo 2";
+  font-family: 'Baloo 2';
   font-weight: bold;
   letter-spacing: 5px;
   text-transform: uppercase;
-  text-align: center; 
+  text-align: center;
 `
 
 const MemberComponent = ({
@@ -275,14 +192,9 @@ const MemberComponent = ({
 
 const Team = () => {
   return (
-
-    
-    
     <div name="team" className=" text-gray-300 ">
-
       <Header>Team</Header>
       <Section id="team">
-       
         <motion.div
           initial={{
             opacity: 0,
@@ -314,24 +226,22 @@ const Team = () => {
               position="Founder"
               twitter="https://twitter.com/Lee_Michaelson1"
             />
-            
           </Container>
           <Container>
             <MemberComponent
-                img={img4}
-                name="BEN"
-                position="Developer"
-                twitter="https://twitter.com/B3nskiii"
-              />
-              <MemberComponent
-                img={img5}
-                name="AIDAN"
-                position="Developer"
-                twitter="https://twitter.com/Aidan__eth"
-              />
+              img={img4}
+              name="BEN"
+              position="Developer"
+              twitter="https://twitter.com/B3nskiii"
+            />
+            <MemberComponent
+              img={img5}
+              name="AIDAN"
+              position="Developer"
+              twitter="https://twitter.com/Aidan__eth"
+            />
           </Container>
         </motion.div>
-        
       </Section>
     </div>
   )

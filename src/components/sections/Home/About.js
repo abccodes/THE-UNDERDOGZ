@@ -1,17 +1,11 @@
-import React, { lazy, Suspense } from 'react'
+import React, { Suspense } from 'react'
 import styled from 'styled-components'
-// import Carousel from '../Carousel'
-// import Loading from '../Loading'
 import Card from './Card.tsx'
 import { motion } from 'framer-motion'
 import '../../fonts.css'
 
-// import fire from '../../assets/Looping_Fire_2_4001_HD_AdobeExpress (1).gif'
-// import cloud from '../../assets/Cartoon-Smoke-2-4003-HD.gif'
-// const Carousel = lazy(() => import('./Carousel'))
-
 const Section = styled.section`
-  height: auto; 
+  height: auto;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -21,18 +15,16 @@ const Section = styled.section`
   background-color: #121113;
 `
 
-
 const Container = styled.div`
   width: 75%;
   margin: 75px auto;
-  margin-bottom: 45px; 
+  margin-bottom: 45px;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  
-  border-radius: 25px;
 
+  border-radius: 25px;
 `
 
 const Box = styled.div`
@@ -92,55 +84,6 @@ const SubText = styled.p`
     width: 100%;
   }
 `
-
-const SubTextLight = styled.p`
-  font-size: 1em;
-  color: #fafaff;
-  align-self: flex-start;
-  width: 80%;
-  margin: 1rem auto;
-  font-weight: 400;
-  // font-weight: bold;
-
-  @media (max-width: 64em) {
-    width: 100%;
-    text-align: center;
-    font-size: 0.875em;
-  }
-  @media (max-width: 40em) {
-    font-size: 0.875em;
-  }
-  @media (max-width: 30em) {
-    font-size: 0.75em;
-  }
-  color: #fafaff;
-`
-
-const ButtonContainer = styled.div`
-  width: 80%;
-  margin: 1rem auto;
-  display: flex;
-  align-self: flex-start;
-
-  @media (max-width: 64em) {
-    width: 100%;
-
-    button {
-      margin: 0 auto;
-    }
-  }
-`
-const styles = {
-  root: {
-    fontFamily: 'sans-serif',
-    textAlign: 'center',
-    height: '100%',
-    background: '#222',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-}
 
 const About = () => {
   return (
