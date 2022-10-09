@@ -8,7 +8,6 @@ import { Provider } from 'react-redux'
 import store from './redux/store'
 import img from '../../assets/giphy (3).gif'
 import Count from './CountdownTimer/CountdownTimer'
-import lightning1 from "../../assets/Lightning_Bursts_1_2286_2K.gif"
 import {getRemainingTimeUntilMsTimestamp} from "./CountdownTimer/Utils/CountdownTimerUtils"
 
 const Section = styled.a`
@@ -249,10 +248,10 @@ function Mint() {
   }, [blockchain.account]);
 
   //countdown to display time until mint
-  const countdown = 1664953200000;  
+  const countdown = 2233438330000;  
   
   return (
-    <Section style={{backgroundImage: `url(${lightning1})`}}>
+    <Section className="mintBackground">
     { 
       
       ((getRemainingTimeUntilMsTimestamp(countdown)).days) > 0 &&
