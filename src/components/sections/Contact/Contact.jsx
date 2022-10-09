@@ -214,10 +214,10 @@ const Contact = () => {
 
           <p className = "form-header">Request & Reccomendations? <br/> Let us know!</p>
 
-          <input className= 'form-input h-10' type = "text" placeholder= ' Name' name='name' />
-          <input className= 'form-input h-10' type = "email" placeholder= ' Email' name='email' />
+          <input className= 'form-input h-10' type = "text" placeholder= ' Name' name='name' required/>
+          <input className= 'form-input h-10' type = "email" placeholder= ' Email' name='email' required/>
 
-          <textarea className= 'form-input h-50' name="message" rows="10" placeholder=' Message'></textarea>
+          <textarea className= 'form-input h-50' name="message" rows="10" placeholder=' Message' required></textarea>
 
           <button className = 'form-submit'>Submit</button>
 
