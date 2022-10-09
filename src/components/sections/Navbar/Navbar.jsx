@@ -24,7 +24,6 @@ const HamburgerIcons = styled.div`
   justify-content: center;
   align-items: center;
   
-
   width: 100%;
   height: auto; 
   
@@ -103,23 +102,23 @@ const Navbar = () => {
       <ul className = { !nav ? 'hidden' : 'absolute top-0 left-0 w-full h-screen bg-zinc-800 font-bold flex flex-col place-content-evenly items-center col Baloo2'}>
 
         <li className='py-6 text-4xl '>
-          <a href="/">Home</a>
+          <a href="/" className = 'text-white'>Home</a>
         </li>
 
         <li className='py-6 text-4xl'>
-        <a href="/dao">Dao</a>
+        <a href="/dao" className = 'text-white'>Dao</a>
         </li>
 
         <li className='py-6 text-4xl'>
-        <a href="/mint">Mint</a>
+        <a href="/mint" className = 'text-white'>Mint</a>
         </li>
 
         <li className='py-6 text-4xl'>
-          <a href="/help">Help</a>
+          <a href="/help" className = 'text-white'>Help</a>
         </li>
 
         <li className='py-6 text-4xl'>
-        <a href="/contact">Contact</a>
+        <a href="/contact" className = 'text-white'>Contact</a>
         </li>
 
         <Hamburgerline></Hamburgerline>
