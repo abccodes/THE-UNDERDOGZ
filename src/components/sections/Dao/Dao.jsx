@@ -427,7 +427,7 @@ const Dao = () => {
 
     if (isMobileDevice()) {
 
-      const dappUrl = "metamask.app.link/dapp/opensea.io/"    //deep link for mobile users - will be set to opensea until UDZ is hosted
+      const dappUrl = "metamask.app.link/dapp/underdogzdao.com/"    //deep link for mobile users - will be set to opensea until UDZ is hosted
       const metamaskAppDeepLink = "https://metamask.app.link/dapp/" + dappUrl; 
 
       return (
