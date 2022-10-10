@@ -13,8 +13,6 @@ const Header = styled.div`
   align-content: center;
   background-color: #121113;
 
-  
-
   padding-top: 45px;
   background: #121113; 
   box-shadow: 0px 0px 500px 500px #121113;
@@ -101,8 +99,6 @@ const Home = () => {
       }),
     )
   }
-
-
 
   return (
   

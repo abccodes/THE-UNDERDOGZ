@@ -1,7 +1,7 @@
 import gsap from 'gsap'
 import Loading from '../../Loading'
 import ScrollTrigger from 'gsap/ScrollTrigger'
-import React, {useRef, lazy, Suspense } from 'react'
+import React, { useRef, lazy, Suspense } from 'react'
 import styled from 'styled-components'
 import DrawSvg from './DrawSvg.js'
 import { motion } from 'framer-motion'
@@ -20,41 +20,27 @@ const Header = styled.div`
   display: flex;
   justify-content: center;
   align-content: center;
-  text-align: center; 
+  text-align: center;
   margin-top: 45px;
 
   padding: 5px;
-  background: #121113; 
-  
+  background: #121113;
 
-  color: #fff; 
+  color: #fff;
   font-size: 67.2px;
   font-weight: 700;
-  font-family: "Baloo 2";
+  font-family: 'Baloo 2';
   font-weight: bold;
   letter-spacing: 5px;
   text-transform: uppercase;
-  
+
   @media (max-width: 770px) {
-    font-size: 64px; 
+    font-size: 64px;
   }
 
   @media (max-width: 480px) {
-    font-size: 50px; 
+    font-size: 50px;
   }
-
-`
-const Line = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 25px;
-
-  width: 100%;
-  height: 5px;
-  border-radius: 2rem;
-
-  background-color: #2d2d2d;
-  opacity: .5;
 `
 
 const Container = styled.div`
@@ -85,7 +71,6 @@ const Items = styled.ul`
 
   @media (max-width: 48em) {
     width: 90%;
-
   }
 
   & > *:nth-of-type(2n + 1) {
@@ -138,10 +123,9 @@ const ItemContainer = styled.div`
   color: white;
   @media (max-width: 48em) {
     width: 80%;
-    
   }
   background-color: white;
-  border-radius: 2rem; 
+  border-radius: 2rem;
   background-color: #1e1e1f;
   box-shadow: 0px 5px 30px -10px #3a0ca3;
 `
@@ -151,15 +135,15 @@ const SubTitle = styled.span`
 
   color: white;
   font-size: 25px;
-  font-weight: bold; 
+  font-weight: bold;
   text-transform: capitalize;
-  text-decoration: underline; 
-  letter-spacing: 1.5px; 
+  text-decoration: underline;
+  letter-spacing: 1.5px;
 
   @media (max-width: 48em) {
     font-size: 30px;
     font-weight: 600;
-    text-align: center; 
+    text-align: center;
   }
   font-family: 'Baloo 2', cursive;
 `
@@ -173,7 +157,7 @@ const Text = styled.span`
   margin: 0.5rem 0;
   @media (max-width: 48em) {
     font-size: 20px;
-    text-align: center;  
+    text-align: center;
   }
 `
 
@@ -214,18 +198,14 @@ const Roadmap = () => {
 
   return (
     <Section>
-      <Line></Line>
       <Header>Roadmap</Header>
       <Suspense fallback={<Loading />}>
         <ConfettiComponent />{' '}
       </Suspense>
 
       <Container>
+        <DrawSvg className="self-center"></DrawSvg>
 
-        
-        <DrawSvg className = "self-center"></DrawSvg>
-        
-      
         <Items>
           <RoadMapItem
             addToRef={addToRefs}
@@ -258,9 +238,7 @@ const Roadmap = () => {
           />
         </Items>
       </Container>
-      
     </Section>
-    
   )
 }
 

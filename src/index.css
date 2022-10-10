@@ -40,7 +40,8 @@
     
     border-bottom: 10px solid rgb(255, 255, 255);
     width:100%; 
-    
+    align-items: center;
+    justify-content: center;
 }
 
 .content-div {

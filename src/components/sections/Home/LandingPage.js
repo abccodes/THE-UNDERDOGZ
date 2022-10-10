@@ -3,8 +3,8 @@ import { motion } from 'framer-motion'
 
 const LandingPage = () => {
   return (
-    <div className="w-full h-screen titlePage css-selector  ">
-      <div className="max-w-[1000px] mx-auto px-9 flex flex-col justify-center h-full Baloo">
+    <div className="w-full h-screen css-selector ">
+      <div className=" titlePage flex flex-col justify-center h-full Baloo">
         <motion.div
           initial={{
             opacity: 0,
