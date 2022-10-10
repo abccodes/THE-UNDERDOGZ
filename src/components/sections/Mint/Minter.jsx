@@ -8,7 +8,7 @@ import { Provider } from 'react-redux'
 import store from './redux/store'
 import img from '../../assets/giphy (3).gif'
 import Count from './CountdownTimer/CountdownTimer'
-import {getRemainingTimeUntilMsTimestamp} from "./CountdownTimer/Utils/CountdownTimerUtils"
+// import {getRemainingTimeUntilMsTimestamp} from "./CountdownTimer/Utils/CountdownTimerUtils"
 
 const Section = styled.a`
   height: 100vh;
