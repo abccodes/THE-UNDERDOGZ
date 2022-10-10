@@ -10,7 +10,7 @@ const ConfettiComponent = () => {
         numberOfPieces={200}
         gravity={0.01}
         width={width}
-        height={height * 2}
+        height={height * 3}
         drawShape={(ctx) => {
           ctx.beginPath()
           for (let i = 0; i < 22; i++) {

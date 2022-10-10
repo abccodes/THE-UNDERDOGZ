@@ -248,18 +248,21 @@ function Mint() {
   }, [blockchain.account]);
 
   //countdown to display time until mint
-  const countdown = 2233438330000;  
+  // <Count countdownTimestampMs={countdown}/>
+  const countdown = 0;  
   
   return (
     <Section className="mintBackground">
     { 
-      
-      ((getRemainingTimeUntilMsTimestamp(countdown)).days) > 0 &&
-      ((getRemainingTimeUntilMsTimestamp(countdown)).hours) > 0 &&
-      ((getRemainingTimeUntilMsTimestamp(countdown)).minutes) > 0 &&
-      ((getRemainingTimeUntilMsTimestamp(countdown)).seconds) > 0
+      1>0
+      // ((getRemainingTimeUntilMsTimestamp(countdown)).days) > 0 &&
+      // ((getRemainingTimeUntilMsTimestamp(countdown)).hours) > 0 &&
+      // ((getRemainingTimeUntilMsTimestamp(countdown)).minutes) > 0 &&
+      // ((getRemainingTimeUntilMsTimestamp(countdown)).seconds) > 0
 
-     ? (<Count countdownTimestampMs={countdown}/>) 
+     ? (<div className="countdown-timer titleFont">
+      <p className="animate-charcter Baloo2">COMING SOON</p>
+     </div>) 
     : 
      
      
